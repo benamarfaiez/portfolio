@@ -35,7 +35,6 @@ export const useDeepSeek = (): UseDeepSeekReturn => {
       };
       
       setMessages(prev => [...prev, userMessage]);
-      console.log(messages);
       // Appeler l'API DeepSeek
       const response = await fetch('https://api.groq.com/openai/v1/chat/completions', {
         method: 'POST',
