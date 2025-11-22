@@ -35,7 +35,7 @@ export const useDeepSeek = (): UseDeepSeekReturn => {
       };
       
       setMessages(prev => [...prev, userMessage]);
-
+      console.log(messages);
       // Appeler l'API DeepSeek
       const response = await fetch('https://api.groq.com/openai/v1/chat/completions', {
         method: 'POST',
@@ -47,7 +47,7 @@ export const useDeepSeek = (): UseDeepSeekReturn => {
           model: 'llama-3.3-70b-versatile', // Modèle gratuit
           messages: [
             { role: 'system', content: 'You are a helpful assistant.' },
-            ...messages,
+            ...messages.map(m=>({ content: m.content, role: m.role})),
             { role: 'user', content }
           ],
           temperature: 0.7,
