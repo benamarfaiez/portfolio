@@ -1,0 +1,1 @@
+{"root":["./src/app.tsx","./src/main.tsx","./src/vite-env.d.ts","./src/components/deepseekchat.tsx","./src/config/constants.ts","./src/config/env.ts","./src/hooks/usedeepseek.tsx","./src/types/deepseek.ts"],"version":"5.9.3"}
