@@ -69,7 +69,7 @@ export default function Hero() {
                         >
                             <div className="absolute inset-0 bg-gradient-to-tr from-blue-600 to-cyan-500 rounded-full blur-2xl opacity-20 animate-pulse" />
                             <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-white dark:border-slate-800 shadow-2xl">
-                                <img src="./../../public/image_profile.png" alt={personalInfo.name} className="w-full h-full object-cover" />
+                                <img src="image_profile.png" alt={personalInfo.name} className="w-full h-full object-cover" />
                             </div>
                         </motion.div>
                     </div>
