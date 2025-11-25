@@ -52,8 +52,10 @@ describe('Layout Component', () => {
             </Layout>
         );
 
-        const themeBtn = screen.getByLabelText('Toggle theme');
-        fireEvent.click(themeBtn);
+        // Get all theme toggle buttons (desktop and mobile)
+        const themeBtns = screen.getAllByLabelText('Toggle theme');
+        // Click the first one (desktop toggle)
+        fireEvent.click(themeBtns[0]);
 
         expect(mockToggleTheme).toHaveBeenCalledTimes(1);
     });
