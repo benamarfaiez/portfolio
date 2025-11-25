@@ -51,6 +51,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                             <button
                                 onClick={toggleTheme}
                                 className="p-2 mr-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+                                aria-label="Toggle theme"
                             >
                                 {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
                             </button>

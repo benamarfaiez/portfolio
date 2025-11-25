@@ -13,22 +13,45 @@ test.describe('Portfolio E2E', () => {
     });
 
     test('navigation works correctly', async ({ page }) => {
-        // Check desktop navigation
+        const viewportSize = page.viewportSize();
+        const isMobile = viewportSize ? viewportSize.width < 768 : false;
+
+        if (isMobile) {
+            // On mobile, need to open menu first
+            const menuToggle = page.locator('nav button').last();
+            await menuToggle.click();
+            await page.waitForTimeout(300); // Wait for menu animation
+        }
+
+        // Check navigation links are visible
         const navLinks = ['À propos', 'Expérience', 'Compétences', 'Formation', 'Contact'];
 
         for (const linkText of navLinks) {
-            const link = page.getByRole('link', { name: linkText }).first();
+            const link = isMobile
+                ? page.getByRole('link', { name: linkText }).last()
+                : page.getByRole('link', { name: linkText }).first();
             await expect(link).toBeVisible();
-
-            // Click and verify URL hash or scroll
-            // Note: Smooth scroll might make this tricky to verify exact position immediately
-            // so we just check the URL hash update if applicable, or just that it's clickable
-            await link.click();
         }
+
+        // Test clicking one link to verify it works
+        const firstLink = isMobile
+            ? page.getByRole('link', { name: 'À propos' }).last()
+            : page.getByRole('link', { name: 'À propos' }).first();
+        await firstLink.click();
+
+        // Verify URL hash changed
+        await expect(page).toHaveURL(/#about/);
     });
 
     test('theme toggle works', async ({ page }) => {
-        const toggleBtn = page.getByLabel('Toggle theme').first();
+        const viewportSize = page.viewportSize();
+        const isMobile = viewportSize ? viewportSize.width < 768 : false;
+
+        // Get the appropriate toggle button
+        // Desktop toggle is nth(0), mobile toggle is nth(1)
+        const toggleBtn = isMobile
+            ? page.getByLabel('Toggle theme').nth(1) // Mobile toggle is second
+            : page.getByLabel('Toggle theme').nth(0); // Desktop toggle is first
 
         // Check initial state (should be dark by default based on our hook logic or system pref)
         // We can check the html class
