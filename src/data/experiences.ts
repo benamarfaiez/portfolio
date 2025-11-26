@@ -18,9 +18,9 @@ export const experiences: Experience[] = [
     {
         id: 1,
         company: "Henner",
-        location: "Nantes",
+        location: "experience.henner.location",
         role: 'experience.henner.role',
-        period: "Nov 2024 - Oct 2025",
+        period: "experience.henner.period",
         description: 'experience.henner.description',
         projects: [
             {
@@ -45,9 +45,9 @@ export const experiences: Experience[] = [
     {
         id: 2,
         company: "Euro Information",
-        location: "Nantes",
+        location: "experience.euro_information.location",
         role: 'experience.euro_information.role',
-        period: "Sept 2022 - Juin 2024",
+        period: "experience.euro_information.period",
         description: 'experience.euro_information.description',
         projects: [
             {
@@ -60,9 +60,9 @@ export const experiences: Experience[] = [
     {
         id: 3,
         company: "Canaccord Genuity",
-        location: "Tunis / Remote",
+        location: "experience.canaccord.location",
         role: 'experience.canaccord.role',
-        period: "Juil 2020 - Août 2022",
+        period: "experience.canaccord.period",
         description: 'experience.canaccord.description',
         projects: [
             {
@@ -75,9 +75,9 @@ export const experiences: Experience[] = [
     {
         id: 4,
         company: "Mapgears",
-        location: "Tunis",
+        location: "experience.mapgears.location",
         role: 'experience.mapgears.role',
-        period: "Fév 2020 - Juin 2020",
+        period: "experience.mapgears.period",
         description: 'experience.mapgears.description',
         projects: [
             {

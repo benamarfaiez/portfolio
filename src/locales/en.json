@@ -12,6 +12,8 @@
     "experience": {
         "title": "PROFESSIONAL EXPERIENCE",
         "henner": {
+            "location": "Nantes, France",
+            "period": "Nov 2024 - Oct 2025",
             "role": "Backend Engineer",
             "description": "Development and maintenance of critical microservices for notification and broker management.",
             "projects": {
@@ -34,6 +36,8 @@
             }
         },
         "euro_information": {
+            "location": "Nantes, France",
+            "period": "Sept 2022 - June 2024",
             "role": "Full-Stack Engineer",
             "description": "Development of transversal tools for the banking group.",
             "projects": {
@@ -44,6 +48,8 @@
             }
         },
         "canaccord": {
+            "location": "Tunis, Tunisia",
+            "period": "July 2020 - Aug 2022",
             "role": "Full-Stack Engineer",
             "description": "Development of investment platforms for the Canadian stock market.",
             "projects": {
@@ -54,6 +60,8 @@
             }
         },
         "mapgears": {
+            "location": "Tunis / Remote",
+            "period": "Feb 2020 - June 2020",
             "role": "Internship",
             "description": "Design and implementation of a web application for satellite image visualization.",
             "projects": {

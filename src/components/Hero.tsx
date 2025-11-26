@@ -37,13 +37,13 @@ export default function Hero() {
 
                             <div className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4">
                                 <a
-                                    href="#contact"
+                                    href="mailto:benamarfaiez@gmail.com"
                                     className="w-full sm:w-auto px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-full font-medium transition-all flex items-center justify-center gap-2 shadow-lg shadow-blue-500/25"
                                 >
                                     {t('hero.contact')} <Mail size={18} />
                                 </a>
                                 <a
-                                    href="/cv.pdf" // Placeholder link
+                                    href='CV_FaiezBENAMAR.pdf'
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="w-full sm:w-auto px-8 py-3 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-blue-500 dark:hover:border-blue-500 text-slate-900 dark:text-white rounded-full font-medium transition-all flex items-center justify-center gap-2"
