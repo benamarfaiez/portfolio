@@ -105,14 +105,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                                 © {new Date().getFullYear()} Faiez BEN AMAR. All rights reserved.
                             </p>
                         </div>
-                        <div className="flex space-x-6">
-                            <a href={personalInfo.linkedin} target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-blue-600 transition-colors">
-                                <Linkedin size={20} />
-                            </a>
-                            <a href={`mailto:${personalInfo.email}`} className="text-slate-400 hover:text-blue-600 transition-colors">
-                                <Mail size={20} />
-                            </a>
-                        </div>
                     </div>
                 </div>
             </footer>

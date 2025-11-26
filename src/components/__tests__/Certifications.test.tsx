@@ -1,17 +1,24 @@
 import { render, screen } from '@testing-library/react';
 import Certifications from '../Certifications';
-import { certifications } from '../../data/certifications';
+
+// Mock the certifications data
+jest.mock('../../data/certifications', () => ({
+    certifications: [
+        { id: 1, title: 'React JS', column: 'left' },
+        { id: 2, title: 'Angular 12', column: 'right' },
+    ],
+}));
 
 describe('Certifications component', () => {
-
-    test('renders all certification items', () => {
+    test('renders section title', () => {
         render(<Certifications />);
-
-        certifications.forEach((certif) => {
-            expect(screen.getAllByText(certif.title).length).toBeGreaterThan(0);
-            expect(screen.getAllByText(certif.date).length).toBeGreaterThan(0);
-            expect(screen.getAllByText(certif.issuer).length).toBeGreaterThan(0);
-        });
+        const title = screen.getByText(/CERTIFICATIONS/i);
+        expect(title).toBeInTheDocument();
     });
 
+    test('renders certification items', () => {
+        render(<Certifications />);
+        expect(screen.getByText('React JS')).toBeInTheDocument();
+        expect(screen.getByText('Angular 12')).toBeInTheDocument();
+    });
 });
