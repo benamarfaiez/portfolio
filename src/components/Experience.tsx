@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { experiences } from '../data/data';
+import { experiences } from '../data/experiences';
 import { Calendar, MapPin, Briefcase } from 'lucide-react';
 
 export default function Experience() {
