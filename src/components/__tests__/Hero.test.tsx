@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import Hero from '../Hero';
-import { personalInfo } from '../../data';
+import { personalInfo } from '../../data/data';
 
 describe('Hero Component', () => {
     test('renders personal information correctly', () => {

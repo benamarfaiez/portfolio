@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { personalInfo } from '../data';
+import { personalInfo } from '../data/data';
 import { Code2, Database, Layout, Server } from 'lucide-react';
 
 export default function About() {

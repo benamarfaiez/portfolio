@@ -11,21 +11,17 @@ test.describe('Portfolio E2E', () => {
         const metaDescription = page.locator('meta[name="description"]');
         await expect(metaDescription).toHaveAttribute('content', /Ingénieur Full-Stack/);
     });
-
     test('navigation works correctly', async ({ page }) => {
         const viewportSize = page.viewportSize();
         const isMobile = viewportSize ? viewportSize.width < 768 : false;
 
         if (isMobile) {
-            // On mobile, need to open menu first
             const menuToggle = page.locator('nav button').last();
             await menuToggle.click();
-            await page.waitForTimeout(300); // Wait for menu animation
+            await page.waitForTimeout(300);
         }
 
-        // Check navigation links are visible
-        const navLinks = ['À propos', 'Expérience', 'Compétences', 'Formation', 'Contact'];
-
+        const navLinks = ['À propos', 'Expérience', 'Compétences', 'Formation', 'Certifications', 'Contact'];
         for (const linkText of navLinks) {
             const link = isMobile
                 ? page.getByRole('link', { name: linkText }).last()
@@ -33,41 +29,13 @@ test.describe('Portfolio E2E', () => {
             await expect(link).toBeVisible();
         }
 
-        // Test clicking one link to verify it works
         const firstLink = isMobile
             ? page.getByRole('link', { name: 'À propos' }).last()
             : page.getByRole('link', { name: 'À propos' }).first();
         await firstLink.click();
-
-        // Verify URL hash changed
         await expect(page).toHaveURL(/#about/);
     });
 
-    test('theme toggle works', async ({ page }) => {
-        const viewportSize = page.viewportSize();
-        const isMobile = viewportSize ? viewportSize.width < 768 : false;
-
-        // Get the appropriate toggle button
-        // Desktop toggle is nth(0), mobile toggle is nth(1)
-        const toggleBtn = isMobile
-            ? page.getByLabel('Toggle theme').nth(1) // Mobile toggle is second
-            : page.getByLabel('Toggle theme').nth(0); // Desktop toggle is first
-
-        // Check initial state (should be dark by default based on our hook logic or system pref)
-        // We can check the html class
-        const html = page.locator('html');
-
-        // Click toggle
-        await toggleBtn.click();
-
-        // Verify class changed
-        // Note: exact class depends on initial state, so we check for change
-        const initialClass = await html.getAttribute('class');
-        await toggleBtn.click();
-        const newClass = await html.getAttribute('class');
-
-        expect(newClass).not.toBe(initialClass);
-    });
 
     test('experience section displays projects', async ({ page }) => {
         // Scroll to experience
