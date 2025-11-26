@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { Moon, Sun, Menu, X, Linkedin, Mail } from 'lucide-react';
+import { Moon, Sun, Menu, X } from 'lucide-react';
 import { useTheme } from '../hooks/useTheme';
-import { personalInfo } from '../data/data';
 import { motion, AnimatePresence } from 'framer-motion';
 import ScrollToTopButton from './ScrollToTopButton';
 
