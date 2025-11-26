@@ -1,36 +1,32 @@
 import { render, screen } from '@testing-library/react';
 import Education from '../Education';
+import { educations } from '../../data/educations';
 
 describe('Education Component', () => {
+    test('renders correctly and matches snapshot', () => {
+        const { container } = render(<Education />);
+        expect(container).toMatchSnapshot();
+    });
+
     test('renders section title', () => {
         render(<Education />);
         expect(screen.getByText('education.title')).toBeInTheDocument();
     });
 
-    test('renders education items', () => {
+    test('renders all education items', () => {
         render(<Education />);
-        // Check for translation keys for education entries
-        expect(screen.getByText('education.ensi.degree')).toBeInTheDocument();
-        expect(screen.getByText('education.ensi.school')).toBeInTheDocument();
-        expect(screen.getByText('education.prepa.degree')).toBeInTheDocument();
-        expect(screen.getByText('education.prepa.school')).toBeInTheDocument();
+        educations.forEach(edu => {
+            expect(screen.getByText(edu.degree)).toBeInTheDocument();
+            expect(screen.getByText(edu.school)).toBeInTheDocument();
+            expect(screen.getByText(edu.year)).toBeInTheDocument();
+            expect(screen.getByText(edu.location)).toBeInTheDocument();
+        });
     });
 
-    test('renders all education years', () => {
-        render(<Education />);
-        expect(screen.getByText('2020')).toBeInTheDocument();
-        expect(screen.getByText('2017')).toBeInTheDocument();
-    });
-
-    test('renders with correct section id', () => {
+    test('renders icons for each item', () => {
         const { container } = render(<Education />);
-        const section = container.querySelector('#education');
-        expect(section).toBeInTheDocument();
-    });
-
-    test('renders graduation cap icons', () => {
-        const { container } = render(<Education />);
-        const icons = container.querySelectorAll('svg');
-        expect(icons.length).toBeGreaterThan(0);
+        // Check for GraduationCap icon wrapper
+        const icons = container.querySelectorAll('.bg-blue-50.dark\\:bg-blue-900\\/30');
+        expect(icons).toHaveLength(educations.length);
     });
 });

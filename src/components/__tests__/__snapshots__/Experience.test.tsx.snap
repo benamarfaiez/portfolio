@@ -1,0 +1,780 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`Experience Component renders correctly and matches snapshot 1`] = `
+<div>
+  <section
+    class="py-20 bg-white dark:bg-slate-950"
+    id="experience"
+  >
+    <div
+      class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+    >
+      <div
+        class="mb-16 text-center"
+        style="opacity: 0; transform: translateY(20px);"
+      >
+        <h2
+          class="text-3xl md:text-4xl font-bold mb-4"
+        >
+          experience.title
+        </h2>
+        <div
+          class="w-20 h-1.5 bg-blue-600 mx-auto rounded-full"
+        />
+      </div>
+      <div
+        class="relative"
+      >
+        <div
+          class="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 top-0 bottom-0 w-1 bg-slate-200 dark:bg-slate-800"
+        />
+        <div
+          class="space-y-12"
+        >
+          <div
+            class="relative flex flex-col md:flex-row md:flex-row-reverse"
+            style="opacity: 0; transform: translateY(20px);"
+          >
+            <div
+              class="absolute left-[-5px] md:left-1/2 transform md:-translate-x-1/2 w-3.5 h-3.5 bg-blue-600 rounded-full border-4 border-white dark:border-slate-950 z-10 mt-1.5 md:mt-0"
+            />
+            <div
+              class="md:w-1/2 pl-8 md:pl-0 md:px-12"
+            >
+              <div
+                class="flex flex-col md:items-start"
+              >
+                <div
+                  class="bg-slate-50 dark:bg-slate-900 p-6 rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm hover:shadow-md transition-shadow w-full"
+                >
+                  <div
+                    class="flex flex-col gap-2 mb-4"
+                  >
+                    <h3
+                      class="text-xl font-bold text-slate-900 dark:text-white flex items-center gap-2"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        class="lucide lucide-briefcase text-blue-600"
+                        fill="none"
+                        height="18"
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        viewBox="0 0 24 24"
+                        width="18"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"
+                        />
+                        <rect
+                          height="14"
+                          rx="2"
+                          width="20"
+                          x="2"
+                          y="6"
+                        />
+                      </svg>
+                      experience.henner.role
+                    </h3>
+                    <div
+                      class="text-lg font-medium text-blue-600 dark:text-blue-400"
+                    >
+                      Henner
+                    </div>
+                    <div
+                      class="flex flex-wrap gap-4 text-sm text-slate-500 dark:text-slate-400"
+                    >
+                      <span
+                        class="flex items-center gap-1"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          class="lucide lucide-calendar"
+                          fill="none"
+                          height="14"
+                          stroke="currentColor"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          viewBox="0 0 24 24"
+                          width="14"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M8 2v4"
+                          />
+                          <path
+                            d="M16 2v4"
+                          />
+                          <rect
+                            height="18"
+                            rx="2"
+                            width="18"
+                            x="3"
+                            y="4"
+                          />
+                          <path
+                            d="M3 10h18"
+                          />
+                        </svg>
+                        Nov 2024 - Oct 2025
+                      </span>
+                      <span
+                        class="flex items-center gap-1"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          class="lucide lucide-map-pin"
+                          fill="none"
+                          height="14"
+                          stroke="currentColor"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          viewBox="0 0 24 24"
+                          width="14"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"
+                          />
+                          <circle
+                            cx="12"
+                            cy="10"
+                            r="3"
+                          />
+                        </svg>
+                        Nantes
+                      </span>
+                    </div>
+                  </div>
+                  <p
+                    class="text-slate-600 dark:text-slate-300 mb-4"
+                  >
+                    experience.henner.description
+                  </p>
+                  <div
+                    class="space-y-3 mb-4"
+                  >
+                    <div
+                      class="pl-4 border-l-2 border-blue-100 dark:border-blue-900"
+                    >
+                      <h4
+                        class="font-medium text-slate-900 dark:text-white text-sm"
+                      >
+                        experience.henner.projects.push_notification.name
+                      </h4>
+                      <p
+                        class="text-sm text-slate-500 dark:text-slate-400"
+                      >
+                        experience.henner.projects.push_notification.details
+                      </p>
+                    </div>
+                    <div
+                      class="pl-4 border-l-2 border-blue-100 dark:border-blue-900"
+                    >
+                      <h4
+                        class="font-medium text-slate-900 dark:text-white text-sm"
+                      >
+                        experience.henner.projects.ring_central.name
+                      </h4>
+                      <p
+                        class="text-sm text-slate-500 dark:text-slate-400"
+                      >
+                        experience.henner.projects.ring_central.details
+                      </p>
+                    </div>
+                    <div
+                      class="pl-4 border-l-2 border-blue-100 dark:border-blue-900"
+                    >
+                      <h4
+                        class="font-medium text-slate-900 dark:text-white text-sm"
+                      >
+                        experience.henner.projects.broker.name
+                      </h4>
+                      <p
+                        class="text-sm text-slate-500 dark:text-slate-400"
+                      >
+                        experience.henner.projects.broker.details
+                      </p>
+                    </div>
+                    <div
+                      class="pl-4 border-l-2 border-blue-100 dark:border-blue-900"
+                    >
+                      <h4
+                        class="font-medium text-slate-900 dark:text-white text-sm"
+                      >
+                        experience.henner.projects.migration.name
+                      </h4>
+                      <p
+                        class="text-sm text-slate-500 dark:text-slate-400"
+                      >
+                        experience.henner.projects.migration.details
+                      </p>
+                    </div>
+                  </div>
+                  <div
+                    class="flex flex-wrap gap-2 mt-4"
+                  >
+                    <span
+                      class="px-3 py-1 bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 text-xs font-medium rounded-full"
+                    >
+                      .NET 8
+                    </span>
+                    <span
+                      class="px-3 py-1 bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 text-xs font-medium rounded-full"
+                    >
+                      .NET 6
+                    </span>
+                    <span
+                      class="px-3 py-1 bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 text-xs font-medium rounded-full"
+                    >
+                      Microservices
+                    </span>
+                    <span
+                      class="px-3 py-1 bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 text-xs font-medium rounded-full"
+                    >
+                      Azure
+                    </span>
+                    <span
+                      class="px-3 py-1 bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 text-xs font-medium rounded-full"
+                    >
+                      SQL Server
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="relative flex flex-col md:flex-row "
+            style="opacity: 0; transform: translateY(20px);"
+          >
+            <div
+              class="absolute left-[-5px] md:left-1/2 transform md:-translate-x-1/2 w-3.5 h-3.5 bg-blue-600 rounded-full border-4 border-white dark:border-slate-950 z-10 mt-1.5 md:mt-0"
+            />
+            <div
+              class="md:w-1/2 pl-8 md:pl-0 md:px-12"
+            >
+              <div
+                class="flex flex-col md:items-end"
+              >
+                <div
+                  class="bg-slate-50 dark:bg-slate-900 p-6 rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm hover:shadow-md transition-shadow w-full"
+                >
+                  <div
+                    class="flex flex-col gap-2 mb-4"
+                  >
+                    <h3
+                      class="text-xl font-bold text-slate-900 dark:text-white flex items-center gap-2"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        class="lucide lucide-briefcase text-blue-600"
+                        fill="none"
+                        height="18"
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        viewBox="0 0 24 24"
+                        width="18"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"
+                        />
+                        <rect
+                          height="14"
+                          rx="2"
+                          width="20"
+                          x="2"
+                          y="6"
+                        />
+                      </svg>
+                      experience.euro_information.role
+                    </h3>
+                    <div
+                      class="text-lg font-medium text-blue-600 dark:text-blue-400"
+                    >
+                      Euro Information
+                    </div>
+                    <div
+                      class="flex flex-wrap gap-4 text-sm text-slate-500 dark:text-slate-400"
+                    >
+                      <span
+                        class="flex items-center gap-1"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          class="lucide lucide-calendar"
+                          fill="none"
+                          height="14"
+                          stroke="currentColor"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          viewBox="0 0 24 24"
+                          width="14"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M8 2v4"
+                          />
+                          <path
+                            d="M16 2v4"
+                          />
+                          <rect
+                            height="18"
+                            rx="2"
+                            width="18"
+                            x="3"
+                            y="4"
+                          />
+                          <path
+                            d="M3 10h18"
+                          />
+                        </svg>
+                        Sept 2022 - Juin 2024
+                      </span>
+                      <span
+                        class="flex items-center gap-1"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          class="lucide lucide-map-pin"
+                          fill="none"
+                          height="14"
+                          stroke="currentColor"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          viewBox="0 0 24 24"
+                          width="14"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"
+                          />
+                          <circle
+                            cx="12"
+                            cy="10"
+                            r="3"
+                          />
+                        </svg>
+                        Nantes
+                      </span>
+                    </div>
+                  </div>
+                  <p
+                    class="text-slate-600 dark:text-slate-300 mb-4"
+                  >
+                    experience.euro_information.description
+                  </p>
+                  <div
+                    class="space-y-3 mb-4"
+                  >
+                    <div
+                      class="pl-4 border-l-2 border-blue-100 dark:border-blue-900"
+                    >
+                      <h4
+                        class="font-medium text-slate-900 dark:text-white text-sm"
+                      >
+                        experience.euro_information.projects.pixis.name
+                      </h4>
+                      <p
+                        class="text-sm text-slate-500 dark:text-slate-400"
+                      >
+                        experience.euro_information.projects.pixis.details
+                      </p>
+                    </div>
+                  </div>
+                  <div
+                    class="flex flex-wrap gap-2 mt-4"
+                  >
+                    <span
+                      class="px-3 py-1 bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 text-xs font-medium rounded-full"
+                    >
+                      Angular 12
+                    </span>
+                    <span
+                      class="px-3 py-1 bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 text-xs font-medium rounded-full"
+                    >
+                      .NET 4.8
+                    </span>
+                    <span
+                      class="px-3 py-1 bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 text-xs font-medium rounded-full"
+                    >
+                      C#
+                    </span>
+                    <span
+                      class="px-3 py-1 bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 text-xs font-medium rounded-full"
+                    >
+                      SQL Server
+                    </span>
+                    <span
+                      class="px-3 py-1 bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 text-xs font-medium rounded-full"
+                    >
+                      HTML/CSS
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="relative flex flex-col md:flex-row md:flex-row-reverse"
+            style="opacity: 0; transform: translateY(20px);"
+          >
+            <div
+              class="absolute left-[-5px] md:left-1/2 transform md:-translate-x-1/2 w-3.5 h-3.5 bg-blue-600 rounded-full border-4 border-white dark:border-slate-950 z-10 mt-1.5 md:mt-0"
+            />
+            <div
+              class="md:w-1/2 pl-8 md:pl-0 md:px-12"
+            >
+              <div
+                class="flex flex-col md:items-start"
+              >
+                <div
+                  class="bg-slate-50 dark:bg-slate-900 p-6 rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm hover:shadow-md transition-shadow w-full"
+                >
+                  <div
+                    class="flex flex-col gap-2 mb-4"
+                  >
+                    <h3
+                      class="text-xl font-bold text-slate-900 dark:text-white flex items-center gap-2"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        class="lucide lucide-briefcase text-blue-600"
+                        fill="none"
+                        height="18"
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        viewBox="0 0 24 24"
+                        width="18"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"
+                        />
+                        <rect
+                          height="14"
+                          rx="2"
+                          width="20"
+                          x="2"
+                          y="6"
+                        />
+                      </svg>
+                      experience.canaccord.role
+                    </h3>
+                    <div
+                      class="text-lg font-medium text-blue-600 dark:text-blue-400"
+                    >
+                      Canaccord Genuity
+                    </div>
+                    <div
+                      class="flex flex-wrap gap-4 text-sm text-slate-500 dark:text-slate-400"
+                    >
+                      <span
+                        class="flex items-center gap-1"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          class="lucide lucide-calendar"
+                          fill="none"
+                          height="14"
+                          stroke="currentColor"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          viewBox="0 0 24 24"
+                          width="14"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M8 2v4"
+                          />
+                          <path
+                            d="M16 2v4"
+                          />
+                          <rect
+                            height="18"
+                            rx="2"
+                            width="18"
+                            x="3"
+                            y="4"
+                          />
+                          <path
+                            d="M3 10h18"
+                          />
+                        </svg>
+                        Juil 2020 - Août 2022
+                      </span>
+                      <span
+                        class="flex items-center gap-1"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          class="lucide lucide-map-pin"
+                          fill="none"
+                          height="14"
+                          stroke="currentColor"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          viewBox="0 0 24 24"
+                          width="14"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"
+                          />
+                          <circle
+                            cx="12"
+                            cy="10"
+                            r="3"
+                          />
+                        </svg>
+                        Tunis / Remote
+                      </span>
+                    </div>
+                  </div>
+                  <p
+                    class="text-slate-600 dark:text-slate-300 mb-4"
+                  >
+                    experience.canaccord.description
+                  </p>
+                  <div
+                    class="space-y-3 mb-4"
+                  >
+                    <div
+                      class="pl-4 border-l-2 border-blue-100 dark:border-blue-900"
+                    >
+                      <h4
+                        class="font-medium text-slate-900 dark:text-white text-sm"
+                      >
+                        experience.canaccord.projects.investment_platform.name
+                      </h4>
+                      <p
+                        class="text-sm text-slate-500 dark:text-slate-400"
+                      >
+                        experience.canaccord.projects.investment_platform.details
+                      </p>
+                    </div>
+                  </div>
+                  <div
+                    class="flex flex-wrap gap-2 mt-4"
+                  >
+                    <span
+                      class="px-3 py-1 bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 text-xs font-medium rounded-full"
+                    >
+                      Angular 13
+                    </span>
+                    <span
+                      class="px-3 py-1 bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 text-xs font-medium rounded-full"
+                    >
+                      .NET Core
+                    </span>
+                    <span
+                      class="px-3 py-1 bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 text-xs font-medium rounded-full"
+                    >
+                      Azure Blob Storage
+                    </span>
+                    <span
+                      class="px-3 py-1 bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 text-xs font-medium rounded-full"
+                    >
+                      SQL Server
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="relative flex flex-col md:flex-row "
+            style="opacity: 0; transform: translateY(20px);"
+          >
+            <div
+              class="absolute left-[-5px] md:left-1/2 transform md:-translate-x-1/2 w-3.5 h-3.5 bg-blue-600 rounded-full border-4 border-white dark:border-slate-950 z-10 mt-1.5 md:mt-0"
+            />
+            <div
+              class="md:w-1/2 pl-8 md:pl-0 md:px-12"
+            >
+              <div
+                class="flex flex-col md:items-end"
+              >
+                <div
+                  class="bg-slate-50 dark:bg-slate-900 p-6 rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm hover:shadow-md transition-shadow w-full"
+                >
+                  <div
+                    class="flex flex-col gap-2 mb-4"
+                  >
+                    <h3
+                      class="text-xl font-bold text-slate-900 dark:text-white flex items-center gap-2"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        class="lucide lucide-briefcase text-blue-600"
+                        fill="none"
+                        height="18"
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        viewBox="0 0 24 24"
+                        width="18"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"
+                        />
+                        <rect
+                          height="14"
+                          rx="2"
+                          width="20"
+                          x="2"
+                          y="6"
+                        />
+                      </svg>
+                      experience.mapgears.role
+                    </h3>
+                    <div
+                      class="text-lg font-medium text-blue-600 dark:text-blue-400"
+                    >
+                      Mapgears
+                    </div>
+                    <div
+                      class="flex flex-wrap gap-4 text-sm text-slate-500 dark:text-slate-400"
+                    >
+                      <span
+                        class="flex items-center gap-1"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          class="lucide lucide-calendar"
+                          fill="none"
+                          height="14"
+                          stroke="currentColor"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          viewBox="0 0 24 24"
+                          width="14"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M8 2v4"
+                          />
+                          <path
+                            d="M16 2v4"
+                          />
+                          <rect
+                            height="18"
+                            rx="2"
+                            width="18"
+                            x="3"
+                            y="4"
+                          />
+                          <path
+                            d="M3 10h18"
+                          />
+                        </svg>
+                        Fév 2020 - Juin 2020
+                      </span>
+                      <span
+                        class="flex items-center gap-1"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          class="lucide lucide-map-pin"
+                          fill="none"
+                          height="14"
+                          stroke="currentColor"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          viewBox="0 0 24 24"
+                          width="14"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"
+                          />
+                          <circle
+                            cx="12"
+                            cy="10"
+                            r="3"
+                          />
+                        </svg>
+                        Tunis
+                      </span>
+                    </div>
+                  </div>
+                  <p
+                    class="text-slate-600 dark:text-slate-300 mb-4"
+                  >
+                    experience.mapgears.description
+                  </p>
+                  <div
+                    class="space-y-3 mb-4"
+                  >
+                    <div
+                      class="pl-4 border-l-2 border-blue-100 dark:border-blue-900"
+                    >
+                      <h4
+                        class="font-medium text-slate-900 dark:text-white text-sm"
+                      >
+                        experience.mapgears.projects.sentinel.name
+                      </h4>
+                      <p
+                        class="text-sm text-slate-500 dark:text-slate-400"
+                      >
+                        experience.mapgears.projects.sentinel.details
+                      </p>
+                    </div>
+                  </div>
+                  <div
+                    class="flex flex-wrap gap-2 mt-4"
+                  >
+                    <span
+                      class="px-3 py-1 bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 text-xs font-medium rounded-full"
+                    >
+                      OpenLayers
+                    </span>
+                    <span
+                      class="px-3 py-1 bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 text-xs font-medium rounded-full"
+                    >
+                      Flask
+                    </span>
+                    <span
+                      class="px-3 py-1 bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 text-xs font-medium rounded-full"
+                    >
+                      PostGIS
+                    </span>
+                    <span
+                      class="px-3 py-1 bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 text-xs font-medium rounded-full"
+                    >
+                      Python
+                    </span>
+                    <span
+                      class="px-3 py-1 bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 text-xs font-medium rounded-full"
+                    >
+                      JavaScript
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+`;

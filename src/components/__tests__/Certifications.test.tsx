@@ -1,29 +1,44 @@
 import { render, screen } from '@testing-library/react';
 import Certifications from '../Certifications';
+import { certifications } from '../../data/certifications';
 
-describe('Certifications component', () => {
+describe('Certifications Component', () => {
+    test('renders correctly and matches snapshot', () => {
+        const { container } = render(<Certifications />);
+        expect(container).toMatchSnapshot();
+    });
+
     test('renders section title', () => {
         render(<Certifications />);
-        const title = screen.getByText('certifications.title');
-        expect(title).toBeInTheDocument();
+        expect(screen.getByText('certifications.title')).toBeInTheDocument();
     });
 
-    test('renders certification items', () => {
+    test('renders all certifications', () => {
         render(<Certifications />);
-        // Check for actual certification titles from data file
-        expect(screen.getByText('React JS')).toBeInTheDocument();
-        expect(screen.getByText(/Angular 12 .Net core web API/i)).toBeInTheDocument();
+        certifications.forEach(cert => {
+            // Check title - use getAllByText as some titles might be duplicated
+            expect(screen.getAllByText(cert.title).length).toBeGreaterThan(0);
+            // Check issuer and date
+            expect(screen.getAllByText(`${cert.issuer} - ${cert.date}`).length).toBeGreaterThan(0);
+        });
     });
 
-    test('renders certification dates', () => {
+    test('renders correct links for certifications', () => {
         render(<Certifications />);
-        expect(screen.getByText(/Novembre 2025/i)).toBeInTheDocument();
-        expect(screen.getByText(/Juillet 2021/i)).toBeInTheDocument();
+        certifications.forEach(cert => {
+            const links = screen.getAllByRole('link', { name: cert.title });
+            // Should have at least one link
+            expect(links.length).toBeGreaterThan(0);
+            const link = links[0];
+            expect(link).toHaveAttribute('href', cert.credentialUrl);
+            expect(link).toHaveAttribute('target', '_blank');
+            expect(link).toHaveAttribute('rel', 'noopener noreferrer');
+        });
     });
 
-    test('renders with correct section id', () => {
+    test('renders two columns', () => {
         const { container } = render(<Certifications />);
-        const section = container.querySelector('#certifications');
-        expect(section).toBeInTheDocument();
+        const columns = container.querySelectorAll('.grid > ul');
+        expect(columns).toHaveLength(2);
     });
 });

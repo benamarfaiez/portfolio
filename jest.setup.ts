@@ -38,3 +38,16 @@ jest.mock('react-i18next', () => ({
         init: () => { },
     },
 }));
+
+// Mock window.scrollTo
+Object.defineProperty(window, 'scrollTo', {
+    value: jest.fn(),
+    writable: true,
+});
+
+// Mock window.open
+Object.defineProperty(window, 'open', {
+    value: jest.fn(),
+    writable: true,
+});
+

@@ -1,0 +1,256 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`Education Component renders correctly and matches snapshot 1`] = `
+<div>
+  <section
+    class="py-20 bg-white dark:bg-slate-950"
+    id="education"
+  >
+    <div
+      class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+    >
+      <div
+        class="mb-16 text-center"
+        style="opacity: 0; transform: translateY(20px);"
+      >
+        <h2
+          class="text-3xl md:text-4xl font-bold mb-4 text-slate-900 dark:text-white"
+        >
+          education.title
+        </h2>
+        <div
+          class="w-20 h-1.5 bg-blue-600 mx-auto rounded-full"
+        />
+      </div>
+      <div
+        class="max-w-4xl mx-auto space-y-8"
+      >
+        <div
+          class="bg-white dark:bg-slate-800 p-8 rounded-2xl shadow-sm hover:shadow-md transition-all border border-slate-100 dark:border-slate-700 flex flex-col md:flex-row gap-6 items-start md:items-center"
+          style="opacity: 0; transform: translateX(-20px);"
+        >
+          <div
+            class="p-4 bg-blue-50 dark:bg-blue-900/30 rounded-xl text-blue-600 shrink-0"
+          >
+            <svg
+              aria-hidden="true"
+              class="lucide lucide-graduation-cap"
+              fill="none"
+              height="32"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="32"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"
+              />
+              <path
+                d="M22 10v6"
+              />
+              <path
+                d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"
+              />
+            </svg>
+          </div>
+          <div
+            class="flex-1"
+          >
+            <div
+              class="flex flex-col md:flex-row md:items-center justify-between gap-2 mb-2"
+            >
+              <h3
+                class="text-xl font-bold text-slate-900 dark:text-white"
+              >
+                education.ensi.degree
+              </h3>
+              <span
+                class="inline-flex items-center gap-1 px-3 py-1 bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 rounded-full text-sm font-medium"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="lucide lucide-calendar"
+                  fill="none"
+                  height="14"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  width="14"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M8 2v4"
+                  />
+                  <path
+                    d="M16 2v4"
+                  />
+                  <rect
+                    height="18"
+                    rx="2"
+                    width="18"
+                    x="3"
+                    y="4"
+                  />
+                  <path
+                    d="M3 10h18"
+                  />
+                </svg>
+                2020
+              </span>
+            </div>
+            <h4
+              class="text-lg text-slate-700 dark:text-slate-300 font-medium mb-2"
+            >
+              education.ensi.school
+            </h4>
+            <div
+              class="flex items-center gap-2 text-slate-500 dark:text-slate-400 text-sm"
+            >
+              <svg
+                aria-hidden="true"
+                class="lucide lucide-map-pin"
+                fill="none"
+                height="16"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+                width="16"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"
+                />
+                <circle
+                  cx="12"
+                  cy="10"
+                  r="3"
+                />
+              </svg>
+              education.ensi.location
+            </div>
+          </div>
+        </div>
+        <div
+          class="bg-white dark:bg-slate-800 p-8 rounded-2xl shadow-sm hover:shadow-md transition-all border border-slate-100 dark:border-slate-700 flex flex-col md:flex-row gap-6 items-start md:items-center"
+          style="opacity: 0; transform: translateX(20px);"
+        >
+          <div
+            class="p-4 bg-blue-50 dark:bg-blue-900/30 rounded-xl text-blue-600 shrink-0"
+          >
+            <svg
+              aria-hidden="true"
+              class="lucide lucide-graduation-cap"
+              fill="none"
+              height="32"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="32"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"
+              />
+              <path
+                d="M22 10v6"
+              />
+              <path
+                d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"
+              />
+            </svg>
+          </div>
+          <div
+            class="flex-1"
+          >
+            <div
+              class="flex flex-col md:flex-row md:items-center justify-between gap-2 mb-2"
+            >
+              <h3
+                class="text-xl font-bold text-slate-900 dark:text-white"
+              >
+                education.prepa.degree
+              </h3>
+              <span
+                class="inline-flex items-center gap-1 px-3 py-1 bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 rounded-full text-sm font-medium"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="lucide lucide-calendar"
+                  fill="none"
+                  height="14"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  width="14"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M8 2v4"
+                  />
+                  <path
+                    d="M16 2v4"
+                  />
+                  <rect
+                    height="18"
+                    rx="2"
+                    width="18"
+                    x="3"
+                    y="4"
+                  />
+                  <path
+                    d="M3 10h18"
+                  />
+                </svg>
+                2017
+              </span>
+            </div>
+            <h4
+              class="text-lg text-slate-700 dark:text-slate-300 font-medium mb-2"
+            >
+              education.prepa.school
+            </h4>
+            <div
+              class="flex items-center gap-2 text-slate-500 dark:text-slate-400 text-sm"
+            >
+              <svg
+                aria-hidden="true"
+                class="lucide lucide-map-pin"
+                fill="none"
+                height="16"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+                width="16"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"
+                />
+                <circle
+                  cx="12"
+                  cy="10"
+                  r="3"
+                />
+              </svg>
+              education.prepa.location
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+`;
