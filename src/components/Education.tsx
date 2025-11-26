@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { education } from '../data/data';
+import { educations } from '../data/educations';
 
 export default function Education() {
     return (
@@ -24,7 +24,7 @@ export default function Education() {
                         transition={{ duration: 0.5, delay: 0.2 }}
                     >
                         <div className="space-y-8">
-                            {education.map((edu, index) => (
+                            {educations.map((edu, index) => (
                                 <div key={index} className="relative pl-8 border-l-2 border-slate-200 dark:border-slate-800">
                                     <div className="absolute -left-[9px] top-0 w-4 h-4 bg-white dark:bg-slate-950 border-2 border-blue-600 rounded-full" />
                                     <div className="mb-1 text-sm font-semibold text-blue-600 dark:text-blue-400">
