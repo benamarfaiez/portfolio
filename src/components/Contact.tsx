@@ -1,10 +1,10 @@
 import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin, Send } from 'lucide-react';
-import { personalInfo } from '../data';
+import { personalInfo } from '../data/data';
 
 export default function Contact() {
     return (
-        <section id="contact" className="py-20 bg-slate-50 dark:bg-slate-900/50">
+        <section id="contact" className="py-20 bg-white dark:bg-slate-950">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}

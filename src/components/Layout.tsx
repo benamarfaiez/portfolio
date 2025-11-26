@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Moon, Sun, Menu, X, Linkedin, Mail } from 'lucide-react';
 import { useTheme } from '../hooks/useTheme';
-import { personalInfo } from '../data';
+import { personalInfo } from '../data/data';
 import { motion, AnimatePresence } from 'framer-motion';
 import ScrollToTopButton from './ScrollToTopButton';
 
@@ -14,6 +14,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         { name: 'Expérience', href: '#experience' },
         { name: 'Compétences', href: '#skills' },
         { name: 'Formation', href: '#education' },
+        { name: 'Certifications', href: '#certifications' },
         { name: 'Contact', href: '#contact' },
     ];
 

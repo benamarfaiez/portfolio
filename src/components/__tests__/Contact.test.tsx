@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import Contact from '../Contact';
-import { personalInfo } from '../../data';
+import { personalInfo } from '../../data/data';
 
 describe('Contact Component', () => {
     test('renders section title', () => {

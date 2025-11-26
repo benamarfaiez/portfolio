@@ -135,13 +135,3 @@ export const education = [
         year: "2017"
     }
 ];
-
-export const certifications = [
-    "React JS",
-    "Angular 12 + .NET Core Web API",
-    "ASP.NET MVC",
-    "Web Security",
-    "Pentesting",
-    "Git",
-    "Agile Methodology"
-];

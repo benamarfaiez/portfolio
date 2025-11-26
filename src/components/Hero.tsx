@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { Download, Linkedin, Mail } from 'lucide-react';
-import { personalInfo } from '../data';
+import { personalInfo } from '../data/data';
 
 export default function Hero() {
     return (
