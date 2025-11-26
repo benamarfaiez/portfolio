@@ -37,6 +37,7 @@ Objectif : présenter mon parcours, mes compétences techniques et mes réalisat
 
 | Catégorie           | Technologies |
 |---------------------|------------|
+| IDE                 | Antigravity (workflows) |
 | Framework           | React 18, TypeScript, Vite |
 | Styling             | Tailwind CSS, shadcn/ui, Headless UI |
 | Animations          | Framer Motion |
