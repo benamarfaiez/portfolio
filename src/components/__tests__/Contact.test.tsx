@@ -5,7 +5,7 @@ import { personalInfo } from '../../data/data';
 describe('Contact Component', () => {
     test('renders section title', () => {
         render(<Contact />);
-        expect(screen.getByText('Me Contacter')).toBeInTheDocument();
+        expect(screen.getByText('contact.title')).toBeInTheDocument();
     });
 
     test('renders contact information', () => {
@@ -13,16 +13,16 @@ describe('Contact Component', () => {
 
         expect(screen.getByText(personalInfo.email)).toBeInTheDocument();
         expect(screen.getByText(personalInfo.phone)).toBeInTheDocument();
-        expect(screen.getByText(personalInfo.location)).toBeInTheDocument();
+        expect(screen.getByText('contact.location')).toBeInTheDocument();
     });
 
     test('renders contact form inputs', () => {
         render(<Contact />);
 
-        expect(screen.getByLabelText(/Nom complet/i)).toBeInTheDocument();
-        expect(screen.getByLabelText(/Email/i)).toBeInTheDocument();
-        expect(screen.getByLabelText(/Message/i)).toBeInTheDocument();
-        expect(screen.getByRole('button', { name: /Envoyer/i })).toBeInTheDocument();
+        expect(screen.getByLabelText(/contact.form.name/i)).toBeInTheDocument();
+        expect(screen.getByLabelText(/contact.form.email/i)).toBeInTheDocument();
+        expect(screen.getByLabelText(/contact.form.message/i)).toBeInTheDocument();
+        expect(screen.getByRole('button', { name: /contact.form.send/i })).toBeInTheDocument();
     });
 
     test('form has correct action attribute', () => {

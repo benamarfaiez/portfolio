@@ -7,15 +7,15 @@ describe('Hero Component', () => {
         render(<Hero />);
 
         expect(screen.getByText(personalInfo.name)).toBeInTheDocument();
-        expect(screen.getByText(personalInfo.title)).toBeInTheDocument();
-        expect(screen.getByText(/Développeur passionné/i)).toBeInTheDocument();
+        expect(screen.getByText('hero.title')).toBeInTheDocument();
+        expect(screen.getByText('about.description')).toBeInTheDocument();
     });
 
     test('renders call to action buttons', () => {
         render(<Hero />);
 
-        const contactBtn = screen.getByRole('link', { name: /Me contacter/i });
-        const cvBtn = screen.getByRole('link', { name: /Télécharger CV/i });
+        const contactBtn = screen.getByRole('link', { name: /hero.contact/i });
+        const cvBtn = screen.getByRole('link', { name: /hero.download_cv/i });
 
         expect(contactBtn).toBeInTheDocument();
         expect(contactBtn).toHaveAttribute('href', '#contact');

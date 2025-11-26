@@ -1,3 +1,4 @@
+import './i18n';
 import Layout from './components/Layout';
 import Hero from './components/Hero';
 import About from './components/About';

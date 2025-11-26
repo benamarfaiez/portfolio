@@ -1,8 +1,11 @@
 import { motion } from 'framer-motion';
-import { experiences } from '../data/experiences';
 import { Calendar, MapPin, Briefcase } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
+import { experiences } from '../data/experiences';
 
 export default function Experience() {
+    const { t } = useTranslation();
+
     return (
         <section id="experience" className="py-20 bg-white dark:bg-slate-950">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -13,7 +16,7 @@ export default function Experience() {
                     transition={{ duration: 0.5 }}
                     className="mb-16 text-center"
                 >
-                    <h2 className="text-3xl md:text-4xl font-bold mb-4">Expérience Professionnelle</h2>
+                    <h2 className="text-3xl md:text-4xl font-bold mb-4">{t('experience.title')}</h2>
                     <div className="w-20 h-1.5 bg-blue-600 mx-auto rounded-full" />
                 </motion.div>
 
@@ -42,7 +45,7 @@ export default function Experience() {
                                             <div className="flex flex-col gap-2 mb-4">
                                                 <h3 className="text-xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
                                                     <Briefcase size={18} className="text-blue-600" />
-                                                    {exp.role}
+                                                    {t(exp.role)}
                                                 </h3>
                                                 <div className="text-lg font-medium text-blue-600 dark:text-blue-400">
                                                     {exp.company}
@@ -50,27 +53,27 @@ export default function Experience() {
                                                 <div className="flex flex-wrap gap-4 text-sm text-slate-500 dark:text-slate-400">
                                                     <span className="flex items-center gap-1">
                                                         <Calendar size={14} />
-                                                        {exp.period}
+                                                        {t(exp.period)}
                                                     </span>
                                                     <span className="flex items-center gap-1">
                                                         <MapPin size={14} />
-                                                        {exp.location}
+                                                        {t(exp.location)}
                                                     </span>
                                                 </div>
                                             </div>
 
                                             <p className="text-slate-600 dark:text-slate-300 mb-4">
-                                                {exp.description}
+                                                {t(exp.description)}
                                             </p>
 
                                             <div className="space-y-3 mb-4">
                                                 {exp.projects.map((project, idx) => (
                                                     <div key={idx} className="pl-4 border-l-2 border-blue-100 dark:border-blue-900">
                                                         <h4 className="font-medium text-slate-900 dark:text-white text-sm">
-                                                            {project.name}
+                                                            {t(project.name)}
                                                         </h4>
                                                         <p className="text-sm text-slate-500 dark:text-slate-400">
-                                                            {project.details}
+                                                            {t(project.details)}
                                                         </p>
                                                     </div>
                                                 ))}
@@ -82,7 +85,7 @@ export default function Experience() {
                                                         key={idx}
                                                         className="px-3 py-1 bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 text-xs font-medium rounded-full"
                                                     >
-                                                        {tech}
+                                                        {t(tech)}
                                                     </span>
                                                 ))}
                                             </div>

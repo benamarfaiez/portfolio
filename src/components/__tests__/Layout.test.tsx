@@ -28,11 +28,12 @@ describe('Layout Component', () => {
             </Layout>
         );
 
-        expect(screen.getByText('À propos')).toBeInTheDocument();
-        expect(screen.getByText('Expérience')).toBeInTheDocument();
-        expect(screen.getByText('Compétences')).toBeInTheDocument();
-        expect(screen.getByText('Formation')).toBeInTheDocument();
-        expect(screen.getByText('Contact')).toBeInTheDocument();
+        expect(screen.getByText('about.title')).toBeInTheDocument();
+        expect(screen.getByText('experience.title')).toBeInTheDocument();
+        expect(screen.getByText('skills.title')).toBeInTheDocument();
+        expect(screen.getByText('education.title')).toBeInTheDocument();
+        expect(screen.getByText('certifications.title')).toBeInTheDocument();
+        expect(screen.getByText('contact.title')).toBeInTheDocument();
     });
 
     test('renders children content', () => {
@@ -68,7 +69,7 @@ describe('Layout Component', () => {
         );
 
         expect(screen.getByText(/Faiez BEN AMAR/i)).toBeInTheDocument();
-        expect(screen.getByText(/All rights reserved/i)).toBeInTheDocument();
+        expect(screen.getByText(/footer.rights/i)).toBeInTheDocument();
     });
 
     test('toggles mobile menu when button is clicked', () => {
@@ -78,9 +79,9 @@ describe('Layout Component', () => {
             </Layout>
         );
 
-        // Find the menu toggle button (the one that shows Menu/X icon, not the theme toggle)
+        // Find the menu toggle button (the one that shows Menu/X icon)
         const buttons = screen.getAllByRole('button');
-        const menuToggleBtn = buttons.find(btn => btn.className.includes('rounded-md'));
+        const menuToggleBtn = buttons.find(btn => btn.className.includes('rounded-lg') && !btn.getAttribute('aria-label'));
 
         expect(menuToggleBtn).toBeDefined();
 
@@ -88,7 +89,7 @@ describe('Layout Component', () => {
         fireEvent.click(menuToggleBtn!);
 
         // Mobile menu links should now be visible
-        const mobileLinks = screen.getAllByRole('link', { name: /À propos/i });
+        const mobileLinks = screen.getAllByRole('link', { name: /about.title/i });
         expect(mobileLinks.length).toBeGreaterThan(1); // Desktop + mobile
     });
 
@@ -101,11 +102,11 @@ describe('Layout Component', () => {
 
         // Open the mobile menu
         const buttons = screen.getAllByRole('button');
-        const menuToggleBtn = buttons.find(btn => btn.className.includes('rounded-md'));
+        const menuToggleBtn = buttons.find(btn => btn.className.includes('rounded-lg') && !btn.getAttribute('aria-label'));
         fireEvent.click(menuToggleBtn!);
 
-        // Get all "À propos" links (desktop and mobile)
-        const allLinks = screen.getAllByRole('link', { name: /À propos/i });
+        // Get all links (desktop and mobile)
+        const allLinks = screen.getAllByRole('link', { name: /about.title/i });
 
         // Click the mobile version (should be the last one)
         const mobileLink = allLinks[allLinks.length - 1];

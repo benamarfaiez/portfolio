@@ -1,8 +1,11 @@
+import { useTranslation } from 'react-i18next';
 import { certifications } from '../data/certifications';
 
 export default function Certifications() {
-    const leftColumn = certifications.filter(c => c.column === 'left');
-    const rightColumn = certifications.filter(c => c.column === 'right');
+    const { t } = useTranslation();
+
+    const leftColumn = certifications.filter(cert => cert.column === 'left');
+    const rightColumn = certifications.filter(cert => cert.column === 'right');
 
     return (
         <section id="certifications" className="py-20 bg-slate-50 dark:bg-slate-900/50">
@@ -10,7 +13,7 @@ export default function Certifications() {
 
                 <div className="mb-16 text-center" style={{ opacity: 1, transform: 'none' }}>
                     <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                        Certifications
+                        {t('certifications.title')}
                     </h2>
                     <div className="w-20 h-1.5 bg-blue-600 mx-auto rounded-full"></div>
                 </div>

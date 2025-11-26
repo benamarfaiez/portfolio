@@ -1,0 +1,133 @@
+{
+    "hero": {
+        "title": "Ingénieur Full-Stack .NET / Angular",
+        "experience": "5 années d’expérience",
+        "contact": "Contactez-moi",
+        "download_cv": "Télécharger CV"
+    },
+    "about": {
+        "title": "À PROPOS",
+        "description": "Ingénieur Full-Stack passionné avec 5 ans d'expérience dans la conception et le développement d'applications web robustes et évolutives. Expert en écosystème .NET et Angular, avec une solide maîtrise des architectures modernes (Microservices, Clean Architecture) et du Cloud Azure. Je m'efforce de créer des solutions performantes qui répondent aux besoins réels des utilisateurs."
+    },
+    "experience": {
+        "title": "EXPÉRIENCES PROFESSIONNELLES",
+        "henner": {
+            "role": "Ingénieur Backend",
+            "description": "Développement et maintenance de microservices critiques pour la gestion des notifications et des courtiers.",
+            "projects": {
+                "push_notification": {
+                    "name": "Projet PushNotification",
+                    "details": "Gestion des notifications batch via Airship."
+                },
+                "ring_central": {
+                    "name": "Projet RingCentral",
+                    "details": "Webhook .NET 6 microservices, appels parallèles, authentification par instance."
+                },
+                "broker": {
+                    "name": "Projet Courtier",
+                    "details": "Refonte de la gestion des tâches payantes."
+                },
+                "migration": {
+                    "name": "Migration .NET",
+                    "details": "Migration massive .NET 6 → .NET 8 de +100 projets avec outil d’automatisation maison."
+                }
+            }
+        },
+        "euro_information": {
+            "role": "Ingénieur Full-Stack",
+            "description": "Développement d'outils transverses pour le groupe bancaire.",
+            "projects": {
+                "pixis": {
+                    "name": "Projet PIXIS",
+                    "details": "Visionneuse universelle de documents (PDF, HTML, vidéo, image) intégrée aux applications bancaires."
+                }
+            }
+        },
+        "canaccord": {
+            "role": "Ingénieur Full-Stack",
+            "description": "Développement de plateformes d'investissement pour le marché boursier canadien.",
+            "projects": {
+                "investment_platform": {
+                    "name": "Plateforme d’investissement",
+                    "details": "Développement pour CG Direct, Morgan Stanley, Bamboo."
+                }
+            }
+        },
+        "mapgears": {
+            "role": "Stagiaire PFE",
+            "description": "Conception et réalisation d'une application web de visualisation d'images satellites.",
+            "projects": {
+                "sentinel": {
+                    "name": "Visualisation Sentinel-2",
+                    "details": "Application web de visualisation d’images satellites Sentinel-2."
+                }
+            }
+        }
+    },
+    "skills": {
+        "title": "COMPÉTENCES TECHNIQUES",
+        "categories": {
+            "backend": "Backend",
+            "frontend": "Frontend",
+            "database": "Base de données",
+            "devops": "DevOps & Cloud",
+            "architecture": "Architecture & Testing"
+        }
+    },
+    "education": {
+        "title": "FORMATION",
+        "ensi": {
+            "degree": "Diplôme d’Ingénieur en Informatique",
+            "school": "École Nationale des Sciences de l’Informatique (ENSI)",
+            "location": "Manouba, Tunisie"
+        },
+        "prepa": {
+            "degree": "Classes préparatoires Math-Physique",
+            "school": "Institut Préparatoire aux Études d'Ingénieurs",
+            "location": "Sfax, Tunisie"
+        }
+    },
+    "certifications": {
+        "title": "CERTIFICATIONS",
+        "items": {
+            "react": "React JS",
+            "angular_net": "Angular 12 .Net core web API & Microsoft SQL full stack app",
+            "business_analysis": "Business Analysis & Process Management",
+            "web_security": "Web Security",
+            "api": "API",
+            "git": "Git",
+            "cloud_intro": "Cloud Intro",
+            "pentesting": "Pentesting and security web application",
+            "asp_net": "ASP .Net MVC & entity Framework",
+            "responsive_web": "Responsive Web Design",
+            "bootstrap": "Front-End Web UI Frameworks and Tools: Bootstrap 4",
+            "agile": "Agile Software Development",
+            "angular": "JS Frameworks: Angular",
+            "javascript": "JavaScript"
+        }
+    },
+    "contact": {
+        "title": "CONTACT",
+        "location": "Nantes, France",
+        "languages": {
+            "french": "Français : pratique professionnelle",
+            "english": "Anglais : pratique occasionnelle"
+        },
+        "subtitle": "Parlons de votre projet",
+        "description": "Je suis actuellement à l'écoute de nouvelles opportunités. Que vous ayez une question ou que vous souhaitiez simplement dire bonjour, n'hésitez pas à me contacter !",
+        "form": {
+            "name": "Nom complet",
+            "email": "Email",
+            "message": "Message",
+            "send": "Envoyer",
+            "placeholder": {
+                "name": "Votre nom",
+                "email": "votre@email.com",
+                "message": "Votre message..."
+            }
+        }
+    },
+    "footer": {
+        "rights": "Tous droits réservés."
+    }
+}

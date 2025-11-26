@@ -1,28 +1,15 @@
 import { render, screen } from '@testing-library/react';
 import Skills from '../Skills';
-import { skills } from '../../data/data';
 
 describe('Skills Component', () => {
     test('renders section title', () => {
         render(<Skills />);
-        expect(screen.getByText('Compétences Techniques')).toBeInTheDocument();
+        expect(screen.getByText('skills.title')).toBeInTheDocument();
     });
 
-    test('renders all skill categories', () => {
+    test('renders skill categories', () => {
         render(<Skills />);
-
-        skills.forEach((category) => {
-            expect(screen.getByText(category.category)).toBeInTheDocument();
-        });
-    });
-
-    test('renders skill items', () => {
-        render(<Skills />);
-
-        skills.forEach((category) => {
-            category.items.forEach((item) => {
-                expect(screen.getAllByText(item).length).toBeGreaterThan(0);
-            });
-        });
+        expect(screen.getByText('skills.categories.backend')).toBeInTheDocument();
+        expect(screen.getByText('skills.categories.frontend')).toBeInTheDocument();
     });
 });

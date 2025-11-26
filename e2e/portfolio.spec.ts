@@ -3,6 +3,8 @@ import { test, expect } from '@playwright/test';
 test.describe('Portfolio E2E', () => {
     test.beforeEach(async ({ page }) => {
         await page.goto('/');
+        // Wait for page to be fully loaded
+        await page.waitForLoadState('networkidle');
     });
 
     test('has title and meta description', async ({ page }) => {
@@ -11,6 +13,7 @@ test.describe('Portfolio E2E', () => {
         const metaDescription = page.locator('meta[name="description"]');
         await expect(metaDescription).toHaveAttribute('content', /Ingénieur Full-Stack/);
     });
+
     test('navigation works correctly', async ({ page }) => {
         const viewportSize = page.viewportSize();
         const isMobile = viewportSize ? viewportSize.width < 768 : false;
@@ -21,7 +24,7 @@ test.describe('Portfolio E2E', () => {
             await page.waitForTimeout(300);
         }
 
-        const navLinks = ['À propos', 'Expérience', 'Compétences', 'Formation', 'Certifications', 'Contact'];
+        const navLinks = ['À PROPOS', 'EXPÉRIENCE', 'COMPÉTENCES', 'FORMATION', 'CERTIFICATIONS', 'CONTACT'];
         for (const linkText of navLinks) {
             const link = isMobile
                 ? page.getByRole('link', { name: linkText }).last()
@@ -30,24 +33,42 @@ test.describe('Portfolio E2E', () => {
         }
 
         const firstLink = isMobile
-            ? page.getByRole('link', { name: 'À propos' }).last()
-            : page.getByRole('link', { name: 'À propos' }).first();
+            ? page.getByRole('link', { name: 'À PROPOS' }).last()
+            : page.getByRole('link', { name: 'À PROPOS' }).first();
         await firstLink.click();
         await expect(page).toHaveURL(/#about/);
     });
 
+    test('language switcher works', async ({ page }) => {
+        const languageSwitcher = page.locator('select').first();
+        await expect(languageSwitcher).toBeVisible();
 
-    test('experience section displays projects', async ({ page }) => {
-        // Scroll to experience
-        const experienceSection = page.locator('#experience');
-        await experienceSection.scrollIntoViewIfNeeded();
+        const options = ['Français', 'English'];
+        for (const option of options) {
+            await languageSwitcher.selectOption(option);
+            await expect(page.getByText(option)).toBeVisible();
+        }
+    });
 
-        // Check for company names
-        await expect(page.getByText('Henner')).toBeVisible();
-        await expect(page.getByText('Euro Information')).toBeVisible();
+    test('skills section displays categories', async ({ page }) => {
+        // Scroll to skills section
+        const skillsSection = page.locator('#skills');
+        await skillsSection.scrollIntoViewIfNeeded();
 
-        // Check for project details
-        await expect(page.getByText('Projet PushNotification')).toBeVisible();
+        // Check for skill categories (in French)
+        await expect(page.getByText('Backend')).toBeVisible();
+        await expect(page.getByText('Frontend')).toBeVisible();
+        await expect(page.getByText('Base de données')).toBeVisible();
+    });
+
+    test('certifications section displays items', async ({ page }) => {
+        // Scroll to certifications section
+        const certificationsSection = page.locator('#certifications');
+        await certificationsSection.scrollIntoViewIfNeeded();
+
+        // Check for certification titles (original titles)
+        await expect(page.getByText('React JS')).toBeVisible();
+        await expect(page.locator('text=Angular 12 .Net core web API')).toBeVisible();
     });
 
     test('mobile menu works', async ({ page }) => {
@@ -58,22 +79,50 @@ test.describe('Portfolio E2E', () => {
         const desktopNav = page.locator('nav .hidden.md\\:flex');
         await expect(desktopNav).toBeHidden();
 
-        // Open mobile menu
-        const menuBtn = page.locator('button:has-svg'); // This selector might need refinement based on exact icon
-        // Better selector:
-        const menuToggle = page.locator('nav button').last(); // Assuming it's the last button in nav
+        // Open mobile menu - find the button without aria-label (menu toggle, not theme/language)
+        const menuToggle = page.locator('nav button').last();
         await menuToggle.click();
+        await page.waitForTimeout(300);
 
         // Verify mobile menu items are visible
-        await expect(page.getByText('À propos').last()).toBeVisible();
+        await expect(page.locator('a:has-text("À PROPOS")').last()).toBeVisible();
 
-        // Click a link and verify menu closes
-        await page.getByText('À propos').last().click();
-        // Wait for animation
+        // Click a link
+        await page.locator('a:has-text("À PROPOS")').last().click();
         await page.waitForTimeout(500);
-        // Should be hidden or removed
-        // Note: Framer motion removes it from DOM
-        // await expect(page.getByText('À propos').last()).toBeHidden(); 
+
+        // Verify navigation happened
+        await expect(page).toHaveURL(/#about/);
+    });
+
+    test('theme toggle works', async ({ page }) => {
+        // Find theme toggle button
+        const themeButton = page.locator('button[aria-label="Toggle theme"]').first();
+        await expect(themeButton).toBeVisible();
+
+        // Get initial theme (check for dark mode class)
+        const htmlElement = page.locator('html');
+        const initialHasDark = await htmlElement.evaluate(el => el.classList.contains('dark'));
+
+        // Click theme toggle
+        await themeButton.click();
+        await page.waitForTimeout(300);
+
+        // Verify theme changed
+        const finalHasDark = await htmlElement.evaluate(el => el.classList.contains('dark'));
+        expect(initialHasDark).not.toBe(finalHasDark);
+    });
+
+    test('contact form is present', async ({ page }) => {
+        // Scroll to contact section
+        const contactSection = page.locator('#contact');
+        await contactSection.scrollIntoViewIfNeeded();
+
+        // Check form elements
+        await expect(page.locator('input[name="name"]')).toBeVisible();
+        await expect(page.locator('input[name="email"]')).toBeVisible();
+        await expect(page.locator('textarea[name="message"]')).toBeVisible();
+        await expect(page.locator('button[type="submit"]')).toBeVisible();
     });
 
     test('no console errors', async ({ page }) => {

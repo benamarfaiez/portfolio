@@ -2,24 +2,12 @@ import { useState, useEffect } from 'react';
 import { ArrowUp } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-/**
- * ScrollToTopButton - Bouton flottant pour retourner en haut de page
- * 
- * Fonctionnalités :
- * - Apparaît après 400px de scroll
- * - Animation fluide d'entrée/sortie
- * - Affiche le pourcentage de scroll
- * - Compatible dark mode
- * - Accessible (aria-label, focus visible)
- */
 export default function ScrollToTopButton() {
     const [isVisible, setIsVisible] = useState(false);
 
-    // Détecte le scroll et calcule le pourcentage
     useEffect(() => {
         const toggleVisibility = () => {
             const scrolled = window.scrollY;
-            // Affiche le bouton après 400px
             setIsVisible(scrolled > 400);
         };
 
@@ -30,7 +18,6 @@ export default function ScrollToTopButton() {
         };
     }, []);
 
-    // Scroll fluide vers le haut
     const scrollToTop = () => {
         window.scrollTo({
             top: 0,
@@ -59,7 +46,6 @@ export default function ScrollToTopButton() {
                      focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2
                      group"
                 >
-                    {/* Icône avec animation de rebond */}
                     <motion.div
                         animate={{ y: [0, -3, 0] }}
                         transition={{
@@ -74,7 +60,6 @@ export default function ScrollToTopButton() {
                          transition-colors"
                         />
                     </motion.div>
-
 
                 </motion.button>
             )}
