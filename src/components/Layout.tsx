@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Moon, Sun, Menu, X } from 'lucide-react';
 import { useTheme } from '../hooks/useTheme';
-import { motion, AnimatePresence } from 'framer-motion';
+import { AnimatePresence } from 'framer-motion';
 import ScrollToTopButton from './ScrollToTopButton';
 import LanguageSwitcher from './LanguageSwitcher';
 import { useTranslation } from 'react-i18next';
@@ -76,12 +76,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 {/* Mobile Navigation */}
                 <AnimatePresence>
                     {isMenuOpen && (
-                        <motion.div
-                            initial={{ opacity: 0, height: 0 }}
-                            animate={{ opacity: 1, height: 'auto' }}
-                            exit={{ opacity: 0, height: 0 }}
-                            className="md:hidden bg-white dark:bg-slate-950 border-b border-slate-200 dark:border-slate-800"
-                        >
+                        <div className="md:hidden bg-white dark:bg-slate-950 border-b border-slate-200 dark:border-slate-800">
                             <div className="px-4 pt-2 pb-4 space-y-1">
                                 {navLinks.map((link) => (
                                     <a
@@ -94,7 +89,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                                     </a>
                                 ))}
                             </div>
-                        </motion.div>
+                        </div>
                     )}
                 </AnimatePresence>
             </nav>
