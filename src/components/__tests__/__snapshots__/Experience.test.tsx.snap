@@ -120,7 +120,7 @@ exports[`Experience Component renders correctly and matches snapshot 1`] = `
                             d="M3 10h18"
                           />
                         </svg>
-                        Nov 2024 - Oct 2025
+                        experience.henner.period
                       </span>
                       <span
                         class="flex items-center gap-1"
@@ -147,7 +147,7 @@ exports[`Experience Component renders correctly and matches snapshot 1`] = `
                             r="3"
                           />
                         </svg>
-                        Nantes
+                        experience.henner.location
                       </span>
                     </div>
                   </div>
@@ -338,7 +338,7 @@ exports[`Experience Component renders correctly and matches snapshot 1`] = `
                             d="M3 10h18"
                           />
                         </svg>
-                        Sept 2022 - Juin 2024
+                        experience.euro_information.period
                       </span>
                       <span
                         class="flex items-center gap-1"
@@ -365,7 +365,7 @@ exports[`Experience Component renders correctly and matches snapshot 1`] = `
                             r="3"
                           />
                         </svg>
-                        Nantes
+                        experience.euro_information.location
                       </span>
                     </div>
                   </div>
@@ -514,7 +514,7 @@ exports[`Experience Component renders correctly and matches snapshot 1`] = `
                             d="M3 10h18"
                           />
                         </svg>
-                        Juil 2020 - Août 2022
+                        experience.canaccord.period
                       </span>
                       <span
                         class="flex items-center gap-1"
@@ -541,7 +541,7 @@ exports[`Experience Component renders correctly and matches snapshot 1`] = `
                             r="3"
                           />
                         </svg>
-                        Tunis / Tunisie
+                        experience.canaccord.location
                       </span>
                     </div>
                   </div>
@@ -685,7 +685,7 @@ exports[`Experience Component renders correctly and matches snapshot 1`] = `
                             d="M3 10h18"
                           />
                         </svg>
-                        Fév 2020 - Juin 2020
+                        experience.mapgears.period
                       </span>
                       <span
                         class="flex items-center gap-1"
@@ -712,7 +712,7 @@ exports[`Experience Component renders correctly and matches snapshot 1`] = `
                             r="3"
                           />
                         </svg>
-                        Tunis
+                        experience.mapgears.location
                       </span>
                     </div>
                   </div>

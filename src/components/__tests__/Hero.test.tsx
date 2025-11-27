@@ -24,10 +24,10 @@ describe('Hero Component', () => {
         const cvBtns = screen.getAllByRole('link', { name: /hero.download_cv/i });
 
         expect(contactBtns[0]).toBeInTheDocument();
-        expect(contactBtns[0]).toHaveAttribute('href', '#contact');
+        expect(contactBtns[0]).toHaveAttribute('href', 'mailto:benamarfaiez@gmail.com');
 
         expect(cvBtns[0]).toBeInTheDocument();
-        expect(cvBtns[0]).toHaveAttribute('href', '/cv.pdf');
+        expect(cvBtns[0]).toHaveAttribute('href', 'CV_FaiezBENAMAR.pdf');
         expect(cvBtns[0]).toHaveAttribute('target', '_blank');
         expect(cvBtns[0]).toHaveAttribute('rel', 'noopener noreferrer');
     });

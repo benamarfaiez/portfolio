@@ -57,7 +57,7 @@ exports[`Hero Component renders correctly and matches snapshot 1`] = `
             >
               <a
                 class="w-full sm:w-auto px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-full font-medium transition-all flex items-center justify-center gap-2 shadow-lg shadow-blue-500/25"
-                href="#contact"
+                href="mailto:benamarfaiez@gmail.com"
               >
                 hero.contact
                  
@@ -88,7 +88,7 @@ exports[`Hero Component renders correctly and matches snapshot 1`] = `
               </a>
               <a
                 class="w-full sm:w-auto px-8 py-3 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-blue-500 dark:hover:border-blue-500 text-slate-900 dark:text-white rounded-full font-medium transition-all flex items-center justify-center gap-2"
-                href="/cv.pdf"
+                href="CV_FaiezBENAMAR.pdf"
                 rel="noopener noreferrer"
                 target="_blank"
               >
