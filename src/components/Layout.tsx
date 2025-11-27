@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Moon, Sun, Menu, X } from 'lucide-react';
 import { useTheme } from '../hooks/useTheme';
-import { motion, AnimatePresence } from 'framer-motion';
+import { AnimatePresence } from 'framer-motion';
 import ScrollToTopButton from './ScrollToTopButton';
 import LanguageSwitcher from './LanguageSwitcher';
 import { useTranslation } from 'react-i18next';
@@ -22,17 +22,19 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
     return (
         <div className="min-h-screen bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 transition-colors duration-300">
-            <nav className="fixed top-0 w-full z-50 bg-white/90 dark:bg-slate-950/90 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 shadow-sm">
+            <nav className="fixed top-0 w-full z-50 bg-white/80 dark:bg-slate-950/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="flex justify-center md:justify-between items-center h-14">
+                    <div className="flex justify-between items-center h-16">
+                        <a href="#" className="text-xl font-bold bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">
+                        </a>
 
                         {/* Desktop Navigation */}
-                        <div className="hidden md:flex items-center space-x-8 flex-1 justify-center">
+                        <div className="hidden md:flex items-center space-x-4 mr-2">
                             {navLinks.map((link) => (
                                 <a
                                     key={link.name}
                                     href={link.href}
-                                    className="text-sm font-medium text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                                    className="text-sm font-medium hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
                                 >
                                     {link.name}
                                 </a>
@@ -40,32 +42,32 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                         </div>
 
                         {/* Desktop Controls */}
-                        <div className="hidden md:flex items-center gap-3">
+                        <div className="hidden md:flex items-center">
                             <LanguageSwitcher />
                             <button
                                 onClick={toggleTheme}
-                                className="p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+                                className="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
                                 aria-label="Toggle theme"
                             >
-                                {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
+                                {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
                             </button>
                         </div>
 
                         {/* Mobile Menu */}
-                        <div className="md:hidden flex items-center gap-2">
+                        <div className="md:hidden flex items-center">
                             <LanguageSwitcher />
                             <button
                                 onClick={toggleTheme}
-                                className="p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+                                className="p-2 mr-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
                                 aria-label="Toggle theme"
                             >
-                                {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
+                                {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
                             </button>
                             <button
                                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                                className="p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+                                className="p-2 rounded-md hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
                             >
-                                {isMenuOpen ? <X size={22} /> : <Menu size={22} />}
+                                {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
                             </button>
                         </div>
                     </div>
@@ -74,12 +76,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 {/* Mobile Navigation */}
                 <AnimatePresence>
                     {isMenuOpen && (
-                        <motion.div
-                            initial={{ opacity: 0, height: 0 }}
-                            animate={{ opacity: 1, height: 'auto' }}
-                            exit={{ opacity: 0, height: 0 }}
-                            className="md:hidden bg-white dark:bg-slate-950 border-b border-slate-200 dark:border-slate-800"
-                        >
+                        <div className="md:hidden bg-white dark:bg-slate-950 border-b border-slate-200 dark:border-slate-800">
                             <div className="px-4 pt-2 pb-4 space-y-1">
                                 {navLinks.map((link) => (
                                     <a
@@ -92,7 +89,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                                     </a>
                                 ))}
                             </div>
-                        </motion.div>
+                        </div>
                     )}
                 </AnimatePresence>
             </nav>
