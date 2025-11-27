@@ -1,0 +1,141 @@
+{
+    "hero": {
+        "title": "Full-Stack .NET / Angular Engineer",
+        "experience": "5 years of experience",
+        "contact": "Contact Me",
+        "download_cv": "Download CV"
+    },
+    "about": {
+        "title": "ABOUT",
+        "description": "Passionate Full-Stack Engineer with 5 years of experience in designing and developing robust and scalable web applications. Expert in the .NET and Angular ecosystem, with strong mastery of modern architectures (Microservices, Clean Architecture) and Azure Cloud. I strive to create high-performance solutions that meet real user needs."
+    },
+    "experience": {
+        "title": "PROFESSIONAL EXPERIENCE",
+        "henner": {
+            "location": "Nantes, France",
+            "period": "Nov 2024 - Oct 2025",
+            "role": "Backend Engineer",
+            "description": "Development and maintenance of critical microservices for notification and broker management.",
+            "projects": {
+                "push_notification": {
+                    "name": "Push Notification Batch System",
+                    "details": "Batch notification management via Airship."
+                },
+                "ring_central": {
+                    "name": "RingCentral Webhook Microservice",
+                    "details": ".NET 6 Webhook microservices, parallel calls, instance-based authentication."
+                },
+                "broker": {
+                    "name": "Broker Project",
+                    "details": "Overhaul of paid task management."
+                },
+                "migration": {
+                    "name": ".NET Migration",
+                    "details": "Massive migration .NET 6 → .NET 8 of 100+ projects with in-house automation tool."
+                }
+            }
+        },
+        "euro_information": {
+            "location": "Nantes, France",
+            "period": "Sept 2022 - June 2024",
+            "role": "Full-Stack Engineer",
+            "description": "Development of transversal tools for the banking group.",
+            "projects": {
+                "pixis": {
+                    "name": "PIXIS Project",
+                    "details": "Universal document viewer (PDF, HTML, video, image) integrated into banking applications."
+                }
+            }
+        },
+        "canaccord": {
+            "location": "Tunis, Tunisia",
+            "period": "July 2020 - Aug 2022",
+            "role": "Full-Stack Engineer",
+            "description": "Development of investment platforms for the Canadian stock market.",
+            "projects": {
+                "investment_platform": {
+                    "name": "Investment Platform",
+                    "details": "Development for CG Direct, Morgan Stanley, Bamboo."
+                }
+            }
+        },
+        "mapgears": {
+            "location": "Tunis / Remote",
+            "period": "Feb 2020 - June 2020",
+            "role": "Internship",
+            "description": "Design and implementation of a web application for satellite image visualization.",
+            "projects": {
+                "sentinel": {
+                    "name": "Sentinel-2 Visualization",
+                    "details": "Web application for Sentinel-2 satellite image visualization."
+                }
+            }
+        }
+    },
+    "skills": {
+        "title": "TECHNICAL SKILLS",
+        "categories": {
+            "backend": "Backend",
+            "frontend": "Frontend",
+            "database": "Database",
+            "devops": "DevOps & Cloud",
+            "architecture": "Architecture & Testing"
+        }
+    },
+    "education": {
+        "title": "EDUCATION",
+        "ensi": {
+            "degree": "National Engineering Degree in Computer Science",
+            "school": "National School of Computer Sciences (ENSI)",
+            "location": "Manouba, Tunisia"
+        },
+        "prepa": {
+            "degree": "Preparatory Classes for Engineering Schools (Math-Physics)",
+            "school": "Preparatory Institute for Engineering Studies",
+            "location": "Sfax, Tunisia"
+        }
+    },
+    "certifications": {
+        "title": "CERTIFICATIONS",
+        "items": {
+            "react": "React JS",
+            "angular_net": "Angular 12 .Net core web API & Microsoft SQL full stack app",
+            "business_analysis": "Business Analysis & Process Management",
+            "web_security": "Web Security",
+            "api": "API",
+            "git": "Git",
+            "cloud_intro": "Cloud Intro",
+            "pentesting": "Pentesting and security web application",
+            "asp_net": "ASP .Net MVC & entity Framework",
+            "responsive_web": "Responsive Web Design",
+            "bootstrap": "Front-End Web UI Frameworks and Tools: Bootstrap 4",
+            "agile": "Agile Software Development",
+            "angular": "JS Frameworks: Angular",
+            "javascript": "JavaScript"
+        }
+    },
+    "contact": {
+        "title": "CONTACT",
+        "location": "Nantes, France",
+        "languages": {
+            "french": "French: Professional working proficiency",
+            "english": "English: Limited working proficiency"
+        },
+        "subtitle": "Let's talk about your project",
+        "description": "I am currently looking for new opportunities. Whether you have a question or just want to say hi, feel free to contact me!",
+        "form": {
+            "name": "Full Name",
+            "email": "Email",
+            "message": "Message",
+            "send": "Send",
+            "placeholder": {
+                "name": "Your name",
+                "email": "your@email.com",
+                "message": "Your message..."
+            }
+        }
+    },
+    "footer": {
+        "rights": "All rights reserved."
+    }
+}

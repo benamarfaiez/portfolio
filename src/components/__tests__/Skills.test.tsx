@@ -1,28 +1,39 @@
 import { render, screen } from '@testing-library/react';
 import Skills from '../Skills';
-import { skills } from '../../data/data';
+import { skills } from '../../data/skills';
 
 describe('Skills Component', () => {
+    test('renders correctly and matches snapshot', () => {
+        const { container } = render(<Skills />);
+        expect(container).toMatchSnapshot();
+    });
+
     test('renders section title', () => {
         render(<Skills />);
-        expect(screen.getByText('Compétences Techniques')).toBeInTheDocument();
+        expect(screen.getByText('skills.title')).toBeInTheDocument();
     });
 
     test('renders all skill categories', () => {
         render(<Skills />);
-
-        skills.forEach((category) => {
-            expect(screen.getByText(category.category)).toBeInTheDocument();
+        skills.forEach(skill => {
+            expect(screen.getByText(skill.category)).toBeInTheDocument();
         });
     });
 
-    test('renders skill items', () => {
+    test('renders all skill items', () => {
         render(<Skills />);
-
-        skills.forEach((category) => {
-            category.items.forEach((item) => {
+        skills.forEach(skill => {
+            skill.items.forEach(item => {
+                // Use getAllByText because some skills might be repeated or appear in multiple places
                 expect(screen.getAllByText(item).length).toBeGreaterThan(0);
             });
         });
+    });
+
+    test('renders icons for each category', () => {
+        const { container } = render(<Skills />);
+        // Check for icon wrappers
+        const icons = container.querySelectorAll('.bg-blue-50.dark\\:bg-blue-900\\/30');
+        expect(icons).toHaveLength(skills.length);
     });
 });

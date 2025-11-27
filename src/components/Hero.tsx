@@ -1,8 +1,11 @@
 import { motion } from 'framer-motion';
 import { Download, Linkedin, Mail } from 'lucide-react';
 import { personalInfo } from '../data/data';
+import { useTranslation } from 'react-i18next';
 
 export default function Hero() {
+    const { t } = useTranslation();
+
     return (
         <section id="hero" className="min-h-[calc(100vh-4rem)] flex items-center justify-center py-20 relative overflow-hidden">
             {/* Background Elements */}
@@ -26,26 +29,26 @@ export default function Hero() {
                                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500">{personalInfo.name}</span>
                             </h1>
                             <h2 className="text-2xl md:text-3xl text-slate-600 dark:text-slate-300 mb-6 font-medium">
-                                {personalInfo.title}
+                                {t('hero.title')}
                             </h2>
                             <p className="text-lg text-slate-600 dark:text-slate-400 mb-8 max-w-2xl mx-auto md:mx-0 leading-relaxed">
-                                Développeur passionné avec 5 ans d'expérience dans la création d'applications web performantes et évolutives. Spécialisé en .NET et Angular.
+                                {t('about.description')}
                             </p>
 
                             <div className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4">
                                 <a
-                                    href="#contact"
+                                    href="mailto:benamarfaiez@gmail.com"
                                     className="w-full sm:w-auto px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-full font-medium transition-all flex items-center justify-center gap-2 shadow-lg shadow-blue-500/25"
                                 >
-                                    Me contacter <Mail size={18} />
+                                    {t('hero.contact')} <Mail size={18} />
                                 </a>
                                 <a
-                                    href="/cv.pdf" // Placeholder link
+                                    href='CV_FaiezBENAMAR.pdf'
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="w-full sm:w-auto px-8 py-3 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-blue-500 dark:hover:border-blue-500 text-slate-900 dark:text-white rounded-full font-medium transition-all flex items-center justify-center gap-2"
                                 >
-                                    Télécharger CV <Download size={18} />
+                                    {t('hero.download_cv')} <Download size={18} />
                                 </a>
                                 <a
                                     href={personalInfo.linkedin}

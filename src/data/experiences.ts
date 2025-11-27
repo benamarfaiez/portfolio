@@ -18,26 +18,26 @@ export const experiences: Experience[] = [
     {
         id: 1,
         company: "Henner",
-        location: "Nantes",
-        role: "Ingénieur Backend",
-        period: "Nov 2024 - Oct 2025",
-        description: "Développement et maintenance de microservices critiques pour la gestion des notifications et des courtiers.",
+        location: "experience.henner.location",
+        role: 'experience.henner.role',
+        period: "experience.henner.period",
+        description: 'experience.henner.description',
         projects: [
             {
-                name: "Projet PushNotification",
-                details: "Gestion des notifications batch via Airship."
+                name: 'experience.henner.projects.push_notification.name',
+                details: 'experience.henner.projects.push_notification.details'
             },
             {
-                name: "Projet RingCentral",
-                details: "Webhook .NET 6 microservices, appels parallèles, authentification par instance."
+                name: 'experience.henner.projects.ring_central.name',
+                details: 'experience.henner.projects.ring_central.details'
             },
             {
-                name: "Projet Courtier",
-                details: "Refonte de la gestion des tâches payantes."
+                name: 'experience.henner.projects.broker.name',
+                details: 'experience.henner.projects.broker.details'
             },
             {
-                name: "Migration .NET",
-                details: "Migration massive .NET 6 → .NET 8 de +100 projets avec outil d’automatisation maison."
+                name: 'experience.henner.projects.migration.name',
+                details: 'experience.henner.projects.migration.details'
             }
         ],
         technologies: [".NET 8", ".NET 6", "Microservices", "Azure", "SQL Server"]
@@ -45,14 +45,14 @@ export const experiences: Experience[] = [
     {
         id: 2,
         company: "Euro Information",
-        location: "Nantes",
-        role: "Ingénieur Full-Stack",
-        period: "Sept 2022 - Juin 2024",
-        description: "Développement d'outils transverses pour le groupe bancaire.",
+        location: "experience.euro_information.location",
+        role: 'experience.euro_information.role',
+        period: "experience.euro_information.period",
+        description: 'experience.euro_information.description',
         projects: [
             {
-                name: "Projet PIXIS",
-                details: "Visionneuse universelle de documents (PDF, HTML, vidéo, image) intégrée aux applications bancaires."
+                name: 'experience.euro_information.projects.pixis.name',
+                details: 'experience.euro_information.projects.pixis.details'
             }
         ],
         technologies: ["Angular 12", ".NET 4.8", "C#", "SQL Server", "HTML/CSS"]
@@ -60,14 +60,14 @@ export const experiences: Experience[] = [
     {
         id: 3,
         company: "Canaccord Genuity",
-        location: "Tunis / Remote",
-        role: "Ingénieur Full-Stack",
-        period: "Juil 2020 - Août 2022",
-        description: "Développement de plateformes d'investissement pour le marché boursier canadien.",
+        location: "experience.canaccord.location",
+        role: 'experience.canaccord.role',
+        period: "experience.canaccord.period",
+        description: 'experience.canaccord.description',
         projects: [
             {
-                name: "Plateforme d’investissement",
-                details: "Développement pour CG Direct, Morgan Stanley, Bamboo."
+                name: 'experience.canaccord.projects.investment_platform.name',
+                details: 'experience.canaccord.projects.investment_platform.details'
             }
         ],
         technologies: ["Angular 13", ".NET Core", "Azure Blob Storage", "SQL Server"]
@@ -75,14 +75,14 @@ export const experiences: Experience[] = [
     {
         id: 4,
         company: "Mapgears",
-        location: "Tunis",
-        role: "Stagiaire PFE",
-        period: "Fév 2020 - Juin 2020",
-        description: "Conception et réalisation d'une application web de visualisation d'images satellites.",
+        location: "experience.mapgears.location",
+        role: 'experience.mapgears.role',
+        period: "experience.mapgears.period",
+        description: 'experience.mapgears.description',
         projects: [
             {
-                name: "Visualisation Sentinel-2",
-                details: "Application web de visualisation d’images satellites Sentinel-2."
+                name: 'experience.mapgears.projects.sentinel.name',
+                details: 'experience.mapgears.projects.sentinel.details'
             }
         ],
         technologies: ["OpenLayers", "Flask", "PostGIS", "Python", "JavaScript"]

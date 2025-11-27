@@ -23,3 +23,31 @@ Object.defineProperty(window, 'matchMedia', {
         dispatchEvent: jest.fn(),
     })),
 });
+
+// Mock react-i18next
+jest.mock('react-i18next', () => ({
+    useTranslation: () => ({
+        t: (key: string) => key,
+        i18n: {
+            changeLanguage: () => new Promise(() => { }),
+            language: 'fr',
+        },
+    }),
+    initReactI18next: {
+        type: '3rdParty',
+        init: () => { },
+    },
+}));
+
+// Mock window.scrollTo
+Object.defineProperty(window, 'scrollTo', {
+    value: jest.fn(),
+    writable: true,
+});
+
+// Mock window.open
+Object.defineProperty(window, 'open', {
+    value: jest.fn(),
+    writable: true,
+});
+

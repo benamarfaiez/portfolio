@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>8/8</span>
+                <span class='fraction'>10/10</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>8/8</span>
+                <span class='fraction'>10/10</span>
             </div>
         
             
@@ -162,13 +162,18 @@
 <a name='L97'></a><a href='#L97'>97</a>
 <a name='L98'></a><a href='#L98'>98</a>
 <a name='L99'></a><a href='#L99'>99</a>
-<a name='L100'></a><a href='#L100'>100</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L100'></a><a href='#L100'>100</a>
+<a name='L101'></a><a href='#L101'>101</a>
+<a name='L102'></a><a href='#L102'>102</a>
+<a name='L103'></a><a href='#L103'>103</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -187,8 +192,8 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">16x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">24x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -229,8 +234,8 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">28x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">42x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -242,7 +247,8 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">76x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">114x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -262,10 +268,13 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { motion } from 'framer-motion';
-import { experiences } from '../data';
 import { Calendar, MapPin, Briefcase } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
+import { experiences } from '../data/experiences';
 &nbsp;
 export default function Experience() {
+    const { t } = useTranslation();
+&nbsp;
     return (
         &lt;section id="experience" className="py-20 bg-white dark:bg-slate-950"&gt;
             &lt;div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"&gt;
@@ -276,7 +285,7 @@ export default function Experience() {
                     transition={{ duration: 0.5 }}
                     className="mb-16 text-center"
                 &gt;
-                    &lt;h2 className="text-3xl md:text-4xl font-bold mb-4"&gt;Expérience Professionnelle&lt;/h2&gt;
+                    &lt;h2 className="text-3xl md:text-4xl font-bold mb-4"&gt;{t('experience.title')}&lt;/h2&gt;
                     &lt;div className="w-20 h-1.5 bg-blue-600 mx-auto rounded-full" /&gt;
                 &lt;/motion.div&gt;
 &nbsp;
@@ -305,7 +314,7 @@ export default function Experience() {
                                             &lt;div className="flex flex-col gap-2 mb-4"&gt;
                                                 &lt;h3 className="text-xl font-bold text-slate-900 dark:text-white flex items-center gap-2"&gt;
                                                     &lt;Briefcase size={18} className="text-blue-600" /&gt;
-                                                    {exp.role}
+                                                    {t(exp.role)}
                                                 &lt;/h3&gt;
                                                 &lt;div className="text-lg font-medium text-blue-600 dark:text-blue-400"&gt;
                                                     {exp.company}
@@ -313,27 +322,27 @@ export default function Experience() {
                                                 &lt;div className="flex flex-wrap gap-4 text-sm text-slate-500 dark:text-slate-400"&gt;
                                                     &lt;span className="flex items-center gap-1"&gt;
                                                         &lt;Calendar size={14} /&gt;
-                                                        {exp.period}
+                                                        {t(exp.period)}
                                                     &lt;/span&gt;
                                                     &lt;span className="flex items-center gap-1"&gt;
                                                         &lt;MapPin size={14} /&gt;
-                                                        {exp.location}
+                                                        {t(exp.location)}
                                                     &lt;/span&gt;
                                                 &lt;/div&gt;
                                             &lt;/div&gt;
 &nbsp;
                                             &lt;p className="text-slate-600 dark:text-slate-300 mb-4"&gt;
-                                                {exp.description}
+                                                {t(exp.description)}
                                             &lt;/p&gt;
 &nbsp;
                                             &lt;div className="space-y-3 mb-4"&gt;
                                                 {exp.projects.map((project, idx) =&gt; (
                                                     &lt;div key={idx} className="pl-4 border-l-2 border-blue-100 dark:border-blue-900"&gt;
                                                         &lt;h4 className="font-medium text-slate-900 dark:text-white text-sm"&gt;
-                                                            {project.name}
+                                                            {t(project.name)}
                                                         &lt;/h4&gt;
                                                         &lt;p className="text-sm text-slate-500 dark:text-slate-400"&gt;
-                                                            {project.details}
+                                                            {t(project.details)}
                                                         &lt;/p&gt;
                                                     &lt;/div&gt;
                                                 ))}
@@ -345,7 +354,7 @@ export default function Experience() {
                                                         key={idx}
                                                         className="px-3 py-1 bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 text-xs font-medium rounded-full"
                                                     &gt;
-                                                        {tech}
+                                                        {t(tech)}
                                                     &lt;/span&gt;
                                                 ))}
                                             &lt;/div&gt;
@@ -367,7 +376,7 @@ export default function Experience() {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-11-25T23:01:28.126Z
+                at 2025-11-26T20:20:00.639Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

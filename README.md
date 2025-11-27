@@ -1,73 +1,50 @@
-# React + TypeScript + Vite
+# Faiez BEN AMAR — Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Ingénieur Full-Stack .NET / Angular**  
+5 ans d’expérience — Nantes, France
 
-Currently, two official plugins are available:
+Live Demo → https://react-app-six-khaki.vercel.app/  
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## À propos
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Portfolio personnel moderne et entièrement responsive, développé avec les meilleures pratiques 2025 :  
+Vite + React 18 + TypeScript + TailwindCSS + shadcn/ui + Framer Motion
 
-## Expanding the ESLint configuration
+Objectif : présenter mon parcours, mes compétences techniques et mes réalisations de manière claire, élégante et professionnelle — tout en démontrant ma maîtrise du frontend moderne.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Fonctionnalités
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- **100 % bilingue** Français / Anglais (react-i18next)
+- Mode sombre / clair avec persistance (localStorage)
+- Animations fluides (Framer Motion)
+- Bouton "Retour en haut" intelligent
+- Section Certifications fidèle au CV papier
+- Téléchargement du CV (PDF)
+- Galerie complète du CV (9 pages) avec lightbox
+- Formatage automatique du texte en Title Case
+- Responsive parfait
+- Accessibilité renforcée (ARIA, contrastes, navigation clavier)
+- Tests unitaires Jest + React Testing Library (couverture > 90 %)
+- Déploiement automatique via Vercel
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+---
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Technologies utilisées
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+| Catégorie           | Technologies |
+|---------------------|------------|
+| IDE                 | Antigravity (workflows) |
+| Framework           | React 18, TypeScript, Vite |
+| Styling             | Tailwind CSS, shadcn/ui, Headless UI |
+| Animations          | Framer Motion |
+| Internationalisation| react-i18next + i18next-browser-languagedetector |
+| Tests               | Jest, React Testing Library, Vitest |
+| Icônes              | lucide-react |
+| Lightbox            | yet-another-react-lightbox |
+| Déploiement         | Vercel |
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+---

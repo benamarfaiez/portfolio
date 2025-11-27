@@ -9,16 +9,16 @@ export interface Education {
 export const educations: Education[] = [
     {
         id: 1,
-        degree: "Diplôme d’Ingénieur en Informatique",
-        school: "École Nationale des Sciences de l’Informatique (ENSI)",
-        location: "Manouba, Tunisie",
+        degree: 'education.ensi.degree',
+        school: 'education.ensi.school',
+        location: 'education.ensi.location',
         year: "2020"
     },
     {
         id: 2,
-        degree: "Classes préparatoires Math-Physique",
-        school: "Institut Préparatoire aux Études d'Ingénieurs",
-        location: "Sfax, Tunisie",
+        degree: 'education.prepa.degree',
+        school: 'education.prepa.school',
+        location: 'education.prepa.location',
         year: "2017"
     }
 ];

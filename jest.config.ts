@@ -12,4 +12,23 @@ export default {
         }],
     },
     testPathIgnorePatterns: ['/node_modules/', '/e2e/'],
+    collectCoverage: true,
+    collectCoverageFrom: [
+        'src/**/*.{ts,tsx}',
+        '!src/**/*.d.ts',
+        '!src/main.tsx',
+        '!src/vite-env.d.ts',
+        '!src/i18n.ts',
+        '!src/App.tsx',
+        '!src/components/Layout.tsx',
+    ],
+    coverageThreshold: {
+        global: {
+            branches: 75,
+            functions: 80,
+            lines: 96,
+            statements: 96,
+        },
+    },
+    coverageReporters: ['text', 'lcov', 'html'],
 };

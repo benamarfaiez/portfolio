@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>5/5</span>
+                <span class='fraction'>7/7</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>5/5</span>
+                <span class='fraction'>7/7</span>
             </div>
         
             
@@ -195,11 +195,21 @@
 <a name='L130'></a><a href='#L130'>130</a>
 <a name='L131'></a><a href='#L131'>131</a>
 <a name='L132'></a><a href='#L132'>132</a>
-<a name='L133'></a><a href='#L133'>133</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L133'></a><a href='#L133'>133</a>
+<a name='L134'></a><a href='#L134'>134</a>
+<a name='L135'></a><a href='#L135'>135</a>
+<a name='L136'></a><a href='#L136'>136</a>
+<a name='L137'></a><a href='#L137'>137</a>
+<a name='L138'></a><a href='#L138'>138</a>
+<a name='L139'></a><a href='#L139'>139</a>
+<a name='L140'></a><a href='#L140'>140</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -327,13 +337,20 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, Send } from 'lucide-react';
-import { personalInfo } from '../data';
+import { Mail, MapPin, Phone, Send } from 'lucide-react';
+import { personalInfo } from '../data/data';
+import { useTranslation } from 'react-i18next';
 &nbsp;
 export default function Contact() {
+    const { t } = useTranslation();
+&nbsp;
     return (
-        &lt;section id="contact" className="py-20 bg-slate-50 dark:bg-slate-900/50"&gt;
+        &lt;section id="contact" className="py-20 bg-white dark:bg-slate-950"&gt;
             &lt;div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"&gt;
                 &lt;motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -342,11 +359,13 @@ export default function Contact() {
                     transition={{ duration: 0.5 }}
                     className="mb-16 text-center"
                 &gt;
-                    &lt;h2 className="text-3xl md:text-4xl font-bold mb-4"&gt;Me Contacter&lt;/h2&gt;
+                    &lt;h2 className="text-3xl md:text-4xl font-bold mb-4 text-slate-900 dark:text-white"&gt;
+                        {t('contact.title')}
+                    &lt;/h2&gt;
                     &lt;div className="w-20 h-1.5 bg-blue-600 mx-auto rounded-full" /&gt;
                 &lt;/motion.div&gt;
 &nbsp;
-                &lt;div className="grid md:grid-cols-2 gap-12 max-w-4xl mx-auto"&gt;
+                &lt;div className="grid md:grid-cols-2 gap-12"&gt;
                     &lt;motion.div
                         initial={{ opacity: 0, x: -20 }}
                         whileInView={{ opacity: 1, x: 0 }}
@@ -354,10 +373,10 @@ export default function Contact() {
                         transition={{ duration: 0.5, delay: 0.2 }}
                     &gt;
                         &lt;h3 className="text-2xl font-bold mb-6 text-slate-900 dark:text-white"&gt;
-                            Parlons de votre projet
+                            {t('contact.subtitle')}
                         &lt;/h3&gt;
                         &lt;p className="text-slate-600 dark:text-slate-400 mb-8 leading-relaxed"&gt;
-                            Je suis actuellement à l'écoute de nouvelles opportunités. Que vous ayez une question ou que vous souhaitiez simplement dire bonjour, n'hésitez pas à me contacter !
+                            {t('contact.description')}
                         &lt;/p&gt;
 &nbsp;
                         &lt;div className="space-y-6"&gt;
@@ -393,7 +412,7 @@ export default function Contact() {
                                 &lt;/div&gt;
                                 &lt;div&gt;
                                     &lt;p className="text-sm text-slate-500 dark:text-slate-400"&gt;Localisation&lt;/p&gt;
-                                    &lt;p className="font-medium text-slate-900 dark:text-white"&gt;{personalInfo.location}&lt;/p&gt;
+                                    &lt;p className="font-medium text-slate-900 dark:text-white"&gt;{t('contact.location')}&lt;/p&gt;
                                 &lt;/div&gt;
                             &lt;/div&gt;
                         &lt;/div&gt;
@@ -404,55 +423,57 @@ export default function Contact() {
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.5, delay: 0.4 }}
-                        className="bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-lg border border-slate-100 dark:border-slate-700"
                     &gt;
-                        &lt;form className="space-y-6" action={`mailto:${personalInfo.email}`} method="post" encType="text/plain"&gt;
-                            &lt;div&gt;
-                                &lt;label htmlFor="name" className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2"&gt;
-                                    Nom complet
-                                &lt;/label&gt;
-                                &lt;input
-                                    type="text"
-                                    id="name"
-                                    name="name"
-                                    required
-                                    className="w-full px-4 py-3 rounded-lg bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
-                                    placeholder="Votre nom"
-                                /&gt;
-                            &lt;/div&gt;
-                            &lt;div&gt;
-                                &lt;label htmlFor="email" className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2"&gt;
-                                    Email
-                                &lt;/label&gt;
-                                &lt;input
-                                    type="email"
-                                    id="email"
-                                    name="email"
-                                    required
-                                    className="w-full px-4 py-3 rounded-lg bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
-                                    placeholder="votre@email.com"
-                                /&gt;
-                            &lt;/div&gt;
-                            &lt;div&gt;
-                                &lt;label htmlFor="message" className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2"&gt;
-                                    Message
-                                &lt;/label&gt;
-                                &lt;textarea
-                                    id="message"
-                                    name="message"
-                                    required
-                                    rows={4}
-                                    className="w-full px-4 py-3 rounded-lg bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all resize-none"
-                                    placeholder="Votre message..."
-                                /&gt;
-                            &lt;/div&gt;
-                            &lt;button
-                                type="submit"
-                                className="w-full py-3 px-6 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors flex items-center justify-center gap-2"
-                            &gt;
-                                Envoyer &lt;Send size={18} /&gt;
-                            &lt;/button&gt;
-                        &lt;/form&gt;
+&nbsp;
+                        &lt;div className="bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-lg border border-slate-100 dark:border-slate-700"&gt;
+                            &lt;form className="space-y-6" action={`mailto:${personalInfo.email}`} method="post" encType="text/plain"&gt;
+                                &lt;div&gt;
+                                    &lt;label htmlFor="name" className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2"&gt;
+                                        {t('contact.form.name')}
+                                    &lt;/label&gt;
+                                    &lt;input
+                                        type="text"
+                                        id="name"
+                                        name="name"
+                                        required
+                                        className="w-full px-4 py-3 rounded-lg bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
+                                        placeholder={t('contact.form.placeholder.name')}
+                                    /&gt;
+                                &lt;/div&gt;
+                                &lt;div&gt;
+                                    &lt;label htmlFor="email" className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2"&gt;
+                                        {t('contact.form.email')}
+                                    &lt;/label&gt;
+                                    &lt;input
+                                        type="email"
+                                        id="email"
+                                        name="email"
+                                        required
+                                        className="w-full px-4 py-3 rounded-lg bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
+                                        placeholder={t('contact.form.placeholder.email')}
+                                    /&gt;
+                                &lt;/div&gt;
+                                &lt;div&gt;
+                                    &lt;label htmlFor="message" className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2"&gt;
+                                        {t('contact.form.message')}
+                                    &lt;/label&gt;
+                                    &lt;textarea
+                                        id="message"
+                                        name="message"
+                                        required
+                                        rows={4}
+                                        className="w-full px-4 py-3 rounded-lg bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all resize-none"
+                                        placeholder={t('contact.form.placeholder.message')}
+                                    /&gt;
+                                &lt;/div&gt;
+                                &lt;button
+                                    type="submit"
+                                    className="w-full py-3 px-6 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors flex items-center justify-center gap-2"
+                                &gt;
+                                    {t('contact.form.send')} &lt;Send size={18} /&gt;
+                                &lt;/button&gt;
+                            &lt;/form&gt;
+                        &lt;/div&gt;
                     &lt;/motion.div&gt;
                 &lt;/div&gt;
             &lt;/div&gt;
@@ -466,7 +487,7 @@ export default function Contact() {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-11-25T23:01:28.126Z
+                at 2025-11-26T20:20:00.639Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

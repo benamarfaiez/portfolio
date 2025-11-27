@@ -3,63 +3,69 @@ import { Moon, Sun, Menu, X } from 'lucide-react';
 import { useTheme } from '../hooks/useTheme';
 import { motion, AnimatePresence } from 'framer-motion';
 import ScrollToTopButton from './ScrollToTopButton';
+import LanguageSwitcher from './LanguageSwitcher';
+import { useTranslation } from 'react-i18next';
 
 export default function Layout({ children }: { children: React.ReactNode }) {
     const { theme, toggleTheme } = useTheme();
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const { t } = useTranslation();
 
     const navLinks = [
-        { name: 'À propos', href: '#about' },
-        { name: 'Expérience', href: '#experience' },
-        { name: 'Compétences', href: '#skills' },
-        { name: 'Formation', href: '#education' },
-        { name: 'Certifications', href: '#certifications' },
-        { name: 'Contact', href: '#contact' },
+        { name: t('about.title'), href: '#about' },
+        { name: t('experience.title'), href: '#experience' },
+        { name: t('skills.title'), href: '#skills' },
+        { name: t('education.title'), href: '#education' },
+        { name: t('certifications.title'), href: '#certifications' },
+        { name: t('contact.title'), href: '#contact' },
     ];
 
     return (
         <div className="min-h-screen bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 transition-colors duration-300">
-            <nav className="fixed top-0 w-full z-50 bg-white/80 dark:bg-slate-950/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
+            <nav className="fixed top-0 w-full z-50 bg-white/90 dark:bg-slate-950/90 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 shadow-sm">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="flex justify-between items-center h-16">
-                        <a href="#" className="text-xl font-bold bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">
-                            Faiez.dev
-                        </a>
+                    <div className="flex justify-center md:justify-between items-center h-14">
 
                         {/* Desktop Navigation */}
-                        <div className="hidden md:flex items-center space-x-8">
+                        <div className="hidden md:flex items-center space-x-8 flex-1 justify-center">
                             {navLinks.map((link) => (
                                 <a
                                     key={link.name}
                                     href={link.href}
-                                    className="text-sm font-medium hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                                    className="text-sm font-medium text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
                                 >
                                     {link.name}
                                 </a>
                             ))}
+                        </div>
+
+                        {/* Desktop Controls */}
+                        <div className="hidden md:flex items-center gap-3">
+                            <LanguageSwitcher />
                             <button
                                 onClick={toggleTheme}
-                                className="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+                                className="p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
                                 aria-label="Toggle theme"
                             >
-                                {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
+                                {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
                             </button>
                         </div>
 
-                        {/* Mobile Menu Button */}
-                        <div className="md:hidden flex items-center">
+                        {/* Mobile Menu */}
+                        <div className="md:hidden flex items-center gap-2">
+                            <LanguageSwitcher />
                             <button
                                 onClick={toggleTheme}
-                                className="p-2 mr-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+                                className="p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
                                 aria-label="Toggle theme"
                             >
-                                {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
+                                {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
                             </button>
                             <button
                                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                                className="p-2 rounded-md hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+                                className="p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
                             >
-                                {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+                                {isMenuOpen ? <X size={22} /> : <Menu size={22} />}
                             </button>
                         </div>
                     </div>
@@ -101,7 +107,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                     <div className="flex flex-col md:flex-row justify-between items-center">
                         <div className="mb-4 md:mb-0">
                             <p className="text-sm text-slate-500 dark:text-slate-400">
-                                © {new Date().getFullYear()} Faiez BEN AMAR. All rights reserved.
+                                © {new Date().getFullYear()} Faiez BEN AMAR. {t('footer.rights')}
                             </p>
                         </div>
                     </div>
