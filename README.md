@@ -1,8 +1,5 @@
 # Faiez BEN AMAR — Portfolio
 
-**Ingénieur Full-Stack .NET / Angular**  
-5 ans d’expérience — Nantes, France
-
 Live Demo → https://react-app-six-khaki.vercel.app/  
 
 ---
