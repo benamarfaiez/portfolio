@@ -75,11 +75,13 @@
     "skills": {
         "title": "TECHNICAL SKILLS",
         "categories": {
+            "languages": "Languages",
             "backend": "Backend",
             "frontend": "Frontend",
             "database": "Database",
-            "devops": "DevOps & Cloud",
-            "architecture": "Architecture & Testing"
+            "tests": "Tests",
+            "devops": "Versioning tools",
+            "architecture": "Architecture"
         }
     },
     "education": {

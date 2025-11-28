@@ -75,10 +75,11 @@
     "skills": {
         "title": "COMPÉTENCES TECHNIQUES",
         "categories": {
+            "languages": "Langages",
             "backend": "Backend",
             "frontend": "Frontend",
             "database": "Base de données",
-            "devops": "DevOps & Cloud",
+            "devops": "Outils de versionning",
             "architecture": "Architecture & Testing"
         }
     },
