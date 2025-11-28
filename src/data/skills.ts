@@ -36,6 +36,6 @@ export const skills = [
     {
         category: 'skills.categories.architecture',
         icon: Settings,
-        items: ["Microservices", "Clean Architecture"]
+        items: ["Microservices", "Clean Architecture", "Decorator", "Factory", "Strategy", "Repository", "Unit of Work", "DI"]
     }
 ];

@@ -3,7 +3,8 @@
         "title": "Full-Stack .NET / Angular Engineer",
         "experience": "5 years of experience",
         "contact": "Contact Me",
-        "download_cv": "Download CV"
+        "download_cv": "Download CV",
+        "description": "Passionate Full-Stack Engineer with 5 years of experience in designing and developing robust and scalable web applications. Expert in the .NET and Angular ecosystem, with strong mastery of modern architectures (Microservices, Clean Architecture) and Azure Cloud. I strive to create high-performance solutions that meet real user needs."
     },
     "about": {
         "title": "ABOUT",
@@ -81,7 +82,7 @@
             "database": "Database",
             "tests": "Tests",
             "devops": "Versioning tools",
-            "architecture": "Architecture"
+            "architecture": "Architecture & Design Patterns"
         }
     },
     "education": {

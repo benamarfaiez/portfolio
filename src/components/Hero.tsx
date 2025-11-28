@@ -32,7 +32,7 @@ export default function Hero() {
                                 {t('hero.title')}
                             </h2>
                             <p className="text-lg text-slate-600 dark:text-slate-400 mb-8 max-w-2xl mx-auto md:mx-0 leading-relaxed">
-                                {t('about.description')}
+                                {t('hero.description')}
                             </p>
 
                             <div className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4">
