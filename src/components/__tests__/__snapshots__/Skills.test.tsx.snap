@@ -95,27 +95,32 @@ exports[`Skills Component renders correctly and matches snapshot 1`] = `
             <span
               class="px-3 py-1 bg-slate-50 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-sm font-medium rounded-lg border border-slate-200 dark:border-slate-600"
             >
-              .NET 8/6/Core
+              .NET
             </span>
             <span
               class="px-3 py-1 bg-slate-50 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-sm font-medium rounded-lg border border-slate-200 dark:border-slate-600"
             >
-              ASP.NET Web API
+              ASP.NET Core
             </span>
             <span
               class="px-3 py-1 bg-slate-50 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-sm font-medium rounded-lg border border-slate-200 dark:border-slate-600"
             >
-              Node.js
+              .Net (6 et 8)
             </span>
             <span
               class="px-3 py-1 bg-slate-50 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-sm font-medium rounded-lg border border-slate-200 dark:border-slate-600"
             >
-              Python
+              .Net Framework (3.5 et 4.8)
             </span>
             <span
               class="px-3 py-1 bg-slate-50 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-sm font-medium rounded-lg border border-slate-200 dark:border-slate-600"
             >
-              Entity Framework
+              Entity Framework Core
+            </span>
+            <span
+              class="px-3 py-1 bg-slate-50 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-sm font-medium rounded-lg border border-slate-200 dark:border-slate-600"
+            >
+              Dapper
             </span>
           </div>
         </div>
@@ -169,12 +174,27 @@ exports[`Skills Component renders correctly and matches snapshot 1`] = `
             <span
               class="px-3 py-1 bg-slate-50 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-sm font-medium rounded-lg border border-slate-200 dark:border-slate-600"
             >
-              Angular (12+)
+              Angular
             </span>
             <span
               class="px-3 py-1 bg-slate-50 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-sm font-medium rounded-lg border border-slate-200 dark:border-slate-600"
             >
               React
+            </span>
+            <span
+              class="px-3 py-1 bg-slate-50 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-sm font-medium rounded-lg border border-slate-200 dark:border-slate-600"
+            >
+              NodeJs
+            </span>
+            <span
+              class="px-3 py-1 bg-slate-50 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-sm font-medium rounded-lg border border-slate-200 dark:border-slate-600"
+            >
+              Bootstrap
+            </span>
+            <span
+              class="px-3 py-1 bg-slate-50 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-sm font-medium rounded-lg border border-slate-200 dark:border-slate-600"
+            >
+              RxJS
             </span>
             <span
               class="px-3 py-1 bg-slate-50 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-sm font-medium rounded-lg border border-slate-200 dark:border-slate-600"
@@ -196,10 +216,105 @@ exports[`Skills Component renders correctly and matches snapshot 1`] = `
             >
               CSS3/SCSS
             </span>
+          </div>
+        </div>
+        <div
+          class="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-sm hover:shadow-md transition-all border border-slate-100 dark:border-slate-700 group"
+          style="opacity: 0; transform: translateY(20px);"
+        >
+          <div
+            class="flex items-center gap-4 mb-6"
+          >
+            <div
+              class="p-3 bg-blue-50 dark:bg-blue-900/30 rounded-lg text-blue-600 group-hover:scale-110 transition-transform"
+            >
+              <svg
+                aria-hidden="true"
+                class="lucide lucide-flask-conical"
+                fill="none"
+                height="24"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+                width="24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M14 2v6a2 2 0 0 0 .245.96l5.51 10.08A2 2 0 0 1 18 22H6a2 2 0 0 1-1.755-2.96l5.51-10.08A2 2 0 0 0 10 8V2"
+                />
+                <path
+                  d="M6.453 15h11.094"
+                />
+                <path
+                  d="M8.5 2h7"
+                />
+              </svg>
+            </div>
+            <h3
+              class="text-xl font-bold text-slate-900 dark:text-white"
+            >
+              skills.categories.tests
+            </h3>
+          </div>
+          <div
+            class="flex flex-wrap gap-2"
+          >
             <span
               class="px-3 py-1 bg-slate-50 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-sm font-medium rounded-lg border border-slate-200 dark:border-slate-600"
             >
-              Tailwind CSS
+              xUnit
+            </span>
+            <span
+              class="px-3 py-1 bg-slate-50 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-sm font-medium rounded-lg border border-slate-200 dark:border-slate-600"
+            >
+              NUnit
+            </span>
+            <span
+              class="px-3 py-1 bg-slate-50 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-sm font-medium rounded-lg border border-slate-200 dark:border-slate-600"
+            >
+              Moq
+            </span>
+            <span
+              class="px-3 py-1 bg-slate-50 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-sm font-medium rounded-lg border border-slate-200 dark:border-slate-600"
+            >
+              FluentAssertions
+            </span>
+            <span
+              class="px-3 py-1 bg-slate-50 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-sm font-medium rounded-lg border border-slate-200 dark:border-slate-600"
+            >
+              SonarQube
+            </span>
+            <span
+              class="px-3 py-1 bg-slate-50 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-sm font-medium rounded-lg border border-slate-200 dark:border-slate-600"
+            >
+              Postman
+            </span>
+            <span
+              class="px-3 py-1 bg-slate-50 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-sm font-medium rounded-lg border border-slate-200 dark:border-slate-600"
+            >
+              Jest
+            </span>
+            <span
+              class="px-3 py-1 bg-slate-50 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-sm font-medium rounded-lg border border-slate-200 dark:border-slate-600"
+            >
+              Jasmine
+            </span>
+            <span
+              class="px-3 py-1 bg-slate-50 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-sm font-medium rounded-lg border border-slate-200 dark:border-slate-600"
+            >
+              Playwright
+            </span>
+            <span
+              class="px-3 py-1 bg-slate-50 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-sm font-medium rounded-lg border border-slate-200 dark:border-slate-600"
+            >
+              ESLint
+            </span>
+            <span
+              class="px-3 py-1 bg-slate-50 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-sm font-medium rounded-lg border border-slate-200 dark:border-slate-600"
+            >
+              Zeplin
             </span>
           </div>
         </div>
@@ -252,6 +367,11 @@ exports[`Skills Component renders correctly and matches snapshot 1`] = `
             <span
               class="px-3 py-1 bg-slate-50 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-sm font-medium rounded-lg border border-slate-200 dark:border-slate-600"
             >
+              SQL
+            </span>
+            <span
+              class="px-3 py-1 bg-slate-50 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-sm font-medium rounded-lg border border-slate-200 dark:border-slate-600"
+            >
               SQL Server
             </span>
             <span
@@ -267,7 +387,12 @@ exports[`Skills Component renders correctly and matches snapshot 1`] = `
             <span
               class="px-3 py-1 bg-slate-50 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-sm font-medium rounded-lg border border-slate-200 dark:border-slate-600"
             >
-              Redis
+              SSMS
+            </span>
+            <span
+              class="px-3 py-1 bg-slate-50 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-sm font-medium rounded-lg border border-slate-200 dark:border-slate-600"
+            >
+              DBeaver
             </span>
           </div>
         </div>
@@ -390,22 +515,32 @@ exports[`Skills Component renders correctly and matches snapshot 1`] = `
             <span
               class="px-3 py-1 bg-slate-50 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-sm font-medium rounded-lg border border-slate-200 dark:border-slate-600"
             >
-              xUnit
+              Decorator
             </span>
             <span
               class="px-3 py-1 bg-slate-50 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-sm font-medium rounded-lg border border-slate-200 dark:border-slate-600"
             >
-              NUnit
+              Factory
             </span>
             <span
               class="px-3 py-1 bg-slate-50 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-sm font-medium rounded-lg border border-slate-200 dark:border-slate-600"
             >
-              Moq
+              Strategy
             </span>
             <span
               class="px-3 py-1 bg-slate-50 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-sm font-medium rounded-lg border border-slate-200 dark:border-slate-600"
             >
-              SonarQube
+              Repository
+            </span>
+            <span
+              class="px-3 py-1 bg-slate-50 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-sm font-medium rounded-lg border border-slate-200 dark:border-slate-600"
+            >
+              Unit of Work
+            </span>
+            <span
+              class="px-3 py-1 bg-slate-50 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-sm font-medium rounded-lg border border-slate-200 dark:border-slate-600"
+            >
+              DI
             </span>
           </div>
         </div>

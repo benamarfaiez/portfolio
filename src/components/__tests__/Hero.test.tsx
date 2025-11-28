@@ -13,7 +13,7 @@ describe('Hero Component', () => {
 
         expect(screen.getByText(personalInfo.name)).toBeInTheDocument();
         expect(screen.getByText('hero.title')).toBeInTheDocument();
-        expect(screen.getByText('about.description')).toBeInTheDocument();
+        expect(screen.getByText('hero.description')).toBeInTheDocument();
         expect(screen.getByAltText(personalInfo.name)).toBeInTheDocument();
     });
 
