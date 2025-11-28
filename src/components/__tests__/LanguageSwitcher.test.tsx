@@ -1,5 +1,6 @@
 import { render, screen, fireEvent } from '@testing-library/react';
 import LanguageSwitcher from '../LanguageSwitcher';
+import * as ReactI18Next from 'react-i18next';
 
 const mockChangeLanguage = jest.fn();
 
@@ -40,13 +41,14 @@ describe('LanguageSwitcher Component', () => {
 
     test('renders with English selected when language is en', () => {
         // Re-mock for this specific test
-        jest.spyOn(require('react-i18next'), 'useTranslation').mockReturnValue({
+        jest.spyOn(ReactI18Next, 'useTranslation').mockReturnValue({
             t: (key: string) => key,
             i18n: {
                 changeLanguage: mockChangeLanguage,
                 language: 'en',
             },
-        });
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        } as any);
 
         render(<LanguageSwitcher />);
         const select = screen.getByRole('combobox');
