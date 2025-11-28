@@ -26,7 +26,7 @@ export const skills = [
     {
         category: 'skills.categories.database',
         icon: Database,
-        items: ["SQL", "SQL Server", "PostgreSQL", "MySQL", "SSMS", "Dbvear"]
+        items: ["SQL", "SQL Server", "PostgreSQL", "MySQL", "SSMS", "DBeaver"]
     },
     {
         category: 'skills.categories.devops',
