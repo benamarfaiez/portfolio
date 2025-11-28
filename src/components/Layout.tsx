@@ -12,12 +12,12 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     const { t } = useTranslation();
 
     const navLinks = [
-        { name: t('about.title'), href: '#about' },
-        { name: t('experience.title'), href: '#experience' },
-        { name: t('skills.title'), href: '#skills' },
-        { name: t('education.title'), href: '#education' },
-        { name: t('certifications.title'), href: '#certifications' },
-        { name: t('contact.title'), href: '#contact' },
+        { name: t('layout.about'), href: '#about' },
+        { name: t('layout.experience'), href: '#experience' },
+        { name: t('layout.competences'), href: '#skills' },
+        { name: t('layout.formation'), href: '#education' },
+        { name: t('layout.certifications'), href: '#certifications' },
+        { name: t('layout.contact'), href: '#contact' },
     ];
 
     return (
@@ -25,8 +25,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             <nav className="fixed top-0 w-full z-50 bg-white/80 dark:bg-slate-950/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex justify-between items-center h-16">
-                        <a href="/" className="text-xl font-bold bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">
-                        </a>
+                        <div className="md:hidden">
+                        </div>
 
                         {/* Desktop Navigation */}
                         <div className="hidden md:flex items-center space-x-4 mr-2">
@@ -46,7 +46,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                             <LanguageSwitcher />
                             <button
                                 onClick={toggleTheme}
-                                className="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+                                className="ml-2 p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
                                 aria-label="Toggle theme"
                             >
                                 {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
@@ -58,7 +58,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                             <LanguageSwitcher />
                             <button
                                 onClick={toggleTheme}
-                                className="p-2 mr-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+                                className="ml-2 p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
                                 aria-label="Toggle theme"
                             >
                                 {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}

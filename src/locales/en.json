@@ -73,6 +73,14 @@
             }
         }
     },
+    "layout": {
+        "about": "About",
+        "experience": "Experiences",
+        "competences": "Technical skills",
+        "formation": "Education",
+        "certifications": "Certifications",
+        "contact": "Contact"
+    },
     "skills": {
         "title": "TECHNICAL SKILLS",
         "categories": {

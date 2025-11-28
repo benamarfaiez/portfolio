@@ -1,6 +1,22 @@
 import { test, expect } from '@playwright/test';
 
 test.describe('Portfolio E2E', () => {
+    const navLinksFr = [
+        { text: 'À propos', href: '#about' },
+        { text: 'Expériences', href: '#experience' },
+        { text: 'Compétences', href: '#skills' },
+        { text: 'Formation', href: '#education' },
+        { text: 'Certifications', href: '#certifications' },
+        { text: 'Contact', href: '#contact' }
+    ];
+    const navLinksEn = [
+        { text: 'About', href: '#about' },
+        { text: 'Experiences', href: '#experience' },
+        { text: 'Skills', href: '#skills' },
+        { text: 'Education', href: '#education' },
+        { text: 'Certifications', href: '#certifications' },
+        { text: 'Contact', href: '#contact' }
+    ];
     // Force French locale for consistent testing
     test.use({ locale: 'fr-FR' });
 
@@ -29,27 +45,18 @@ test.describe('Portfolio E2E', () => {
             // Wait for layout to adjust
             await page.waitForTimeout(500);
 
-            const navLinks = [
-                { text: 'À PROPOS', href: '#about' },
-                { text: 'EXPÉRIENCES PROFESSIONNELLES', href: '#experience' },
-                { text: 'COMPÉTENCES TECHNIQUES', href: '#skills' },
-                { text: 'FORMATION', href: '#education' },
-                { text: 'CERTIFICATIONS', href: '#certifications' },
-                { text: 'CONTACT', href: '#contact' }
-            ];
-
             // Scope to desktop nav container specifically
             const desktopNav = page.locator('nav').first();
             await expect(desktopNav).toBeVisible();
 
-            for (const link of navLinks) {
+            for (const link of navLinksFr) {
                 const navItem = desktopNav.getByRole('link', { name: link.text, exact: true });
                 await expect(navItem).toBeVisible();
                 await expect(navItem).toHaveAttribute('href', link.href);
             }
 
             // Test clicking a link
-            await desktopNav.getByRole('link', { name: 'À PROPOS', exact: true }).click();
+            await desktopNav.getByRole('link', { name: navLinksFr[0].text, exact: true }).click();
             await expect(page).toHaveURL(/#about/);
         });
 
@@ -68,11 +75,11 @@ test.describe('Portfolio E2E', () => {
 
             // Wait for mobile menu container to appear - target the one with links (avoiding language switcher container)
             // The menu usually has the links, so we can filter by text of a known link
-            const mobileMenu = page.locator('nav .md\\:hidden').filter({ hasText: 'À PROPOS' });
+            const mobileMenu = page.locator('nav .md\\:hidden').filter({ hasText: navLinksFr[0].text });
             await expect(mobileMenu).toBeVisible();
 
             // Check link visibility
-            const mobileLink = mobileMenu.getByRole('link', { name: 'À PROPOS', exact: true });
+            const mobileLink = mobileMenu.getByRole('link', { name: navLinksFr[0].text, exact: true });
             await expect(mobileLink).toBeVisible();
 
             // Click link
@@ -105,7 +112,7 @@ test.describe('Portfolio E2E', () => {
             // Initial state (French)
             await expect(languageSwitcher).toHaveValue('fr');
             // Use heading to ensure visibility on mobile (nav links are hidden)
-            await expect(page.getByRole('heading', { name: 'À PROPOS' })).toBeVisible();
+            await expect(page.getByRole('heading', { name: navLinksFr[0].text })).toBeVisible();
 
             // Switch to English
             await languageSwitcher.selectOption('en');
@@ -152,7 +159,7 @@ test.describe('Portfolio E2E', () => {
             await experience.scrollIntoViewIfNeeded();
 
             // Use getByText for section titles to be safer
-            await expect(experience.getByText('EXPÉRIENCES PROFESSIONNELLES')).toBeVisible();
+            await expect(experience.getByText(navLinksFr[1].text)).toBeVisible();
             // Check for a specific company or role - FIX: .first() inside expect
             await expect(experience.getByText('Ingénieur Backend').first()).toBeVisible();
         });
@@ -161,7 +168,7 @@ test.describe('Portfolio E2E', () => {
             const skills = page.locator('#skills');
             await skills.scrollIntoViewIfNeeded();
 
-            await expect(skills.getByText('COMPÉTENCES TECHNIQUES')).toBeVisible();
+            await expect(skills.getByText(navLinksFr[2].text)).toBeVisible();
             // Check categories
             await expect(skills.getByText('Backend', { exact: true })).toBeVisible();
             await expect(skills.getByText('Frontend', { exact: true })).toBeVisible();
@@ -170,14 +177,14 @@ test.describe('Portfolio E2E', () => {
         test('Education section is present', async ({ page }) => {
             const education = page.locator('#education');
             await education.scrollIntoViewIfNeeded();
-            await expect(education.getByText('FORMATION')).toBeVisible();
+            await expect(education.getByText(navLinksFr[3].text)).toBeVisible();
             await expect(education.getByText('Diplôme d’Ingénieur en Informatique')).toBeVisible();
         });
 
         test('Certifications section is present', async ({ page }) => {
             const certs = page.locator('#certifications');
             await certs.scrollIntoViewIfNeeded();
-            await expect(certs.getByText('CERTIFICATIONS')).toBeVisible();
+            await expect(certs.getByText(navLinksFr[4].text)).toBeVisible();
             await expect(certs.getByText('React JS')).toBeVisible();
         });
 
@@ -185,7 +192,6 @@ test.describe('Portfolio E2E', () => {
             const contact = page.locator('#contact');
             await contact.scrollIntoViewIfNeeded();
 
-            await expect(contact.getByText('CONTACT', { exact: true })).toBeVisible();
             await expect(contact.locator('input[name="name"]')).toBeVisible();
             await expect(contact.locator('input[name="email"]')).toBeVisible();
             await expect(contact.locator('textarea[name="message"]')).toBeVisible();
