@@ -9,14 +9,7 @@ test.describe('Portfolio E2E', () => {
         { text: 'Certifications', href: '#certifications' },
         { text: 'Contact', href: '#contact' }
     ];
-    const navLinksEn = [
-        { text: 'About', href: '#about' },
-        { text: 'Experiences', href: '#experience' },
-        { text: 'Skills', href: '#skills' },
-        { text: 'Education', href: '#education' },
-        { text: 'Certifications', href: '#certifications' },
-        { text: 'Contact', href: '#contact' }
-    ];
+
     // Force French locale for consistent testing
     test.use({ locale: 'fr-FR' });
 
