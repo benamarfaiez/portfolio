@@ -3,6 +3,9 @@ import { useTranslation } from 'react-i18next';
 
 export default function About() {
     const { t } = useTranslation();
+    function anneesExperience() {
+        return t('about.description').replace('{{anneesExperience}}', (new Date().getFullYear() - 2020).toString());
+    }
 
     return (
         <section id="about" className="py-20 bg-slate-50 dark:bg-slate-900/50">
@@ -18,7 +21,7 @@ export default function About() {
                     </h2>
                     <div className="max-w-3xl mx-auto text-center">
                         <p className="text-lg text-slate-600 dark:text-slate-400 leading-relaxed">
-                            {t('about.description')}
+                            {anneesExperience()}
                         </p>
                     </div>
                 </motion.div>
