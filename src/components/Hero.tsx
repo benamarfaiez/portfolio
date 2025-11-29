@@ -5,6 +5,9 @@ import { useTranslation } from 'react-i18next';
 
 export default function Hero() {
     const { t } = useTranslation();
+    function anneesExperience() {
+        return t('hero.description').replace('{{anneesExperience}}', (new Date().getFullYear() - 2020).toString());
+    }
 
     return (
         <section id="hero" className="min-h-[calc(100vh-4rem)] flex items-center justify-center py-20 relative overflow-hidden">
@@ -26,13 +29,15 @@ export default function Hero() {
                                 Portfolio
                             </h2>
                             <h1 className="text-4xl md:text-6xl font-bold mb-4 tracking-tight">
-                                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500">{personalInfo.name}</span>
+                                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500">
+                                    {personalInfo.name}
+                                </span>
                             </h1>
                             <h2 className="text-2xl md:text-3xl text-slate-600 dark:text-slate-300 mb-6 font-medium">
                                 {t('hero.title')}
                             </h2>
                             <p className="text-lg text-slate-600 dark:text-slate-400 mb-8 max-w-2xl mx-auto md:mx-0 leading-relaxed">
-                                {t('hero.description')}
+                                {anneesExperience()}
                             </p>
 
                             <div className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4">
