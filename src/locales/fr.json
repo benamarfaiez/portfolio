@@ -23,19 +23,31 @@
             "projects": {
                 "push_notification": {
                     "name": "Projet PushNotification",
-                    "details": "Gestion des notifications batch via Airship."
+                    "details": "Gestion des notifications batch via Airship.",
+                    "context": "Conception et développement d'un batch de notifications dont l'objectif est d'automatiser la récupération et la mise à jour des données de la BDD, ainsi que l'envoi de notifications aux applications mobiles (Android et Ios) via le tiers Airship.",
+                    "realization": "realisation",
+                    "technicalEnvironment": "C#"
                 },
                 "ring_central": {
                     "name": "Projet RingCentral",
-                    "details": "Webhook .NET 6 microservices, appels parallèles, authentification par instance."
+                    "details": "Webhook .NET 6 microservices, appels parallèles, authentification par instance.",
+                    "context": "Conception et développement d'un Webhook en .NET 6 au sein d'une architecture Microservices pour le traitement en temps réel des messages utilisateurs et des pièces jointes de courriels.",
+                    "realization": "realisation",
+                    "technicalEnvironment": "C#"
                 },
                 "broker": {
                     "name": "Projet Courtier",
-                    "details": "Refonte de la gestion des tâches payantes."
+                    "details": "Refonte de la gestion des tâches payantes.",
+                    "context": "Refonte d'un système de gestion des tâches payants pour remplacer l'existant au sein du projet Web API.",
+                    "realization": "realisation",
+                    "technicalEnvironment": "C#"
                 },
                 "migration": {
                     "name": "Migration .NET",
-                    "details": "Migration massive .NET 6 → .NET 8 de +100 projets avec outil d’automatisation maison."
+                    "details": "Migration massive .NET 6 → .NET 8 de +100 projets avec outil d'automatisation maison.",
+                    "context": "Migration de plus de 100 projets interdépendants (SDK, API, Services) de .NET 6 vers .NET 8, avec développement d'un outil interne pour automatiser et sécuriser le processus.",
+                    "realization": "realisation",
+                    "technicalEnvironment": "C#"
                 }
             }
         },

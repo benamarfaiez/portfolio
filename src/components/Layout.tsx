@@ -79,7 +79,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                             ))}
                         </div>
 
-                        {/* Contrôles Desktop (Langue + Thème) */}
+                        {/* Contrôles Desktop */}
                         <div className="hidden md:flex items-center gap-2">
                             <LanguageSwitcher />
                             <button
@@ -91,7 +91,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                             </button>
                         </div>
 
-                        {/* Menu Mobile (Burger) */}
+                        {/* Menu Mobile */}
                         <div className="md:hidden flex items-center gap-2">
                             <LanguageSwitcher />
                             <button

@@ -26,7 +26,7 @@ export default function ExperienceDetail() {
                         className="text-blue-600 hover:text-blue-700 font-medium flex items-center gap-2 mx-auto"
                     >
                         <ArrowLeft size={20} />
-                        Back to Home
+                        {t('common.back_to_list')}
                     </button>
                 </div>
             </div>
@@ -59,15 +59,15 @@ export default function ExperienceDetail() {
                                 <div className="flex items-center gap-3">
                                     {experience.logo && (
                                         <img
-                                            src={experience.logo}
+                                            src={'../' + experience.logo}
                                             alt={`${experience.company} logo`}
-                                            className="w-10 h-10 object-contain rounded-md bg-white p-0.5"
+                                            className="h-8 object-contain rounded-md p-0.5"
                                             onError={(e) => {
                                                 (e.target as HTMLImageElement).style.display = 'none';
                                             }}
                                         />
                                     )}
-                                    <div className="text-xl font-medium text-blue-600 dark:text-blue-400">
+                                    <div className="text-lg font-medium text-blue-600 dark:text-blue-400">
                                         {experience.company}
                                     </div>
                                 </div>
@@ -92,24 +92,6 @@ export default function ExperienceDetail() {
                     <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
                         {/* Main Content */}
                         <div className="lg:col-span-2 space-y-8">
-                            {/* Missions */}
-                            {experience.missions && (
-                                <section className="bg-white dark:bg-slate-900 rounded-2xl p-8 shadow-sm border border-slate-100 dark:border-slate-800">
-                                    <h2 className="text-xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-2">
-                                        <Briefcase className="text-blue-600" size={24} />
-                                        Key Missions
-                                    </h2>
-                                    <ul className="space-y-4">
-                                        {experience.missions.map((mission, idx) => (
-                                            <li key={idx} className="flex items-start gap-3 text-slate-600 dark:text-slate-300">
-                                                <CheckCircle className="text-green-500 mt-1 flex-shrink-0" size={18} />
-                                                <span>{t(mission)}</span>
-                                            </li>
-                                        ))}
-                                    </ul>
-                                </section>
-                            )}
-
                             {/* Projects */}
                             <section className="bg-white dark:bg-slate-900 rounded-2xl p-8 shadow-sm border border-slate-100 dark:border-slate-800">
                                 <h2 className="text-xl font-bold text-slate-900 dark:text-white mb-6">Key Projects</h2>
@@ -120,33 +102,20 @@ export default function ExperienceDetail() {
                                                 {t(project.name)}
                                             </h3>
                                             <p className="text-slate-600 dark:text-slate-300">
-                                                {t(project.details)}
+                                                <span className="font-bold">Contexte : </span>{t(project.context)}
+                                            </p>
+                                            <p className="text-slate-600 dark:text-slate-300">
+                                                <span className="font-bold">Prestation réalisée : </span>
+                                                {t(project.realization)}
+                                            </p>
+                                            <p className="text-slate-600 dark:text-slate-300">
+                                                <span className="font-bold">Environnement technique : </span>
+                                                {t(project.technicalEnvironment)}
                                             </p>
                                         </div>
                                     ))}
                                 </div>
                             </section>
-
-                            {/* Challenges & Solutions */}
-                            {(experience.challenges || experience.solutions) && (
-                                <section className="bg-white dark:bg-slate-900 rounded-2xl p-8 shadow-sm border border-slate-100 dark:border-slate-800">
-                                    <h2 className="text-xl font-bold text-slate-900 dark:text-white mb-6">Challenges & Solutions</h2>
-                                    <div className="space-y-6">
-                                        {experience.challenges && (
-                                            <div>
-                                                <h3 className="font-semibold text-slate-900 dark:text-white mb-2">Challenges</h3>
-                                                <p className="text-slate-600 dark:text-slate-300">{t(experience.challenges)}</p>
-                                            </div>
-                                        )}
-                                        {experience.solutions && (
-                                            <div>
-                                                <h3 className="font-semibold text-slate-900 dark:text-white mb-2">Solutions</h3>
-                                                <p className="text-slate-600 dark:text-slate-300">{t(experience.solutions)}</p>
-                                            </div>
-                                        )}
-                                    </div>
-                                </section>
-                            )}
                         </div>
 
                         {/* Sidebar */}
@@ -165,27 +134,19 @@ export default function ExperienceDetail() {
                                     ))}
                                 </div>
                             </section>
-
-                            {/* Links */}
-                            {experience.links && (
-                                <section className="bg-white dark:bg-slate-900 rounded-2xl p-6 shadow-sm border border-slate-100 dark:border-slate-800">
-                                    <h2 className="text-lg font-bold text-slate-900 dark:text-white mb-4">Links</h2>
-                                    <div className="space-y-3">
-                                        {experience.links.map((link, idx) => (
-                                            <a
-                                                key={idx}
-                                                href={link.url}
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                                className="flex items-center gap-2 text-blue-600 hover:text-blue-700 font-medium transition-colors"
-                                            >
-                                                <ExternalLink size={16} />
-                                                {link.label}
-                                            </a>
-                                        ))}
-                                    </div>
-                                </section>
-                            )}
+                            <section className="bg-white dark:bg-slate-900 rounded-2xl p-6 shadow-sm border border-slate-100 dark:border-slate-800">
+                                <h2 className="text-lg font-bold text-slate-900 dark:text-white mb-4">Tech Stack</h2>
+                                <div className="flex flex-wrap gap-2">
+                                    {experience.technologies.map((tech, idx) => (
+                                        <span
+                                            key={idx}
+                                            className="px-3 py-1 bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 text-sm font-medium rounded-full"
+                                        >
+                                            {t(tech)}
+                                        </span>
+                                    ))}
+                                </div>
+                            </section>
                         </div>
                     </div>
                 </motion.div>
