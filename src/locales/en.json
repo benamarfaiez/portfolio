@@ -1,4 +1,7 @@
 {
+    "common": {
+        "back_to_list": "Back to list"
+    },
     "hero": {
         "title": "Full-Stack .NET / Angular Engineer",
         "experience": "5 years of experience",
@@ -76,7 +79,7 @@
     "layout": {
         "about": "About",
         "experience": "Experiences",
-        "competences": "Technical skills",
+        "skills": "Technical skills",
         "formation": "Education",
         "certifications": "Certifications",
         "contact": "Contact"

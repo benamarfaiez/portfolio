@@ -41,7 +41,7 @@ export default function ExperienceDetail() {
                     className="inline-flex items-center gap-2 text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors mb-8 group"
                 >
                     <ArrowLeft size={20} className="group-hover:-translate-x-1 transition-transform" />
-                    {t('common.back_to_list') || "Back to List"}
+                    {t('common.back_to_list')}
                 </Link>
 
                 <motion.div
@@ -56,8 +56,20 @@ export default function ExperienceDetail() {
                                 <h1 className="text-3xl font-bold text-slate-900 dark:text-white mb-2">
                                     {t(experience.role)}
                                 </h1>
-                                <div className="text-xl font-medium text-blue-600 dark:text-blue-400">
-                                    {experience.company}
+                                <div className="flex items-center gap-3">
+                                    {experience.logo && (
+                                        <img
+                                            src={experience.logo}
+                                            alt={`${experience.company} logo`}
+                                            className="w-10 h-10 object-contain rounded-md bg-white p-0.5"
+                                            onError={(e) => {
+                                                (e.target as HTMLImageElement).style.display = 'none';
+                                            }}
+                                        />
+                                    )}
+                                    <div className="text-xl font-medium text-blue-600 dark:text-blue-400">
+                                        {experience.company}
+                                    </div>
                                 </div>
                             </div>
                             <div className="flex flex-col gap-2 text-slate-500 dark:text-slate-400 text-sm">

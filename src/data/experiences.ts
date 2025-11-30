@@ -7,6 +7,7 @@ export interface Experience {
     id: number;
     slug: string;
     company: string;
+    logo: string;
     location: string;
     role: string;
     period: string;
@@ -27,6 +28,7 @@ export const experiences: Experience[] = [
         id: 1,
         slug: "henner-net-developer",
         company: "Henner",
+        logo: "logo-henner.png",
         location: "experience.henner.location",
         role: 'experience.henner.role',
         period: "experience.henner.period",
@@ -66,6 +68,7 @@ export const experiences: Experience[] = [
         id: 2,
         slug: "euro-information-fullstack",
         company: "Euro Information",
+        logo: "logo-euro-information.png",
         location: "experience.euro_information.location",
         role: 'experience.euro_information.role',
         period: "experience.euro_information.period",
@@ -91,6 +94,7 @@ export const experiences: Experience[] = [
         id: 3,
         slug: "canaccord-genuity-developer",
         company: "Canaccord Genuity",
+        logo: "logo-cg.jpg",
         location: "experience.canaccord.location",
         role: 'experience.canaccord.role',
         period: "experience.canaccord.period",
@@ -116,6 +120,7 @@ export const experiences: Experience[] = [
         id: 4,
         slug: "mapgears-gis-developer",
         company: "Mapgears",
+        logo: "logo-mapgears.png",
         location: "experience.mapgears.location",
         role: 'experience.mapgears.role',
         period: "experience.mapgears.period",

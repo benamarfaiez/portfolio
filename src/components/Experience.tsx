@@ -48,8 +48,20 @@ export default function Experience() {
                                                     <Briefcase size={18} className="text-blue-600" />
                                                     {t(exp.role)}
                                                 </h3>
-                                                <div className="text-lg font-medium text-blue-600 dark:text-blue-400">
-                                                    {exp.company}
+                                                <div className="flex items-center gap-3">
+                                                    {exp.logo && (
+                                                        <img
+                                                            src={exp.logo}
+                                                            alt={`${exp.company} logo`}
+                                                            className="h-8 object-contain rounded-md p-0.5"
+                                                            onError={(e) => {
+                                                                (e.target as HTMLImageElement).style.display = 'none';
+                                                            }}
+                                                        />
+                                                    )}
+                                                    <div className="text-lg font-medium text-blue-600 dark:text-blue-400">
+                                                        {exp.company}
+                                                    </div>
                                                 </div>
                                                 <div className="flex flex-wrap gap-4 text-sm text-slate-500 dark:text-slate-400">
                                                     <span className="flex items-center gap-1">
