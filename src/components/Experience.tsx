@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
-import { Calendar, MapPin, Briefcase } from 'lucide-react';
+import { Calendar, MapPin, Briefcase, ArrowRight } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
 import { experiences } from '../data/experiences';
 
 export default function Experience() {
@@ -66,7 +67,7 @@ export default function Experience() {
                                                 {t(exp.description)}
                                             </p>
 
-                                            <div className="space-y-3 mb-4">
+                                            <div className="space-y-3 mb-6">
                                                 {exp.projects.map((project, idx) => (
                                                     <div key={idx} className="pl-4 border-l-2 border-blue-100 dark:border-blue-900">
                                                         <h4 className="font-medium text-slate-900 dark:text-white text-sm">
@@ -79,7 +80,7 @@ export default function Experience() {
                                                 ))}
                                             </div>
 
-                                            <div className="flex flex-wrap gap-2 mt-4">
+                                            <div className="flex flex-wrap gap-2 mb-6">
                                                 {exp.technologies.map((tech, idx) => (
                                                     <span
                                                         key={idx}
@@ -89,6 +90,14 @@ export default function Experience() {
                                                     </span>
                                                 ))}
                                             </div>
+
+                                            <Link
+                                                to={`/experiences/${exp.slug}`}
+                                                className="inline-flex items-center gap-2 text-sm font-medium text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 transition-colors group"
+                                            >
+                                                {t('common.view_details') || "View Details"}
+                                                <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+                                            </Link>
                                         </div>
                                     </div>
                                 </div>
