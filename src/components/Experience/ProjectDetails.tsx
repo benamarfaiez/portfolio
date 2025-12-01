@@ -69,7 +69,8 @@ export default function ProjectDetails({
                     <div className="space-y-2 mt-2">
                         {project.realization.map((value, item) =>
                             <div className="flex items-start gap-2 ml-10" key={item}>
-                                <CheckCircle2 size={16} className="mt-1 text-blue-600 flex-shrink-0" />
+                                {value.indexOf('sous_tache') == -1 && <CheckCircle2 size={16} className="mt-1 text-blue-600 flex-shrink-0" />}
+                                {value.indexOf('sous_tache') != -1 && <p className='ml-5'>-</p>}
                                 <p className="text-slate-600 dark:text-slate-300">{t(value)}</p>
                             </div>
                         )}

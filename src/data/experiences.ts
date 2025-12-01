@@ -59,22 +59,57 @@ export const experiences: Experience[] = [
                 name: 'experience.henner.projects.ring_central.name',
                 details: 'experience.henner.projects.ring_central.details',
                 context: 'experience.henner.projects.ring_central.context',
-                realization: ['experience.henner.projects.ring_central.realization'],
+                realization: [
+                    'experience.henner.projects.ring_central.realization.tache1',
+                    'experience.henner.projects.ring_central.realization.tache2',
+                    'experience.henner.projects.ring_central.realization.tache3',
+                    'experience.henner.projects.ring_central.realization.tache4',
+                    'experience.henner.projects.ring_central.realization.tache5',
+                    'experience.henner.projects.ring_central.realization.tache6',
+                    'experience.henner.projects.ring_central.realization.tache7',
+                    'experience.henner.projects.ring_central.realization.tache8',
+                    'experience.henner.projects.ring_central.realization.tache9',
+                    'experience.henner.projects.ring_central.realization.tache10',
+                ],
                 technicalEnvironment: ['C#', '.NET 6', 'ASP.NET Core', 'Web API', 'Microservices', 'HttpClientFactory', 'Logging', 'Linq', 'Threading', 'AutoMapper', 'RingCentral', 'FluentValidation', 'Tests : Moq, xUnit (tests unitaires), Postman (tests API), FluentAssertions', 'Contrôle de version : Git, GitLab, CI/CD']
             },
             {
                 name: 'experience.henner.projects.broker.name',
                 details: 'experience.henner.projects.broker.details',
                 context: 'experience.henner.projects.broker.context',
-                realization: ['experience.henner.projects.broker.realization'],
+                realization: [
+                    'experience.henner.projects.broker.realization.tache1',
+                    'experience.henner.projects.broker.realization.tache2',
+                    'experience.henner.projects.broker.realization.tache3',
+                    'experience.henner.projects.broker.realization.tache4',
+                    'experience.henner.projects.broker.realization.tache5',
+                    'experience.henner.projects.broker.realization.tache6',
+                    'experience.henner.projects.broker.realization.tache7',
+                    'experience.henner.projects.broker.realization.tache8',
+                ],
                 technicalEnvironment: ['.NET 6', 'C#', 'WebApi', 'RestApi', 'Dapper/SqlMapper', 'xUnit', 'Moq', 'FluentMigrator', 'SonarQube', 'AutoMapper', 'SQL/PostgreSQL', 'Pattern Repository, Unit Of Work, Dependency injection, Factory', 'Visual Studio, Postman, Bitbucket, Git/GitLab, Sharepoint']
             },
             {
                 name: 'experience.henner.projects.migration.name',
                 details: 'experience.henner.projects.migration.details',
                 context: 'experience.henner.projects.migration.context',
-                realization: ['experience.henner.projects.migration.realization'],
-                technicalEnvironment: ['.NET 8', 'C#', 'LibGit2Sharp', 'ClosedXML', 'Serilog', 'NuGet', 'PowerShell', 'Git, GitLab, CI/CD, Nexus, Xunit, AutoMapper']
+                realization: [
+                    'experience.henner.projects.migration.realization.tache1',
+                    'experience.henner.projects.migration.realization.tache2',
+                    'experience.henner.projects.migration.realization.tache3.titre',
+                    'experience.henner.projects.migration.realization.tache3.sous_tache1',
+                    'experience.henner.projects.migration.realization.tache3.sous_tache2',
+                    'experience.henner.projects.migration.realization.tache3.sous_tache3',
+                    'experience.henner.projects.migration.realization.tache3.sous_tache4',
+                    'experience.henner.projects.migration.realization.tache3.sous_tache5',
+                    'experience.henner.projects.migration.realization.tache3.sous_tache6',
+                    'experience.henner.projects.migration.realization.tache3.sous_tache7',
+                    'experience.henner.projects.migration.realization.tache3.sous_tache8',
+                    'experience.henner.projects.migration.realization.tache3.sous_tache9',
+                    'experience.henner.projects.migration.realization.tache4',
+                    'experience.henner.projects.migration.realization.tache5'
+                ],
+                technicalEnvironment: ['.NET 6', '.NET 8', 'C#', 'LibGit2Sharp', 'ClosedXML', 'Serilog', 'NuGet', 'PowerShell', 'GitLab', 'CI/CD', 'Nexus', 'Xunit', 'AutoMapper']
             }
         ],
         technologies: ["C#", ".NET 6", "Microservices", "Docker", "SQL Server", "PostgreSQL", "MySQL", "Xunit", "GitLab"]
