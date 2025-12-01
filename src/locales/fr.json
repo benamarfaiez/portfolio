@@ -155,7 +155,7 @@
         "mapgears": {
             "location": "Tunis / à distance",
             "period": "Fév 2020 - Juin 2020",
-            "role": "Stagiaire PFE",
+            "role": "Stage de fin d'étude",
             "description": "Conception et réalisation d'une application web de visualisation d'images satellites.",
             "projects": {
                 "sentinel": {
@@ -171,6 +171,23 @@
                         "tache6": "Rédaction de documentations techniques et fonctionnelles, y compris la création de diagrammes UML et la rédaction du cahier des charges.",
                         "tache7": "Intégration des bibliothèques GDAL/OGR pour manipuler les données géographiques avec précision et efficacité.",
                         "tache8": "Intégration de MapServer pour le rendu dynamique des images géospatiales sur une carte web, permettant un affichage efficace des couches de données spatiales."
+                    }
+                }
+            }
+        },
+        "zetaBox": {
+            "location": "Sfax, Tunisie",
+            "period": "Juil 2019 - Aout 2019",
+            "role": "Stage Ingénieur Informatique",
+            "description": "Développement et conception d'une application web permettant de gérer les objets connectés d'une manière plus simple à l’aide de protocol TR-369.",
+            "projects": {
+                "iot": {
+                    "name": "Gestion des objets connectés",
+                    "context": "Développement et conception d'une solution web pour gérer les objets connectés d'une manière plus simple à l’aide de protocol TR-369.",
+                    "details": "Application web permettant de gérer les objets connectés d'une manière plus simple à l’aide de protocol TR-369.",
+                    "realization": {
+                        "tache1": "t1",
+                        "tache2": "t2"
                     }
                 }
             }

@@ -220,5 +220,37 @@ export const experiences: Experience[] = [
             }
         ],
         technologies: ["OpenLayers", "Flask", "PostGIS", "Python", "JavaScript"]
+    },
+    {
+        id: 5,
+        slug: "zeta-box-developer",
+        company: "zeta-Box",
+        logo: "logo-zetaBox.png",
+        location: "experience.zetaBox.location",
+        role: 'experience.zetaBox.role',
+        period: "experience.zetaBox.period",
+        description: 'experience.zetaBox.description',
+        challenges: "experience.zetaBox.challenges",
+        solutions: "experience.zetaBox.solutions",
+        results: "experience.zetaBox.results",
+        projects: [
+            {
+                name: 'experience.zetaBox.projects.iot.name',
+                details: 'experience.zetaBox.projects.iot.details',
+                context: 'experience.zetaBox.projects.iot.context',
+                realization: [
+                    'experience.zetaBox.projects.iot.realization.tache1',
+                    'experience.zetaBox.projects.iot.realization.tache2',
+                    'experience.zetaBox.projects.iot.realization.tache3',
+                    'experience.zetaBox.projects.iot.realization.tache4',
+                    'experience.zetaBox.projects.iot.realization.tache5',
+                    'experience.zetaBox.projects.iot.realization.tache6',
+                    'experience.zetaBox.projects.iot.realization.tache7',
+                    'experience.zetaBox.projects.iot.realization.tache8'
+                ],
+                technicalEnvironment: ["Angular 8", "NodeJS", "TR-369", "JavaScript", "STOMP", "RabbitMQ", "IoT", "Rasbery Pi"]
+            }
+        ],
+        technologies: ["Angular 8", "NodeJS", "TR-369", "JavaScript", "STOMP", "RabbitMQ", "IoT", "Rasbery Pi"]
     }
 ];
