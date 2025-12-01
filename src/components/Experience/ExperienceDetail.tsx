@@ -1,6 +1,6 @@
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowLeft, ChevronLeft, ChevronRight } from 'lucide-react';
+import { ArrowLeft } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { experiences } from '../../data/experiences';
 import ProjectDetails from './ProjectDetails';
@@ -71,38 +71,21 @@ export default function ExperienceDetail() {
                         {/* Main Content */}
                         <div className="lg:col-span-2 space-y-8">
                             {/* Projects */}
-                            <ProjectDetails project={experience.projects[currentProjectIndex]} />
-                            <div className="flex items-center justify-between mb-4">
-                                <button
-                                    onClick={prevProject}
-                                    disabled={currentProjectIndex === 0}
-                                    className={`p-2 rounded-full transition-colors ${currentProjectIndex === 0
-                                        ? 'text-slate-300 dark:text-slate-700 cursor-not-allowed'
-                                        : 'text-blue-600 hover:bg-blue-50 dark:text-blue-400 dark:hover:bg-blue-900/30'
-                                        }`}
-                                >
-                                    <ChevronLeft size={24} />
-                                </button>
-                                <span className="text-sm font-medium text-slate-500 dark:text-slate-400">
-                                    Project {currentProjectIndex + 1} of {experience.projects.length}
-                                </span>
-                                <button
-                                    onClick={nextProject}
-                                    disabled={currentProjectIndex === experience.projects.length - 1}
-                                    className={`p-2 rounded-full transition-colors ${currentProjectIndex === experience.projects.length - 1
-                                        ? 'text-slate-300 dark:text-slate-700 cursor-not-allowed'
-                                        : 'text-blue-600 hover:bg-blue-50 dark:text-blue-400 dark:hover:bg-blue-900/30'
-                                        }`}
-                                >
-                                    <ChevronRight size={24} />
-                                </button>
-                            </div>
+                            <ProjectDetails
+                                project={experience.projects[currentProjectIndex]}
+                                onNext={nextProject}
+                                onPrev={prevProject}
+                                hasNext={currentProjectIndex < experience.projects.length - 1}
+                                hasPrev={currentProjectIndex > 0}
+                                currentIndex={currentProjectIndex}
+                                totalProjects={experience.projects.length}
+                            />
                         </div>
 
                         {/* Sidebar */}
                         <div className="space-y-8">
                             {/* Tech Stack */}
-                            <section className="bg-white dark:bg-slate-900 rounded-2xl p-6 shadow-sm border border-slate-100 dark:border-slate-800">
+                            <section id='tech_stack' className="bg-white dark:bg-slate-900 rounded-2xl p-6 shadow-sm border border-slate-100 dark:border-slate-800">
                                 <h2 className="text-lg font-bold text-slate-900 dark:text-white mb-4">Tech Stack</h2>
                                 <div className="flex flex-wrap gap-2">
                                     {experience.projects[currentProjectIndex].technicalEnvironment.map((tech, idx) => (
