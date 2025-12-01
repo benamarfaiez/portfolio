@@ -24,7 +24,7 @@
             "projects": {
                 "push_notification": {
                     "name": "Projet PushNotification",
-                    "details": "Gestion des notifications batch via Airship.",
+                    "details": "Batch C# pour envoi de notifications aux applications mobiles.",
                     "context": "Conception et développement d'un batch de notifications dont l'objectif est d'automatiser la récupération et la mise à jour des données de la BDD, ainsi que l'envoi de notifications aux applications mobiles (Android et Ios) via le tiers Airship.",
                     "realization": {
                         "tache1": "Structuration du projet autour d'une architecture solide pour assurer une séparation des responsabilités optimales et une maintenabilité.",
@@ -38,7 +38,7 @@
                 },
                 "ring_central": {
                     "name": "Projet RingCentral",
-                    "details": "Webhook .NET 6 microservices, appels parallèles, authentification par instance.",
+                    "details": "Webhook qui traite en temps réel les courriels issus de RingCentral.",
                     "context": "Conception et développement d'un Webhook en .NET 6 au sein d'une architecture Microservices pour le traitement en temps réel des messages utilisateurs et des pièces jointes de courriels.",
                     "realization": {
                         "tache1": "Développement des API REST pour permettre aux gestionnaires de récupérer les pièces jointes des courriels, obtenir les détails d'un message spécifique et lister tous les messages d'un agent sur toutes les instances.",
@@ -55,8 +55,8 @@
                 },
                 "broker": {
                     "name": "Projet Courtier",
-                    "details": "Refonte de la gestion des tâches payantes.",
-                    "context": "Refonte d'un système de gestion des tâches payants pour remplacer l'existant au sein du projet Web API.",
+                    "details": "Refonte de la gestion des tâches au sein du projet Web API.",
+                    "context": "Refonte d'un système de gestion des tâches pour remplacer l'existant au sein du projet Web API.",
                     "realization": {
                         "tache1": "Conception et modélisation de la base de données, avec définition du schéma relationnel et développement de scripts de migration BD via FluentMigrator.",
                         "tache2": "Développement d'un repository dédié à la gestion des tâches, incluant les opérations de création, modification, récupération et recherche multicritères avec ajout de fonctionnalités de tri et de pagination ainsi que la gestion des commentaires associés.",
@@ -70,7 +70,7 @@
                 },
                 "migration": {
                     "name": "Migration .NET",
-                    "details": "Migration massive .NET 6 → .NET 8 de +100 projets avec outil d'automatisation maison.",
+                    "details": "Migration de projets .NET 6 vers .NET 8",
                     "context": "Migration de plus de 100 projets interdépendants (SDK, API, Services) de .NET 6 vers .NET 8, avec développement d'un outil interne pour automatiser et sécuriser le processus.",
                     "realization": {
                         "tache1": "Développement d'un projet console pour automatiser la migration des projets .NET 6 vers .NET 8.",
