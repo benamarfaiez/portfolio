@@ -20,7 +20,7 @@
             "location": "Nantes, France",
             "period": "Nov 2024 - Oct 2025",
             "role": "Ingénieur Backend",
-            "description": "Développement et maintenance de microservices critiques pour la gestion des notifications et des courtiers.",
+            "description": "Implémentation de solutions back-end destinées à remplacer l'ESB, en se concentrant sur une architecture modulaire, la maintenabilité et la couverture exhaustive par tests unitaires.",
             "projects": {
                 "push_notification": {
                     "name": "Projet PushNotification",

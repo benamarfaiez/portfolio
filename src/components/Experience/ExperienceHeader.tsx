@@ -45,7 +45,7 @@ export default function ExperienceHeader({ experience }: ExperienceHeaderProps) 
             </div>
 
             <p className="text-slate-600 dark:text-slate-300 text-lg leading-relaxed">
-                {t(experience.longDescription || experience.description)}
+                {t(experience.description)}
             </p>
         </div>
     );

@@ -15,7 +15,6 @@ export interface Experience {
     role: string;
     period: string;
     description: string;
-    longDescription?: string;
     missions?: string[];
     challenges?: string;
     solutions?: string;
@@ -35,7 +34,6 @@ export const experiences: Experience[] = [
         role: 'experience.henner.role',
         period: "experience.henner.period",
         description: 'experience.henner.description',
-        longDescription: "experience.henner.longDescription",
         challenges: "experience.henner.challenges",
         solutions: "experience.henner.solutions",
         results: "experience.henner.results",
@@ -123,7 +121,6 @@ export const experiences: Experience[] = [
         role: 'experience.euro_information.role',
         period: "experience.euro_information.period",
         description: 'experience.euro_information.description',
-        longDescription: "experience.euro_information.longDescription",
         challenges: "experience.euro_information.challenges",
         solutions: "experience.euro_information.solutions",
         results: "experience.euro_information.results",
@@ -163,7 +160,6 @@ export const experiences: Experience[] = [
         role: 'experience.canaccord.role',
         period: "experience.canaccord.period",
         description: 'experience.canaccord.description',
-        longDescription: "experience.canaccord.longDescription",
         challenges: "experience.canaccord.challenges",
         solutions: "experience.canaccord.solutions",
         results: "experience.canaccord.results",
@@ -202,7 +198,6 @@ export const experiences: Experience[] = [
         role: 'experience.mapgears.role',
         period: "experience.mapgears.period",
         description: 'experience.mapgears.description',
-        longDescription: "experience.mapgears.longDescription",
         challenges: "experience.mapgears.challenges",
         solutions: "experience.mapgears.solutions",
         results: "experience.mapgears.results",
