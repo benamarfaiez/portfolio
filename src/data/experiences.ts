@@ -172,8 +172,23 @@ export const experiences: Experience[] = [
                 name: 'experience.canaccord.projects.investment_platform.name',
                 details: 'experience.canaccord.projects.investment_platform.details',
                 context: 'experience.canaccord.projects.investment_platform.context',
-                realization: ['experience.canaccord.projects.investment_platform.realization'],
-                technicalEnvironment: ['Angular 13', '.NET Core', 'Azure Blob Storage', 'SQL Server']
+                realization: [
+                    'experience.canaccord.projects.investment_platform.realization.tache1',
+                    'experience.canaccord.projects.investment_platform.realization.tache2',
+                    'experience.canaccord.projects.investment_platform.realization.tache3',
+                    'experience.canaccord.projects.investment_platform.realization.tache4',
+                    'experience.canaccord.projects.investment_platform.realization.tache5',
+                    'experience.canaccord.projects.investment_platform.realization.tache6',
+                    'experience.canaccord.projects.investment_platform.realization.tache7',
+                    'experience.canaccord.projects.investment_platform.realization.tache8',
+                    'experience.canaccord.projects.investment_platform.realization.tache9',
+                    'experience.canaccord.projects.investment_platform.realization.tache10',
+                    'experience.canaccord.projects.investment_platform.realization.tache11',
+                    'experience.canaccord.projects.investment_platform.realization.tache12',
+                    'experience.canaccord.projects.investment_platform.realization.tache13',
+                    'experience.canaccord.projects.investment_platform.realization.tache14'
+                ],
+                technicalEnvironment: ['ASP.net core', 'C#', 'Entity Framework', 'LINQ', 'SQL server', 'Xunit', 'Jasmine/Karma', 'Azure Devops', 'Blob Storage', 'Visual Studio', 'VS code', 'Postman', 'Jira', 'Bitbucket', 'SourceTree', 'Zeplin', 'Angular13', 'Bootstrap', 'RxJS', 'TS', 'JS', 'Scss/Css', 'HTML', 'Json']
             }
         ],
         technologies: ["Angular 13", ".NET Core", "Azure Blob Storage", "SQL Server"]
@@ -196,8 +211,17 @@ export const experiences: Experience[] = [
                 name: 'experience.mapgears.projects.sentinel.name',
                 details: 'experience.mapgears.projects.sentinel.details',
                 context: 'experience.mapgears.projects.sentinel.context',
-                realization: ['experience.mapgears.projects.sentinel.realization'],
-                technicalEnvironment: ['OpenLayers', 'Flask', 'PostGIS', 'Python', 'JavaScript']
+                realization: [
+                    'experience.mapgears.projects.sentinel.realization.tache1',
+                    'experience.mapgears.projects.sentinel.realization.tache2',
+                    'experience.mapgears.projects.sentinel.realization.tache3',
+                    'experience.mapgears.projects.sentinel.realization.tache4',
+                    'experience.mapgears.projects.sentinel.realization.tache5',
+                    'experience.mapgears.projects.sentinel.realization.tache6',
+                    'experience.mapgears.projects.sentinel.realization.tache7',
+                    'experience.mapgears.projects.sentinel.realization.tache8'
+                ],
+                technicalEnvironment: ['Python 3.8', 'Open Layers', 'MapServer', 'GDAL/OGR', 'Geojson', 'Flask', 'OpenStreetMap', 'SENTINEL-2', 'GitHub', 'PostgreSQL', 'PostGIS']
             }
         ],
         technologies: ["OpenLayers", "Flask", "PostGIS", "Python", "JavaScript"]

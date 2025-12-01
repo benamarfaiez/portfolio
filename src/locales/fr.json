@@ -131,7 +131,24 @@
             "projects": {
                 "investment_platform": {
                     "name": "Plateforme d'investissement",
-                    "details": "Développement pour CG Direct, Morgan Stanley, Bamboo."
+                    "context": "Développement et conception des solutions web multi-browser et responsives qui permet à nos utilisateurs de faire l'inscription sur une plateforme d'investissement à la bourse canadienne: (Projet: CG Direct , Morgan Stanley, Bamboo).",
+                    "details": "Développement pour CG Direct, Morgan Stanley, Bamboo.",
+                    "realization": {
+                        "tache1": "Adaptation et création des nouvelles interfaces utilisateur avec des composants dynamiques et réutilisables.",
+                        "tache2": "Collaboration avec l'équipe UX/UI pour garantir une expérience utilisateur optimale.",
+                        "tache3": "Organisation de workshops pour le partage de connaissance avec les membres de l'équipe.",
+                        "tache4": "Implémentation d'un service d'envoi d'emails via un serveur SMTP, incluant la configuration du client SMTP, la création de templates d'emails au format CSHTML, ainsi que l'envoi d'emails avec pièces jointes.",
+                        "tache5": "Implémentations des tests unitaires (backend: xUnit et frontend: Jasmine).",
+                        "tache6": "Implémentation de services backend permettant la gestion des actions Blob, incluant la connexion au stockage Blob, l'autorisation d'accès via Default Azure Credential, ainsi que le téléchargement, l'upload, la suppression et la recherche de documents de blocs.",
+                        "tache7": "Création de contrôleurs pour fournir des API assurant la gestion des documents.",
+                        "tache8": "Consommation des API côté frontend, assurant une interaction fluide entre le front-end et les services backend pour la gestion des documents.",
+                        "tache9": "Analyse des besoins techniques des utilisateurs.",
+                        "tache10": "Code Refactoring, pair programming.",
+                        "tache11": "Code review.",
+                        "tache12": "Maintenance et correction de bugs.",
+                        "tache13": "Réalise les développements des tests unitaires.",
+                        "tache14": "Déploiement et le suivi en production en Azure Devops."
+                    }
                 }
             }
         },
@@ -143,7 +160,18 @@
             "projects": {
                 "sentinel": {
                     "name": "Visualisation Sentinel-2",
-                    "details": "Application web de visualisation d’images satellites Sentinel-2."
+                    "context": "Développement et conception d'une solution web pour visualiser facilement les données géographiques récentes et passées sur une carte dynamique à l'aide d'un ensemble des images géospatiales récupérées du satellite Sentinel-2 d'une façon périodique.",
+                    "details": "Application web de visualisation d'images satellites Sentinel-2.",
+                    "realization": {
+                        "tache1": "Conception d'une application de cartographie interactive.",
+                        "tache2": "Communication avec Sentinel-2 via une API REST pour récupérer les images satellites correspondant à une zone d'intérêt définie, sur un intervalle de temps et une fréquence d'actualisation spécifiés par l'utilisateur.",
+                        "tache3": "Téléchargement des images satellites provenant de Sentinel-2 et traitement des données géospatiales associées.",
+                        "tache4": "Stockage et gestion des données géographiques dans une base de données PostgreSQL avec l'extension PostGIS pour effectuer des analyses spatiales et matricielles.",
+                        "tache5": " Affichage interactif des données sur une carte OpenLayers, avec la possibilité de zoomer, dézoomer et se déplacer sur la carte, permettant une exploration détaillée des zones d'intérêt.",
+                        "tache6": "Rédaction de documentations techniques et fonctionnelles, y compris la création de diagrammes UML et la rédaction du cahier des charges.",
+                        "tache7": "Intégration des bibliothèques GDAL/OGR pour manipuler les données géographiques avec précision et efficacité.",
+                        "tache8": "Intégration de MapServer pour le rendu dynamique des images géospatiales sur une carte web, permettant un affichage efficace des couches de données spatiales."
+                    }
                 }
             }
         }
