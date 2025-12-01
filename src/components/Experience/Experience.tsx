@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { Calendar, MapPin, Briefcase, ArrowRight } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
-import { experiences } from '../data/experiences';
+import { experiences } from '../../data/experiences';
 
 export default function Experience() {
     const { t } = useTranslation();
