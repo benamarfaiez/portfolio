@@ -110,7 +110,7 @@ export const experiences: Experience[] = [
                 technicalEnvironment: ['.NET 6', '.NET 8', 'C#', 'LibGit2Sharp', 'ClosedXML', 'Serilog', 'NuGet', 'PowerShell', 'GitLab', 'CI/CD', 'Nexus', 'Xunit', 'AutoMapper']
             }
         ],
-        technologies: ["C#", ".NET 6", "Microservices", "Docker", "SQL Server", "PostgreSQL", "MySQL", "Xunit", "GitLab"]
+        technologies: ["C#", ".NET 6", "Microservices", "Docker", "SQL", "Xunit", "GitLab"]
     },
     {
         id: 2,
@@ -149,7 +149,7 @@ export const experiences: Experience[] = [
                 technicalEnvironment: ['ASP.net', 'framework 4.8', 'C#', 'Entity Framework', 'API REST', 'IIS', 'NUnit', 'SQL Server', 'SSMS', 'Angular12', 'Bootstrap', 'RxJS', 'TypeScript', 'JavaScript', 'Css/Scss', 'HTML', 'PDF.js', 'Ngx-Videogular', 'Jasmine', 'Json', 'Visual Studio', 'Visual Studio code', 'Postman', 'TFS', 'Bitbucket', 'GitLab', 'Sharepoint', 'Zeplin']
             }
         ],
-        technologies: ["Angular 12", ".NET 4.8", "C#", "SQL Server", "HTML/CSS"]
+        technologies: ["Angular 12", ".NET framework 4.8", "C#", "SQL Server", "Azure"]
     },
     {
         id: 3,
@@ -187,7 +187,7 @@ export const experiences: Experience[] = [
                 technicalEnvironment: ['ASP.net core', 'C#', 'Entity Framework', 'LINQ', 'SQL server', 'Xunit', 'Jasmine/Karma', 'Azure Devops', 'Blob Storage', 'Visual Studio', 'VS code', 'Postman', 'Jira', 'Bitbucket', 'SourceTree', 'Zeplin', 'Angular13', 'Bootstrap', 'RxJS', 'TS', 'JS', 'Scss/Css', 'HTML', 'Json']
             }
         ],
-        technologies: ["Angular 13", ".NET Core", "Azure Blob Storage", "SQL Server"]
+        technologies: ["Angular 13", ".NET Core 3.1", "Azure Blob Storage", "SQL Server"]
     },
     {
         id: 4,
@@ -219,7 +219,7 @@ export const experiences: Experience[] = [
                 technicalEnvironment: ['Python 3.8', 'Open Layers', 'MapServer', 'GDAL/OGR', 'Geojson', 'Flask', 'OpenStreetMap', 'SENTINEL-2', 'GitHub', 'PostgreSQL', 'PostGIS']
             }
         ],
-        technologies: ["OpenLayers", "Flask", "PostGIS", "Python", "JavaScript"]
+        technologies: ["Python 3.8", "OpenLayers", "Flask", "PostGIS", "JavaScript"]
     },
     {
         id: 5,
