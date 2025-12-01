@@ -1,6 +1,7 @@
 {
     "common": {
-        "back_to_list": "Back to list"
+        "back_to_list": "Back to list",
+        "view_details": "View details"
     },
     "hero": {
         "title": "Full-Stack .NET / Angular Engineer",

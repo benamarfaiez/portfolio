@@ -93,7 +93,7 @@ export default function ExperienceDetail() {
                         {/* Main Content */}
                         <div className="lg:col-span-2 space-y-8">
                             {/* Projects */}
-                            <section className="bg-white dark:bg-slate-900 rounded-2xl p-8 shadow-sm border border-slate-100 dark:border-slate-800">
+                            <section id="projects_details" className="bg-white dark:bg-slate-900 rounded-2xl p-8 shadow-sm border border-slate-100 dark:border-slate-800">
                                 <h2 className="text-xl font-bold text-slate-900 dark:text-white mb-6">Key Projects</h2>
                                 <div className="space-y-6">
                                     {experience.projects.map((project, idx) => (
@@ -101,17 +101,28 @@ export default function ExperienceDetail() {
                                             <h3 className="font-bold text-slate-900 dark:text-white mb-2">
                                                 {t(project.name)}
                                             </h3>
-                                            <p className="text-slate-600 dark:text-slate-300">
-                                                <span className="font-bold">Contexte : </span>{t(project.context)}
+                                            <h3 className=" font-bold text-slate-600 dark:text-slate-300">
+                                                Contexte :
+                                            </h3>
+                                            <p className="ml-10 text-slate-600 dark:text-slate-300">
+                                                {t(project.context)}
                                             </p>
-                                            <p className="text-slate-600 dark:text-slate-300">
-                                                <span className="font-bold">Prestation réalisée : </span>
-                                                {t(project.realization)}
-                                            </p>
-                                            <p className="text-slate-600 dark:text-slate-300">
-                                                <span className="font-bold">Environnement technique : </span>
-                                                {t(project.technicalEnvironment)}
-                                            </p>
+                                            <h3 className="font-bold text-slate-600 dark:text-slate-300">
+                                                Prestation réalisée :
+                                            </h3>
+                                            {project.realization.map((value, item) =>
+                                                <p className="ml-10 text-slate-600 dark:text-slate-300" key={item}>{t(value)}</p>
+                                            )}
+                                            <h3 className="font-bold text-slate-600 dark:text-slate-300">
+                                                Environnement technique :
+                                            </h3>
+                                            <div className="ml-10">
+                                                {project.technicalEnvironment.map((value, item) =>
+                                                    <span key={item}>
+                                                        {t(value) + ', '}
+                                                    </span>
+                                                )}
+                                            </div>
                                         </div>
                                     ))}
                                 </div>
