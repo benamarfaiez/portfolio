@@ -29,7 +29,7 @@ export default function ProjectDetails({
                 <h2 className="text-xl font-bold text-slate-900 dark:text-white">
                     {t(project.name)}
                 </h2>
-                <div className="flex items-center gap-4">
+                {totalProjects > 1 && <div id='projects_navigation' className="flex items-center gap-4">
                     <button
                         onClick={onPrev}
                         disabled={!hasPrev}
@@ -53,7 +53,7 @@ export default function ProjectDetails({
                     >
                         <ChevronRight size={24} />
                     </button>
-                </div>
+                </div>}
             </div>
             <div className="space-y-6">
                 <div className="border-l-4 border-blue-600 pl-4 py-1">

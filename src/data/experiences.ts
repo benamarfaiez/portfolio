@@ -132,9 +132,24 @@ export const experiences: Experience[] = [
                 name: 'experience.euro_information.projects.pixis.name',
                 details: 'experience.euro_information.projects.pixis.details',
                 context: 'experience.euro_information.projects.pixis.context',
-                realization: ['experience.euro_information.projects.pixis.realization'],
-                technicalEnvironment: ["Angular 12", ".NET 4.8", "C#", "SQL Server", "HTML/CSS"]
-
+                realization: [
+                    'experience.euro_information.projects.pixis.realization.tache1',
+                    'experience.euro_information.projects.pixis.realization.tache2',
+                    'experience.euro_information.projects.pixis.realization.tache3',
+                    'experience.euro_information.projects.pixis.realization.tache4',
+                    'experience.euro_information.projects.pixis.realization.tache5',
+                    'experience.euro_information.projects.pixis.realization.tache6',
+                    'experience.euro_information.projects.pixis.realization.tache7',
+                    'experience.euro_information.projects.pixis.realization.tache8',
+                    'experience.euro_information.projects.pixis.realization.tache9',
+                    'experience.euro_information.projects.pixis.realization.tache10',
+                    'experience.euro_information.projects.pixis.realization.tache11',
+                    'experience.euro_information.projects.pixis.realization.tache12',
+                    'experience.euro_information.projects.pixis.realization.tache13',
+                    'experience.euro_information.projects.pixis.realization.tache14',
+                    'experience.euro_information.projects.pixis.realization.tache15'
+                ],
+                technicalEnvironment: ['ASP.net', 'framework 4.8', 'C#', 'Entity Framework', 'API REST', 'IIS', 'NUnit', 'SQL Server', 'SSMS', 'Angular12', 'Bootstrap', 'RxJS', 'TypeScript', 'JavaScript', 'Css/Scss', 'HTML', 'PDF.js', 'Ngx-Videogular', 'Jasmine', 'Json', 'Visual Studio', 'Visual Studio code', 'Postman', 'TFS', 'Bitbucket', 'GitLab', 'Sharepoint', 'Zeplin']
             }
         ],
         technologies: ["Angular 12", ".NET 4.8", "C#", "SQL Server", "HTML/CSS"]

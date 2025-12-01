@@ -101,7 +101,25 @@
             "projects": {
                 "pixis": {
                     "name": "Projet PIXIS",
-                    "details": "Visionneuse universelle de documents (PDF, HTML, vidéo, image) intégrée aux applications bancaires."
+                    "details": "Visionneuse universelle de documents (PDF, HTML, vidéo, image) intégrée aux applications bancaires.",
+                    "context": "Conception, développement et mise en œuvre d'une plateforme permettant la gestion des documents.",
+                    "realization": {
+                        "tache1": "Intégration de diverses bibliothèques permettant l'affichage et le téléchargement de tous types de documents tels que HTML, PDF, vidéos, images, ...",
+                        "tache2": "Analyse et traitement des documents HTML extraits de la base de données avec des bibliothèques de parsing.",
+                        "tache3": "Implémentation des services pour assurer la communication et l'échange de données entre le back-end et le front-end",
+                        "tache4": "Mise en place d'un système de routage pour permettre la navigation entre les documents sans recharger la page.",
+                        "tache5": "Création d'une fonctionnalité de recherche dans le document.",
+                        "tache6": "Intégration du design proposé par l'équipe d'ergonomie",
+                        "tache7": "Gestion de l'historique des documents consultés",
+                        "tache8": "Implémentation de la fonctionnalité de déclaration d'anomalies pour signaler des problèmes dans les documents consultés",
+                        "tache9": "Développement de la fonctionnalité de gestion des favoris.",
+                        "tache10": "Rédaction de documentation technique",
+                        "tache11": "Optimisation des performances de l'application grâce à l'implémentation de caches dans les API.",
+                        "tache12": "Implémentation des tests unitaires.",
+                        "tache13": "Maintenance et correction de bugs.",
+                        "tache14": "Code review.",
+                        "tache15": " Code Refactoring."
+                    }
                 }
             }
         },
@@ -112,7 +130,7 @@
             "description": "Développement de plateformes d'investissement pour le marché boursier canadien.",
             "projects": {
                 "investment_platform": {
-                    "name": "Plateforme d’investissement",
+                    "name": "Plateforme d'investissement",
                     "details": "Développement pour CG Direct, Morgan Stanley, Bamboo."
                 }
             }
