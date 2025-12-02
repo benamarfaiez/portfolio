@@ -11,6 +11,9 @@ export default {
             tsconfig: 'tsconfig.app.json',
         }],
     },
+    transformIgnorePatterns: [
+        'node_modules/(?!(react-router|react-router-dom|@remix-run)/)',
+    ],
     testPathIgnorePatterns: ['/node_modules/', '/e2e/'],
     collectCoverage: true,
     collectCoverageFrom: [
