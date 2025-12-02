@@ -2,12 +2,12 @@ import { test, expect } from '@playwright/test';
 
 test.describe('Portfolio E2E', () => {
     const navLinksFr = [
-        { text: 'À propos', href: '#about' },
-        { text: 'Expériences', href: '#experience' },
-        { text: 'Compétences', href: '#skills' },
-        { text: 'Formation', href: '#education' },
-        { text: 'Certifications', href: '#certifications' },
-        { text: 'Contact', href: '#contact' }
+        { text: 'À propos', href: '/#about' },
+        { text: 'Expériences', href: '/#experience' },
+        { text: 'Compétences', href: '/#skills' },
+        { text: 'Formation', href: '/#education' },
+        { text: 'Certifications', href: '/#certifications' },
+        { text: 'Contact', href: '/#contact' }
     ];
 
     // Force French locale for consistent testing
@@ -17,7 +17,7 @@ test.describe('Portfolio E2E', () => {
         await page.goto('/');
         await page.waitForLoadState('domcontentloaded');
         // Wait for the app to be hydrated by checking for the main heading
-        await expect(page.locator('h1').first()).toBeVisible({ timeout: 10000 });
+        await expect(page.locator('h1').first()).toBeVisible({ timeout: 1000 });
     });
 
     test.afterEach(async ({ page }) => {
@@ -50,7 +50,7 @@ test.describe('Portfolio E2E', () => {
 
             // Test clicking a link
             await desktopNav.getByRole('link', { name: navLinksFr[0].text, exact: true }).click();
-            await expect(page).toHaveURL(/#about/);
+            await expect(page).toHaveURL('/');
         });
 
         test('mobile navigation works', async ({ page }) => {
@@ -80,7 +80,7 @@ test.describe('Portfolio E2E', () => {
             await page.waitForTimeout(500);
 
             // Menu should close (optional check) and URL update
-            await expect(page).toHaveURL(/#about/);
+            await expect(page).toHaveURL('/');
         });
 
         test('scroll to top button works', async ({ page }) => {
