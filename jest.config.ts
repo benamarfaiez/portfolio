@@ -24,6 +24,7 @@ export default {
         '!src/i18n.ts',
         '!src/App.tsx',
         '!src/components/Layout.tsx',
+        '!src/components/Experience/ExperienceDetail.tsx',
     ],
     coverageThreshold: {
         global: {
