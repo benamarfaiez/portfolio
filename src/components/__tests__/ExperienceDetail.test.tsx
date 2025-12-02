@@ -1,5 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import { experiences } from '../../data/experiences';
+import ExperienceDetail from '../Experience/ExperienceDetail';
+import { LinkProps } from 'react-router-dom';
 
 // Mock scroll to top
 window.scrollTo = jest.fn();
@@ -9,11 +11,8 @@ const mockNavigate = jest.fn();
 jest.mock('react-router-dom', () => ({
     useParams: () => ({ slug: 'euro-information-developer' }),
     useNavigate: () => mockNavigate,
-    Link: ({ children, to, ...props }: any) => <a href={to} {...props}>{children}</a>,
+    Link: ({ children, to, ...props }: React.PropsWithChildren<LinkProps>) => <a href={to as string} {...props}>{children}</a>,
 }));
-
-// Import component AFTER mocks are set up
-import ExperienceDetail from '../Experience/ExperienceDetail';
 
 describe('ExperienceDetail Component', () => {
     const validSlug = 'euro-information-developer';

@@ -1,5 +1,6 @@
 import { render, screen, fireEvent } from '@testing-library/react';
 import Layout from '../Layout';
+import { LinkProps } from 'react-router-dom';
 
 // Mock hooks
 const mockToggleTheme = jest.fn();
@@ -14,7 +15,7 @@ const mockNavigate = jest.fn();
 jest.mock('react-router-dom', () => ({
     useNavigate: () => mockNavigate,
     useLocation: () => ({ pathname: '/', hash: '' }),
-    Link: ({ children, to, className }: any) => <a href={to} className={className}>{children}</a>,
+    Link: ({ children, to, ...props }: React.PropsWithChildren<LinkProps>) => <a href={to as string} {...props}>{children}</a>,
 }));
 
 // Mock scrollIntoView

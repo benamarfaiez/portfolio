@@ -1,9 +1,10 @@
 import { render, screen } from '@testing-library/react';
 import { experiences } from '../../data/experiences';
+import { LinkProps } from 'react-router-dom';
 
 // Mock react-router-dom to avoid ESM import issues
 jest.mock('react-router-dom', () => ({
-    Link: ({ children, to, ...props }: any) => <a href={to} {...props}>{children}</a>,
+    Link: ({ children, to, ...props }: React.PropsWithChildren<LinkProps>) => <a href={to as string} {...props}>{children}</a>,
 }));
 
 // Import component AFTER mocks are set up
