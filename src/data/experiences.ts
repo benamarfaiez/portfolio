@@ -246,11 +246,12 @@ export const experiences: Experience[] = [
                     'experience.zetaBox.projects.iot.realization.tache5',
                     'experience.zetaBox.projects.iot.realization.tache6',
                     'experience.zetaBox.projects.iot.realization.tache7',
-                    'experience.zetaBox.projects.iot.realization.tache8'
+                    'experience.zetaBox.projects.iot.realization.tache8',
+                    'experience.zetaBox.projects.iot.realization.tache9'
                 ],
-                technicalEnvironment: ["Angular 8", "NodeJS", "TR-369", "JavaScript", "STOMP", "RabbitMQ", "IoT", "Rasbery Pi"]
+                technicalEnvironment: ["Angular 8", "NodeJS", "TR-369", "JavaScript", "Python 3.6", "STOMP", "RabbitMQ", "IoT", "Rasbery Pi 3", "Postman"]
             }
         ],
-        technologies: ["Angular 8", "NodeJS", "TR-369", "JavaScript", "STOMP", "RabbitMQ", "IoT", "Rasbery Pi"]
+        technologies: ["Angular 8", "TR-369", "Python 3.6", "RabbitMQ", "IoT", "Rasbery Pi 3"]
     }
 ];

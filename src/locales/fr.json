@@ -12,7 +12,7 @@
     },
     "about": {
         "title": "À PROPOS",
-        "description": "Ingénieur Full-Stack passionné avec {{anneesExperience}} ans d'expérience dans la conception et le développement d'applications web robustes et évolutives. Expert en écosystème .NET et Angular, avec une solide maîtrise des architectures modernes (Microservices, Clean Architecture) et du Cloud Azure. Je m'efforce de créer des solutions performantes qui répondent aux besoins réels des utilisateurs."
+        "description": "Mon adaptabilité et ma polyvalence me permettent de couvrir toutes les étapes du cycle de vie des applications web, de l'analyse des besoins utilisateurs jusqu'au déploiement technique. Expert en écosystème .NET et Angular, avec une solide maîtrise des architectures modernes (Microservices, Clean Architecture) et du Cloud Azure. Je développe des solutions performantes qui répondent aux besoins réels des entreprises."
     },
     "experience": {
         "title": "EXPÉRIENCES PROFESSIONNELLES",
@@ -167,7 +167,7 @@
                         "tache2": "Communication avec Sentinel-2 via une API REST pour récupérer les images satellites correspondant à une zone d'intérêt définie, sur un intervalle de temps et une fréquence d'actualisation spécifiés par l'utilisateur.",
                         "tache3": "Téléchargement des images satellites provenant de Sentinel-2 et traitement des données géospatiales associées.",
                         "tache4": "Stockage et gestion des données géographiques dans une base de données PostgreSQL avec l'extension PostGIS pour effectuer des analyses spatiales et matricielles.",
-                        "tache5": " Affichage interactif des données sur une carte OpenLayers, avec la possibilité de zoomer, dézoomer et se déplacer sur la carte, permettant une exploration détaillée des zones d'intérêt.",
+                        "tache5": "Affichage interactif des données sur une carte OpenLayers, avec la possibilité de zoomer, dézoomer et se déplacer sur la carte, permettant une exploration détaillée des zones d'intérêt.",
                         "tache6": "Rédaction de documentations techniques et fonctionnelles, y compris la création de diagrammes UML et la rédaction du cahier des charges.",
                         "tache7": "Intégration des bibliothèques GDAL/OGR pour manipuler les données géographiques avec précision et efficacité.",
                         "tache8": "Intégration de MapServer pour le rendu dynamique des images géospatiales sur une carte web, permettant un affichage efficace des couches de données spatiales."
@@ -176,18 +176,25 @@
             }
         },
         "zetaBox": {
-            "location": "Sfax, Tunisie",
-            "period": "Juil 2019 - Aout 2019",
-            "role": "Stage Ingénieur Informatique",
-            "description": "Développement et conception d'une application web permettant de gérer les objets connectés d'une manière plus simple à l’aide de protocol TR-369.",
+            "location": "Sfax, Tunisia",
+            "period": "Jul 2019 - Sep 2019",
+            "role": "Stage d'ingénieur",
+            "description": "Développement d'une plateforme destinée à la gestion des équipements connectés par l'implémentation du protocole TR-369 (USP) pour assurer la sécurité et la flexibilité de contrôle des objets connectés existants.",
             "projects": {
                 "iot": {
-                    "name": "Gestion des objets connectés",
-                    "context": "Développement et conception d'une solution web pour gérer les objets connectés d'une manière plus simple à l’aide de protocol TR-369.",
-                    "details": "Application web permettant de gérer les objets connectés d'une manière plus simple à l’aide de protocol TR-369.",
+                    "name": "Projet TR-369",
+                    "context": "Réponse à la problématique du manque de flexibilité de contrôle des objets connectés. L'objectif était d'utiliser le protocole TR-369 pour faciliter la manipulation à distance des périphériques.",
+                    "details": "Conception et développement d'une architecture système basée sur un agent USP, un contrôleur USP et une application web, communiquant via le protocole USP à travers un serveur RabbitMQ.",
                     "realization": {
-                        "tache1": "t1",
-                        "tache2": "t2"
+                        "tache1": "Étude et analyse des besoins fonctionnels (gestion des paramètres d'objets et MTP) et non-fonctionnels (Sécurité, Flexibilité, Mise à l'échelle).",
+                        "tache2": "Conception de l'architecture globale du système, incluant l'application web, l'agent USP et le serveur RabbitMQ.",
+                        "tache3": "Configuration et mise en place de l'Agent USP sur Raspberry Pi 3.",
+                        "tache4": "Mise en place d'un serveur d'échange de messages RabbitMQ implémentant le protocole STOMP pour l'échange entre l'Agent et le Contrôleur.",
+                        "tache5": "Développement du Contrôleur USP (back-end) en Python.",
+                        "tache6": "Développement de l'API REST avec NodeJS pour générer et envoyer les messages USP.",
+                        "tache7": "Conception et développement de l'interface utilisateur en Angular.",
+                        "tache8": "Implémentation des fonctionnalités de gestion : Extraire, Modifier les valeurs des paramètres des objets connectés et des paramètres MTP (Message Transfer Protocol).",
+                        "tache9": "Test et validation de la communication de messages USP entre l'application, le contrôleur et l'agent."
                     }
                 }
             }
