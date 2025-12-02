@@ -1,18 +1,16 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Moon, Sun, Menu, X } from 'lucide-react';
 import { useTheme } from '../hooks/useTheme';
 import { AnimatePresence } from 'framer-motion';
 import ScrollToTopButton from './ScrollToTopButton';
 import LanguageSwitcher from './LanguageSwitcher';
 import { useTranslation } from 'react-i18next';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useLayoutNavigation } from '../hooks/useLayoutNavigation';
 
 export default function Layout({ children }: { children: React.ReactNode }) {
     const { theme, toggleTheme } = useTheme();
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const { isMenuOpen, toggleMenu, handleNavigation } = useLayoutNavigation();
     const { t } = useTranslation();
-    const navigate = useNavigate();
-    const location = useLocation();
 
     const navLinks = [
         { name: t('layout.about'), href: '/#about' },
@@ -23,39 +21,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         { name: t('layout.contact'), href: '/#contact' },
     ];
 
-    // Gère le scroll automatique lors du changement de route avec un hash
-    useEffect(() => {
-        if (location.hash) {
-            const element = document.querySelector(location.hash);
-            if (element) {
-                setTimeout(() => {
-                    element.scrollIntoView({ behavior: 'smooth' });
-                }, 100);
-            }
-        } else if (location.pathname === '/') {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-    }, [location]);
 
-    // Fonction de navigation intelligente
-    const handleNavigation = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-        e.preventDefault();
-        const [, hash] = href.split('#');
-        const targetId = hash ? `#${hash}` : null;
-        if (location.pathname === '/') {
-            if (targetId) {
-                const element = document.querySelector(targetId);
-                if (element) {
-                    element.scrollIntoView({ behavior: 'smooth' });
-                }
-            } else {
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            }
-        } else {
-            navigate(href);
-        }
-        setIsMenuOpen(false);
-    };
 
     return (
         <div className="min-h-screen bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 transition-colors duration-300">
@@ -102,7 +68,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                                 {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
                             </button>
                             <button
-                                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                                onClick={toggleMenu}
                                 className="p-2 rounded-md hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors text-slate-600 dark:text-slate-300"
                                 aria-label="Toggle menu"
                             >
