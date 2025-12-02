@@ -1,14 +1,18 @@
 {
+    "common": {
+        "back_to_list": "Back to list",
+        "view_details": "View details"
+    },
     "hero": {
         "title": "Full-Stack .NET / Angular Engineer",
         "experience": "5 years of experience",
         "contact": "Contact Me",
         "download_cv": "Download CV",
-        "description": "Passionate Full-Stack Engineer with {{anneesExperience}} years of experience in designing and developing robust and scalable web applications. Expert in the .NET and Angular ecosystem, with strong mastery of modern architectures (Microservices, Clean Architecture) and Azure Cloud. I strive to create high-performance solutions that meet real user needs."
+        "description": "Full-Stack Engineer with {{anneesExperience}} years of experience in designing and developing robust and scalable web applications within the .NET and Angular ecosystem, with a strong mastery of modern architectures and Azure Cloud."
     },
     "about": {
         "title": "ABOUT",
-        "description": "Passionate Full-Stack Engineer with {{anneesExperience}} years of experience in designing and developing robust and scalable web applications. Expert in the .NET and Angular ecosystem, with strong mastery of modern architectures (Microservices, Clean Architecture) and Azure Cloud. I strive to create high-performance solutions that meet real user needs."
+        "description": "Possessing strong adaptability and versatility, I manage the entire web application lifecycle, from initial user needs analysis through to technical deployment. I am an expert in the .NET and Angular ecosystems, leveraging a deep understanding of modern architectures (Microservices, Clean Architecture) and Azure Cloud. I focus on delivering high-performance solutions that directly address and fulfill core business requirements."
     },
     "experience": {
         "title": "PROFESSIONAL EXPERIENCE",
@@ -16,23 +20,76 @@
             "location": "Nantes, France",
             "period": "Nov 2024 - Oct 2025",
             "role": "Backend Engineer",
-            "description": "Development and maintenance of critical microservices for notification and broker management.",
+            "description": "Implementation of back-end solutions intended to replace the ESB, focusing on a modular architecture, maintainability, and exhaustive unit test coverage.",
             "projects": {
                 "push_notification": {
-                    "name": "Push Notification Batch System",
-                    "details": "Batch notification management via Airship."
+                    "name": "Push Notification Project",
+                    "details": "Batch job for sending notifications to mobile applications.",
+                    "context": "Design and development of a notification batch process aimed at automating the retrieval and update of database (DB) data, as well as sending notifications to mobile applications (Android and iOS) via the Airship third-party service.",
+                    "realization": {
+                        "tache1": "Structuring the project around a solid architecture to ensure optimal separation of responsibilities and maintainability.",
+                        "tache2": "Writing and execution of SQL migration scripts to create and initialize configuration tables in the database.",
+                        "tache3": "Development of repositories (notification and configuration) in the infrastructure layer, in order to implement operations for retrieving and updating unsent notifications and managing configuration parameters from different database tables.",
+                        "tache4": "Development of business logic to determine the notification type (singular/plural) and to build CSV files (payloads) compliant with Airship API requirements.",
+                        "tache5": "Implementation of a service to make calls to Airship APIs via HttpWebRequest and ensuring JSON flow management (serialization/deserialization) to retrieve static lists, update data, and send notifications.",
+                        "tache6": "Setting up log and error management to ensure error traceability and facilitate maintenance.",
+                        "tache7": "Maintenance and bug fixing."
+                    }
                 },
                 "ring_central": {
-                    "name": "RingCentral Webhook Microservice",
-                    "details": ".NET 6 Webhook microservices, parallel calls, instance-based authentication."
+                    "name": "RingCentral Project",
+                    "details": "Webhook that processes emails from RingCentral in real time.",
+                    "context": "Design and development of a Webhook in .NET 6 within a Microservices architecture for the real-time processing of user messages and email attachments.",
+                    "realization": {
+                        "tache1": "Development of REST APIs to allow managers to retrieve email attachments, get details of a specific message, and list all messages for an agent across all instances.",
+                        "tache2": "Optimization of response time by implementing parallel calls to all RingCentral instances for synchronous and fast data collection.",
+                        "tache3": "Specific authentication management per instance to guarantee security and segmentation of access to RingCentral data.",
+                        "tache4": "Data modeling and definition of DTOs for object serialization.",
+                        "tache5": "Integration of AutoMapper to automate and reliable mapping operations.",
+                        "tache6": "Use of FluentValidation for clear and decoupled business validation.",
+                        "tache7": "Centralization of HTTP requests in dedicated repositories, relying on HttpClientFactory's dependency injection.",
+                        "tache8": "Execution of unit tests (xUnit) with dependency mocking (Moq), and result verification using FluentAssertions.",
+                        "tache9": "Deployment on the staging environment and application of SonarQube rules to ensure code quality.",
+                        "tache10": "Maintenance and bug fixing."
+                    }
                 },
                 "broker": {
-                    "name": "Broker Project",
-                    "details": "Overhaul of paid task management."
+                    "name": "Courtier Project",
+                    "details": "Redesign of task management within the Web API project.",
+                    "context": "Redesign of a task management system to replace the existing one within the Web API project.",
+                    "realization": {
+                        "tache1": "Design and modeling of the database, with definition of the relational schema and development of DB migration scripts via FluentMigrator.",
+                        "tache2": "Development of a dedicated repository for task management, including creation, modification, retrieval, and multi-criteria search operations with added sorting and pagination features as well as the management of associated comments.",
+                        "tache3": "Integration of the repository via the Unit of Work pattern into services to replace calls to the old system.",
+                        "tache4": "Code structuring around models and Data Transfer Objects (DTOs), with use of AutoMapper to ensure mapping between the different layers.",
+                        "tache5": "Creation and updating of unit tests with xUnit, ensuring the security of developments and non-regression of the code.",
+                        "tache6": "Functional and technical validation of the APIs with execution of complete scenarios and verification of edge cases.",
+                        "tache7": "Contribution to the deployment and continuous integration of the solution via GitLab CI/CD.",
+                        "tache8": "Maintenance and bug fixing."
+                    }
                 },
                 "migration": {
                     "name": ".NET Migration",
-                    "details": "Massive migration .NET 6 → .NET 8 of 100+ projects with in-house automation tool."
+                    "details": "Migration of .NET 6 projects to .NET 8",
+                    "context": "Migration of over 100 interdependent projects (SDKs, APIs, Services) from .NET 6 to .NET 8, including the development of an internal tool to automate and secure the process.",
+                    "realization": {
+                        "tache1": "Development of a console application to automate the migration of .NET 6 projects to .NET 8.",
+                        "tache2": "Analysis of dependencies between projects and grouping into coherent migration batches to minimize conflicts",
+                        "tache3": {
+                            "title": "Complete automation of the migration pipeline:",
+                            "sous_tache1": "Automatic creation of a dedicated Git branch for each project.",
+                            "sous_tache2": "Target Framework update.",
+                            "sous_tache3": "NuGet packages update.",
+                            "sous_tache4": "Dockerfile update.",
+                            "sous_tache5": "GitLab-CI file update.",
+                            "sous_tache6": "Automatic execution of build and unit tests.",
+                            "sous_tache7": "Generation and update of an Excel report.",
+                            "sous_tache8": "Centralization of logs to ensure traceability.",
+                            "sous_tache9": "Automatic push of changes to the created branch of each migrated project if its migration is validated"
+                        },
+                        "tache4": "Manual migration of projects containing build or unit test errors, including replacement of obsolete methods and correction of incompatibilities",
+                        "tache5": "Deployment of migrated projects to the Nexus server (Nuget-Beta version) for integration and reuse in other projects."
+                    }
                 }
             }
         },
@@ -44,31 +101,94 @@
             "projects": {
                 "pixis": {
                     "name": "PIXIS Project",
-                    "details": "Universal document viewer (PDF, HTML, video, image) integrated into banking applications."
+                    "details": "Universal document viewer (PDF, HTML, video, image) integrated into banking applications.",
+                    "context": "Design, development, and implementation of a platform for document management.",
+                    "realization": {
+                        "tache1": "Integration of various libraries enabling the display and download of all types of documents such as HTML, PDF, videos, images, ...",
+                        "tache2": "Analysis and processing of HTML documents extracted from the database using parsing libraries.",
+                        "tache3": "Implementation of services to ensure communication and data exchange between the back-end and the front-end",
+                        "tache4": "Setup of a routing system to allow navigation between documents without reloading the page.",
+                        "tache5": "Creation of a search functionality within the document.",
+                        "tache6": "Integration of the design proposed by the ergonomics team",
+                        "tache7": "Management of the consultation history of viewed documents",
+                        "tache8": "Implementation of the anomaly reporting feature to flag issues in consulted documents",
+                        "tache9": "Development of the favorites management feature.",
+                        "tache10": "Writing of technical documentation",
+                        "tache11": "Optimization of application performance through the implementation of caches in the APIs.",
+                        "tache12": "Implementation of unit tests.",
+                        "tache13": "Maintenance and bug fixing.",
+                        "tache14": "Code review.",
+                        "tache15": "Code Refactoring."
+                    }
                 }
             }
         },
         "canaccord": {
             "location": "Tunis, Tunisia",
-            "period": "July 2020 - Aug 2022",
+            "period": "Jul 2020 - Aug 2022",
             "role": "Full-Stack Engineer",
             "description": "Development of investment platforms for the Canadian stock market.",
             "projects": {
                 "investment_platform": {
                     "name": "Investment Platform",
-                    "details": "Development for CG Direct, Morgan Stanley, Bamboo."
+                    "context": "Development and design of multi-browser and responsive web solutions allowing our users to register on a Canadian stock market investment platform: (Projects: CG Direct, Morgan Stanley, Bamboo).",
+                    "details": "Development for CG Direct, Morgan Stanley, Bamboo.",
+                    "realization": {
+                        "tache1": "Adaptation and creation of new user interfaces with dynamic and reusable components.",
+                        "tache2": "Collaboration with the UX/UI team to ensure an optimal user experience.",
+                        "tache3": "Organization of workshops for knowledge sharing with team members.",
+                        "tache4": "Implementation of an email sending service via an SMTP server, including SMTP client configuration, creation of CSHTML email templates, as well as sending emails with attachments.",
+                        "tache5": "Implementation of unit tests (backend: xUnit and frontend: Jasmine).",
+                        "tache6": "Implementation of backend services for Blob action management, including connection to Blob storage, access authorization via Default Azure Credential, as well as downloading, uploading, deleting, and searching for block documents.",
+                        "tache7": "Creation of controllers to provide APIs ensuring document management.",
+                        "tache8": "Consumption of APIs on the frontend side, ensuring fluid interaction between the front-end and backend services for document management.",
+                        "tache9": "Analysis of users' technical needs.",
+                        "tache10": "Code Refactoring, pair programming.",
+                        "tache11": "Code review.",
+                        "tache12": "Maintenance and bug fixing.",
+                        "tache13": "Carried out the development of unit tests.",
+                        "tache14": "Deployment and monitoring in production on Azure Devops."
+                    }
                 }
             }
         },
         "mapgears": {
             "location": "Tunis / Remote",
-            "period": "Feb 2020 - June 2020",
-            "role": "Internship",
-            "description": "Design and implementation of a web application for satellite image visualization.",
+            "period": "Feb 2020 - Jun 2020",
+            "role": "Graduation Internship",
+            "description": "Design and development of a web application for satellite image visualization.",
             "projects": {
                 "sentinel": {
                     "name": "Sentinel-2 Visualization",
-                    "details": "Web application for Sentinel-2 satellite image visualization."
+                    "context": "Development and design of a web solution to easily visualize recent and past geographic data on a dynamic map using a set of geospatial images periodically retrieved from the Sentinel-2 satellite.",
+                    "details": "Web application for visualizing Sentinel-2 satellite images.",
+                    "realization": {
+                        "tache1": "Design of an interactive mapping application.",
+                        "tache2": "Communication with Sentinel-2 via a REST API to retrieve satellite images corresponding to a defined area of interest, over a time interval and refresh frequency specified by the user.",
+                        "tache3": "Downloading satellite images from Sentinel-2 and processing the associated geospatial data.",
+                        "tache4": "Storage and management of geographic data in a PostgreSQL database with the PostGIS extension to perform spatial and raster analysis.",
+                        "tache5": "Interactive display of data on an OpenLayers map, with the ability to zoom in, zoom out, and move around the map, allowing detailed exploration of the areas of interest.",
+                        "tache6": "Writing technical and functional documentation, including the creation of UML diagrams and the drafting of the specifications.",
+                        "tache7": "Integration of GDAL/OGR libraries to manipulate geographic data with precision and efficiency.",
+                        "tache8": "Integration of MapServer for dynamic rendering of geospatial images on a web map, enabling efficient display of spatial data layers."
+                    }
+                }
+            }
+        },
+        "zetaBox": {
+            "location": "Sfax, Tunisia",
+            "period": "Jul 2019 - Aug 2019",
+            "role": "IT Engineer Internship",
+            "description": "Development and design of a web application for managing connected objects in a simpler way using the TR-369 protocol.",
+            "projects": {
+                "iot": {
+                    "name": "Connected Objects Management",
+                    "context": "Development and design of a web solution to manage connected objects in a simpler way using the TR-369 protocol.",
+                    "details": "Web application for managing connected objects in a simpler way using the TR-369 protocol.",
+                    "realization": {
+                        "tache1": "t1",
+                        "tache2": "t2"
+                    }
                 }
             }
         }
@@ -76,7 +196,7 @@
     "layout": {
         "about": "About",
         "experience": "Experiences",
-        "competences": "Technical skills",
+        "skills": "Technical skills",
         "formation": "Education",
         "certifications": "Certifications",
         "contact": "Contact"
