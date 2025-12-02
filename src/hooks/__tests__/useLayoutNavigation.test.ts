@@ -1,6 +1,5 @@
 import { renderHook, act, waitFor } from '@testing-library/react';
 import { useLayoutNavigation } from '../useLayoutNavigation';
-import { useNavigate, useLocation } from 'react-router-dom';
 
 // Mock react-router-dom
 const mockNavigate = jest.fn();
