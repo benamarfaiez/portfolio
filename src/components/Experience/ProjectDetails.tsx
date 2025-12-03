@@ -29,7 +29,7 @@ export default function ProjectDetails({
                 <h2 className="text-xl font-bold text-slate-900 dark:text-white">
                     {t(project.name)}
                 </h2>
-                {totalProjects > 1 && <div id='projects_navigation' className="flex items-center gap-4 w-52">
+                {totalProjects > 1 && <div id='projects_navigation' className="flex items-center gap-2" style={{ width: '140px' }}>
                     <button
                         onClick={onPrev}
                         disabled={!hasPrev}

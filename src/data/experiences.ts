@@ -149,7 +149,7 @@ export const experiences: Experience[] = [
                 technicalEnvironment: ['ASP.net', 'framework 4.8', 'C#', 'Entity Framework', 'API REST', 'IIS', 'NUnit', 'SQL Server', 'SSMS', 'Angular12', 'Bootstrap', 'RxJS', 'TypeScript', 'JavaScript', 'Css/Scss', 'HTML', 'PDF.js', 'Ngx-Videogular', 'Jasmine', 'Json', 'Visual Studio', 'Visual Studio code', 'Postman', 'TFS', 'Bitbucket', 'GitLab', 'Sharepoint', 'Zeplin']
             }
         ],
-        technologies: ["Angular 12", ".NET framework 4.8", "C#", "SQL Server", "Azure"]
+        technologies: ["Angular 12", "RxJS", ".NET framework 4.8", "C#", "SQL Server", "GitLab"]
     },
     {
         id: 3,

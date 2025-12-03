@@ -1,5 +1,8 @@
 import { motion } from 'framer-motion';
-import { Mail, MapPin, Phone, Send } from 'lucide-react';
+import { Mail } from 'lucide-react';
+import { MapPin } from 'lucide-react';
+import { Phone } from 'lucide-react';
+import { Send } from 'lucide-react';
 import { personalInfo } from '../data/data';
 import { useTranslation } from 'react-i18next';
 
