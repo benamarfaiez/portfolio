@@ -1,5 +1,7 @@
 import { motion } from 'framer-motion';
-import { Download, Linkedin, Mail } from 'lucide-react';
+import { Mail } from 'lucide-react';
+import { Linkedin } from 'lucide-react';
+import { Download } from 'lucide-react';
 import { personalInfo } from '../data/data';
 import { useTranslation } from 'react-i18next';
 

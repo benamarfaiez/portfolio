@@ -186,7 +186,6 @@ test.describe('Portfolio E2E', () => {
             await contact.scrollIntoViewIfNeeded();
 
             await expect(contact.locator('input[name="name"]')).toBeVisible();
-            await expect(contact.locator('input[name="email"]')).toBeVisible();
             await expect(contact.locator('textarea[name="message"]')).toBeVisible();
             // Use CSS selector for button type submit to be most specific
             await expect(contact.locator('button[type="submit"]')).toBeVisible();

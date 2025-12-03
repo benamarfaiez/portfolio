@@ -457,6 +457,11 @@ exports[`Experience Component renders correctly and matches snapshot 1`] = `
                     <span
                       class="px-3 py-1 bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 text-xs font-medium rounded-full"
                     >
+                      RxJS
+                    </span>
+                    <span
+                      class="px-3 py-1 bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 text-xs font-medium rounded-full"
+                    >
                       .NET framework 4.8
                     </span>
                     <span
@@ -472,7 +477,7 @@ exports[`Experience Component renders correctly and matches snapshot 1`] = `
                     <span
                       class="px-3 py-1 bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 text-xs font-medium rounded-full"
                     >
-                      Azure
+                      GitLab
                     </span>
                   </div>
                   <a
