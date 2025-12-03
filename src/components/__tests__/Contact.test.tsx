@@ -1,8 +1,27 @@
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import Contact from '../Contact';
 import { personalInfo } from '../../data/data';
+import emailjs from '@emailjs/browser';
+import { getEnvVar } from '../../utils/env';
+
+// Mock dependencies
+jest.mock('@emailjs/browser', () => ({
+    __esModule: true,
+    default: {
+        sendForm: jest.fn(),
+    },
+}));
+
+jest.mock('../../utils/env', () => ({
+    getEnvVar: jest.fn(),
+}));
 
 describe('Contact Component', () => {
+    beforeEach(() => {
+        jest.clearAllMocks();
+        (getEnvVar as jest.Mock).mockReturnValue('test-value');
+    });
+
     test('renders correctly and matches snapshot', () => {
         const { container } = render(<Contact />);
         expect(container).toMatchSnapshot();
@@ -20,7 +39,6 @@ describe('Contact Component', () => {
         const emailLink = screen.getByRole('link', { name: new RegExp(personalInfo.email, 'i') });
         expect(emailLink).toHaveAttribute('href', `mailto:${personalInfo.email}`);
 
-        // Phone can be found by checking all links and finding the one with tel: href
         const allLinks = screen.getAllByRole('link');
         const phoneLink = allLinks.find(link => link.getAttribute('href')?.includes('tel:'));
         expect(phoneLink).toBeInTheDocument();
@@ -40,13 +58,83 @@ describe('Contact Component', () => {
     test('allows user to type in form fields', () => {
         render(<Contact />);
 
-        const nameInput = screen.getByPlaceholderText('contact.form.placeholder.email') as HTMLInputElement;
-        const messageInput = screen.getByPlaceholderText('contact.form.placeholder.message') as HTMLTextAreaElement;
+        const emailInput = screen.getByPlaceholderText('contact.form.placeholder.email');
+        const messageInput = screen.getByPlaceholderText('contact.form.placeholder.message');
 
-        fireEvent.change(nameInput, { target: { value: 'John Doe' } });
+        fireEvent.change(emailInput, { target: { value: 'john@example.com' } });
         fireEvent.change(messageInput, { target: { value: 'Hello there' } });
 
-        expect(nameInput).toHaveValue('John Doe');
+        expect(emailInput).toHaveValue('john@example.com');
         expect(messageInput).toHaveValue('Hello there');
+    });
+
+    test('shows error when environment variables are missing', async () => {
+        (getEnvVar as jest.Mock).mockReturnValue(undefined);
+
+        render(<Contact />);
+
+        // Mock form validity to allow submission attempt
+        const emailInput = screen.getByPlaceholderText('contact.form.placeholder.email');
+        const messageInput = screen.getByPlaceholderText('contact.form.placeholder.message');
+
+        fireEvent.change(emailInput, { target: { value: 'john@test.com' } });
+        fireEvent.change(messageInput, { target: { value: 'Message' } });
+
+        const submitBtn = screen.getByRole('button', { name: /contact.form.send/i });
+        fireEvent.click(submitBtn);
+
+        await waitFor(() => {
+            expect(screen.getByText(/Configuration EmailJS manquante/i)).toBeInTheDocument();
+        });
+
+        expect(emailjs.sendForm).not.toHaveBeenCalled();
+    });
+
+    test('handles successful form submission', async () => {
+        jest.useFakeTimers();
+        (emailjs.sendForm as jest.Mock).mockResolvedValue({ status: 200, text: 'OK' });
+
+        render(<Contact />);
+
+        fireEvent.change(screen.getByPlaceholderText('contact.form.placeholder.email'), { target: { value: 'john@test.com' } });
+        fireEvent.change(screen.getByPlaceholderText('contact.form.placeholder.message'), { target: { value: 'Message' } });
+
+        fireEvent.click(screen.getByRole('button', { name: /contact.form.send/i }));
+
+        expect(screen.getByText(/Envoi en cours/i)).toBeInTheDocument();
+
+        await waitFor(() => {
+            expect(screen.getByText(/Message envoyé avec succès/i)).toBeInTheDocument();
+        });
+
+        expect(emailjs.sendForm).toHaveBeenCalledTimes(1);
+
+        // Test reset timeout
+        jest.runAllTimers();
+
+        await waitFor(() => {
+            expect(screen.queryByText(/Message envoyé avec succès/i)).not.toBeInTheDocument();
+        });
+
+        jest.useRealTimers();
+    });
+
+    test('handles API error during submission', async () => {
+        const consoleSpy = jest.spyOn(console, 'error').mockImplementation(() => { });
+        (emailjs.sendForm as jest.Mock).mockRejectedValue(new Error('API Error'));
+
+        render(<Contact />);
+
+        fireEvent.change(screen.getByPlaceholderText('contact.form.placeholder.email'), { target: { value: 'john@test.com' } });
+        fireEvent.change(screen.getByPlaceholderText('contact.form.placeholder.message'), { target: { value: 'Message' } });
+
+        fireEvent.click(screen.getByRole('button', { name: /contact.form.send/i }));
+
+        await waitFor(() => {
+            expect(screen.getByText(/Erreur lors de l'envoi/i)).toBeInTheDocument();
+        });
+
+        expect(emailjs.sendForm).toHaveBeenCalledTimes(1);
+        consoleSpy.mockRestore();
     });
 });
