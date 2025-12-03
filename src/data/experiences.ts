@@ -85,7 +85,7 @@ export const experiences: Experience[] = [
                     'experience.henner.projects.broker.realization.tache7',
                     'experience.henner.projects.broker.realization.tache8',
                 ],
-                technicalEnvironment: ['.NET 6', 'C#', 'WebApi', 'RestApi', 'Dapper/SqlMapper', 'xUnit', 'Moq', 'FluentMigrator', 'SonarQube', 'AutoMapper', 'SQL/PostgreSQL', 'Pattern Repository, Unit Of Work, Dependency injection, Factory', 'Visual Studio, Postman, Bitbucket, Git/GitLab, Sharepoint']
+                technicalEnvironment: ['.NET 6', 'C#', 'WebApi', 'RestApi', 'Dapper/SqlMapper', 'xUnit', 'Moq', 'FluentMigrator', 'SonarQube', 'AutoMapper', 'SQL/PostgreSQL', 'Pattern Repository, Unit Of Work, Dependency injection, Factory', 'Visual Studio', 'Postman', 'Bitbucket', 'Git/GitLab', 'Sharepoint']
             },
             {
                 name: 'experience.henner.projects.migration.name',
