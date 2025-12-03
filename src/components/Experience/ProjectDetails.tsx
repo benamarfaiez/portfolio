@@ -29,7 +29,7 @@ export default function ProjectDetails({
                 <h2 className="text-xl font-bold text-slate-900 dark:text-white">
                     {t(project.name)}
                 </h2>
-                {totalProjects > 1 && <div id='projects_navigation' className="flex items-center gap-4">
+                {totalProjects > 1 && <div id='projects_navigation' className="flex items-center gap-4 w-52">
                     <button
                         onClick={onPrev}
                         disabled={!hasPrev}
@@ -70,7 +70,7 @@ export default function ProjectDetails({
                         {project.realization.map((value, item) =>
                             <div className="flex items-start gap-2 ml-10" key={item}>
                                 {value.indexOf('sous_tache') == -1 && <CheckCircle2 size={16} className="mt-1 text-blue-600 flex-shrink-0" />}
-                                {value.indexOf('sous_tache') != -1 && <p className='ml-5'>-</p>}
+                                {value.indexOf('sous_tache') != -1 && <p className='ml-5'><ChevronRight size={16} className="mt-1 text-blue-600 flex-shrink-0" /></p>}
                                 <p className="text-slate-600 dark:text-slate-300">{t(value)}</p>
                             </div>
                         )}
