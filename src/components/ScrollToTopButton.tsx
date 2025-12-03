@@ -1,29 +1,9 @@
-import { useState, useEffect } from 'react';
 import { ArrowUp } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useScrollVisibility } from '../hooks/useScrollVisibility';
 
 export default function ScrollToTopButton() {
-    const [isVisible, setIsVisible] = useState(false);
-
-    useEffect(() => {
-        const toggleVisibility = () => {
-            const scrolled = window.scrollY;
-            setIsVisible(scrolled > 400);
-        };
-
-        window.addEventListener('scroll', toggleVisibility);
-
-        return () => {
-            window.removeEventListener('scroll', toggleVisibility);
-        };
-    }, []);
-
-    const scrollToTop = () => {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
-    };
+    const { isVisible, scrollToTop } = useScrollVisibility();
 
     return (
         <AnimatePresence>
