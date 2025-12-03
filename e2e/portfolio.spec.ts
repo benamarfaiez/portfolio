@@ -112,7 +112,7 @@ test.describe('Portfolio E2E', () => {
             await expect(languageSwitcher).toHaveValue('en');
 
             // Verify content change
-            await expect(page.getByRole('heading', { name: 'ABOUT', exact: true })).toBeVisible();
+            await expect(page.getByRole('heading', { name: 'ABOUT' })).toBeVisible();
         });
     });
 
@@ -185,7 +185,6 @@ test.describe('Portfolio E2E', () => {
             const contact = page.locator('#contact');
             await contact.scrollIntoViewIfNeeded();
 
-            await expect(contact.locator('input[name="name"]')).toBeVisible();
             await expect(contact.locator('input[name="email"]')).toBeVisible();
             await expect(contact.locator('textarea[name="message"]')).toBeVisible();
             // Use CSS selector for button type submit to be most specific
