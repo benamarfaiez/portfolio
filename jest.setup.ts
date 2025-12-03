@@ -51,3 +51,22 @@ Object.defineProperty(window, 'open', {
     writable: true,
 });
 
+// Mock utils/env for EmailJS environment variables
+jest.mock('./src/utils/env', () => ({
+    getEnvVar: (key: string) => {
+        const envVars: Record<string, string> = {
+            'VITE_EMAILJS_SERVICE_ID': 'test_service_id',
+            'VITE_EMAILJS_TEMPLATE_ID': 'test_template_id',
+            'VITE_EMAILJS_PUBLIC_KEY': 'test_public_key',
+        };
+        return envVars[key];
+    },
+}));
+
+// Mock @emailjs/browser
+jest.mock('@emailjs/browser', () => ({
+    __esModule: true,
+    default: {
+        sendForm: jest.fn(() => Promise.resolve({ status: 200, text: 'OK' })),
+    },
+}));

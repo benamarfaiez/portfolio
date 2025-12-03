@@ -7,6 +7,7 @@ import { Phone } from 'lucide-react';
 import { Send } from 'lucide-react';
 import { personalInfo } from '../data/data';
 import { useTranslation } from 'react-i18next';
+import { getEnvVar } from '../utils/env';
 
 export default function Contact() {
     const { t } = useTranslation();
@@ -21,9 +22,9 @@ export default function Contact() {
         if (!formRef.current) return;
 
         // Validate environment variables
-        const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
-        const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
-        const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+        const serviceId = getEnvVar('VITE_EMAILJS_SERVICE_ID');
+        const templateId = getEnvVar('VITE_EMAILJS_TEMPLATE_ID');
+        const publicKey = getEnvVar('VITE_EMAILJS_PUBLIC_KEY');
 
         if (!serviceId || !templateId || !publicKey) {
             setSubmitStatus('error');

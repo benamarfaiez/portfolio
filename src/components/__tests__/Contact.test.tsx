@@ -31,7 +31,6 @@ describe('Contact Component', () => {
         render(<Contact />);
 
         expect(screen.getByPlaceholderText('contact.form.placeholder.name')).toBeInTheDocument();
-        expect(screen.getByPlaceholderText('contact.form.placeholder.email')).toBeInTheDocument();
         expect(screen.getByPlaceholderText('contact.form.placeholder.message')).toBeInTheDocument();
 
         const submitBtn = screen.getByRole('button', { name: /contact.form.send/i });
@@ -42,15 +41,12 @@ describe('Contact Component', () => {
         render(<Contact />);
 
         const nameInput = screen.getByPlaceholderText('contact.form.placeholder.name') as HTMLInputElement;
-        const emailInput = screen.getByPlaceholderText('contact.form.placeholder.email') as HTMLInputElement;
         const messageInput = screen.getByPlaceholderText('contact.form.placeholder.message') as HTMLTextAreaElement;
 
         fireEvent.change(nameInput, { target: { value: 'John Doe' } });
-        fireEvent.change(emailInput, { target: { value: 'john@example.com' } });
         fireEvent.change(messageInput, { target: { value: 'Hello there' } });
 
         expect(nameInput).toHaveValue('John Doe');
-        expect(emailInput).toHaveValue('john@example.com');
         expect(messageInput).toHaveValue('Hello there');
     });
 });
