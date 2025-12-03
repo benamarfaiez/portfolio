@@ -30,7 +30,7 @@ describe('Contact Component', () => {
     test('renders form inputs and submit button', () => {
         render(<Contact />);
 
-        expect(screen.getByPlaceholderText('contact.form.placeholder.name')).toBeInTheDocument();
+        expect(screen.getByPlaceholderText('contact.form.placeholder.email')).toBeInTheDocument();
         expect(screen.getByPlaceholderText('contact.form.placeholder.message')).toBeInTheDocument();
 
         const submitBtn = screen.getByRole('button', { name: /contact.form.send/i });
@@ -40,7 +40,7 @@ describe('Contact Component', () => {
     test('allows user to type in form fields', () => {
         render(<Contact />);
 
-        const nameInput = screen.getByPlaceholderText('contact.form.placeholder.name') as HTMLInputElement;
+        const nameInput = screen.getByPlaceholderText('contact.form.placeholder.email') as HTMLInputElement;
         const messageInput = screen.getByPlaceholderText('contact.form.placeholder.message') as HTMLTextAreaElement;
 
         fireEvent.change(nameInput, { target: { value: 'John Doe' } });
