@@ -1,39 +1,54 @@
 import { render, screen } from '@testing-library/react';
+import { MemoryRouter } from 'react-router-dom';
 import Skills from '../skills/Skills';
 import { skills } from '../../data/skills';
 
 describe('Skills Component', () => {
     test('renders correctly and matches snapshot', () => {
-        const { container } = render(<Skills />);
+        const { container } = render(
+            <MemoryRouter>
+                <Skills />
+            </MemoryRouter>
+        );
         expect(container).toMatchSnapshot();
     });
 
     test('renders section title', () => {
-        render(<Skills />);
+        render(
+            <MemoryRouter>
+                <Skills />
+            </MemoryRouter>
+        );
         expect(screen.getByText('skills.title')).toBeInTheDocument();
     });
 
     test('renders all skill categories', () => {
-        render(<Skills />);
+        render(
+            <MemoryRouter>
+                <Skills />
+            </MemoryRouter>
+        );
         skills.forEach(skill => {
-            expect(screen.getByText(skill.category)).toBeInTheDocument();
+            expect(screen.getByText(skill.title)).toBeInTheDocument();
+            expect(screen.getByText(skill.desc)).toBeInTheDocument();
         });
     });
 
-    test('renders all skill items', () => {
-        render(<Skills />);
-        skills.forEach(skill => {
-            skill.items.forEach(item => {
-                // Use getAllByText because some skills might be repeated or appear in multiple places
-                expect(screen.getAllByText(item).length).toBeGreaterThan(0);
-            });
-        });
-    });
+    test('renders links for each category', () => {
+        render(
+            <MemoryRouter>
+                <Skills />
+            </MemoryRouter>
+        );
+        const links = screen.getAllByRole('link');
+        expect(links).toHaveLength(skills.length);
 
-    test('renders icons for each category', () => {
-        const { container } = render(<Skills />);
-        // Check for icon wrappers
-        const icons = container.querySelectorAll('.bg-blue-50.dark\\:bg-blue-900\\/30');
-        expect(icons).toHaveLength(skills.length);
+        skills.forEach(skill => {
+            // Check if link exists with correct href
+            // Note: We look for the link that contains the title
+            const link = links.find(l => l.getAttribute('href') === skill.link);
+            expect(link).toBeInTheDocument();
+            expect(link).toHaveTextContent(skill.title);
+        });
     });
 });

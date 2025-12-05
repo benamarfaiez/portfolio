@@ -147,9 +147,6 @@ const SkillsCategoryPage: React.FC = () => {
                         <Bar data={data} options={options} />
                     </div>
 
-                    <div className="text-center mt-10 text-white/50 text-sm">
-                        Auto-évaluation de {filtered.length} compétences
-                    </div>
                 </motion.div>
             </div>
         </div>

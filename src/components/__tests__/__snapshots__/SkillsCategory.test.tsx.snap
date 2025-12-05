@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`Skills Category Component renders correctly and matches snapshot 1`] = `
+<div>
+  <div
+    class="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-black py-16 px-6"
+  >
+    <div
+      class="max-w-6xl mx-auto"
+    >
+      <button
+        class="flex items-center gap-3 text-white/80 hover:text-white text-lg font-medium transition"
+        style="opacity: 0; transform: translateX(-50px);"
+      >
+        <svg
+          aria-hidden="true"
+          class="lucide lucide-arrow-left"
+          fill="none"
+          height="28"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          width="28"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="m12 19-7-7 7-7"
+          />
+          <path
+            d="M19 12H5"
+          />
+        </svg>
+        common.back_to_list
+      </button>
+      <h1
+        class="text-5xl md:text-7xl font-black text-center mb-8 bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent"
+        style="opacity: 0; transform: translateY(40px);"
+      >
+        Backend & DevOps
+      </h1>
+      <div
+        class="relative bg-white/5 backdrop-blur-xl rounded-3xl shadow-2xl border border-white/10 overflow-hidden p-2 md:p-4"
+        style="opacity: 0; transform: scale(0.95);"
+      >
+        <div
+          class="absolute inset-0 bg-gradient-to-br from-purple-500 to-pink-500 opacity-10"
+        />
+        <div
+          class="relative h-[300px] md:h-[400px] lg:h-[500px]"
+        >
+          <div
+            data-testid="mock-bar-chart"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
