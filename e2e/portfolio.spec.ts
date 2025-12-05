@@ -117,7 +117,7 @@ test.describe('Portfolio E2E', () => {
     });
 
     test.describe('Theme System', () => {
-        test.only('theme toggle switches dark/light mode', async ({ page }) => {
+        test('theme toggle switches dark/light mode', async ({ page }) => {
             const html = page.locator('html');
             // Find the visible toggle button (handles both mobile and desktop)
             const toggleBtn = page.locator('button[aria-label="Toggle theme"]').locator('visible=true').first();
