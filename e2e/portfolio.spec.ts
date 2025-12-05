@@ -117,16 +117,16 @@ test.describe('Portfolio E2E', () => {
     });
 
     test.describe('Theme System', () => {
-        test('theme toggle switches dark/light mode', async ({ page }) => {
+        test.only('theme toggle switches dark/light mode', async ({ page }) => {
             const html = page.locator('html');
             // Find the visible toggle button (handles both mobile and desktop)
             const toggleBtn = page.locator('button[aria-label="Toggle theme"]').locator('visible=true').first();
 
             // Check initial state
             const initialClass = await html.getAttribute('class');
-
             await toggleBtn.click();
             await page.waitForTimeout(500);
+            expect(await html.getAttribute('class')).not.toBe(initialClass);
 
             const newClass = await html.getAttribute('class');
             expect(newClass).not.toBe(initialClass);
