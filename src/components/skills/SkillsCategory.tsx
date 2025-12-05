@@ -1,5 +1,3 @@
-// src/pages/SkillsCategoryPage.tsx (version définitive 2025)
-
 import React from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
@@ -49,7 +47,7 @@ const SkillsCategoryPage: React.FC = () => {
             borderColor: config.color,
             borderWidth: 4,
             borderRadius: 16,
-            borderSkipped: 'bottom' as const,           // ← Bord en bas supprimé
+            borderSkipped: 'bottom' as const,
             barThickness: 42,
             maxBarThickness: 64,
             hoverBackgroundColor: config.color,
@@ -70,16 +68,16 @@ const SkillsCategoryPage: React.FC = () => {
                 backgroundColor: 'rgba(0, 0, 0, 0.9)',
                 cornerRadius: 16,
                 padding: 16,
-                titleFont: { size: 18, weight: 'bold' },
-                bodyFont: { size: 16, weight: 300 },
+                titleFont: { size: 14, weight: 'bold' },
+                bodyFont: { size: 14, weight: 300 },
                 displayColors: false,
                 borderColor: config.color,
-                borderWidth: 0,
+                borderWidth: 1,
                 caretPadding: 12,
                 callbacks: {
                     title: (items: TooltipItem<'bar'>[]) => items[0].label,
                     label: (item: TooltipItem<'bar'>) => `${item.parsed.y}/10`,
-                    afterLabel: () => 'Niveau de maîtrise',
+                    afterLabel: () => t('Niveau de maîtrise'),
                 },
             },
         },
@@ -98,7 +96,7 @@ const SkillsCategoryPage: React.FC = () => {
                 ticks: {
                     stepSize: 1,
                     color: '#9ca3af',
-                    font: { size: 13, weight: 500 },
+                    font: { size: 14, weight: 500 },
                     callback: (value) => `${value}`,
                 },
                 grid: {
@@ -126,7 +124,7 @@ const SkillsCategoryPage: React.FC = () => {
                     className="flex items-center gap-3 text-white/80 hover:text-white text-lg font-medium transition"
                 >
                     <ArrowLeft size={28} />
-                    Retour
+                    {t('common.back_to_list')}
                 </motion.button>
 
                 <motion.h1
