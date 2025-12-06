@@ -28,8 +28,7 @@ Objectif : présenter mon parcours, mes compétences techniques et mes réalisat
 - **100 % bilingue** Français / Anglais (react-i18next)
 - Mode sombre / clair avec persistance (localStorage)
 - Animations fluides (Framer Motion)
-- Bouton "Retour en haut" intelligent
-- Section Certifications fidèle au CV papier
+- Bouton "Retour en haut"
 - Téléchargement du CV (PDF)
 - Galerie complète du CV (9 pages) avec lightbox
 - Formatage automatique du texte en Title Case
