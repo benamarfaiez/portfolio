@@ -4,7 +4,7 @@
 
 [![CI](https://github.com/benamarfaiez/portfolio/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/benamarfaiez/portfolio/actions/workflows/ci.yml)
 
-[![Coverage](https://codecov.io/gh/benamarfaiez/portfolio/branch/main/graph/badge.svg)](https://codecov.io/gh/benamarfaiez/portfolio)
+[![codecov](https://codecov.io/github/benamarfaiez/portfolio/branch/main/graph/badge.svg?token=MISG5RO2QK)](https://codecov.io/github/benamarfaiez/portfolio)
 
 Live demo → https://benamarfaiez.vercel.app
 
