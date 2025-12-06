@@ -34,12 +34,12 @@ exports[`Skills Category Component renders correctly and matches snapshot 1`] = 
         </svg>
         common.back_to_list
       </button>
-      <h1
-        class="text-5xl md:text-7xl font-black text-center mb-8 bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent"
+      <h2
+        class="text-5xl md:text-5xl font-black text-center mb-4 bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent"
         style="opacity: 0; transform: translateY(40px);"
       >
         Backend & DevOps
-      </h1>
+      </h2>
       <div
         class="relative bg-white/5 backdrop-blur-xl rounded-3xl shadow-2xl border border-white/10 overflow-hidden p-2 md:p-4"
         style="opacity: 0; transform: scale(0.95);"

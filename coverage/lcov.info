@@ -344,9 +344,9 @@ FN:123,(anonymous_8)
 FNF:9
 FNH:5
 FNDA:4,(anonymous_0)
-FNDA:36,(anonymous_1)
-FNDA:12,(anonymous_2)
-FNDA:12,(anonymous_3)
+FNDA:150,(anonymous_1)
+FNDA:27,(anonymous_2)
+FNDA:27,(anonymous_3)
 FNDA:0,(anonymous_4)
 FNDA:0,(anonymous_5)
 FNDA:0,(anonymous_6)
@@ -369,10 +369,10 @@ DA:32,4
 DA:34,4
 DA:35,1
 DA:38,3
-DA:39,36
+DA:39,150
 DA:41,3
-DA:42,12
-DA:45,12
+DA:42,27
+DA:45,27
 DA:58,3
 DA:78,0
 DA:79,0
@@ -435,8 +435,8 @@ SF:src\data\skills.ts
 FNF:0
 FNH:0
 DA:1,2
-DA:10,2
-DA:67,2
+DA:26,2
+DA:83,2
 LF:3
 LH:3
 BRF:0

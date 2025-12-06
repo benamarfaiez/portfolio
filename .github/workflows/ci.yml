@@ -42,7 +42,7 @@ jobs:
         run: npm run lint
 
   build:
-    needs: setup
+    needs: lint
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -58,7 +58,7 @@ jobs:
         run: npm run build
 
   unit-test:
-    needs: setup
+    needs: build
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -81,7 +81,7 @@ jobs:
           retention-days: 30
 
   e2e-test:
-    needs: setup
+    needs: build
     runs-on: ubuntu-latest
     timeout-minutes: 60
     steps:
@@ -105,6 +105,12 @@ jobs:
           name: playwright-report
           path: playwright-report/
           retention-days: 30
+
+  coverage:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
       - name: Upload coverage reports to Codecov
         uses: codecov/codecov-action@v5
         with:
