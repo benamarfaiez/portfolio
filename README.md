@@ -1,8 +1,11 @@
-## Portfolio – Faiez Ben Amara
+## Portfolio – Faiez Ben Amar
 
 [![Vercel](https://img.shields.io/badge/Vercel-Deployed-000000?logo=vercel&logoColor=white)](https://benamarfaiez.vercel.app)
+
 [![CI](https://github.com/benamarfaiez/portfolio/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/benamarfaiez/portfolio/actions/workflows/ci.yml)
+
 [![Coverage](https://codecov.io/gh/benamarfaiez/portfolio/branch/main/graph/badge.svg)](https://codecov.io/gh/benamarfaiez/portfolio)
+
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
 > Portfolio personnel moderne construit avec React 18, TypeScript, Vite, Tailwind CSS, Framer Motion et déployé sur Vercel.  
