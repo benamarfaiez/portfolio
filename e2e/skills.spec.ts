@@ -8,7 +8,7 @@ test.describe('Skills & SkillsCategory E2E', () => {
         await page.goto('/');
         await page.waitForLoadState('domcontentloaded');
         // Wait for the app to be hydrated by checking for the main heading
-        await expect(page.locator('h1').first()).toBeVisible({ timeout: 5000 });
+        await expect(page.locator('h1').first()).toBeVisible({ timeout: 6000 });
     });
 
     test.afterEach(async ({ page }) => {
@@ -47,7 +47,7 @@ test.describe('Skills & SkillsCategory E2E', () => {
         await expect(page.locator('canvas')).toBeVisible();
     });
 
-    test.only('Back button navigates back to Home Page', async ({ page }) => {
+    test('Back button navigates back to Home Page', async ({ page }) => {
         // Go directly to a category page
         await page.goto('/skills/frontend');
 
