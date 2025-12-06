@@ -127,13 +127,13 @@ const SkillsCategoryPage: React.FC = () => {
                     {t('common.back_to_list')}
                 </motion.button>
 
-                <motion.h1
+                <motion.h2
                     initial={{ opacity: 0, y: 40 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className={`text-5xl md:text-7xl font-black text-center mb-8 bg-gradient-to-r ${config.gradient} bg-clip-text text-transparent`}
+                    className={`text-5xl md:text-5xl font-black text-center mb-4 bg-gradient-to-r ${config.gradient} bg-clip-text text-transparent`}
                 >
                     {config.title}
-                </motion.h1>
+                </motion.h2>
 
                 <motion.div
                     initial={{ opacity: 0, scale: 0.95 }}
