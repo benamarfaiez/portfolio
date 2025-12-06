@@ -36,4 +36,11 @@ export default {
         },
     },
     coverageReporters: ['text', 'lcov', 'html'],
+    reporters: [
+        'default',
+        ['jest-junit', {
+            outputDirectory: 'coverage',
+            outputName: 'junit.xml',
+        }],
+    ],
 };
