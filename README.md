@@ -6,19 +6,16 @@
 
 [![Coverage](https://codecov.io/gh/benamarfaiez/portfolio/branch/main/graph/badge.svg)](https://codecov.io/gh/benamarfaiez/portfolio)
 
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-
-> Portfolio personnel moderne construit avec React 18, TypeScript, Vite, Tailwind CSS, Framer Motion et déployé sur Vercel.  
-> Tests unitaires + E2E (Playwright) à plus de 90 % de couverture.
-
 Live demo → https://benamarfaiez.vercel.app
 
 ---
 
 ## À propos
 
-Portfolio personnel moderne et entièrement responsive, développé avec les meilleures pratiques 2025 :  
-Vite + React 18 + TypeScript + TailwindCSS + shadcn/ui + Framer Motion
+Portfolio personnel moderne et entièrement responsive, développé avec les meilleures pratiques.
+Construit avec : Vite + React 18 + TypeScript + Tailwind CSS + shadcn/ui + Framer Motion
+Déployé sur : Vercel
+Tests unitaires + E2E (Playwright) à plus de 90 % de couverture.
 
 Objectif : présenter mon parcours, mes compétences techniques et mes réalisations de manière claire, élégante et professionnelle — tout en démontrant ma maîtrise du frontend moderne.
 
