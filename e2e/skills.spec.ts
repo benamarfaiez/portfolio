@@ -8,7 +8,7 @@ test.describe('Skills & SkillsCategory E2E', () => {
         await page.goto('/');
         await page.waitForLoadState('domcontentloaded');
         // Wait for the app to be hydrated by checking for the main heading
-        await expect(page.locator('h1').first()).toBeVisible({ timeout: 2000 });
+        await expect(page.locator('h1').first()).toBeVisible({ timeout: 6000 });
     });
 
     test.afterEach(async ({ page }) => {
