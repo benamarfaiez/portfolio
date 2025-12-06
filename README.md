@@ -13,8 +13,10 @@ Live demo → https://benamarfaiez.vercel.app
 ## À propos
 
 Portfolio personnel moderne et entièrement responsive, développé avec les meilleures pratiques.
+
 Construit avec : Vite + React 18 + TypeScript + Tailwind CSS + shadcn/ui + Framer Motion
-Déployé sur : Vercel
+déployé sur : Vercel
+
 Tests unitaires + E2E (Playwright) à plus de 90 % de couverture.
 
 Objectif : présenter mon parcours, mes compétences techniques et mes réalisations de manière claire, élégante et professionnelle — tout en démontrant ma maîtrise du frontend moderne.
