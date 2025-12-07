@@ -77,7 +77,7 @@ exports[`Contact Component renders correctly and matches snapshot 1`] = `
                 <p
                   class="text-sm text-slate-500 dark:text-slate-400"
                 >
-                  Email
+                  common.email
                 </p>
                 <p
                   class="font-medium text-slate-900 dark:text-white"
@@ -115,7 +115,7 @@ exports[`Contact Component renders correctly and matches snapshot 1`] = `
                 <p
                   class="text-sm text-slate-500 dark:text-slate-400"
                 >
-                  Téléphone
+                  common.phone
                 </p>
                 <p
                   class="font-medium text-slate-900 dark:text-white"
@@ -157,7 +157,7 @@ exports[`Contact Component renders correctly and matches snapshot 1`] = `
                 <p
                   class="text-sm text-slate-500 dark:text-slate-400"
                 >
-                  Localisation
+                  common.location
                 </p>
                 <p
                   class="font-medium text-slate-900 dark:text-white"

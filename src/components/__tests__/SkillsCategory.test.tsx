@@ -27,7 +27,7 @@ describe('Skills Category Component', () => {
                 </Routes>
             </MemoryRouter>
         );
-        expect(screen.getByText(/404/)).toBeInTheDocument();
+        expect(screen.getByText('common.not_found_category')).toBeInTheDocument();
     });
 
     test('renders correct content for backend category', () => {
@@ -40,7 +40,7 @@ describe('Skills Category Component', () => {
         );
 
         // Check title (from config in component)
-        expect(screen.getByText('Backend & DevOps')).toBeInTheDocument();
+        expect(screen.getByText('skills.categories.backend')).toBeInTheDocument();
 
         // Check chart is rendered
         expect(screen.getByTestId('mock-bar-chart')).toBeInTheDocument();

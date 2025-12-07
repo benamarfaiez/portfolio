@@ -98,7 +98,7 @@ exports[`Skills Component renders correctly and matches snapshot 1`] = `
               <div
                 class="flex justify-center items-center gap-3 text-lg font-medium text-gray-700 dark:text-gray-200"
               >
-                Voir le détail
+                common.view_detail
                 <svg
                   aria-hidden="true"
                   class="lucide lucide-arrow-right transition-transform duration-300 group-hover:translate-x-3"
@@ -181,7 +181,7 @@ exports[`Skills Component renders correctly and matches snapshot 1`] = `
               <div
                 class="flex justify-center items-center gap-3 text-lg font-medium text-gray-700 dark:text-gray-200"
               >
-                Voir le détail
+                common.view_detail
                 <svg
                   aria-hidden="true"
                   class="lucide lucide-arrow-right transition-transform duration-300 group-hover:translate-x-3"
@@ -260,7 +260,7 @@ exports[`Skills Component renders correctly and matches snapshot 1`] = `
               <div
                 class="flex justify-center items-center gap-3 text-lg font-medium text-gray-700 dark:text-gray-200"
               >
-                Voir le détail
+                common.view_detail
                 <svg
                   aria-hidden="true"
                   class="lucide lucide-arrow-right transition-transform duration-300 group-hover:translate-x-3"
@@ -342,7 +342,7 @@ exports[`Skills Component renders correctly and matches snapshot 1`] = `
               <div
                 class="flex justify-center items-center gap-3 text-lg font-medium text-gray-700 dark:text-gray-200"
               >
-                Voir le détail
+                common.view_detail
                 <svg
                   aria-hidden="true"
                   class="lucide lucide-arrow-right transition-transform duration-300 group-hover:translate-x-3"
@@ -415,7 +415,7 @@ exports[`Skills Component renders correctly and matches snapshot 1`] = `
               <div
                 class="flex justify-center items-center gap-3 text-lg font-medium text-gray-700 dark:text-gray-200"
               >
-                Voir le détail
+                common.view_detail
                 <svg
                   aria-hidden="true"
                   class="lucide lucide-arrow-right transition-transform duration-300 group-hover:translate-x-3"
@@ -493,7 +493,7 @@ exports[`Skills Component renders correctly and matches snapshot 1`] = `
               <div
                 class="flex justify-center items-center gap-3 text-lg font-medium text-gray-700 dark:text-gray-200"
               >
-                Voir le détail
+                common.view_detail
                 <svg
                   aria-hidden="true"
                   class="lucide lucide-arrow-right transition-transform duration-300 group-hover:translate-x-3"

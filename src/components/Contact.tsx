@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { useState, useRef, FormEvent } from 'react';
+import { useState, FormEvent } from 'react';
 import emailjs from '@emailjs/browser';
 import { Mail } from 'lucide-react';
 import { MapPin } from 'lucide-react';
@@ -11,15 +11,13 @@ import { getEnvVar } from '../utils/env';
 
 export default function Contact() {
     const { t } = useTranslation();
-    const formRef = useRef<HTMLFormElement>(null);
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
     const [errorMessage, setErrorMessage] = useState('');
 
     const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-
-        if (!formRef.current) return;
+        const form = e.currentTarget;
 
         // Validate environment variables
         const serviceId = getEnvVar('VITE_EMAILJS_SERVICE_ID');
@@ -40,7 +38,7 @@ export default function Contact() {
             await emailjs.sendForm(
                 serviceId,
                 templateId,
-                formRef.current,
+                form,
                 publicKey
             );
 
@@ -49,7 +47,7 @@ export default function Contact() {
 
             // Reset form after 2 seconds
             setTimeout(() => {
-                formRef.current?.reset();
+                form.reset();
                 setSubmitStatus('idle');
             }, 2000);
 
@@ -100,7 +98,7 @@ export default function Contact() {
                                     <Mail size={24} />
                                 </div>
                                 <div>
-                                    <p className="text-sm text-slate-500 dark:text-slate-400">Email</p>
+                                    <p className="text-sm text-slate-500 dark:text-slate-400">{t('common.email')}</p>
                                     <p className="font-medium text-slate-900 dark:text-white">{personalInfo.email}</p>
                                 </div>
                             </a>
@@ -113,7 +111,7 @@ export default function Contact() {
                                     <Phone size={24} />
                                 </div>
                                 <div>
-                                    <p className="text-sm text-slate-500 dark:text-slate-400">Téléphone</p>
+                                    <p className="text-sm text-slate-500 dark:text-slate-400">{t('common.phone')}</p>
                                     <p className="font-medium text-slate-900 dark:text-white">{personalInfo.phone}</p>
                                 </div>
                             </a>
@@ -123,7 +121,7 @@ export default function Contact() {
                                     <MapPin size={24} />
                                 </div>
                                 <div>
-                                    <p className="text-sm text-slate-500 dark:text-slate-400">Localisation</p>
+                                    <p className="text-sm text-slate-500 dark:text-slate-400">{t('common.location')}</p>
                                     <p className="font-medium text-slate-900 dark:text-white">{t('contact.location')}</p>
                                 </div>
                             </div>
@@ -137,7 +135,7 @@ export default function Contact() {
                         transition={{ duration: 0.5, delay: 0.4 }}
                     >
                         <div className="bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-lg border border-slate-100 dark:border-slate-700" style={{ marginTop: '58px' }}>
-                            <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
+                            <form onSubmit={handleSubmit} className="space-y-6">
                                 <div>
                                     <label htmlFor="name" className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
                                         {t('contact.form.email')}
@@ -171,7 +169,7 @@ export default function Contact() {
                                 {submitStatus === 'success' && (
                                     <div className="p-4 bg-green-50 dark:bg-green-900/30 border border-green-200 dark:border-green-800 rounded-lg">
                                         <p className="text-green-800 dark:text-green-200 text-sm font-medium">
-                                            ✓ Message envoyé avec succès !
+                                            {t('contact.success')}
                                         </p>
                                     </div>
                                 )}
@@ -196,7 +194,7 @@ export default function Contact() {
                                                 <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />
                                                 <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
                                             </svg>
-                                            Envoi en cours...
+                                            {t('contact.loading')}
                                         </>
                                     ) : (
                                         <>

@@ -11,28 +11,31 @@ import {
     type ChartOptions,
     type TooltipItem,
 } from 'chart.js';
-import { skillsDiagram, type SkillCategory } from '../../data/skills';
+import { skillsDiagram, type StyleCategory, type SkillCategory } from '../../data/skills';
 import { ArrowLeft } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 ChartJS.register(CategoryScale, LinearScale, BarElement, Tooltip);
-
-const categoryConfig: Record<SkillCategory, { title: string; color: string; gradient: string }> = {
-    frontend: { title: "Frontend Development", color: "#3b82f6", gradient: "from-blue-500 to-cyan-400" },
-    backend: { title: "Backend & DevOps", color: "#a855f7", gradient: "from-purple-500 to-pink-500" },
-    tests: { title: "Tests", color: "#10b981", gradient: "from-emerald-500 to-teal-500" },
-    database: { title: "Database", color: "#f59e0b", gradient: "from-amber-500 to-orange-500" },
-    devops: { title: "DevOps", color: "#8b5cf6", gradient: "from-violet-500 to-purple-600" },
-    architecture: { title: "Architecture", color: "#ef4444", gradient: "from-red-500 to-rose-600" },
-};
 
 const SkillsCategoryPage: React.FC = () => {
     const { category } = useParams<{ category: SkillCategory }>();
     const navigate = useNavigate();
     const { t } = useTranslation();
 
+
+    const categoryConfig: Record<SkillCategory, StyleCategory> = {
+        frontend: { title: t('skills.categories.frontend'), color: "#3b82f6", gradient: "from-blue-500 to-cyan-400" },
+        backend: { title: t('skills.categories.backend'), color: "#a855f7", gradient: "from-purple-500 to-pink-500" },
+        tests: { title: t('skills.categories.tests'), color: "#10b981", gradient: "from-emerald-500 to-teal-500" },
+        database: { title: t('skills.categories.database'), color: "#f59e0b", gradient: "from-amber-500 to-orange-500" },
+        devops: { title: t('skills.categories.devops'), color: "#8b5cf6", gradient: "from-violet-500 to-purple-600" },
+        architecture: { title: t('skills.categories.architecture'), color: "#ef4444", gradient: "from-red-500 to-rose-600" },
+    };
+
     if (!category || !Object.keys(categoryConfig).includes(category)) {
-        return <div className="text-center py-32 text-3xl text-white">404 – Catégorie introuvable</div>;
+        return <div className="text-center py-32 text-3xl text-white">
+            {t('common.not_found_category')}
+        </div>;
     }
 
     const config = categoryConfig[category];
