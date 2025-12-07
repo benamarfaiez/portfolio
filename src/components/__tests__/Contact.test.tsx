@@ -1,4 +1,4 @@
-import { render, screen, fireEvent, waitFor } from '@testing-library/react';
+import { render, screen, fireEvent, waitFor, act } from '@testing-library/react';
 import Contact from '../Contact';
 import { personalInfo } from '../../data/data';
 import emailjs from '@emailjs/browser';
@@ -110,7 +110,10 @@ describe('Contact Component', () => {
         expect(emailjs.sendForm).toHaveBeenCalledTimes(1);
 
         // Test reset timeout
-        jest.runAllTimers();
+        // eslint-disable-next-line testing-library/no-unnecessary-act
+        await act(async () => {
+            jest.runAllTimers();
+        });
 
         await waitFor(() => {
             expect(screen.queryByText(/contact.success/i)).not.toBeInTheDocument();

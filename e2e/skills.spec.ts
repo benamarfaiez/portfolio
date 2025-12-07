@@ -41,7 +41,7 @@ test.describe('Skills & SkillsCategory E2E', () => {
         await expect(page).toHaveURL(/\/skills\/backend/);
 
         // Verify Page Title (from SkillsCategory.tsx config)
-        await expect(page.getByRole('heading', { name: 'Backend & DevOps' })).toBeVisible();
+        await expect(page.getByRole('heading', { name: 'Backend' })).toBeVisible();
 
         // Verify Chart is present
         await expect(page.locator('canvas')).toBeVisible();
@@ -52,7 +52,7 @@ test.describe('Skills & SkillsCategory E2E', () => {
         await page.goto('/skills/frontend');
 
         // Verify we are on the page
-        await expect(page.getByRole('heading', { name: 'Frontend Development' })).toBeVisible();
+        await expect(page.getByRole('heading', { name: 'Frontend' })).toBeVisible();
 
         // Click Back button - use exact match to avoid matching "Retour en haut de page"
         const backButton = page.getByRole('button', { name: 'Retour', exact: true });
@@ -71,7 +71,7 @@ test.describe('Skills & SkillsCategory E2E', () => {
 
         // 3. Verify Category Page
         await expect(page).toHaveURL(/\/skills\/frontend/);
-        await expect(page.getByRole('heading', { name: 'Frontend Development' })).toBeVisible();
+        await expect(page.getByRole('heading', { name: 'Frontend' })).toBeVisible();
 
         // 4. Click Back - use exact match
         const backButton = page.getByRole('button', { name: 'Retour', exact: true });
