@@ -110,7 +110,6 @@ describe('Contact Component', () => {
         expect(emailjs.sendForm).toHaveBeenCalledTimes(1);
 
         // Test reset timeout
-        // eslint-disable-next-line testing-library/no-unnecessary-act
         await act(async () => {
             jest.runAllTimers();
         });
