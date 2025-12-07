@@ -5,7 +5,7 @@ import SkillsCategory from '../skills/SkillsCategory';
 // Mock Chart.js components
 const mockBarChart = jest.fn();
 jest.mock('react-chartjs-2', () => ({
-    Bar: (props: any) => {
+    Bar: (props: Record<string, unknown>) => {
         mockBarChart(props);
         return <div data-testid="mock-bar-chart" />;
     }

@@ -69,7 +69,7 @@ describe('useLayoutNavigation', () => {
 
         const scrollIntoViewMock = jest.fn();
         const mockElement = { scrollIntoView: scrollIntoViewMock };
-        jest.spyOn(document, 'querySelector').mockReturnValue(mockElement as any);
+        jest.spyOn(document, 'querySelector').mockReturnValue(mockElement as unknown as Element);
 
         renderHook(() => useLayoutNavigation());
 
@@ -90,7 +90,7 @@ describe('useLayoutNavigation', () => {
 
         const scrollIntoViewMock = jest.fn();
         const mockElement = { scrollIntoView: scrollIntoViewMock };
-        jest.spyOn(document, 'querySelector').mockReturnValue(mockElement as any);
+        jest.spyOn(document, 'querySelector').mockReturnValue(mockElement as unknown as Element);
 
         act(() => {
             result.current.handleNavigation(e, '/#contact');
