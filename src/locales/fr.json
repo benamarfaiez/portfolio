@@ -1,7 +1,11 @@
 {
     "common": {
         "back_to_list": "Retour",
-        "view_details": "Voir les détails"
+        "view_details": "Voir les détails",
+        "not_found_category": "404 – Catégorie introuvable",
+        "email": "Email",
+        "phone": "Téléphone",
+        "location": "Localisation"
     },
     "hero": {
         "title": "Ingénieur Full-Stack .NET / Angular",
@@ -271,7 +275,9 @@
                 "email": "votre@email.com",
                 "message": "Votre message..."
             }
-        }
+        },
+        "success": "✓ Message envoyé avec succès !",
+        "loading": "Envoi en cours..."
     },
     "footer": {
         "rights": "Tous droits réservés."

@@ -1,7 +1,11 @@
 {
     "common": {
         "back_to_list": "Back",
-        "view_details": "View details"
+        "view_details": "View details",
+        "not_found_category": "404 – Category not found",
+        "email": "Email",
+        "phone": "Phone",
+        "location": "Location"
     },
     "hero": {
         "title": "Full-Stack .NET / Angular Engineer",
@@ -264,7 +268,9 @@
                 "email": "your@email.com",
                 "message": "Your message..."
             }
-        }
+        },
+        "success": "✓ Message sent successfully!",
+        "loading": "Sending..."
     },
     "footer": {
         "rights": "All rights reserved."

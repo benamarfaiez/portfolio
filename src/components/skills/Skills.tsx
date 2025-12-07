@@ -1,4 +1,3 @@
-// src/sections/Skills.tsx (ou où se trouve ta section Skills)
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
@@ -54,7 +53,7 @@ const Skills = () => {
 
                                     {/* Flèche qui apparaît au hover */}
                                     <div className="flex justify-center items-center gap-3 text-lg font-medium text-gray-700 dark:text-gray-200">
-                                        Voir le détail
+                                        {t('common.view_detail')}
                                         <ArrowRight
                                             size={28}
                                             className="transition-transform duration-300 group-hover:translate-x-3"

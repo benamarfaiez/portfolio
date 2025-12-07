@@ -23,6 +23,13 @@ export interface SkillDiagram {
     category: string;
     score: number;
 }
+
+export interface StyleCategory {
+    title: string;
+    color: string;
+    gradient: string;
+}
+
 export const skills: Skill[] = [
     {
         title: "Backend",

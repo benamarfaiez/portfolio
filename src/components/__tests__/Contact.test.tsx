@@ -101,10 +101,10 @@ describe('Contact Component', () => {
 
         fireEvent.click(screen.getByRole('button', { name: /contact.form.send/i }));
 
-        expect(screen.getByText(/Envoi en cours/i)).toBeInTheDocument();
+        expect(screen.getByText(/contact.loading/i)).toBeInTheDocument();
 
         await waitFor(() => {
-            expect(screen.getByText(/Message envoyé avec succès/i)).toBeInTheDocument();
+            expect(screen.getByText(/contact.success/i)).toBeInTheDocument();
         });
 
         expect(emailjs.sendForm).toHaveBeenCalledTimes(1);
@@ -113,7 +113,7 @@ describe('Contact Component', () => {
         jest.runAllTimers();
 
         await waitFor(() => {
-            expect(screen.queryByText(/Message envoyé avec succès/i)).not.toBeInTheDocument();
+            expect(screen.queryByText(/contact.success/i)).not.toBeInTheDocument();
         });
 
         jest.useRealTimers();
