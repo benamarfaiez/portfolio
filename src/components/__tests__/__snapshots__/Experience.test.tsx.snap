@@ -45,7 +45,7 @@ exports[`Experience Component renders correctly and matches snapshot 1`] = `
                 class="flex flex-col md:items-start"
               >
                 <div
-                  class="bg-slate-50 dark:bg-slate-900 p-6 rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm hover:shadow-md transition-shadow w-full"
+                  class="bg-slate-50 dark:bg-slate-900 p-6 rounded-2xl border border-slate-300 dark:border-slate-700 shadow-sm hover:shadow-md transition-shadow w-full"
                 >
                   <div
                     class="flex flex-col gap-2 mb-4"
@@ -166,66 +166,6 @@ exports[`Experience Component renders correctly and matches snapshot 1`] = `
                     experience.henner.description
                   </p>
                   <div
-                    class="space-y-3 mb-6"
-                  >
-                    <div
-                      class="pl-4 border-l-2 border-blue-100 dark:border-blue-900"
-                    >
-                      <h4
-                        class="font-medium text-slate-900 dark:text-white text-sm"
-                      >
-                        experience.henner.projects.push_notification.name
-                      </h4>
-                      <p
-                        class="text-sm text-slate-500 dark:text-slate-400"
-                      >
-                        experience.henner.projects.push_notification.details
-                      </p>
-                    </div>
-                    <div
-                      class="pl-4 border-l-2 border-blue-100 dark:border-blue-900"
-                    >
-                      <h4
-                        class="font-medium text-slate-900 dark:text-white text-sm"
-                      >
-                        experience.henner.projects.ring_central.name
-                      </h4>
-                      <p
-                        class="text-sm text-slate-500 dark:text-slate-400"
-                      >
-                        experience.henner.projects.ring_central.details
-                      </p>
-                    </div>
-                    <div
-                      class="pl-4 border-l-2 border-blue-100 dark:border-blue-900"
-                    >
-                      <h4
-                        class="font-medium text-slate-900 dark:text-white text-sm"
-                      >
-                        experience.henner.projects.broker.name
-                      </h4>
-                      <p
-                        class="text-sm text-slate-500 dark:text-slate-400"
-                      >
-                        experience.henner.projects.broker.details
-                      </p>
-                    </div>
-                    <div
-                      class="pl-4 border-l-2 border-blue-100 dark:border-blue-900"
-                    >
-                      <h4
-                        class="font-medium text-slate-900 dark:text-white text-sm"
-                      >
-                        experience.henner.projects.migration.name
-                      </h4>
-                      <p
-                        class="text-sm text-slate-500 dark:text-slate-400"
-                      >
-                        experience.henner.projects.migration.details
-                      </p>
-                    </div>
-                  </div>
-                  <div
                     class="flex flex-wrap gap-2 mb-6"
                   >
                     <span
@@ -266,7 +206,8 @@ exports[`Experience Component renders correctly and matches snapshot 1`] = `
                   </div>
                   <a
                     class="inline-flex items-center gap-2 text-sm font-medium text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 transition-colors group"
-                    href="/experiences/henner-net-developer"
+                    href="/experiences/henner-developer"
+                    state="[object Object]"
                   >
                     common.view_details
                     <svg
@@ -308,7 +249,7 @@ exports[`Experience Component renders correctly and matches snapshot 1`] = `
                 class="flex flex-col md:items-end"
               >
                 <div
-                  class="bg-slate-50 dark:bg-slate-900 p-6 rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm hover:shadow-md transition-shadow w-full"
+                  class="bg-slate-50 dark:bg-slate-900 p-6 rounded-2xl border border-slate-300 dark:border-slate-700 shadow-sm hover:shadow-md transition-shadow w-full"
                 >
                   <div
                     class="flex flex-col gap-2 mb-4"
@@ -429,24 +370,6 @@ exports[`Experience Component renders correctly and matches snapshot 1`] = `
                     experience.euro_information.description
                   </p>
                   <div
-                    class="space-y-3 mb-6"
-                  >
-                    <div
-                      class="pl-4 border-l-2 border-blue-100 dark:border-blue-900"
-                    >
-                      <h4
-                        class="font-medium text-slate-900 dark:text-white text-sm"
-                      >
-                        experience.euro_information.projects.pixis.name
-                      </h4>
-                      <p
-                        class="text-sm text-slate-500 dark:text-slate-400"
-                      >
-                        experience.euro_information.projects.pixis.details
-                      </p>
-                    </div>
-                  </div>
-                  <div
                     class="flex flex-wrap gap-2 mb-6"
                   >
                     <span
@@ -483,6 +406,7 @@ exports[`Experience Component renders correctly and matches snapshot 1`] = `
                   <a
                     class="inline-flex items-center gap-2 text-sm font-medium text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 transition-colors group"
                     href="/experiences/euro-information-fullstack"
+                    state="[object Object]"
                   >
                     common.view_details
                     <svg
@@ -524,7 +448,7 @@ exports[`Experience Component renders correctly and matches snapshot 1`] = `
                 class="flex flex-col md:items-start"
               >
                 <div
-                  class="bg-slate-50 dark:bg-slate-900 p-6 rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm hover:shadow-md transition-shadow w-full"
+                  class="bg-slate-50 dark:bg-slate-900 p-6 rounded-2xl border border-slate-300 dark:border-slate-700 shadow-sm hover:shadow-md transition-shadow w-full"
                 >
                   <div
                     class="flex flex-col gap-2 mb-4"
@@ -645,24 +569,6 @@ exports[`Experience Component renders correctly and matches snapshot 1`] = `
                     experience.canaccord.description
                   </p>
                   <div
-                    class="space-y-3 mb-6"
-                  >
-                    <div
-                      class="pl-4 border-l-2 border-blue-100 dark:border-blue-900"
-                    >
-                      <h4
-                        class="font-medium text-slate-900 dark:text-white text-sm"
-                      >
-                        experience.canaccord.projects.investment_platform.name
-                      </h4>
-                      <p
-                        class="text-sm text-slate-500 dark:text-slate-400"
-                      >
-                        experience.canaccord.projects.investment_platform.details
-                      </p>
-                    </div>
-                  </div>
-                  <div
                     class="flex flex-wrap gap-2 mb-6"
                   >
                     <span
@@ -689,6 +595,7 @@ exports[`Experience Component renders correctly and matches snapshot 1`] = `
                   <a
                     class="inline-flex items-center gap-2 text-sm font-medium text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 transition-colors group"
                     href="/experiences/canaccord-genuity-developer"
+                    state="[object Object]"
                   >
                     common.view_details
                     <svg
@@ -730,7 +637,7 @@ exports[`Experience Component renders correctly and matches snapshot 1`] = `
                 class="flex flex-col md:items-end"
               >
                 <div
-                  class="bg-slate-50 dark:bg-slate-900 p-6 rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm hover:shadow-md transition-shadow w-full"
+                  class="bg-slate-50 dark:bg-slate-900 p-6 rounded-2xl border border-slate-300 dark:border-slate-700 shadow-sm hover:shadow-md transition-shadow w-full"
                 >
                   <div
                     class="flex flex-col gap-2 mb-4"
@@ -851,24 +758,6 @@ exports[`Experience Component renders correctly and matches snapshot 1`] = `
                     experience.mapgears.description
                   </p>
                   <div
-                    class="space-y-3 mb-6"
-                  >
-                    <div
-                      class="pl-4 border-l-2 border-blue-100 dark:border-blue-900"
-                    >
-                      <h4
-                        class="font-medium text-slate-900 dark:text-white text-sm"
-                      >
-                        experience.mapgears.projects.sentinel.name
-                      </h4>
-                      <p
-                        class="text-sm text-slate-500 dark:text-slate-400"
-                      >
-                        experience.mapgears.projects.sentinel.details
-                      </p>
-                    </div>
-                  </div>
-                  <div
                     class="flex flex-wrap gap-2 mb-6"
                   >
                     <span
@@ -900,6 +789,7 @@ exports[`Experience Component renders correctly and matches snapshot 1`] = `
                   <a
                     class="inline-flex items-center gap-2 text-sm font-medium text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 transition-colors group"
                     href="/experiences/mapgears-gis-developer"
+                    state="[object Object]"
                   >
                     common.view_details
                     <svg
@@ -941,7 +831,7 @@ exports[`Experience Component renders correctly and matches snapshot 1`] = `
                 class="flex flex-col md:items-start"
               >
                 <div
-                  class="bg-slate-50 dark:bg-slate-900 p-6 rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm hover:shadow-md transition-shadow w-full"
+                  class="bg-slate-50 dark:bg-slate-900 p-6 rounded-2xl border border-slate-300 dark:border-slate-700 shadow-sm hover:shadow-md transition-shadow w-full"
                 >
                   <div
                     class="flex flex-col gap-2 mb-4"
@@ -1062,24 +952,6 @@ exports[`Experience Component renders correctly and matches snapshot 1`] = `
                     experience.zetaBox.description
                   </p>
                   <div
-                    class="space-y-3 mb-6"
-                  >
-                    <div
-                      class="pl-4 border-l-2 border-blue-100 dark:border-blue-900"
-                    >
-                      <h4
-                        class="font-medium text-slate-900 dark:text-white text-sm"
-                      >
-                        experience.zetaBox.projects.iot.name
-                      </h4>
-                      <p
-                        class="text-sm text-slate-500 dark:text-slate-400"
-                      >
-                        experience.zetaBox.projects.iot.details
-                      </p>
-                    </div>
-                  </div>
-                  <div
                     class="flex flex-wrap gap-2 mb-6"
                   >
                     <span
@@ -1116,6 +988,7 @@ exports[`Experience Component renders correctly and matches snapshot 1`] = `
                   <a
                     class="inline-flex items-center gap-2 text-sm font-medium text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 transition-colors group"
                     href="/experiences/zeta-box-developer"
+                    state="[object Object]"
                   >
                     common.view_details
                     <svg

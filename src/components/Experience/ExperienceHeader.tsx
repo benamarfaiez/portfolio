@@ -10,7 +10,7 @@ export default function ExperienceHeader({ experience }: ExperienceHeaderProps) 
     const { t } = useTranslation();
 
     return (
-        <div className="bg-white dark:bg-slate-900 rounded-2xl p-8 shadow-sm border border-slate-100 dark:border-slate-800 mb-8">
+        <div className="bg-white dark:bg-slate-900 rounded-2xl p-8 shadow-sm border border-slate-300 dark:border-slate-700 mb-8">
             <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-6">
                 <div>
                     <h1 className="text-3xl font-bold text-slate-900 dark:text-white mb-2">

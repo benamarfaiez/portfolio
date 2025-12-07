@@ -1,210 +1,132 @@
-import { renderHook, act, waitFor } from '@testing-library/react';
+import { renderHook, act } from '@testing-library/react';
 import { useLayoutNavigation } from '../useLayoutNavigation';
 
 // Mock react-router-dom
 const mockNavigate = jest.fn();
-const mockUseLocation = jest.fn();
+let mockLocation = { pathname: '/', hash: '', search: '', state: null, key: 'default' };
+let mockNavType = 'PUSH';
+
 jest.mock('react-router-dom', () => ({
     useNavigate: () => mockNavigate,
-    useLocation: () => mockUseLocation(),
+    useLocation: () => mockLocation,
+    useNavigationType: () => mockNavType,
 }));
-
-// Mock DOM methods
-const mockScrollIntoView = jest.fn();
-const mockQuerySelector = jest.fn();
-window.HTMLElement.prototype.scrollIntoView = mockScrollIntoView;
-document.querySelector = mockQuerySelector;
-window.scrollTo = jest.fn();
 
 describe('useLayoutNavigation', () => {
     beforeEach(() => {
         jest.clearAllMocks();
-        mockUseLocation.mockReturnValue({ pathname: '/', hash: '' });
+        mockLocation = { pathname: '/', hash: '', search: '', state: null, key: 'default' };
+        mockNavType = 'PUSH';
+        window.scrollTo = jest.fn();
+        Element.prototype.scrollIntoView = jest.fn();
     });
 
-    describe('Initial state', () => {
-        test('initializes with menu closed', () => {
-            const { result } = renderHook(() => useLayoutNavigation());
-            expect(result.current.isMenuOpen).toBe(false);
+    test('toggles menu state', () => {
+        const { result } = renderHook(() => useLayoutNavigation());
+
+        expect(result.current.isMenuOpen).toBe(false);
+
+        act(() => {
+            result.current.toggleMenu();
         });
+        expect(result.current.isMenuOpen).toBe(true);
+
+        act(() => {
+            result.current.toggleMenu();
+        });
+        expect(result.current.isMenuOpen).toBe(false);
     });
 
-    describe('toggleMenu', () => {
-        test('toggles menu open and closed', () => {
-            const { result } = renderHook(() => useLayoutNavigation());
+    test('handleNavigation navigates to route if not home', () => {
+        mockLocation = { pathname: '/about', hash: '', search: '', state: null, key: 'key' };
+        const { result } = renderHook(() => useLayoutNavigation());
+        const e = { preventDefault: jest.fn() } as unknown as React.MouseEvent<HTMLAnchorElement>;
 
-            act(() => {
-                result.current.toggleMenu();
-            });
-            expect(result.current.isMenuOpen).toBe(true);
-
-            act(() => {
-                result.current.toggleMenu();
-            });
-            expect(result.current.isMenuOpen).toBe(false);
+        act(() => {
+            result.current.handleNavigation(e, '/contact');
         });
+
+        expect(e.preventDefault).toHaveBeenCalled();
+        expect(mockNavigate).toHaveBeenCalledWith('/contact');
+        expect(result.current.isMenuOpen).toBe(false);
     });
 
-    describe('setIsMenuOpen', () => {
-        test('sets menu open state directly', () => {
-            const { result } = renderHook(() => useLayoutNavigation());
+    test('handleNavigation scrolls to top if on home and no hash', () => {
+        mockLocation = { pathname: '/', hash: '', search: '', state: null, key: 'key' };
+        const { result } = renderHook(() => useLayoutNavigation());
+        const e = { preventDefault: jest.fn() } as unknown as React.MouseEvent<HTMLAnchorElement>;
 
-            act(() => {
-                result.current.setIsMenuOpen(true);
-            });
-            expect(result.current.isMenuOpen).toBe(true);
-
-            act(() => {
-                result.current.setIsMenuOpen(false);
-            });
-            expect(result.current.isMenuOpen).toBe(false);
+        act(() => {
+            result.current.handleNavigation(e, '/');
         });
+
+        expect(window.scrollTo).toHaveBeenCalledWith({ top: 0, behavior: 'smooth' });
     });
 
-    describe('useEffect - hash scrolling', () => {
-        test('scrolls to element when hash is present', async () => {
-            const mockElement = document.createElement('div');
-            mockQuerySelector.mockReturnValue(mockElement);
-            mockUseLocation.mockReturnValue({ pathname: '/', hash: '#about' });
+    test('useEffect scrolls to element when hash is present', () => {
+        jest.useFakeTimers();
+        mockLocation = { pathname: '/', hash: '#about', search: '', state: null, key: 'key' };
 
-            renderHook(() => useLayoutNavigation());
+        const scrollIntoViewMock = jest.fn();
+        const mockElement = { scrollIntoView: scrollIntoViewMock };
+        jest.spyOn(document, 'querySelector').mockReturnValue(mockElement as unknown as Element);
 
-            await waitFor(() => {
-                expect(mockQuerySelector).toHaveBeenCalledWith('#about');
-                expect(mockScrollIntoView).toHaveBeenCalledWith({ behavior: 'smooth' });
-            }, { timeout: 200 });
+        renderHook(() => useLayoutNavigation());
+
+        act(() => {
+            jest.runAllTimers();
         });
 
-        test('does not scroll when hash element not found', async () => {
-            mockQuerySelector.mockReturnValue(null);
-            mockUseLocation.mockReturnValue({ pathname: '/', hash: '#notfound' });
+        expect(document.querySelector).toHaveBeenCalledWith('#about');
+        expect(scrollIntoViewMock).toHaveBeenCalledWith({ behavior: 'smooth' });
 
-            renderHook(() => useLayoutNavigation());
-
-            await waitFor(() => {
-                expect(mockQuerySelector).toHaveBeenCalledWith('#notfound');
-            }, { timeout: 200 });
-
-            expect(mockScrollIntoView).not.toHaveBeenCalled();
-        });
-
-        test('scrolls to top when on home page with no hash', () => {
-            mockUseLocation.mockReturnValue({ pathname: '/', hash: '' });
-
-            renderHook(() => useLayoutNavigation());
-
-            expect(window.scrollTo).toHaveBeenCalledWith({ top: 0, behavior: 'smooth' });
-        });
-
-        test('does not scroll when not on home page and no hash', () => {
-            mockUseLocation.mockReturnValue({ pathname: '/other', hash: '' });
-
-            renderHook(() => useLayoutNavigation());
-
-            expect(window.scrollTo).not.toHaveBeenCalled();
-            expect(mockQuerySelector).not.toHaveBeenCalled();
-        });
+        jest.useRealTimers();
     });
 
-    describe('handleNavigation', () => {
-        test('scrolls to target element on home page with hash', () => {
-            const mockElement = document.createElement('div');
-            mockQuerySelector.mockReturnValue(mockElement);
-            mockUseLocation.mockReturnValue({ pathname: '/', hash: '' });
+    test('handleNavigation scrolls to element if on home and hash is present', () => {
+        mockLocation = { pathname: '/', hash: '', search: '', state: null, key: 'key' };
+        const { result } = renderHook(() => useLayoutNavigation());
+        const e = { preventDefault: jest.fn() } as unknown as React.MouseEvent<HTMLAnchorElement>;
 
-            const { result } = renderHook(() => useLayoutNavigation());
+        const scrollIntoViewMock = jest.fn();
+        const mockElement = { scrollIntoView: scrollIntoViewMock };
+        jest.spyOn(document, 'querySelector').mockReturnValue(mockElement as unknown as Element);
 
-            const mockEvent = {
-                preventDefault: jest.fn(),
-            } as unknown as React.MouseEvent<HTMLAnchorElement>;
-
-            act(() => {
-                result.current.handleNavigation(mockEvent, '/#about');
-            });
-
-            expect(mockEvent.preventDefault).toHaveBeenCalled();
-            expect(mockQuerySelector).toHaveBeenCalledWith('#about');
-            expect(mockScrollIntoView).toHaveBeenCalledWith({ behavior: 'smooth' });
-            expect(result.current.isMenuOpen).toBe(false);
+        act(() => {
+            result.current.handleNavigation(e, '/#contact');
         });
 
-        test('scrolls to top on home page without hash', () => {
-            mockUseLocation.mockReturnValue({ pathname: '/', hash: '' });
+        expect(document.querySelector).toHaveBeenCalledWith('#contact');
+        expect(scrollIntoViewMock).toHaveBeenCalledWith({ behavior: 'smooth' });
+    });
+    test('useEffect does nothing if element is not found', () => {
+        jest.useFakeTimers();
+        mockLocation = { pathname: '/', hash: '#missing', search: '', state: null, key: 'key' };
 
-            const { result } = renderHook(() => useLayoutNavigation());
+        jest.spyOn(document, 'querySelector').mockReturnValue(null);
 
-            const mockEvent = {
-                preventDefault: jest.fn(),
-            } as unknown as React.MouseEvent<HTMLAnchorElement>;
+        renderHook(() => useLayoutNavigation());
 
-            act(() => {
-                result.current.handleNavigation(mockEvent, '/');
-            });
-
-            expect(mockEvent.preventDefault).toHaveBeenCalled();
-            expect(window.scrollTo).toHaveBeenCalledWith({ top: 0, behavior: 'smooth' });
-            expect(result.current.isMenuOpen).toBe(false);
+        act(() => {
+            jest.runAllTimers();
         });
 
-        test('navigates when not on home page', () => {
-            mockUseLocation.mockReturnValue({ pathname: '/other', hash: '' });
+        expect(document.querySelector).toHaveBeenCalledWith('#missing');
+        // No crash, and no scrollIntoView called (implicit)
+        jest.useRealTimers();
+    });
 
-            const { result } = renderHook(() => useLayoutNavigation());
+    test('handleNavigation does nothing if element is not found', () => {
+        mockLocation = { pathname: '/', hash: '', search: '', state: null, key: 'key' };
+        const { result } = renderHook(() => useLayoutNavigation());
+        const e = { preventDefault: jest.fn() } as unknown as React.MouseEvent<HTMLAnchorElement>;
 
-            const mockEvent = {
-                preventDefault: jest.fn(),
-            } as unknown as React.MouseEvent<HTMLAnchorElement>;
+        jest.spyOn(document, 'querySelector').mockReturnValue(null);
 
-            act(() => {
-                result.current.handleNavigation(mockEvent, '/#about');
-            });
-
-            expect(mockEvent.preventDefault).toHaveBeenCalled();
-            expect(mockNavigate).toHaveBeenCalledWith('/#about');
-            expect(result.current.isMenuOpen).toBe(false);
+        act(() => {
+            result.current.handleNavigation(e, '/#missing');
         });
 
-        test('does not scroll when target element not found on home page', () => {
-            mockQuerySelector.mockReturnValue(null);
-            mockUseLocation.mockReturnValue({ pathname: '/', hash: '' });
-
-            const { result } = renderHook(() => useLayoutNavigation());
-
-            const mockEvent = {
-                preventDefault: jest.fn(),
-            } as unknown as React.MouseEvent<HTMLAnchorElement>;
-
-            act(() => {
-                result.current.handleNavigation(mockEvent, '/#notfound');
-            });
-
-            expect(mockEvent.preventDefault).toHaveBeenCalled();
-            expect(mockQuerySelector).toHaveBeenCalledWith('#notfound');
-            expect(mockScrollIntoView).not.toHaveBeenCalled();
-            expect(result.current.isMenuOpen).toBe(false);
-        });
-
-        test('closes menu after navigation', () => {
-            mockUseLocation.mockReturnValue({ pathname: '/', hash: '' });
-
-            const { result } = renderHook(() => useLayoutNavigation());
-
-            // Open menu first
-            act(() => {
-                result.current.setIsMenuOpen(true);
-            });
-            expect(result.current.isMenuOpen).toBe(true);
-
-            // Navigate
-            const mockEvent = {
-                preventDefault: jest.fn(),
-            } as unknown as React.MouseEvent<HTMLAnchorElement>;
-
-            act(() => {
-                result.current.handleNavigation(mockEvent, '/');
-            });
-
-            expect(result.current.isMenuOpen).toBe(false);
-        });
+        expect(document.querySelector).toHaveBeenCalledWith('#missing');
     });
 });

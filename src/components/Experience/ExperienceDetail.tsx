@@ -1,4 +1,4 @@
-import { useParams, Link, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowLeft } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
@@ -32,13 +32,25 @@ export default function ExperienceDetail() {
         }
     };
 
+    const location = useLocation();
+
+    // ...
+
+    const handleBack = () => {
+        if (location.state?.from === 'list') {
+            navigate(-1);
+        } else {
+            navigate('/#experience');
+        }
+    };
+
     if (!experience) {
         return (
             <div className="min-h-screen flex items-center justify-center bg-slate-50 dark:bg-slate-950">
                 <div className="text-center">
                     <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-4">Experience not found</h2>
                     <button
-                        onClick={() => navigate('/')}
+                        onClick={handleBack}
                         className="text-blue-600 hover:text-blue-700 font-medium flex items-center gap-2 mx-auto"
                     >
                         <ArrowLeft size={20} />
@@ -50,15 +62,15 @@ export default function ExperienceDetail() {
     }
 
     return (
-        <div className="min-h-screen bg-slate-50 dark:bg-slate-950 pt-24 pb-12">
+        <div className="min-h-screen bg-slate-100 dark:bg-slate-950 pt-24 pb-12">
             <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-                <Link
-                    to="/"
+                <button
+                    onClick={handleBack}
                     className="inline-flex items-center gap-2 text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors mb-8 group"
                 >
                     <ArrowLeft size={20} className="group-hover:-translate-x-1 transition-transform" />
                     {t('common.back_to_list')}
-                </Link>
+                </button>
 
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}

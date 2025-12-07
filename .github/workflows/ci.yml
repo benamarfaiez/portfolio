@@ -42,7 +42,7 @@ jobs:
         run: npm run lint
 
   build:
-    needs: lint
+    needs: setup
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4

@@ -24,7 +24,7 @@ export default function ProjectDetails({
     const { t } = useTranslation();
 
     return (
-        <section id="projects_details" className="bg-white dark:bg-slate-900 rounded-2xl p-8 shadow-sm border border-slate-100 dark:border-slate-800">
+        <section id="projects_details" className="bg-white dark:bg-slate-900 rounded-2xl p-8 shadow-sm border border-slate-300 dark:border-slate-700">
             <div className="flex items-center justify-between mb-6">
                 <h2 className="text-xl font-bold text-slate-900 dark:text-white">
                     {t(project.name)}
@@ -40,7 +40,7 @@ export default function ProjectDetails({
                     >
                         <ChevronLeft size={24} />
                     </button>
-                    <span className="text-sm font-medium text-slate-500 dark:text-slate-400">
+                    <span className="text-sm font-medium text-slate-500 dark:text-slate-400" style={{ width: '28px' }}>
                         {currentIndex + 1} / {totalProjects}
                     </span>
                     <button
