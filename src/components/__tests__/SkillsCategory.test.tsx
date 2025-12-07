@@ -43,6 +43,22 @@ describe('Skills Category Component', () => {
         expect(container).toMatchSnapshot();
     });
 
+    test('renders null when category is undefined', () => {
+        render(
+            <MemoryRouter initialEntries={['/skills']}>
+                <Routes>
+                    <Route path="/skills" element={<SkillsCategory />} />
+                </Routes>
+            </MemoryRouter>
+        );
+        // When category is undefined, activeConfig is undefined, so it returns null (after the check in the component, or crashes if not handled).
+        // Looking at the code: 
+        // const activeConfig = category ? categoryConfig[category] : undefined;
+        // if (!activeConfig) return ... "Catégorie non trouvée"
+
+        expect(screen.getByText('common.not_found_category')).toBeInTheDocument();
+    });
+
     test('renders 404 for invalid category', () => {
         render(
             <MemoryRouter initialEntries={['/skills/invalid']}>

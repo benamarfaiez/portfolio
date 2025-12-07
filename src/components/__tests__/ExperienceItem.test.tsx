@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen, fireEvent } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import ExperienceItem from '../Experience/ExperienceItem';
 
@@ -57,4 +57,18 @@ describe('ExperienceItem Component', () => {
         );
         expect(containerOdd.firstChild).not.toHaveClass('md:flex-row-reverse');
     });
+
+    test('hides logo on error', () => {
+        render(
+            <MemoryRouter>
+                <ExperienceItem experience={mockExperience} index={0} />
+            </MemoryRouter>
+        );
+
+        const img = screen.getByAltText('Test Company logo');
+        fireEvent.error(img);
+
+        expect(img).not.toBeVisible();
+    });
 });
+
