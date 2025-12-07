@@ -27,7 +27,7 @@ export interface Experience {
 export const experiences: Experience[] = [
     {
         id: 1,
-        slug: "henner-net-developer",
+        slug: "henner-developer",
         company: "Henner",
         logo: "logo-henner.png",
         location: "experience.henner.location",
@@ -69,7 +69,7 @@ export const experiences: Experience[] = [
                     'experience.henner.projects.ring_central.realization.tache9',
                     'experience.henner.projects.ring_central.realization.tache10',
                 ],
-                technicalEnvironment: ['C#', '.NET 6', 'ASP.NET Core', 'Web API', 'Microservices', 'HttpClientFactory', 'Logging', 'Linq', 'Threading', 'AutoMapper', 'RingCentral', 'FluentValidation', 'Tests : Moq, xUnit (tests unitaires), Postman (tests API), FluentAssertions', 'Contrôle de version : Git, GitLab, CI/CD']
+                technicalEnvironment: ['C#', '.NET 6', 'ASP.NET Core', 'Web API', 'Microservices', 'HttpClientFactory', 'Logging', 'Linq', 'Threading', 'AutoMapper', 'RingCentral', 'FluentValidation', 'Moq', 'xUnit', 'Postman', 'FluentAssertions', 'GitLab', 'Gitlab CI']
             },
             {
                 name: 'experience.henner.projects.broker.name',
@@ -85,7 +85,7 @@ export const experiences: Experience[] = [
                     'experience.henner.projects.broker.realization.tache7',
                     'experience.henner.projects.broker.realization.tache8',
                 ],
-                technicalEnvironment: ['.NET 6', 'C#', 'WebApi', 'RestApi', 'Dapper/SqlMapper', 'xUnit', 'Moq', 'FluentMigrator', 'SonarQube', 'AutoMapper', 'SQL/PostgreSQL', 'Pattern Repository, Unit Of Work, Dependency injection, Factory', 'Visual Studio', 'Postman', 'Bitbucket', 'Git/GitLab', 'Sharepoint']
+                technicalEnvironment: ['.NET 6', 'C#', 'WebApi', 'RestApi', 'Dapper/SqlMapper', 'xUnit', 'Moq', 'FluentMigrator', 'SonarQube', 'AutoMapper', 'SQL/PostgreSQL', 'Pattern Repository', 'Unit Of Work', 'Dependency injection', 'Factory', 'Visual Studio', 'Postman', 'Bitbucket', 'Git/GitLab', 'Sharepoint']
             },
             {
                 name: 'experience.henner.projects.migration.name',

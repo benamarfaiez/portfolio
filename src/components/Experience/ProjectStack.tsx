@@ -8,7 +8,7 @@ export default function ProjectStack({ technologies }: ProjectStackProps) {
     const { t } = useTranslation();
 
     return (
-        <section id='tech_stack' className="bg-white dark:bg-slate-900 rounded-2xl p-6 shadow-sm border border-slate-100 dark:border-slate-800">
+        <section id='tech_stack' className="bg-white dark:bg-slate-900 rounded-2xl p-6 shadow-sm border border-slate-300 dark:border-slate-700">
             <h2 className="text-lg font-bold text-slate-900 dark:text-white mb-4">Tech Stack</h2>
             <div className="flex flex-wrap gap-2">
                 {technologies.map((tech, idx) => (

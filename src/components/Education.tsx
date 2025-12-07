@@ -30,7 +30,7 @@ export default function Education() {
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.5, delay: index * 0.1 }}
-                            className="bg-white dark:bg-slate-800 p-8 rounded-2xl shadow-sm hover:shadow-md transition-all border border-slate-100 dark:border-slate-700 flex flex-col md:flex-row gap-6 items-start md:items-center"
+                            className="bg-slate-50 dark:bg-slate-900 p-8 rounded-2xl shadow-sm hover:shadow-md transition-all border border-slate-300 dark:border-slate-700 flex flex-col md:flex-row gap-6 items-start md:items-center"
                         >
                             <div className="p-4 bg-blue-50 dark:bg-blue-900/30 rounded-xl text-blue-600 shrink-0">
                                 <GraduationCap size={32} />
