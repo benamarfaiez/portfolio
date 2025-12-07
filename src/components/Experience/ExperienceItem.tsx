@@ -79,6 +79,7 @@ const ExperienceItem: React.FC<ExperienceItemProps> = ({ experience, index }) =>
 
                         <Link
                             to={`/experiences/${experience.slug}`}
+                            state={{ from: 'list' }}
                             className="inline-flex items-center gap-2 text-sm font-medium text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 transition-colors group"
                         >
                             {t('common.view_details') || "View Details"}

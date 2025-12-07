@@ -14,7 +14,7 @@ const SkillCard: React.FC<SkillCardProps> = ({ skill, index }) => {
     const { t } = useTranslation();
 
     return (
-        <Link to={skill.link} className="block h-full">
+        <Link to={skill.link} state={{ from: 'list' }} className="block h-full">
             <motion.div
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}

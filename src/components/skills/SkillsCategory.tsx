@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { Bar } from 'react-chartjs-2';
 import {
@@ -20,7 +20,18 @@ ChartJS.register(CategoryScale, LinearScale, BarElement, Tooltip);
 const SkillsCategoryPage: React.FC = () => {
     const { category } = useParams<{ category: SkillCategory }>();
     const navigate = useNavigate();
+    const location = useLocation();
     const { t } = useTranslation();
+
+    const handleBack = () => {
+        if (location.state?.from === 'list') {
+            navigate(-1);
+        } else {
+            navigate('/#skills');
+        }
+    };
+
+
 
 
     const categoryConfig: Record<SkillCategory, StyleCategory> = useMemo(() => ({
@@ -133,7 +144,7 @@ const SkillsCategoryPage: React.FC = () => {
                 <motion.button
                     initial={{ opacity: 0, x: -50 }}
                     animate={{ opacity: 1, x: 0 }}
-                    onClick={() => navigate(-1)}
+                    onClick={handleBack}
                     className="flex items-center gap-3 text-white/80 hover:text-white text-lg font-medium transition"
                 >
                     <ArrowLeft size={28} />

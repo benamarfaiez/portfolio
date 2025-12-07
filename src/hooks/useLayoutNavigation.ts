@@ -1,10 +1,12 @@
 import { useState, useEffect } from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useNavigate, useLocation, useNavigationType } from 'react-router-dom';
 
 export function useLayoutNavigation() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const navigate = useNavigate();
     const location = useLocation();
+
+    const navType = useNavigationType();
 
     // Gère le scroll automatique lors du changement de route avec un hash
     useEffect(() => {
@@ -15,10 +17,10 @@ export function useLayoutNavigation() {
                     element.scrollIntoView({ behavior: 'smooth' });
                 }, 100);
             }
-        } else if (location.pathname === '/') {
+        } else if (location.pathname === '/' && navType !== 'POP') {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
-    }, [location]);
+    }, [location, navType]);
 
     // Fonction de navigation intelligente
     const handleNavigation = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
