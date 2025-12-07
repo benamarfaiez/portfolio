@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { useState, useRef, FormEvent } from 'react';
+import { useState, FormEvent } from 'react';
 import emailjs from '@emailjs/browser';
 import { Mail } from 'lucide-react';
 import { MapPin } from 'lucide-react';
@@ -11,15 +11,13 @@ import { getEnvVar } from '../utils/env';
 
 export default function Contact() {
     const { t } = useTranslation();
-    const formRef = useRef<HTMLFormElement>(null);
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
     const [errorMessage, setErrorMessage] = useState('');
 
     const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-
-        if (!formRef.current) return;
+        const form = e.currentTarget;
 
         // Validate environment variables
         const serviceId = getEnvVar('VITE_EMAILJS_SERVICE_ID');
@@ -40,7 +38,7 @@ export default function Contact() {
             await emailjs.sendForm(
                 serviceId,
                 templateId,
-                formRef.current,
+                form,
                 publicKey
             );
 
@@ -49,7 +47,7 @@ export default function Contact() {
 
             // Reset form after 2 seconds
             setTimeout(() => {
-                formRef.current?.reset();
+                form.reset();
                 setSubmitStatus('idle');
             }, 2000);
 
@@ -137,7 +135,7 @@ export default function Contact() {
                         transition={{ duration: 0.5, delay: 0.4 }}
                     >
                         <div className="bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-lg border border-slate-100 dark:border-slate-700" style={{ marginTop: '58px' }}>
-                            <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
+                            <form onSubmit={handleSubmit} className="space-y-6">
                                 <div>
                                     <label htmlFor="name" className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
                                         {t('contact.form.email')}

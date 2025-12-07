@@ -19,7 +19,7 @@ déployé sur : Vercel
 
 Tests unitaires + E2E (Playwright) à plus de 90 % de couverture.
 
-Objectif : présenter mon parcours, mes compétences techniques et mes réalisations de manière claire, élégante et professionnelle — tout en démontrant ma maîtrise du frontend moderne.
+Objectif : présenter mon parcours, mes compétences techniques et mes réalisations de manière claire, élégante et professionnelle.
 
 ---
 
@@ -30,7 +30,7 @@ Objectif : présenter mon parcours, mes compétences techniques et mes réalisat
 - Animations fluides (Framer Motion)
 - Bouton "Retour en haut"
 - Téléchargement du CV (PDF)
-- Galerie complète du CV (9 pages) avec lightbox
+- Galerie complète du CV avec lightbox
 - Formatage automatique du texte en Title Case
 - Responsive parfait
 - Accessibilité renforcée (ARIA, contrastes, navigation clavier)
@@ -43,7 +43,6 @@ Objectif : présenter mon parcours, mes compétences techniques et mes réalisat
 
 | Catégorie           | Technologies |
 |---------------------|------------|
-| IDE                 | Antigravity (workflows) |
 | Framework           | React 18, TypeScript, Vite |
 | Styling             | Tailwind CSS, shadcn/ui, Headless UI |
 | Animations          | Framer Motion |
