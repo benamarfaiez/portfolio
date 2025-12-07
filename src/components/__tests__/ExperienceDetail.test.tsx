@@ -11,6 +11,7 @@ const mockNavigate = jest.fn();
 jest.mock('react-router-dom', () => ({
     useParams: () => ({ slug: 'euro-information-developer' }),
     useNavigate: () => mockNavigate,
+    useLocation: () => ({ state: null }),
     Link: ({ children, to, ...props }: React.PropsWithChildren<LinkProps>) => <a href={to as string} {...props}>{children}</a>,
 }));
 

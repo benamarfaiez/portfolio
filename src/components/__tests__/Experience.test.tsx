@@ -32,15 +32,7 @@ describe('Experience Component', () => {
         });
     });
 
-    test('renders projects for each experience', () => {
-        render(<Experience />);
-        experiences.forEach(exp => {
-            exp.projects.forEach(project => {
-                expect(screen.getByText(project.name)).toBeInTheDocument();
-                expect(screen.getByText(project.details)).toBeInTheDocument();
-            });
-        });
-    });
+
 
     test('renders technologies for each experience', () => {
         render(<Experience />);

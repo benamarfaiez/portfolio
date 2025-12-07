@@ -7,6 +7,20 @@ jest.mock('react-chartjs-2', () => ({
     Bar: () => <div data-testid="mock-bar-chart" />
 }));
 
+const mockNavigate = jest.fn();
+
+jest.mock('react-router-dom', () => ({
+    ...jest.requireActual('react-router-dom'),
+    useNavigate: () => mockNavigate,
+    useLocation: () => ({
+        pathname: '/skills/backend',
+        state: null,
+        search: '',
+        hash: '',
+        key: 'default',
+    }),
+}));
+
 describe('Skills Category Component', () => {
     test('renders correctly and matches snapshot', () => {
         const { container } = render(
@@ -57,5 +71,11 @@ describe('Skills Category Component', () => {
 
         const backBtn = screen.getByText('common.back_to_list');
         fireEvent.click(backBtn);
+
+        // Should navigate to anchor since state is empty in mock
+        expect(mockNavigate).toHaveBeenCalledWith('/#skills');
+
+        // Reset mock
+        mockNavigate.mockClear();
     });
 });

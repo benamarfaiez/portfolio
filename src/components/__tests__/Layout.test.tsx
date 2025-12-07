@@ -15,6 +15,7 @@ const mockNavigate = jest.fn();
 jest.mock('react-router-dom', () => ({
     useNavigate: () => mockNavigate,
     useLocation: () => ({ pathname: '/', hash: '' }),
+    useNavigationType: () => 'PUSH',
     Link: ({ children, to, ...props }: React.PropsWithChildren<LinkProps>) => <a href={to as string} {...props}>{children}</a>,
 }));
 
