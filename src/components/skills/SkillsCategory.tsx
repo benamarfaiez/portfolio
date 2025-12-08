@@ -15,13 +15,11 @@ import {
 import { skillsDiagram, type StyleCategory, type SkillCategory } from '../../data/skills';
 import { ArrowLeft } from 'lucide-react';
 import { motion } from 'framer-motion';
-import { useTheme } from '../../hooks/useTheme';
 
 ChartJS.register(CategoryScale, LinearScale, BarElement, Tooltip);
 
 const SkillsCategoryPage: React.FC = () => {
     const { category } = useParams<{ category: SkillCategory }>();
-    const { theme, toggleTheme } = useTheme();
     const navigate = useNavigate();
     const location = useLocation();
     const { t } = useTranslation();
@@ -128,7 +126,7 @@ const SkillsCategoryPage: React.FC = () => {
                     title: {
                         display: true,
                         text: 'Niveau de maîtrise',
-                        color: theme === 'dark' ? '#f3f4f6' : '#111827',
+                        color: '#f3f4f6',
                         font: { size: isMobile ? 12 : isTablet ? 14 : 16, weight: 'bold' },
                         padding: { top: isMobile ? 10 : isTablet ? 15 : 20 },
                     },
@@ -150,7 +148,7 @@ const SkillsCategoryPage: React.FC = () => {
                     initial={{ opacity: 0, x: -50 }}
                     animate={{ opacity: 1, x: 0 }}
                     onClick={handleBack}
-                    className="flex items-center gap-3 text-white/80 hover:text-white text-lg font-medium transition"
+                    className="flex items-center gap-3 text-gray-800/80 hover:text-white text-lg font-medium transition dark:text-white/80"
                 >
                     <ArrowLeft size={28} />
                     {t('common.back_to_list')}
@@ -168,7 +166,8 @@ const SkillsCategoryPage: React.FC = () => {
                     initial={{ opacity: 0, scale: 0.95 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.8, delay: 0.2 }}
-                    className="relative bg-white/5 backdrop-blur-xl rounded-3xl shadow-2xl border border-white/10 overflow-hidden p-2 md:p-4"
+                    className="relative backdrop-blur-xl rounded-3xl shadow-2xl border border-white/10 overflow-hidden p-2 md:p-4 bg-slate-900"
+
                 >
                     <div className={`absolute inset-0 bg-gradient-to-br ${activeConfig.gradient} opacity-10`} />
 

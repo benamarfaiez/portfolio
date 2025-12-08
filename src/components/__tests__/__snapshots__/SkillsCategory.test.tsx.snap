@@ -3,7 +3,7 @@
 exports[`Skills Category Component renders correctly and matches snapshot 1`] = `
 <div>
   <div
-    class="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-black py-16 px-6"
+    class="min-h-screen from-gray-900 via-gray-800 to-black py-16 px-6 bg-slate-50 dark:bg-slate-900/50"
   >
     <div
       class="max-w-6xl mx-auto"
