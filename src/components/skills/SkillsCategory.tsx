@@ -15,11 +15,13 @@ import {
 import { skillsDiagram, type StyleCategory, type SkillCategory } from '../../data/skills';
 import { ArrowLeft } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { useTheme } from '../../hooks/useTheme';
 
 ChartJS.register(CategoryScale, LinearScale, BarElement, Tooltip);
 
 const SkillsCategoryPage: React.FC = () => {
     const { category } = useParams<{ category: SkillCategory }>();
+    const { theme, toggleTheme } = useTheme();
     const navigate = useNavigate();
     const location = useLocation();
     const { t } = useTranslation();
@@ -32,9 +34,6 @@ const SkillsCategoryPage: React.FC = () => {
             navigate('/#skills');
         }
     };
-
-
-
 
     const categoryConfig: Record<SkillCategory, StyleCategory> = useMemo(() => ({
         frontend: { title: t('skills.categories.frontend'), color: "#3b82f6", gradient: "from-blue-500 to-cyan-400" },
@@ -128,8 +127,8 @@ const SkillsCategoryPage: React.FC = () => {
                     },
                     title: {
                         display: true,
-                        text: isMobile ? 'Niveau' : 'Niveau de maîtrise',
-                        color: '#f3f4f6',
+                        text: 'Niveau de maîtrise',
+                        color: theme === 'dark' ? '#f3f4f6' : '#111827',
                         font: { size: isMobile ? 12 : isTablet ? 14 : 16, weight: 'bold' },
                         padding: { top: isMobile ? 10 : isTablet ? 15 : 20 },
                     },
@@ -145,7 +144,7 @@ const SkillsCategoryPage: React.FC = () => {
     }
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-black py-16 px-6">
+        <div className="min-h-screen from-gray-900 via-gray-800 to-black py-16 px-6 bg-slate-50 dark:bg-slate-900/50">
             <div className="max-w-6xl mx-auto">
                 <motion.button
                     initial={{ opacity: 0, x: -50 }}
@@ -173,8 +172,11 @@ const SkillsCategoryPage: React.FC = () => {
                 >
                     <div className={`absolute inset-0 bg-gradient-to-br ${activeConfig.gradient} opacity-10`} />
 
-                    <div className="relative h-[280px] sm:h-[350px] md:h-[400px] lg:h-[500px]">
-                        <Bar data={data} options={options} />
+                    {/* Conteneur avec scroll horizontal stylisé pour garantir la lisibilité sur petits écrans */}
+                    <div className="relative overflow-x-auto custom-scrollbar pb-2">
+                        <div className="h-[280px] sm:h-[350px] md:h-[400px] lg:h-[500px] min-w-[600px]">
+                            <Bar data={data} options={options} />
+                        </div>
                     </div>
 
                 </motion.div>

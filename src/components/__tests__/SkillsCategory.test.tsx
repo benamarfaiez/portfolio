@@ -212,7 +212,7 @@ describe('Skills Category Component', () => {
         expect(options.scales.x.ticks.autoSkipPadding).toBe(10); // mobile value
         expect(options.scales.y.ticks.font.size).toBe(11); // mobile value
         expect(options.scales.y.grid.lineWidth).toBe(1); // mobile value
-        expect(options.scales.y.title.text).toBe('Niveau'); // mobile short text
+        expect(options.scales.y.title.text).toBe('Niveau de maîtrise'); // texte complet maintenant
         expect(options.scales.y.title.font.size).toBe(12); // mobile value
         expect(options.scales.y.title.padding.top).toBe(10); // mobile value
     });
