@@ -1,14 +1,13 @@
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import LanguageSwitcher from '../LanguageSwitcher';
 
 const mockChangeLanguage = jest.fn();
 
 jest.mock('react-i18next', () => ({
     useTranslation: () => ({
-        t: (key: string) => key,
         i18n: {
-            changeLanguage: mockChangeLanguage,
             language: 'fr',
+            changeLanguage: mockChangeLanguage,
         },
     }),
 }));
@@ -18,47 +17,88 @@ describe('LanguageSwitcher Component', () => {
         mockChangeLanguage.mockClear();
     });
 
-    test('renders correctly and matches snapshot', () => {
-        const { container } = render(<LanguageSwitcher />);
-        expect(container).toMatchSnapshot();
-    });
-
-    test('renders with current language selected', () => {
+    test('renders language switcher button with globe icon', () => {
         render(<LanguageSwitcher />);
-        const select = screen.getByRole('combobox');
-        expect(select).toHaveValue('fr');
+
+        const button = screen.getByRole('button', { name: /change language/i });
+        expect(button).toBeInTheDocument();
+        expect(button).toHaveAttribute('aria-expanded', 'false');
     });
 
-    test('changes language when selection changes', () => {
+    test('displays current language label on desktop', () => {
         render(<LanguageSwitcher />);
-        const select = screen.getByRole('combobox');
 
-        fireEvent.change(select, { target: { value: 'en' } });
-
-        expect(mockChangeLanguage).toHaveBeenCalledWith('en');
+        // Should show "Français" (hidden on mobile with sm:inline)
+        expect(screen.getByText('Français')).toBeInTheDocument();
     });
 
-    test('renders with English selected when language is en', async () => {
-        jest.clearAllMocks();
-        jest.resetModules();
+    test('opens dropdown menu when button is clicked', () => {
+        render(<LanguageSwitcher />);
 
-        jest.doMock('react-i18next', () => ({
-            useTranslation: () => ({
-                t: (key: string) => key,
-                i18n: {
-                    changeLanguage: mockChangeLanguage,
-                    language: 'en',
-                },
-            }),
-        }));
+        const button = screen.getByRole('button', { name: /change language/i });
 
-        const LanguageSwitcherModule = await import('../LanguageSwitcher');
-        const LanguageSwitcherEn = LanguageSwitcherModule.default;
+        // Dropdown should be closed initially
+        expect(screen.queryByText('English')).not.toBeInTheDocument();
 
-        const { container } = render(<LanguageSwitcherEn />);
-        const select = container.querySelector('select');
+        // Click to open
+        fireEvent.click(button);
 
-        expect(select).toHaveValue('en');
+        // Dropdown should be open
+        expect(button).toHaveAttribute('aria-expanded', 'true');
+        expect(screen.getAllByText('Français')).toHaveLength(2); // Button + dropdown
+        expect(screen.getByText('English')).toBeInTheDocument();
     });
 
+    test('changes language when option is selected', async () => {
+        render(<LanguageSwitcher />);
+
+        // Open dropdown
+        const button = screen.getByRole('button', { name: /change language/i });
+        fireEvent.click(button);
+
+        // Click on English option
+        const englishOption = screen.getByRole('button', { name: /switch to english/i });
+        fireEvent.click(englishOption);
+
+        // Should call changeLanguage
+        await waitFor(() => {
+            expect(mockChangeLanguage).toHaveBeenCalledWith('en');
+        });
+    });
+
+    test('shows checkmark next to active language', () => {
+        render(<LanguageSwitcher />);
+
+        // Open dropdown
+        const button = screen.getByRole('button', { name: /change language/i });
+        fireEvent.click(button);
+
+        // French should be active (has checkmark)
+        const frenchOption = screen.getByRole('button', { name: /switch to français/i });
+        expect(frenchOption).toHaveClass('bg-blue-50');
+    });
+
+    test('closes dropdown when clicking outside', async () => {
+        render(
+            <div>
+                <LanguageSwitcher />
+                <div data-testid="outside">Outside element</div>
+            </div>
+        );
+
+        // Open dropdown
+        const button = screen.getByRole('button', { name: /change language/i });
+        fireEvent.click(button);
+
+        expect(screen.getByText('English')).toBeInTheDocument();
+
+        // Click outside
+        const outside = screen.getByTestId('outside');
+        fireEvent.mouseDown(outside);
+
+        // Dropdown should close
+        await waitFor(() => {
+            expect(screen.queryByText('English')).not.toBeInTheDocument();
+        });
+    });
 });
