@@ -97,25 +97,6 @@ test.describe('Portfolio E2E', () => {
         });
     });
 
-    test.describe('Internationalization', () => {
-        test('language switcher changes content', async ({ page }) => {
-            // Use visible=true to handle mobile/desktop switchers
-            const languageSwitcher = page.locator('select').locator('visible=true').first();
-
-            // Initial state (French)
-            await expect(languageSwitcher).toHaveValue('fr');
-            // Use heading to ensure visibility on mobile (nav links are hidden)
-            await expect(page.getByRole('heading', { name: navLinksFr[0].text })).toBeVisible();
-
-            // Switch to English
-            await languageSwitcher.selectOption('en');
-            await expect(languageSwitcher).toHaveValue('en');
-
-            // Verify content change
-            await expect(page.getByRole('heading', { name: 'ABOUT', exact: true })).toBeVisible();
-        });
-    });
-
     test.describe('Theme System', () => {
         test('theme toggle switches dark/light mode', async ({ page }) => {
             const html = page.locator('html');

@@ -41,6 +41,7 @@ export default function LanguageSwitcher() {
     return (
         <div className="relative" ref={dropdownRef}>
             <button
+                id="language-switcher-button"
                 onClick={() => setIsOpen(!isOpen)}
                 className="flex items-center gap-2 px-3 py-2 text-sm font-medium rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-slate-800 text-gray-700 dark:text-gray-200 hover:border-blue-500 dark:hover:border-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all cursor-pointer"
                 aria-label="Change language"
@@ -64,6 +65,7 @@ export default function LanguageSwitcher() {
                                 return (
                                     <button
                                         key={lang.code}
+                                        id={`language-option-${lang.code}`}
                                         onClick={() => changeLanguage(lang.code)}
                                         className={`w-full flex items-center justify-between px-4 py-3 text-sm transition-colors ${isActive
                                             ? 'bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400'
