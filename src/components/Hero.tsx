@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Mail } from 'lucide-react';
+import { Github, Mail } from 'lucide-react';
 import { Linkedin } from 'lucide-react';
 import { Download } from 'lucide-react';
 import { personalInfo } from '../data/data';
@@ -53,7 +53,7 @@ export default function Hero() {
                                     href='CV_FaiezBENAMAR.pdf'
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="w-full sm:w-auto px-8 py-3 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-blue-500 dark:hover:border-blue-500 text-slate-900 dark:text-white rounded-full font-medium transition-all flex items-center justify-center gap-2"
+                                    className="w-full sm:w-auto px-8 py-3 bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 hover:border-blue-500 dark:hover:border-blue-500 text-slate-900 dark:text-white rounded-full font-medium transition-all flex items-center justify-center gap-2"
                                 >
                                     {t('hero.download_cv')} <Download size={18} />
                                 </a>
@@ -61,10 +61,19 @@ export default function Hero() {
                                     href={personalInfo.linkedin}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="p-3 bg-slate-100 dark:bg-slate-800 rounded-full hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                                    className="p-3 bg-slate-200 dark:bg-slate-800 rounded-full hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
                                     aria-label="LinkedIn"
                                 >
                                     <Linkedin size={20} />
+                                </a>
+                                <a
+                                    href={personalInfo.github}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="p-3 bg-slate-200 dark:bg-slate-800 rounded-full hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                                    aria-label="GitHub"
+                                >
+                                    <Github size={20} />
                                 </a>
                             </div>
                         </motion.div>
