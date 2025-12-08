@@ -1,6 +1,7 @@
 import React, { useMemo } from 'react';
 import { useParams, useNavigate, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import { useResponsive } from '../../hooks/useResponsive';
 import { Bar } from 'react-chartjs-2';
 import {
     Chart as ChartJS,
@@ -22,6 +23,7 @@ const SkillsCategoryPage: React.FC = () => {
     const navigate = useNavigate();
     const location = useLocation();
     const { t } = useTranslation();
+    const { isMobile, isTablet } = useResponsive();
 
     const handleBack = () => {
         if (location.state?.from === 'list') {
@@ -58,16 +60,16 @@ const SkillsCategoryPage: React.FC = () => {
                 data: filtered.map(s => s.score),
                 backgroundColor: activeConfig.color + 'cc',
                 borderColor: activeConfig.color,
-                borderWidth: 4,
-                borderRadius: 16,
+                borderWidth: isMobile ? 2 : isTablet ? 3 : 4,
+                borderRadius: isMobile ? 8 : isTablet ? 12 : 16,
                 borderSkipped: 'bottom' as const,
-                barThickness: 42,
-                maxBarThickness: 64,
+                barThickness: isMobile ? 24 : isTablet ? 32 : 42,
+                maxBarThickness: isMobile ? 40 : isTablet ? 52 : 64,
                 hoverBackgroundColor: activeConfig.color,
-                hoverBorderWidth: 5,
+                hoverBorderWidth: isMobile ? 3 : isTablet ? 4 : 5,
             }],
         };
-    }, [filtered, activeConfig]);
+    }, [filtered, activeConfig, isMobile, isTablet]);
 
 
     const options: ChartOptions<'bar'> = useMemo(() => {
@@ -76,21 +78,21 @@ const SkillsCategoryPage: React.FC = () => {
             responsive: true,
             maintainAspectRatio: false,
             animation: {
-                duration: 1800,
+                duration: isMobile ? 1200 : 1800,
                 easing: 'easeOutBounce',
             },
             plugins: {
                 legend: { display: false },
                 tooltip: {
                     backgroundColor: 'rgba(0, 0, 0, 0.9)',
-                    cornerRadius: 16,
-                    padding: 16,
-                    titleFont: { size: 14, weight: 'bold' },
-                    bodyFont: { size: 14, weight: 300 },
+                    cornerRadius: isMobile ? 12 : 16,
+                    padding: isMobile ? 8 : isTablet ? 12 : 16,
+                    titleFont: { size: isMobile ? 11 : isTablet ? 13 : 14, weight: 'bold' },
+                    bodyFont: { size: isMobile ? 10 : isTablet ? 12 : 14, weight: 300 },
                     displayColors: false,
                     borderColor: activeConfig.color,
                     borderWidth: 1,
-                    caretPadding: 12,
+                    caretPadding: isMobile ? 8 : 12,
                     callbacks: {
                         title: (items: TooltipItem<'bar'>[]) => items[0].label,
                         label: (item: TooltipItem<'bar'>) => `${item.parsed.y}/10`,
@@ -103,8 +105,12 @@ const SkillsCategoryPage: React.FC = () => {
                     grid: { display: false },
                     ticks: {
                         color: '#e5e7eb',
-                        font: { size: 14, weight: 600 },
-                        padding: 16,
+                        font: { size: isMobile ? 10 : isTablet ? 12 : 14, weight: 600 },
+                        padding: isMobile ? 8 : isTablet ? 12 : 16,
+                        maxRotation: isMobile ? 45 : 0,
+                        minRotation: isMobile ? 45 : 0,
+                        autoSkip: isMobile,
+                        autoSkipPadding: isMobile ? 10 : 0,
                     },
                 },
                 y: {
@@ -113,24 +119,24 @@ const SkillsCategoryPage: React.FC = () => {
                     ticks: {
                         stepSize: 1,
                         color: '#9ca3af',
-                        font: { size: 14, weight: 500 },
+                        font: { size: isMobile ? 11 : isTablet ? 13 : 14, weight: 500 },
                         callback: (value) => `${value}`,
                     },
                     grid: {
                         color: 'rgba(156, 163, 175, 0.15)',
-                        lineWidth: 1.5,
+                        lineWidth: isMobile ? 1 : isTablet ? 1.25 : 1.5,
                     },
                     title: {
                         display: true,
-                        text: 'Niveau de maîtrise',
+                        text: isMobile ? 'Niveau' : 'Niveau de maîtrise',
                         color: '#f3f4f6',
-                        font: { size: 16, weight: 'bold' },
-                        padding: { top: 20 },
+                        font: { size: isMobile ? 12 : isTablet ? 14 : 16, weight: 'bold' },
+                        padding: { top: isMobile ? 10 : isTablet ? 15 : 20 },
                     },
                 },
             },
         };
-    }, [activeConfig, t]);
+    }, [activeConfig, t, isMobile, isTablet]);
 
     if (!activeConfig) {
         return <div className="text-center py-32 text-3xl text-white">
@@ -167,7 +173,7 @@ const SkillsCategoryPage: React.FC = () => {
                 >
                     <div className={`absolute inset-0 bg-gradient-to-br ${activeConfig.gradient} opacity-10`} />
 
-                    <div className="relative h-[300px] md:h-[400px] lg:h-[500px]">
+                    <div className="relative h-[280px] sm:h-[350px] md:h-[400px] lg:h-[500px]">
                         <Bar data={data} options={options} />
                     </div>
 
