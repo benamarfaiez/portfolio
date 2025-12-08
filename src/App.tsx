@@ -10,6 +10,7 @@ import Certifications from './components/Certifications';
 import Contact from './components/Contact';
 import ExperienceDetail from './components/Experience/ExperienceDetail';
 import SkillsCategory from './components/skills/SkillsCategory';
+import NotFound from './components/NotFound';
 
 function App() {
   return (
@@ -29,6 +30,8 @@ function App() {
           } />
           <Route path="/experiences/:slug" element={<ExperienceDetail />} />
           <Route path="/skills/:category" element={<SkillsCategory />} />
+          {/* Route 404 - doit être en dernier */}
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </Layout>
     </BrowserRouter>
