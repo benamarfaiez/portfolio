@@ -38,7 +38,7 @@ describe('LanguageSwitcher Component', () => {
         expect(mockChangeLanguage).toHaveBeenCalledWith('en');
     });
 
-    test('renders with English selected when language is en', () => {
+    test('renders with English selected when language is en', async () => {
         jest.clearAllMocks();
         jest.resetModules();
 
@@ -52,7 +52,7 @@ describe('LanguageSwitcher Component', () => {
             }),
         }));
 
-        const LanguageSwitcherModule = require('../LanguageSwitcher');
+        const LanguageSwitcherModule = await import('../LanguageSwitcher');
         const LanguageSwitcherEn = LanguageSwitcherModule.default;
 
         const { container } = render(<LanguageSwitcherEn />);
