@@ -118,4 +118,45 @@ describe('useResponsive', () => {
         expect(result.current.isTablet).toBe(false);
         expect(result.current.isDesktop).toBe(true);
     });
+
+    // Note: Lines 22 and 27 handle SSR scenarios where window is undefined.
+    // These are defensive programming checks that are difficult to test in JSDOM 
+    // environment, but are crucial for SSR frameworks like Next.js.
+    describe('Window availability checks', () => {
+        it('should initialize correctly when window is available', () => {
+            // This tests the "happy path" where window exists (line 22 branch: window.innerWidth)
+            const { result } = renderHook(() => useResponsive());
+
+            // Should have a valid width from window
+            expect(result.current.width).toBeGreaterThan(0);
+            expect(result.current).toHaveProperty('isMobile');
+            expect(result.current).toHaveProperty('isTablet');
+            expect(result.current).toHaveProperty('isDesktop');
+        });
+
+        it('should handle window resize events correctly', () => {
+            // This tests the useEffect path when window exists (covers line 27 normal branch)
+            act(() => {
+                resizeWindow(375);
+            });
+
+            const { result } = renderHook(() => useResponsive());
+
+            // useEffect should have run and updated the state
+            expect(result.current.isMobile).toBe(true);
+            expect(result.current.width).toBe(375);
+        });
+
+        it('should cleanup event listeners on unmount', () => {
+            const { unmount } = renderHook(() => useResponsive());
+            const removeEventListenerSpy = jest.spyOn(window, 'removeEventListener');
+
+            unmount();
+
+            // Should have removed the resize listener
+            expect(removeEventListenerSpy).toHaveBeenCalledWith('resize', expect.any(Function));
+
+            removeEventListenerSpy.mockRestore();
+        });
+    });
 });

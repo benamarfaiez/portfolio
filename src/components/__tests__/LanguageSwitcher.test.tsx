@@ -38,4 +38,27 @@ describe('LanguageSwitcher Component', () => {
         expect(mockChangeLanguage).toHaveBeenCalledWith('en');
     });
 
+    test('renders with English selected when language is en', () => {
+        jest.clearAllMocks();
+        jest.resetModules();
+
+        jest.doMock('react-i18next', () => ({
+            useTranslation: () => ({
+                t: (key: string) => key,
+                i18n: {
+                    changeLanguage: mockChangeLanguage,
+                    language: 'en',
+                },
+            }),
+        }));
+
+        const LanguageSwitcherModule = require('../LanguageSwitcher');
+        const LanguageSwitcherEn = LanguageSwitcherModule.default;
+
+        const { container } = render(<LanguageSwitcherEn />);
+        const select = container.querySelector('select');
+
+        expect(select).toHaveValue('en');
+    });
+
 });

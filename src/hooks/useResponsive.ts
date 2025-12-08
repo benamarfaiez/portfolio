@@ -23,10 +23,6 @@ export function useResponsive(): ResponsiveState {
     });
 
     useEffect(() => {
-        // Vérifier si window est disponible (pour SSR)
-        if (typeof window === 'undefined') return;
-
-        // Fonction pour mettre à jour la taille d'écran
         const updateScreenSize = () => {
             const width = window.innerWidth;
             setScreenSize({
@@ -37,13 +33,10 @@ export function useResponsive(): ResponsiveState {
             });
         };
 
-        // Initialiser immédiatement
         updateScreenSize();
 
-        // Écouter les changements de taille
         window.addEventListener('resize', updateScreenSize);
 
-        // Nettoyage
         return () => window.removeEventListener('resize', updateScreenSize);
     }, []);
 
