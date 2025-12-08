@@ -13,7 +13,7 @@ import {
     type TooltipItem,
 } from 'chart.js';
 import { skillsDiagram, type StyleCategory, type SkillCategory } from '../../data/skills';
-import { ArrowLeft } from 'lucide-react';
+import { ArrowLeft, ChevronLeft, ChevronRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 ChartJS.register(CategoryScale, LinearScale, BarElement, Tooltip);
@@ -30,6 +30,24 @@ const SkillsCategoryPage: React.FC = () => {
             navigate(-1);
         } else {
             navigate('/#skills');
+        }
+    };
+
+    // Liste ordonnée des catégories pour la navigation
+    const categories: SkillCategory[] = ['frontend', 'backend', 'tests', 'database', 'devops', 'architecture'];
+    const currentIndex = category ? categories.indexOf(category) : -1;
+    const hasPrev = currentIndex > 0;
+    const hasNext = currentIndex >= 0 && currentIndex < categories.length - 1;
+
+    const handlePrevCategory = () => {
+        if (hasPrev) {
+            navigate(`/skills/${categories[currentIndex - 1]}`);
+        }
+    };
+
+    const handleNextCategory = () => {
+        if (hasNext) {
+            navigate(`/skills/${categories[currentIndex + 1]}`);
         }
     };
 
@@ -161,6 +179,42 @@ const SkillsCategoryPage: React.FC = () => {
                 >
                     {activeConfig.title}
                 </motion.h2>
+
+                {/* Boutons de navigation entre catégories */}
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 0.3 }}
+                    className="flex items-center justify-center gap-3 mb-6"
+                >
+                    <button
+                        onClick={handlePrevCategory}
+                        disabled={!hasPrev}
+                        className={`p-2 sm:p-3 rounded-full transition-all ${!hasPrev
+                            ? 'text-slate-400 dark:text-slate-600 cursor-not-allowed opacity-50'
+                            : 'text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-800 hover:scale-110'
+                            }`}
+                        aria-label="Catégorie précédente"
+                    >
+                        <ChevronLeft size={isMobile ? 24 : 28} />
+                    </button>
+
+                    <span className="text-sm sm:text-base font-medium text-slate-600 dark:text-slate-400 min-w-[80px] text-center">
+                        {currentIndex + 1} / {categories.length}
+                    </span>
+
+                    <button
+                        onClick={handleNextCategory}
+                        disabled={!hasNext}
+                        className={`p-2 sm:p-3 rounded-full transition-all ${!hasNext
+                            ? 'text-slate-400 dark:text-slate-600 cursor-not-allowed opacity-50'
+                            : 'text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-800 hover:scale-110'
+                            }`}
+                        aria-label="Catégorie suivante"
+                    >
+                        <ChevronRight size={isMobile ? 24 : 28} />
+                    </button>
+                </motion.div>
 
                 <motion.div
                     initial={{ opacity: 0, scale: 0.95 }}
