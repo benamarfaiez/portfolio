@@ -13,7 +13,7 @@ import {
     type TooltipItem,
 } from 'chart.js';
 import { skillsDiagram, type StyleCategory, type SkillCategory } from '../../data/skills';
-import { ArrowLeft } from 'lucide-react';
+import { ArrowLeft, ChevronLeft, ChevronRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 ChartJS.register(CategoryScale, LinearScale, BarElement, Tooltip);
@@ -33,8 +33,23 @@ const SkillsCategoryPage: React.FC = () => {
         }
     };
 
+    // Liste ordonnée des catégories pour la navigation
+    const categories: SkillCategory[] = ['frontend', 'backend', 'tests', 'database', 'devops', 'architecture'];
+    const currentIndex = category ? categories.indexOf(category) : -1;
+    const hasPrev = currentIndex > 0;
+    const hasNext = currentIndex >= 0 && currentIndex < categories.length - 1;
 
+    const handlePrevCategory = () => {
+        if (hasPrev) {
+            navigate(`/skills/${categories[currentIndex - 1]}`);
+        }
+    };
 
+    const handleNextCategory = () => {
+        if (hasNext) {
+            navigate(`/skills/${categories[currentIndex + 1]}`);
+        }
+    };
 
     const categoryConfig: Record<SkillCategory, StyleCategory> = useMemo(() => ({
         frontend: { title: t('skills.categories.frontend'), color: "#3b82f6", gradient: "from-blue-500 to-cyan-400" },
@@ -128,7 +143,7 @@ const SkillsCategoryPage: React.FC = () => {
                     },
                     title: {
                         display: true,
-                        text: isMobile ? 'Niveau' : 'Niveau de maîtrise',
+                        text: 'Niveau de maîtrise',
                         color: '#f3f4f6',
                         font: { size: isMobile ? 12 : isTablet ? 14 : 16, weight: 'bold' },
                         padding: { top: isMobile ? 10 : isTablet ? 15 : 20 },
@@ -145,13 +160,13 @@ const SkillsCategoryPage: React.FC = () => {
     }
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-black py-16 px-6">
+        <div className="min-h-screen from-gray-900 via-gray-800 to-black py-16 px-6 bg-slate-50 dark:bg-slate-900/50">
             <div className="max-w-6xl mx-auto">
                 <motion.button
                     initial={{ opacity: 0, x: -50 }}
                     animate={{ opacity: 1, x: 0 }}
                     onClick={handleBack}
-                    className="flex items-center gap-3 text-white/80 hover:text-white text-lg font-medium transition"
+                    className="flex items-center gap-3 text-gray-800/80 hover:text-white text-lg font-medium transition dark:text-white/80"
                 >
                     <ArrowLeft size={28} />
                     {t('common.back_to_list')}
@@ -165,16 +180,56 @@ const SkillsCategoryPage: React.FC = () => {
                     {activeConfig.title}
                 </motion.h2>
 
+                {/* Boutons de navigation entre catégories */}
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 0.3 }}
+                    className="flex items-center justify-center gap-3 mb-6"
+                >
+                    <button
+                        onClick={handlePrevCategory}
+                        disabled={!hasPrev}
+                        className={`p-2 sm:p-3 rounded-full transition-all ${!hasPrev
+                            ? 'text-slate-400 dark:text-slate-600 cursor-not-allowed opacity-50'
+                            : 'text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-800 hover:scale-110'
+                            }`}
+                        aria-label="Catégorie précédente"
+                    >
+                        <ChevronLeft size={isMobile ? 24 : 28} />
+                    </button>
+
+                    <span className="text-sm sm:text-base font-medium text-slate-600 dark:text-slate-400 min-w-[80px] text-center">
+                        {currentIndex + 1} / {categories.length}
+                    </span>
+
+                    <button
+                        onClick={handleNextCategory}
+                        disabled={!hasNext}
+                        className={`p-2 sm:p-3 rounded-full transition-all ${!hasNext
+                            ? 'text-slate-400 dark:text-slate-600 cursor-not-allowed opacity-50'
+                            : 'text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-800 hover:scale-110'
+                            }`}
+                        aria-label="Catégorie suivante"
+                    >
+                        <ChevronRight size={isMobile ? 24 : 28} />
+                    </button>
+                </motion.div>
+
                 <motion.div
                     initial={{ opacity: 0, scale: 0.95 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.8, delay: 0.2 }}
-                    className="relative bg-white/5 backdrop-blur-xl rounded-3xl shadow-2xl border border-white/10 overflow-hidden p-2 md:p-4"
+                    className="relative backdrop-blur-xl rounded-3xl shadow-2xl border border-white/10 overflow-hidden p-2 md:p-4 bg-slate-900"
+
                 >
                     <div className={`absolute inset-0 bg-gradient-to-br ${activeConfig.gradient} opacity-10`} />
 
-                    <div className="relative h-[280px] sm:h-[350px] md:h-[400px] lg:h-[500px]">
-                        <Bar data={data} options={options} />
+                    {/* Conteneur avec scroll horizontal stylisé pour garantir la lisibilité sur petits écrans */}
+                    <div className="relative overflow-x-auto custom-scrollbar pb-2">
+                        <div className="h-[280px] sm:h-[350px] md:h-[400px] lg:h-[500px] min-w-[600px]">
+                            <Bar data={data} options={options} />
+                        </div>
                     </div>
 
                 </motion.div>
