@@ -48,7 +48,7 @@ exports[`Skills Category Component renders correctly and matches snapshot 1`] = 
           class="absolute inset-0 bg-gradient-to-br from-purple-500 to-pink-500 opacity-10"
         />
         <div
-          class="relative h-[300px] md:h-[400px] lg:h-[500px]"
+          class="relative h-[280px] sm:h-[350px] md:h-[400px] lg:h-[500px]"
         >
           <div
             data-testid="mock-bar-chart"
