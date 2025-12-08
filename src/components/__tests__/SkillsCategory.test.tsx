@@ -313,4 +313,108 @@ describe('Skills Category Component', () => {
         expect(options.scales.y.title.font.size).toBe(16); // desktop value
         expect(options.scales.y.title.padding.top).toBe(20); // desktop value
     });
+
+    test('navigates to previous category when prev button is clicked', () => {
+        // Start at backend (index 1)
+        render(
+            <MemoryRouter initialEntries={['/skills/backend']}>
+                <Routes>
+                    <Route path="/skills/:category" element={<SkillsCategory />} />
+                </Routes>
+            </MemoryRouter>
+        );
+
+        // Find and click the previous button
+        const prevButton = screen.getByLabelText('Catégorie précédente');
+        fireEvent.click(prevButton);
+
+        // Should navigate to frontend (index 0)
+        expect(mockNavigate).toHaveBeenCalledWith('/skills/frontend');
+    });
+
+    test('navigates to next category when next button is clicked', () => {
+        // Start at backend (index 1)
+        render(
+            <MemoryRouter initialEntries={['/skills/backend']}>
+                <Routes>
+                    <Route path="/skills/:category" element={<SkillsCategory />} />
+                </Routes>
+            </MemoryRouter>
+        );
+
+        // Find and click the next button
+        const nextButton = screen.getByLabelText('Catégorie suivante');
+        fireEvent.click(nextButton);
+
+        // Should navigate to tests (index 2)
+        expect(mockNavigate).toHaveBeenCalledWith('/skills/tests');
+    });
+
+    test('disables prev button on first category', () => {
+        // Start at frontend (index 0 - first category)
+        render(
+            <MemoryRouter initialEntries={['/skills/frontend']}>
+                <Routes>
+                    <Route path="/skills/:category" element={<SkillsCategory />} />
+                </Routes>
+            </MemoryRouter>
+        );
+
+        const prevButton = screen.getByLabelText('Catégorie précédente');
+        expect(prevButton).toBeDisabled();
+    });
+
+    test('disables next button on last category', () => {
+        // Start at architecture (index 5 - last category)
+        render(
+            <MemoryRouter initialEntries={['/skills/architecture']}>
+                <Routes>
+                    <Route path="/skills/:category" element={<SkillsCategory />} />
+                </Routes>
+            </MemoryRouter>
+        );
+
+        const nextButton = screen.getByLabelText('Catégorie suivante');
+        expect(nextButton).toBeDisabled();
+    });
+
+    test('does not navigate when clicking disabled prev button', () => {
+        // Start at frontend (index 0 - first category)
+        render(
+            <MemoryRouter initialEntries={['/skills/frontend']}>
+                <Routes>
+                    <Route path="/skills/:category" element={<SkillsCategory />} />
+                </Routes>
+            </MemoryRouter>
+        );
+
+        mockNavigate.mockClear();
+        const prevButton = screen.getByLabelText('Catégorie précédente');
+
+        // Try to click disabled button (won't actually trigger onClick due to disabled state)
+        fireEvent.click(prevButton);
+
+        // Should not navigate
+        expect(mockNavigate).not.toHaveBeenCalled();
+    });
+
+    test('does not navigate when clicking disabled next button', () => {
+        // Start at architecture (index 5 - last category)
+        render(
+            <MemoryRouter initialEntries={['/skills/architecture']}>
+                <Routes>
+                    <Route path="/skills/:category" element={<SkillsCategory />} />
+                </Routes>
+            </MemoryRouter>
+        );
+
+        mockNavigate.mockClear();
+        const nextButton = screen.getByLabelText('Catégorie suivante');
+
+        // Try to click disabled button (won't actually trigger onClick due to disabled state)
+        fireEvent.click(nextButton);
+
+        // Should not navigate
+        expect(mockNavigate).not.toHaveBeenCalled();
+    });
 });
