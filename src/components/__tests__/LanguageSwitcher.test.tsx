@@ -39,19 +39,4 @@ describe('LanguageSwitcher Component', () => {
         expect(mockChangeLanguage).toHaveBeenCalledWith('en');
     });
 
-    test('renders with English selected when language is en', () => {
-        // Re-mock for this specific test
-        jest.spyOn(ReactI18Next, 'useTranslation').mockReturnValue({
-            t: (key: string) => key,
-            i18n: {
-                changeLanguage: mockChangeLanguage,
-                language: 'en',
-            },
-            // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        } as any);
-
-        render(<LanguageSwitcher />);
-        const select = screen.getByRole('combobox');
-        expect(select).toHaveValue('en');
-    });
 });

@@ -11,6 +11,12 @@ jest.mock('react-chartjs-2', () => ({
     }
 }));
 
+// Mock useResponsive hook
+const mockUseResponsive = jest.fn();
+jest.mock('../../hooks/useResponsive', () => ({
+    useResponsive: () => mockUseResponsive(),
+}));
+
 const mockNavigate = jest.fn();
 const mockUseLocation = jest.fn();
 
@@ -30,6 +36,13 @@ describe('Skills Category Component', () => {
             search: '',
             hash: '',
             key: 'default',
+        });
+        // Default to desktop
+        mockUseResponsive.mockReturnValue({
+            isMobile: false,
+            isTablet: false,
+            isDesktop: true,
+            width: 1440,
         });
     });
     test('renders correctly and matches snapshot', () => {
@@ -153,5 +166,151 @@ describe('Skills Category Component', () => {
 
         // Verify Axis ticks callback (line 117)
         expect(options.scales.y.ticks.callback(5)).toBe('5');
+    });
+
+    test('configures chart with mobile responsive options', () => {
+        // Set mobile viewport
+        mockUseResponsive.mockReturnValue({
+            isMobile: true,
+            isTablet: false,
+            isDesktop: false,
+            width: 375,
+        });
+
+        render(
+            <MemoryRouter initialEntries={['/skills/backend']}>
+                <Routes>
+                    <Route path="/skills/:category" element={<SkillsCategory />} />
+                </Routes>
+            </MemoryRouter>
+        );
+
+        expect(mockBarChart).toHaveBeenCalled();
+        const chartProps = mockBarChart.mock.calls[0][0];
+
+        // Verify mobile dataset configuration (lines 63-69)
+        const dataset = chartProps.data.datasets[0];
+        expect(dataset.borderWidth).toBe(2); // mobile value
+        expect(dataset.borderRadius).toBe(8); // mobile value
+        expect(dataset.barThickness).toBe(24); // mobile value
+        expect(dataset.maxBarThickness).toBe(40); // mobile value
+        expect(dataset.hoverBorderWidth).toBe(3); // mobile value
+
+        // Verify mobile options configuration (lines 81-134)
+        const options = chartProps.options;
+        expect(options.animation.duration).toBe(1200); // mobile value
+        expect(options.plugins.tooltip.cornerRadius).toBe(12); // mobile value
+        expect(options.plugins.tooltip.padding).toBe(8); // mobile value
+        expect(options.plugins.tooltip.titleFont.size).toBe(11); // mobile value
+        expect(options.plugins.tooltip.bodyFont.size).toBe(10); // mobile value
+        expect(options.plugins.tooltip.caretPadding).toBe(8); // mobile value
+        expect(options.scales.x.ticks.font.size).toBe(10); // mobile value
+        expect(options.scales.x.ticks.padding).toBe(8); // mobile value
+        expect(options.scales.x.ticks.maxRotation).toBe(45); // mobile rotation
+        expect(options.scales.x.ticks.minRotation).toBe(45); // mobile rotation
+        expect(options.scales.x.ticks.autoSkip).toBe(true); // mobile autoskip
+        expect(options.scales.x.ticks.autoSkipPadding).toBe(10); // mobile value
+        expect(options.scales.y.ticks.font.size).toBe(11); // mobile value
+        expect(options.scales.y.grid.lineWidth).toBe(1); // mobile value
+        expect(options.scales.y.title.text).toBe('Niveau'); // mobile short text
+        expect(options.scales.y.title.font.size).toBe(12); // mobile value
+        expect(options.scales.y.title.padding.top).toBe(10); // mobile value
+    });
+
+    test('configures chart with tablet responsive options', () => {
+        // Set tablet viewport
+        mockUseResponsive.mockReturnValue({
+            isMobile: false,
+            isTablet: true,
+            isDesktop: false,
+            width: 768,
+        });
+
+        render(
+            <MemoryRouter initialEntries={['/skills/tests']}>
+                <Routes>
+                    <Route path="/skills/:category" element={<SkillsCategory />} />
+                </Routes>
+            </MemoryRouter>
+        );
+
+        expect(mockBarChart).toHaveBeenCalled();
+        const chartProps = mockBarChart.mock.calls[0][0];
+
+        // Verify tablet dataset configuration (lines 63-69)
+        const dataset = chartProps.data.datasets[0];
+        expect(dataset.borderWidth).toBe(3); // tablet value
+        expect(dataset.borderRadius).toBe(12); // tablet value
+        expect(dataset.barThickness).toBe(32); // tablet value
+        expect(dataset.maxBarThickness).toBe(52); // tablet value
+        expect(dataset.hoverBorderWidth).toBe(4); // tablet value
+
+        // Verify tablet options configuration (lines 81-134)
+        const options = chartProps.options;
+        expect(options.animation.duration).toBe(1800); // desktop value (not mobile)
+        expect(options.plugins.tooltip.cornerRadius).toBe(16); // desktop value (not mobile)
+        expect(options.plugins.tooltip.padding).toBe(12); // tablet value
+        expect(options.plugins.tooltip.titleFont.size).toBe(13); // tablet value
+        expect(options.plugins.tooltip.bodyFont.size).toBe(12); // tablet value
+        expect(options.plugins.tooltip.caretPadding).toBe(12); // desktop value (not mobile)
+        expect(options.scales.x.ticks.font.size).toBe(12); // tablet value
+        expect(options.scales.x.ticks.padding).toBe(12); // tablet value
+        expect(options.scales.x.ticks.maxRotation).toBe(0); // no rotation on tablet/desktop
+        expect(options.scales.x.ticks.minRotation).toBe(0); // no rotation on tablet/desktop
+        expect(options.scales.x.ticks.autoSkip).toBe(false); // no autoskip on tablet/desktop
+        expect(options.scales.x.ticks.autoSkipPadding).toBe(0); // no padding on tablet/desktop
+        expect(options.scales.y.ticks.font.size).toBe(13); // tablet value
+        expect(options.scales.y.grid.lineWidth).toBe(1.25); // tablet value
+        expect(options.scales.y.title.text).toBe('Niveau de maîtrise'); // full text on tablet/desktop
+        expect(options.scales.y.title.font.size).toBe(14); // tablet value
+        expect(options.scales.y.title.padding.top).toBe(15); // tablet value
+    });
+
+    test('configures chart with desktop responsive options', () => {
+        // Set desktop viewport
+        mockUseResponsive.mockReturnValue({
+            isMobile: false,
+            isTablet: false,
+            isDesktop: true,
+            width: 1440,
+        });
+
+        render(
+            <MemoryRouter initialEntries={['/skills/frontend']}>
+                <Routes>
+                    <Route path="/skills/:category" element={<SkillsCategory />} />
+                </Routes>
+            </MemoryRouter>
+        );
+
+        expect(mockBarChart).toHaveBeenCalled();
+        const chartProps = mockBarChart.mock.calls[0][0];
+
+        // Verify desktop dataset configuration (lines 63-69)
+        const dataset = chartProps.data.datasets[0];
+        expect(dataset.borderWidth).toBe(4); // desktop value
+        expect(dataset.borderRadius).toBe(16); // desktop value
+        expect(dataset.barThickness).toBe(42); // desktop value
+        expect(dataset.maxBarThickness).toBe(64); // desktop value
+        expect(dataset.hoverBorderWidth).toBe(5); // desktop value
+
+        // Verify desktop options configuration (lines 81-134)
+        const options = chartProps.options;
+        expect(options.animation.duration).toBe(1800); // desktop value
+        expect(options.plugins.tooltip.cornerRadius).toBe(16); // desktop value
+        expect(options.plugins.tooltip.padding).toBe(16); // desktop value
+        expect(options.plugins.tooltip.titleFont.size).toBe(14); // desktop value
+        expect(options.plugins.tooltip.bodyFont.size).toBe(14); // desktop value
+        expect(options.plugins.tooltip.caretPadding).toBe(12); // desktop value
+        expect(options.scales.x.ticks.font.size).toBe(14); // desktop value
+        expect(options.scales.x.ticks.padding).toBe(16); // desktop value
+        expect(options.scales.x.ticks.maxRotation).toBe(0); // no rotation on desktop
+        expect(options.scales.x.ticks.minRotation).toBe(0); // no rotation on desktop
+        expect(options.scales.x.ticks.autoSkip).toBe(false); // no autoskip on desktop
+        expect(options.scales.y.ticks.font.size).toBe(14); // desktop value
+        expect(options.scales.y.grid.lineWidth).toBe(1.5); // desktop value
+        expect(options.scales.y.title.text).toBe('Niveau de maîtrise'); // full text on desktop
+        expect(options.scales.y.title.font.size).toBe(16); // desktop value
+        expect(options.scales.y.title.padding.top).toBe(20); // desktop value
     });
 });
