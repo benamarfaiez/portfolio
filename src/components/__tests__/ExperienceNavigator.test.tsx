@@ -32,5 +32,24 @@ describe('ExperienceNavigator', () => {
         fireEvent.click(screen.getByRole('button', { name: /experience.navigator.previous/i }));
         expect(mockNavigate).toHaveBeenCalledWith('/experiences/henner-developer', { state: { from: 'detail-nav' } });
     });
+
+    test('shows only next button for first experience', () => {
+        render(<ExperienceNavigator currentSlug="henner-developer" />);
+
+        expect(screen.queryByRole('button', { name: /experience.navigator.previous/i })).not.toBeInTheDocument();
+        expect(screen.getByRole('button', { name: /experience.navigator.next/i })).toBeInTheDocument();
+    });
+
+    test('shows only previous button for last experience', () => {
+        render(<ExperienceNavigator currentSlug="zeta-box-developer" />);
+
+        expect(screen.queryByRole('button', { name: /experience.navigator.next/i })).not.toBeInTheDocument();
+        expect(screen.getByRole('button', { name: /experience.navigator.previous/i })).toBeInTheDocument();
+    });
+
+    test('returns null when slug not found', () => {
+        const { container } = render(<ExperienceNavigator currentSlug="unknown-slug" />);
+        expect(container).toBeEmptyDOMElement();
+    });
 });
 
