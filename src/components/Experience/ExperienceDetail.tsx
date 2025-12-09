@@ -10,7 +10,11 @@ import { useEffect, useState } from 'react';
 import ExperienceNavigator from './ExperienceNavigator';
 
 export default function ExperienceDetail() {
-    const { slug } = useParams();
+    const { slug = '' } = useParams();
+    return <ExperienceDetailContent key={slug} slug={slug} />;
+}
+
+function ExperienceDetailContent({ slug }: { slug: string }) {
     const navigate = useNavigate();
     const { t } = useTranslation();
     const [currentProjectIndex, setCurrentProjectIndex] = useState(0);
@@ -19,8 +23,7 @@ export default function ExperienceDetail() {
 
     useEffect(() => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
-        setCurrentProjectIndex(0);
-    }, [slug]);
+    }, []);
 
     const nextProject = () => {
         if (experience && currentProjectIndex < experience.projects.length - 1) {
