@@ -7,9 +7,14 @@ import ProjectDetails from './ProjectDetails';
 import ExperienceHeader from './ExperienceHeader';
 import ProjectStack from './ProjectStack';
 import { useEffect, useState } from 'react';
+import ExperienceNavigator from './ExperienceNavigator';
 
 export default function ExperienceDetail() {
-    const { slug } = useParams();
+    const { slug = '' } = useParams();
+    return <ExperienceDetailContent key={slug} slug={slug} />;
+}
+
+function ExperienceDetailContent({ slug }: { slug: string }) {
     const navigate = useNavigate();
     const { t } = useTranslation();
     const [currentProjectIndex, setCurrentProjectIndex] = useState(0);
@@ -17,7 +22,7 @@ export default function ExperienceDetail() {
     const experience = experiences.find(exp => exp.slug === slug);
 
     useEffect(() => {
-        window.scrollTo(0, 0);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     }, []);
 
     const nextProject = () => {
@@ -73,6 +78,7 @@ export default function ExperienceDetail() {
                 </button>
 
                 <motion.div
+                    key={experience.slug}
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5 }}
@@ -101,6 +107,8 @@ export default function ExperienceDetail() {
                             <ProjectStack technologies={experience.projects[currentProjectIndex].technicalEnvironment} />
                         </div>
                     </div>
+
+                    <ExperienceNavigator currentSlug={experience.slug} />
                 </motion.div>
             </div>
         </div>

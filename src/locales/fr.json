@@ -20,6 +20,11 @@
     },
     "experience": {
         "title": "EXPÉRIENCES PROFESSIONNELLES",
+        "navigator": {
+            "title": "Naviguer entre les expériences",
+            "previous": "Expérience précédente",
+            "next": "Expérience suivante"
+        },
         "henner": {
             "location": "Nantes, France",
             "period": "Nov 2024 - Oct 2025",
