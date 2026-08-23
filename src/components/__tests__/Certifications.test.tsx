@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import Certifications from '../Certifications';
+import Certifications from '../Certifications/Certifications';
 import { certifications } from '../../data/certifications';
 
 describe('Certifications Component', () => {

@@ -3,12 +3,7 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
-import { Skill } from '../../data/skills';
-
-interface SkillCardProps {
-    skill: Skill;
-    index: number;
-}
+import { SkillCardProps } from '../../types/skills';
 
 const SkillCard: React.FC<SkillCardProps> = ({ skill, index }) => {
     const { t } = useTranslation();

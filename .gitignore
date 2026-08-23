@@ -33,3 +33,5 @@ playwright/.cache
 
 # OS
 Thumbs.db
+package-lock.json
+.env

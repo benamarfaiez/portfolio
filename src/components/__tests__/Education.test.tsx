@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import Education from '../Education';
+import Education from '../Education/Education';
 import { educations } from '../../data/educations';
 
 describe('Education Component', () => {
