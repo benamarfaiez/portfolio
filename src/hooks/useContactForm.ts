@@ -1,11 +1,6 @@
 import { useState, FormEvent, useEffect, useRef } from 'react';
 import { sendContactEmail } from '../services/emailService';
-
-export type FormState =
-  | { status: 'idle' }
-  | { status: 'loading' }
-  | { status: 'success' }
-  | { status: 'error'; errorMessage: string };
+import { FormState } from '../types/contact';
 
 export function useContactForm() {
   const [formState, setFormState] = useState<FormState>({ status: 'idle' });

@@ -9,7 +9,6 @@ export const avatarVariants: Variants = {
   },
 };
 
-
 export const scaleInVariants: Variants = {
   hidden: { opacity: 0, scale: 0.85 },
   visible: {
