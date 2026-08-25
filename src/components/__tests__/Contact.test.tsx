@@ -1,5 +1,5 @@
 import { render, screen, fireEvent, waitFor, act } from '@testing-library/react';
-import Contact from '../Contact';
+import Contact from '../Contact/Contact';
 import { personalInfo } from '../../data/data';
 import emailjs from '@emailjs/browser';
 import { getEnvVar } from '../../utils/env';

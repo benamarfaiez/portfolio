@@ -11,10 +11,10 @@ exports[`Certifications Component renders correctly and matches snapshot 1`] = `
     >
       <div
         class="mb-16 text-center"
-        style="opacity: 1; transform: none;"
+        style="opacity: 0; transform: translateY(20px);"
       >
         <h2
-          class="text-3xl md:text-4xl font-bold mb-4"
+          class="text-3xl md:text-4xl font-bold mb-4 text-slate-900 dark:text-white"
         >
           certifications.title
         </h2>
@@ -23,294 +23,280 @@ exports[`Certifications Component renders correctly and matches snapshot 1`] = `
         />
       </div>
       <div
-        class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-2"
+        class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6"
       >
         <ul
-          class="space-y-2 list-disc list-inside marker:text-gray-500"
+          class="space-y-4"
         >
           <li
             class="text-gray-700 dark:text-gray-300 text-base leading-relaxed"
           >
             <a
-              class="hover:underline"
+              class="font-medium hover:underline focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-sm"
               href="https://cursa.app/fr/mon-certificat/cert4a927c59cfdf8be3109a23855c9e1896"
               rel="noopener noreferrer"
               target="_blank"
             >
               React JS
             </a>
-            <p
-              class="mb-1 text-sm font-semibold text-blue-600 dark:text-blue-400"
-              style="margin-left: 21px;"
+            <span
+              class="block text-sm font-semibold text-blue-600 dark:text-blue-400 pl-5 mt-0.5"
             >
               Cursa
                - 
               Novembre 2025
-            </p>
+            </span>
           </li>
           <li
             class="text-gray-700 dark:text-gray-300 text-base leading-relaxed"
           >
             <a
-              class="hover:underline"
-              href="https://www.coursera.org/account/accomplishments/verify/9HDYARW3FGMV"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Business Analysis & Process Management
-            </a>
-            <p
-              class="mb-1 text-sm font-semibold text-blue-600 dark:text-blue-400"
-              style="margin-left: 21px;"
-            >
-              Coursera
-               - 
-              Mai 2024
-            </p>
-          </li>
-          <li
-            class="text-gray-700 dark:text-gray-300 text-base leading-relaxed"
-          >
-            <a
-              class="hover:underline"
-              href="https://www.credly.com/badges/ade52373-6610-4525-9160-66e4c5334647"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              API
-            </a>
-            <p
-              class="mb-1 text-sm font-semibold text-blue-600 dark:text-blue-400"
-              style="margin-left: 21px;"
-            >
-              IBM
-               - 
-              April 2022
-            </p>
-          </li>
-          <li
-            class="text-gray-700 dark:text-gray-300 text-base leading-relaxed"
-          >
-            <a
-              class="hover:underline"
-              href="https://www.udemy.com/certificate/UC-28a41f64-5dd2-41e2-8e0d-1aaf0db4b36c/"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Pentesting and security web application
-            </a>
-            <p
-              class="mb-1 text-sm font-semibold text-blue-600 dark:text-blue-400"
-              style="margin-left: 21px;"
-            >
-              Udemy
-               - 
-              Aout 2021
-            </p>
-          </li>
-          <li
-            class="text-gray-700 dark:text-gray-300 text-base leading-relaxed"
-          >
-            <a
-              class="hover:underline"
-              href="https://www.coursera.org/account/accomplishments/verify/XKFZA7UUFCYH"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Responsive Web Design
-            </a>
-            <p
-              class="mb-1 text-sm font-semibold text-blue-600 dark:text-blue-400"
-              style="margin-left: 21px;"
-            >
-              Coursera
-               - 
-              Novembre 2020
-            </p>
-          </li>
-          <li
-            class="text-gray-700 dark:text-gray-300 text-base leading-relaxed"
-          >
-            <a
-              class="hover:underline"
-              href="https://www.coursera.org/account/accomplishments/verify/TNDQYUPSV5VT"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Agile Software Development
-            </a>
-            <p
-              class="mb-1 text-sm font-semibold text-blue-600 dark:text-blue-400"
-              style="margin-left: 21px;"
-            >
-              Coursera
-               - 
-              Aout 2020
-            </p>
-          </li>
-          <li
-            class="text-gray-700 dark:text-gray-300 text-base leading-relaxed"
-          >
-            <a
-              class="hover:underline"
-              href="https://www.udemy.com/certificate/UC-9f703df2-1b65-402d-993f-bb8f262987c8/"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              JavaScript
-            </a>
-            <p
-              class="mb-1 text-sm font-semibold text-blue-600 dark:text-blue-400"
-              style="margin-left: 21px;"
-            >
-              Udemy
-               - 
-              Mai 2022
-            </p>
-          </li>
-        </ul>
-        <ul
-          class="space-y-2 list-disc list-inside marker:text-gray-500"
-        >
-          <li
-            class="text-gray-700 dark:text-gray-300 text-base leading-relaxed"
-          >
-            <a
-              class="hover:underline"
+              class="font-medium hover:underline focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-sm"
               href="https://udemy-certificate.s3.amazonaws.com/image/UC-a681e4dd-6815-479e-beb3-ba97ba7e9cab.jpg"
               rel="noopener noreferrer"
               target="_blank"
             >
               Angular 12 .Net core web API & Microsoft SQL
             </a>
-            <p
-              class="mb-1 text-sm font-semibold text-blue-600 dark:text-blue-400"
-              style="margin-left: 21px;"
+            <span
+              class="block text-sm font-semibold text-blue-600 dark:text-blue-400 pl-5 mt-0.5"
             >
               Udemy
                - 
               Juillet 2021
-            </p>
+            </span>
           </li>
           <li
             class="text-gray-700 dark:text-gray-300 text-base leading-relaxed"
           >
             <a
-              class="hover:underline"
+              class="font-medium hover:underline focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-sm"
+              href="https://www.coursera.org/account/accomplishments/verify/9HDYARW3FGMV"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Business Analysis & Process Management
+            </a>
+            <span
+              class="block text-sm font-semibold text-blue-600 dark:text-blue-400 pl-5 mt-0.5"
+            >
+              Coursera
+               - 
+              Mai 2024
+            </span>
+          </li>
+          <li
+            class="text-gray-700 dark:text-gray-300 text-base leading-relaxed"
+          >
+            <a
+              class="font-medium hover:underline focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-sm"
               href="https://www.credly.com/badges/d19ee835-15fa-4ff4-8f8e-8a6bcaeaa8fc"
               rel="noopener noreferrer"
               target="_blank"
             >
               Web Security
             </a>
-            <p
-              class="mb-1 text-sm font-semibold text-blue-600 dark:text-blue-400"
-              style="margin-left: 21px;"
+            <span
+              class="block text-sm font-semibold text-blue-600 dark:text-blue-400 pl-5 mt-0.5"
             >
               IBM
                - 
               April 2022
-            </p>
+            </span>
           </li>
           <li
             class="text-gray-700 dark:text-gray-300 text-base leading-relaxed"
           >
             <a
-              class="hover:underline"
+              class="font-medium hover:underline focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-sm"
+              href="https://www.credly.com/badges/ade52373-6610-4525-9160-66e4c5334647"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              API
+            </a>
+            <span
+              class="block text-sm font-semibold text-blue-600 dark:text-blue-400 pl-5 mt-0.5"
+            >
+              IBM
+               - 
+              April 2022
+            </span>
+          </li>
+          <li
+            class="text-gray-700 dark:text-gray-300 text-base leading-relaxed"
+          >
+            <a
+              class="font-medium hover:underline focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-sm"
               href="https://www.credly.com/badges/181fcbcb-d270-4bbb-bd08-907cf7c06f67"
               rel="noopener noreferrer"
               target="_blank"
             >
               Git
             </a>
-            <p
-              class="mb-1 text-sm font-semibold text-blue-600 dark:text-blue-400"
-              style="margin-left: 21px;"
+            <span
+              class="block text-sm font-semibold text-blue-600 dark:text-blue-400 pl-5 mt-0.5"
             >
               IBM
                - 
               April 2022
-            </p>
+            </span>
           </li>
           <li
             class="text-gray-700 dark:text-gray-300 text-base leading-relaxed"
           >
             <a
-              class="hover:underline"
+              class="font-medium hover:underline focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-sm"
               href="https://www.credly.com/badges/badfb93e-6402-4ca0-9e33-b7e0e39046f2"
               rel="noopener noreferrer"
               target="_blank"
             >
               Cloud Intro
             </a>
-            <p
-              class="mb-1 text-sm font-semibold text-blue-600 dark:text-blue-400"
-              style="margin-left: 21px;"
+            <span
+              class="block text-sm font-semibold text-blue-600 dark:text-blue-400 pl-5 mt-0.5"
             >
               IBM
                - 
               April 2022
-            </p>
+            </span>
+          </li>
+        </ul>
+        <ul
+          class="space-y-4"
+        >
+          <li
+            class="text-gray-700 dark:text-gray-300 text-base leading-relaxed"
+          >
+            <a
+              class="font-medium hover:underline focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-sm"
+              href="https://www.udemy.com/certificate/UC-28a41f64-5dd2-41e2-8e0d-1aaf0db4b36c/"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Pentesting and security web application
+            </a>
+            <span
+              class="block text-sm font-semibold text-blue-600 dark:text-blue-400 pl-5 mt-0.5"
+            >
+              Udemy
+               - 
+              Aout 2021
+            </span>
           </li>
           <li
             class="text-gray-700 dark:text-gray-300 text-base leading-relaxed"
           >
             <a
-              class="hover:underline"
+              class="font-medium hover:underline focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-sm"
               href="https://udemy-certificate.s3.amazonaws.com/image/UC-c709bdb1-0503-4c45-b69b-3164a3b35051.jpg"
               rel="noopener noreferrer"
               target="_blank"
             >
               ASP .Net MVC & entity Framework
             </a>
-            <p
-              class="mb-1 text-sm font-semibold text-blue-600 dark:text-blue-400"
-              style="margin-left: 21px;"
+            <span
+              class="block text-sm font-semibold text-blue-600 dark:text-blue-400 pl-5 mt-0.5"
             >
               Udemy
                - 
               Aout 2021
-            </p>
+            </span>
           </li>
           <li
             class="text-gray-700 dark:text-gray-300 text-base leading-relaxed"
           >
             <a
-              class="hover:underline"
+              class="font-medium hover:underline focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-sm"
+              href="https://www.coursera.org/account/accomplishments/verify/XKFZA7UUFCYH"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Responsive Web Design
+            </a>
+            <span
+              class="block text-sm font-semibold text-blue-600 dark:text-blue-400 pl-5 mt-0.5"
+            >
+              Coursera
+               - 
+              Novembre 2020
+            </span>
+          </li>
+          <li
+            class="text-gray-700 dark:text-gray-300 text-base leading-relaxed"
+          >
+            <a
+              class="font-medium hover:underline focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-sm"
               href="https://www.coursera.org/account/accomplishments/verify/R4GMJYYE3VMG"
               rel="noopener noreferrer"
               target="_blank"
             >
               Bootstrap 4
             </a>
-            <p
-              class="mb-1 text-sm font-semibold text-blue-600 dark:text-blue-400"
-              style="margin-left: 21px;"
+            <span
+              class="block text-sm font-semibold text-blue-600 dark:text-blue-400 pl-5 mt-0.5"
             >
               Coursera
                - 
               Septembre 2020
-            </p>
+            </span>
           </li>
           <li
             class="text-gray-700 dark:text-gray-300 text-base leading-relaxed"
           >
             <a
-              class="hover:underline"
+              class="font-medium hover:underline focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-sm"
+              href="https://www.coursera.org/account/accomplishments/verify/TNDQYUPSV5VT"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Agile Software Development
+            </a>
+            <span
+              class="block text-sm font-semibold text-blue-600 dark:text-blue-400 pl-5 mt-0.5"
+            >
+              Coursera
+               - 
+              Aout 2020
+            </span>
+          </li>
+          <li
+            class="text-gray-700 dark:text-gray-300 text-base leading-relaxed"
+          >
+            <a
+              class="font-medium hover:underline focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-sm"
               href="https://www.coursera.org/account/accomplishments/verify/VA24E6BUJ6ZG"
               rel="noopener noreferrer"
               target="_blank"
             >
               JS Frameworks: Angular
             </a>
-            <p
-              class="mb-1 text-sm font-semibold text-blue-600 dark:text-blue-400"
-              style="margin-left: 21px;"
+            <span
+              class="block text-sm font-semibold text-blue-600 dark:text-blue-400 pl-5 mt-0.5"
             >
               Coursera
                - 
               Aout 2020
-            </p>
+            </span>
+          </li>
+          <li
+            class="text-gray-700 dark:text-gray-300 text-base leading-relaxed"
+          >
+            <a
+              class="font-medium hover:underline focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-sm"
+              href="https://www.udemy.com/certificate/UC-9f703df2-1b65-402d-993f-bb8f262987c8/"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              JavaScript
+            </a>
+            <span
+              class="block text-sm font-semibold text-blue-600 dark:text-blue-400 pl-5 mt-0.5"
+            >
+              Udemy
+               - 
+              Mai 2022
+            </span>
           </li>
         </ul>
       </div>
