@@ -42,7 +42,7 @@ describe('AnimatedSection', () => {
   });
 
   test('passes animation and layout options to the motion element', () => {
-    const viewportOptions = { once: false, margin: '10px' };
+    const viewportOptions = { once: false, margin: '10px' } as const;
 
     render(
       <AnimatedSection
