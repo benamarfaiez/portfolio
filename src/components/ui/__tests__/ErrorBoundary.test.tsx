@@ -1,9 +1,9 @@
 import { render, screen } from '@testing-library/react';
 import { ErrorBoundary } from '../ErrorBoundary';
 
-function BrokenChild() {
+const BrokenChild: React.FC = () => {
   throw new Error('render failed');
-}
+};
 
 describe('ErrorBoundary', () => {
   let consoleError: jest.SpyInstance;
