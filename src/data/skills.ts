@@ -6,6 +6,7 @@ import {
     Cloud,
     FlaskConical
 } from 'lucide-react';
+import { Skill } from '../types/skills';
 
 export interface SkillDiagram {
     name: string;

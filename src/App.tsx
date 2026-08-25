@@ -1,41 +1,26 @@
+// App.tsx
+import { Suspense } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './i18n';
 import Layout from './components/Layout';
-import Hero from './components/hero/Hero';
-import About from './components/About';
-import Experience from './components/Experience/Experience';
-import Skills from './components/skills/Skills';
-import Education from './components/Education/Education';
-import Certifications from './components/Certifications/Certifications';
-import Contact from './components/Contact/Contact';
-import ExperienceDetail from './components/Experience/ExperienceDetail';
-import SkillsCategory from './components/skills/SkillsCategory';
-import NotFound from './components/NotFound';
+import { PageLoader } from './components/ui/PageLoader';
+import { ErrorBoundary } from './components/ui/ErrorBoundary';
+import { routes } from './routes';
 
-function App() {
+export default function App() {
   return (
-    <BrowserRouter>
-      <Layout>
-        <Routes>
-          <Route path="/" element={
-            <>
-              <Hero />
-              <About />
-              <Experience />
-              <Skills />
-              <Education />
-              <Certifications />
-              <Contact />
-            </>
-          } />
-          <Route path="/experiences/:slug" element={<ExperienceDetail />} />
-          <Route path="/skills/:category" element={<SkillsCategory />} />
-          {/* Route 404 - doit être en dernier */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </Layout>
-    </BrowserRouter>
+    <ErrorBoundary>
+      <BrowserRouter>
+        <Layout>
+          <Suspense fallback={<PageLoader />}>
+            <Routes>
+              {routes.map(({ path, component: Component }) => (
+                <Route key={path} path={path} element={<Component />} />
+              ))}
+            </Routes>
+          </Suspense>
+        </Layout>
+      </BrowserRouter>
+    </ErrorBoundary>
   );
 }
-
-export default App;

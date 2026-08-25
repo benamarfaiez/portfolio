@@ -27,7 +27,7 @@ export function useContactForm() {
         form.reset();
         setFormState({ status: 'idle' });
       }, 2000);
-    } catch (error) {
+    } catch {
       setFormState({
         status: 'error',
         errorMessage: "Erreur lors de l'envoi du message. Veuillez réessayer.",

@@ -1,41 +1,35 @@
 // vite.config.ts
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
-import path from 'path'
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+import path from 'path';
 
-export default defineConfig(({ mode }) => {
-  const isAnalyze = mode === 'analyze'
-
-  return {
-    plugins: [react()],
-    resolve: {
-      alias: {
-        "@": path.resolve(__dirname, "./src"),
-      },
+export default defineConfig({
+  plugins: [react()],
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, './src'),
     },
-    build: {
-      // Génère un fichier stats.json uniquement en mode analyse
-      reportCompressedSize: true,
-      rollupOptions: {
-        // Optionnel : nomme ton chunk principal pour plus de clarté
-        output: {
-          manualChunks: {
-            vendor: ['react', 'react-dom', 'framer-motion'],
-            ui: ['lucide-react', 'tailwind-merge'],
-          },
+  },
+  build: {
+    reportCompressedSize: true,
+    rollupOptions: {
+      output: {
+        manualChunks(id) {
+          if (id.includes('node_modules')) {
+            // Regroupe les grosses bibliothèques indépendantes et sûres
+            if (id.includes('framer-motion')) {
+              return 'vendor-animation';
+            }
+            if (id.includes('lucide-react')) {
+              return 'vendor-icons';
+            }
+            if (id.includes('i18next')) {
+              return 'vendor-i18n';
+            }
+            return 'vendor';
+          }
         },
       },
-      // Active la génération du stats file pour vite-bundle-visualizer
-      ...(isAnalyze && {
-        rollupOptions: {
-          output: {
-            // Important : génère le fichier stats.json
-            treeshake: true,
-          },
-        },
-        // Cette option force la création du fichier .stats.json
-        // vite-bundle-visualizer le lit automatiquement
-      }),
     },
-  }
-})
+  },
+});

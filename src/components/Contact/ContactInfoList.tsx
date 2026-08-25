@@ -6,7 +6,7 @@ export function ContactInfoList() {
   const contactItems = useContactItems();
 
   return (
-    <ul className="space-y-6" role="list">
+    <ul className="space-y-6">
       {contactItems.map((item) => (
         <li key={item.id}>
           <ContactInfoItem item={item} />

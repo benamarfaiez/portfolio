@@ -16,6 +16,7 @@ export function ContactForm() {
         
         <InputField
           id="email"
+          autocomplete="email"
           name="user_email"
           type="email"
           label={t('contact.form.email')}
