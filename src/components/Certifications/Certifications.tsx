@@ -29,14 +29,12 @@ export default function Certifications() {
 
         {/* Grille 2 Colonnes animées */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6">
-          {CERT_COLUMNS.map(({ id, data, animation }) => (
-            <AnimatedSection key={id} variants={animation}>
-              <ul className="space-y-4">
-                {data.map((cert) => (
-                  <CertificationItem key={cert.id} certification={cert} />
-                ))}
-              </ul>
-            </AnimatedSection>
+          {CERT_COLUMNS.map(({ id, data }) => (
+            <ul key={id} className="space-y-4">
+              {data.map((cert) => (
+                <CertificationItem key={cert.id} certification={cert} />
+              ))}
+            </ul>
           ))}
         </div>
 

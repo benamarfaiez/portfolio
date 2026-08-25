@@ -27,10 +27,12 @@ export function useContactForm() {
         form.reset();
         setFormState({ status: 'idle' });
       }, 2000);
-    } catch {
+    } catch (error) {
       setFormState({
         status: 'error',
-        errorMessage: "Erreur lors de l'envoi du message. Veuillez réessayer.",
+        errorMessage: error instanceof Error && error.message.startsWith('Configuration EmailJS manquante')
+          ? error.message
+          : "Erreur lors de l'envoi du message. Veuillez réessayer.",
       });
     }
   };

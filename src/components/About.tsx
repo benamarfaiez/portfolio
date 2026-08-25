@@ -6,7 +6,8 @@ export default function About() {
   const { t } = useTranslation();
 
   return (
-    <AnimatedSection id="about" variants={fadeInUpVariants} className="bg-slate-50 dark:bg-slate-900/50">
+    <section id="about" className="py-20 bg-slate-50 dark:bg-slate-900/50">
+      <AnimatedSection variants={fadeInUpVariants}>
       <h2 className="text-3xl font-bold text-center mb-12 text-slate-900 dark:text-white">
         {t('about.title')}
       </h2>
@@ -16,6 +17,7 @@ export default function About() {
           {t('about.description')}
         </p>
       </div>
-    </AnimatedSection>
+      </AnimatedSection>
+    </section>
   );
 }

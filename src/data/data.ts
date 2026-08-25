@@ -6,7 +6,7 @@ export const personalInfo = {
     phone: "+33 7 51 42 84 60",
     startYear : 2020,
     location: "Nantes, France",
-    cvPath: "/CV_FaiezBENAMAR.pdf",
+    cvPath: "CV_FaiezBENAMAR.pdf",
     avatarPath: "/image_profile.png",
     linkedin: "https://www.linkedin.com/in/faiez-ben-amar/",
     github: "https://github.com/benamarfaiez",

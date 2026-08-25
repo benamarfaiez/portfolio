@@ -1,4 +1,5 @@
 import emailjs from '@emailjs/browser';
+import { getEnvVar } from '../utils/env';
 
 interface EmailJSConfig {
   serviceId: string;
@@ -7,9 +8,9 @@ interface EmailJSConfig {
 }
 
 function getEmailJSConfig(): EmailJSConfig {
-  const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
-  const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
-  const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+const serviceId = getEnvVar('VITE_EMAILJS_SERVICE_ID');
+const templateId = getEnvVar('VITE_EMAILJS_TEMPLATE_ID');
+const publicKey = getEnvVar('VITE_EMAILJS_PUBLIC_KEY');
 
   if (!serviceId || !templateId || !publicKey) {
     throw new Error("Configuration EmailJS manquante. Veuillez contacter l'administrateur.");
