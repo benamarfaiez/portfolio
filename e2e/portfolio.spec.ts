@@ -166,10 +166,10 @@ test.describe('Portfolio E2E', () => {
             const contact = page.locator('#contact');
             await contact.scrollIntoViewIfNeeded();
 
-            await expect(contact.locator('input[name="name"]')).toBeVisible();
-            await expect(contact.locator('textarea[name="message"]')).toBeVisible();
-            // Use CSS selector for button type submit to be most specific
-            await expect(contact.locator('button[type="submit"]')).toBeVisible();
+            // Best Practice: Use getByRole targeting user-visible label names and buttons
+            await expect(contact.getByRole('textbox', { name: 'Email' })).toBeVisible();
+            await expect(contact.getByRole('textbox', { name: 'Message' })).toBeVisible();
+            await expect(contact.getByRole('button', { name: 'Envoyer' })).toBeVisible();
         });
     });
 });
