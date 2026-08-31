@@ -34,7 +34,7 @@ describe('ExperienceNavigator', () => {
     });
 
     test('shows only next button for first experience', () => {
-        render(<ExperienceNavigator currentSlug="henner-developer" />);
+        render(<ExperienceNavigator currentSlug="apf-developer" />);
 
         expect(screen.queryByRole('button', { name: /experience.navigator.previous/i })).not.toBeInTheDocument();
         expect(screen.getByRole('button', { name: /experience.navigator.next/i })).toBeInTheDocument();

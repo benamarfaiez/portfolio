@@ -24,6 +24,27 @@
             "previous": "Expérience précédente",
             "next": "Expérience suivante"
         },
+        "apf": {
+            "location": "Nantes, France",
+            "period": "Jan 2026 - Sep 2026",
+            "role": "Ingénieur Logiciel Full-Stack ",
+            "description": "Conception de bout en bout d'une application moderne de gestion et de tableaux de bord pour le suivi des actions associatives",
+            "projects": {
+                "actions_associatives": {
+                    "name": "Actions Associatives",
+                    "details": "Conception et développement d'une application web moderne de gestion et de tableaux de bord pour le suivi des actions associatives",
+                    "context": "Les bénévoles saisissent leurs actions associatives (événements, sensibilisations, interventions) dans des fichiers isolés ou peu adaptés, rendant le suivi global complexe et peu fiable.",
+                    "realization": {
+                        "tache1": "Architecture & Conception : Initialisation du projet en Clean Architecture sous .NET 8 et React 19, isolation stricte de la logique métier (Use Cases) et implémentation du pattern CQRS.",
+                        "tache2": "Développement Backend : Conception des APIs REST, implémentation des handlers de commandes/quêtes, création de moteurs de validation (Validators) pour sécuriser les flux entrants, et développement d'un moteur de mapping de données dynamique.",
+                        "tache3": "Stockage & Intégration : Implémentation d'un système de persistance basé sur lasynchronisation et la manipulation de données via Google Sheets API. ",
+                        "tache4": "Développement Frontend : Modélisation et développement d'un dashboard interactif haute performance (Chart.js) intégrant des filtres croisés dynamiques pour le suivi des KPIs métiers et des formulaires multi-étapes complexes.",
+                        "tache5": "Qualité & Fiabilité : Rédaction des spécifications techniques et mise en place d'une stratégie de tests automatisés (xUnit, Moq) combinant tests unitaires et d'intégration avec mock complet des API tierces. ",
+                        "tache6": "DevOps & CI/CD : Configuration de l'intégration et du déploiement continus (CI/CD) via GitHub Actions pour automatiser la mise en production."
+                    }
+                }
+            }
+        },
         "henner": {
             "location": "Nantes, France",
             "period": "Nov 2024 - Oct 2025",

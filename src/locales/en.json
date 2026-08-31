@@ -24,6 +24,27 @@
             "previous": "Previous experience",
             "next": "Next experience"
         },
+        "apf": {
+            "location": "Nantes, France",
+            "period": "Jan 2026 - Sep 2026",
+            "role": "Full-Stack Engineer",
+            "description": "Design and development from scratch of a modern management and dashboard application for tracking association activities.",
+            "projects": {
+                "actions_associatives": {
+                    "name": "Actions Associatives",
+                    "details": "Design and development of a modern web application for management and dashboards to track association activities.",
+                    "context": "Volunteers enter their association actions (events, awareness campaigns, interventions) in isolated or poorly adapted files, making global tracking complex and unreliable.",
+                    "realization": {
+                        "tache1": "Architecture & Design : Project initialization with Clean Architecture under .NET 8 and React 19, strict isolation of business logic (Use Cases) and implementation of the CQRS pattern.",
+                        "tache2": "Backend Development : Design of REST APIs, implementation of command/query handlers, creation of validation engines (Validators) to secure incoming flows, and development of a dynamic data mapping engine.",
+                        "tache3": "Storage & Integration : Implementation of a persistence system based on asynchronous processing and data manipulation via Google Sheets API. ",
+                        "tache4": "Frontend Development : Modeling and development of a high-performance interactive dashboard (Chart.js) integrating dynamic cross-filters for tracking business KPIs and complex multi-step forms.",
+                        "tache5": "Quality & Reliability : Writing technical specifications and implementing an automated testing strategy (xUnit, Moq) combining unit tests and integration tests with complete mocking of third-party APIs. ",
+                        "tache6": "DevOps & CI/CD : Configuration of continuous integration and deployment (CI/CD) via GitHub Actions to automate the production deployment."
+                    }
+                }
+            }
+        },
         "henner": {
             "location": "Nantes, France",
             "period": "Nov 2024 - Oct 2025",
