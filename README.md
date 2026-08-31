@@ -14,7 +14,7 @@ Live demo → https://benamarfaiez.vercel.app
 
 Portfolio personnel moderne et entièrement responsive, développé avec les meilleures pratiques.
 
-Construit avec : Vite + React 18 + TypeScript + Tailwind CSS + shadcn/ui + Framer Motion
+Construit avec : Vite + React 19 + TypeScript + Tailwind CSS + shadcn/ui + Framer Motion
 déployé sur : Vercel
 
 Tests unitaires + E2E (Playwright) à plus de 90 % de couverture.
@@ -43,7 +43,7 @@ Objectif : présenter mon parcours, mes compétences techniques et mes réalisat
 
 | Catégorie           | Technologies |
 |---------------------|------------|
-| Framework           | React 18, TypeScript, Vite |
+| Framework           | React 19, TypeScript, Vite |
 | Styling             | Tailwind CSS, shadcn/ui, Headless UI |
 | Animations          | Framer Motion |
 | Internationalisation| react-i18next + i18next-browser-languagedetector |
