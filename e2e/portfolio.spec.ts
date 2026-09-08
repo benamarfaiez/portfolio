@@ -152,7 +152,7 @@ test.describe('Portfolio E2E', () => {
             const education = page.locator('#education');
             await education.scrollIntoViewIfNeeded();
             await expect(education.getByText(navLinksFr[3].text)).toBeVisible();
-            await expect(education.getByText('Diplôme d’Ingénieur en Informatique')).toBeVisible();
+            await expect(education.getByText("Diplôme d'Ingénieur en Informatique")).toBeVisible();
         });
 
         test('Certifications section is present', async ({ page }) => {
