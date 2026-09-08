@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { Calendar, MapPin, Briefcase, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { Experience } from '../../data/experiences';
+import { Experience } from '../../types/experiences';
 
 interface ExperienceItemProps {
     experience: Experience;

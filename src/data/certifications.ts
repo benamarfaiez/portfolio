@@ -1,11 +1,4 @@
-export interface Certification {
-    id: number;
-    title: string;
-    issuer: string;
-    date: string;
-    credentialUrl: string;
-    column: 'left' | 'right';
-}
+import { Certification } from "../types/certification";
 
 export const certifications: Certification[] = [
     {

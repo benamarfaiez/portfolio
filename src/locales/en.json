@@ -2,7 +2,7 @@
     "common": {
         "back_to_list": "Back",
         "view_details": "View details",
-        "not_found_category": "404 – Category not found",
+        "not_found_category": "404 - Category not found",
         "email": "Email",
         "phone": "Phone",
         "location": "Location"
@@ -26,7 +26,7 @@
         },
         "apf": {
             "location": "Nantes, France",
-            "period": "Jan 2026 - Sep 2026",
+            "period": "Mai 2026 - Sep 2026",
             "role": "Full-Stack Engineer",
             "description": "Design and development from scratch of a modern management and dashboard application for tracking association activities.",
             "projects": {
@@ -47,7 +47,7 @@
         },
         "henner": {
             "location": "Nantes, France",
-            "period": "Nov 2024 - Oct 2025",
+            "period": "Nov 2024 - Apr 2026",
             "role": "Backend Engineer",
             "description": "Implementation of back-end solutions intended to replace the ESB, focusing on a modular architecture, maintainability, and exhaustive unit test coverage.",
             "projects": {
@@ -133,7 +133,7 @@
                     "details": "Universal document viewer (PDF, HTML, video, image) integrated into banking applications.",
                     "context": "Design, development, and implementation of a platform for document management.",
                     "realization": {
-                        "tache1": "Integration of various libraries enabling the display and download of all types of documents such as HTML, PDF, videos, images, ...",
+                        "tache1": "Modeling a document governance by role: only the creator of a document can create a new version or archive an old one, the standard user has the right to report anomalies, which automatically triggers an email to the creator.",
                         "tache2": "Analysis and processing of HTML documents extracted from the database using parsing libraries.",
                         "tache3": "Implementation of services to ensure communication and data exchange between the back-end and the front-end",
                         "tache4": "Setup of a routing system to allow navigation between documents without reloading the page.",
@@ -142,12 +142,12 @@
                         "tache7": "Management of the consultation history of viewed documents",
                         "tache8": "Implementation of the anomaly reporting feature to flag issues in consulted documents",
                         "tache9": "Development of the favorites management feature.",
-                        "tache10": "Writing of technical documentation",
+                        "tache10": "Integration of various libraries enabling the display and download of all types of documents such as HTML, PDF, videos, images, ...",
                         "tache11": "Optimization of application performance through the implementation of caches in the APIs.",
-                        "tache12": "Implementation of unit tests.",
-                        "tache13": "Maintenance and bug fixing.",
-                        "tache14": "Code review.",
-                        "tache15": "Code Refactoring."
+                        "tache12": "Refactoring of WCF contracts (ServiceContracts / DataContracts) into REST APIs exposing HATEOAS/HAL hypermedia",
+                        "tache13": "Quality & Testing : Complete implementation of unit and integration tests to ensure non-regression and reliability of the document management engine",
+                        "tache14": "Refactoring & Code Review : Rigorous Code Reviews within the team and continuous Code Refactoring to modernize the legacy codebase and reduce technical debt",
+                        "tache15": "Documentation & Maintenance : Writing of technical documentation and handling of evolutionary maintenance (analysis and resolution of bugs)."
                     }
                 }
             }

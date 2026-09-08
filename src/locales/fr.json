@@ -2,7 +2,7 @@
     "common": {
         "back_to_list": "Retour",
         "view_details": "Voir les détails",
-        "not_found_category": "404 – Catégorie introuvable",
+        "not_found_category": "404 - Catégorie introuvable",
         "email": "Email",
         "phone": "Téléphone",
         "location": "Localisation"
@@ -26,7 +26,7 @@
         },
         "apf": {
             "location": "Nantes, France",
-            "period": "Jan 2026 - Sep 2026",
+            "period": "Mai 2026 - Sep 2026",
             "role": "Ingénieur Logiciel Full-Stack ",
             "description": "Conception de bout en bout d'une application moderne de gestion et de tableaux de bord pour le suivi des actions associatives",
             "projects": {
@@ -47,7 +47,7 @@
         },
         "henner": {
             "location": "Nantes, France",
-            "period": "Nov 2024 - Oct 2025",
+            "period": "Nov 2024 - Avr 2026",
             "role": "Ingénieur Backend",
             "description": "Développement de 4 solutions back-end pour remplacer l'ESB avec une architecture modulaire, garantissant une haute maintenabilité et une couverture complète via des tests unitaires.",
             "projects": {
@@ -131,9 +131,9 @@
                 "pixis": {
                     "name": "Projet PIXIS",
                     "details": "Visionneuse universelle de documents (PDF, HTML, vidéo, image) intégrée aux applications bancaires.",
-                    "context": "Conception, développement et mise en œuvre d'une plateforme permettant la gestion des documents.",
+                    "context": "Conception fullstack d'une plateforme de gestion documentaire multi-fichiers (PDF, vidéo, HTML) avec gestion du versioning, en environnement legacy WCF.",
                     "realization": {
-                        "tache1": "Intégration de diverses bibliothèques permettant l'affichage et le téléchargement de tous types de documents tels que HTML, PDF, vidéos, images, ...",
+                        "tache1": "Modélisé une gouvernance documentaire par rôle : seul le créateur d'un document peut créer une nouvelle version ou archiver une ancienne, l'utilisateur standard a le droit de signaler les anomalies, ce qui déclenche automatiquement une-mail au créateur.",
                         "tache2": "Analyse et traitement des documents HTML extraits de la base de données avec des bibliothèques de parsing.",
                         "tache3": "Implémentation des services pour assurer la communication et l'échange de données entre le back-end et le front-end",
                         "tache4": "Mise en place d'un système de routage pour permettre la navigation entre les documents sans recharger la page.",
@@ -142,12 +142,12 @@
                         "tache7": "Gestion de l'historique des documents consultés",
                         "tache8": "Implémentation de la fonctionnalité de déclaration d'anomalies pour signaler des problèmes dans les documents consultés",
                         "tache9": "Développement de la fonctionnalité de gestion des favoris.",
-                        "tache10": "Rédaction de documentation technique",
+                        "tache10": "Intégration de diverses bibliothèques permettant l'affichage et le téléchargement de tous types de documents tels que HTML, PDF, vidéos, images, etc.",
                         "tache11": "Optimisation des performances de l'application grâce à l'implémentation de caches dans les API.",
-                        "tache12": "Implémentation des tests unitaires.",
-                        "tache13": "Maintenance et correction de bugs.",
-                        "tache14": "Code review.",
-                        "tache15": " Code Refactoring."
+                        "tache12": "Refonte des contrats WCF (ServiceContracts / DataContracts) en API REST exposant une hypermédia HATEOAS/HAL",
+                        "tache13": "Qualité & Tests : Implémentation complète des tests unitaires et d'intégration afin de garantir la non-régression et d'assurer la fiabilité du moteur de gestion documentaire",
+                        "tache14": "Refactoring & Code Review : Réalisation de Code Reviews rigoureuses au sein de l'équipe et travail continu de Code Refactoring pour moderniser la base de code legacy et réduire la dette technique",
+                        "tache15": "Documentation & Suivi : Rédaction de la documentation technique et prise en charge de la maintenance évolutive (analyse et résolution de bugs)."
                     }
                 }
             }
@@ -252,8 +252,8 @@
     "education": {
         "title": "FORMATION",
         "ensi": {
-            "degree": "Diplôme d’Ingénieur en Informatique",
-            "school": "École Nationale des Sciences de l’Informatique (ENSI)",
+            "degree": "Diplôme d'Ingénieur en Informatique",
+            "school": "École Nationale des Sciences de l'Informatique (ENSI)",
             "location": "Manouba, Tunisie"
         },
         "prepa": {

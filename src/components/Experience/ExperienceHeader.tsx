@@ -1,6 +1,6 @@
 import { Calendar, MapPin } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
-import { Experience } from '../../data/experiences';
+import { Experience } from '../../types/experiences';
 
 interface ExperienceHeaderProps {
     experience: Experience;
