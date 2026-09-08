@@ -1,10 +1,6 @@
 import { Calendar, MapPin } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
-import { Experience } from '../../types/experiences';
-
-interface ExperienceHeaderProps {
-    experience: Experience;
-}
+import { ExperienceHeaderProps } from '../../types/experiences';
 
 export default function ExperienceHeader({ experience }: ExperienceHeaderProps) {
     const { t } = useTranslation();
