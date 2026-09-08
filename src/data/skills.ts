@@ -1,24 +1,6 @@
-import {
-    Database,
-    Layout,
-    Server,
-    Settings,
-    Cloud,
-    FlaskConical
-} from 'lucide-react';
-import { Skill } from '../types/skills';
+import { Skill, SkillDiagram } from "../types/skills";
+import { Cloud, Database, FlaskConical, Layout, Server, Settings } from "lucide-react";
 
-export interface SkillDiagram {
-    name: string;
-    category: string;
-    score: number;
-}
-
-export interface StyleCategory {
-    title: string;
-    color: string;
-    gradient: string;
-}
 
 export const skills: Skill[] = [
     {
@@ -134,5 +116,3 @@ export const skillsDiagram: SkillDiagram[] = [
     { name: "DI", category: "architecture", score: 8.5 },
 
 ];
-
-export type SkillCategory = "frontend" | "backend" | "tests" | "database" | "devops" | "architecture";

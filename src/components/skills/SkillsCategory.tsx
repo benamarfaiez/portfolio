@@ -12,9 +12,10 @@ import {
     type ChartOptions,
     type TooltipItem,
 } from 'chart.js';
-import { skillsDiagram, type StyleCategory, type SkillCategory } from '../../data/skills';
+import { skillsDiagram } from '../../data/skills';
 import { ArrowLeft, ChevronLeft, ChevronRight } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { StyleCategory, SkillCategory } from '../../types/skills';
 
 ChartJS.register(CategoryScale, LinearScale, BarElement, Tooltip);
 

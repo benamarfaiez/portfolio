@@ -1,12 +1,7 @@
-export interface Education {
-    id: number;
-    degree: string;
-    school: string;
-    location: string;
-    year: string;
-}
+import { EducationItem } from "../types/education";
 
-export const educations: Education[] = [
+
+export const educations: EducationItem[] = [
     {
         id: 1,
         degree: 'education.ensi.degree',

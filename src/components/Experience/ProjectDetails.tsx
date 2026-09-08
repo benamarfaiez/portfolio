@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { ChevronLeft, ChevronRight, CheckCircle2 } from 'lucide-react';
-import { Projects } from '../../data/experiences';
+import { Projects } from '../../types/experiences';
 
 interface ProjectDetailsProps {
     project: Projects;
