@@ -23,3 +23,36 @@ export interface Experience {
     technologies: string[];
     images?: string[];
 }
+
+export interface ExperienceNavigatorProps {
+  currentSlug: string;
+  items?: Experience[];
+}
+
+export interface NavigatorCardProps {
+  experience: Experience;
+  direction: 'previous' | 'next';
+  onNavigate: (slug: string) => void;
+}
+
+export interface ExperienceItemProps {
+    experience: Experience;
+    index: number;
+}
+
+export interface CompanyLogoProps {
+  src?: string;
+  alt: string;
+}
+
+export interface TechBadgeListProps {
+  technologies: string[];
+}
+
+export interface ExperienceProps {
+  items?: Experience[];
+}
+
+export interface ExperienceHeaderProps {
+    experience: Experience;
+}

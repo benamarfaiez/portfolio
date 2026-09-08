@@ -1,10 +1,7 @@
 import { useTranslation } from 'react-i18next';
+import { TechBadgeListProps } from '../../types/experiences';
 
-interface ProjectStackProps {
-    technologies: string[];
-}
-
-export default function ProjectStack({ technologies }: ProjectStackProps) {
+export default function ProjectStack({ technologies }: TechBadgeListProps) {
     const { t } = useTranslation();
 
     return (
