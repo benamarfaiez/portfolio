@@ -5,7 +5,9 @@
         "not_found_category": "404 - Catégorie introuvable",
         "email": "Email",
         "phone": "Téléphone",
-        "location": "Localisation"
+        "location": "Localisation",
+        "learn_more": "En savoir plus",
+        "learn_more_about": "En savoir plus sur {{name}}"
     },
     "hero": {
         "title": "Ingénieur Full-Stack .NET / Angular / React",
@@ -77,6 +79,7 @@
                         "tache5": "Intégration d'AutoMapper pour automatiser et fiabiliser les opérations de mapping.",
                         "tache6": "Utilisation de FluentValidation pour une validation métier claire et découplée.",
                         "tache7": "Centralisation des requêtes HTTP dans des repositories dédiés, en s'appuyant sur l'injection de dépendances de HttpClientFactory.",
+                        "justification_httpclientfactory": "HttpClientFactory a été choisi pour centraliser la création et la configuration des clients HTTP, éviter les problèmes liés à la durée de vie des instances, simplifier la gestion des headers et des dépendances, et améliorer la robustesse et la maintenabilité des appels HTTP au sein des repositories.",
                         "tache8": "Réalisation de tests unitaires (xUnit) avec simulation des dépendances (Moq), et vérification des résultats par FluentAssertions.",
                         "tache9": "Déploiement sur l'environnement de recette et application des règles SonarQube pour garantir la qualité du code.",
                         "tache10": "Maintenance et correction de bugs."

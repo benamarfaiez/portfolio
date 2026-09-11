@@ -7,6 +7,16 @@ describe('ProjectDetails Component', () => {
     const mockOnNext = jest.fn();
     const mockOnPrev = jest.fn();
 
+    // Mock des méthodes natives de HTMLDialogElement pour JSDOM
+    beforeAll(() => {
+        HTMLDialogElement.prototype.showModal = jest.fn(function (this: HTMLDialogElement) {
+            this.open = true;
+        });
+        HTMLDialogElement.prototype.close = jest.fn(function (this: HTMLDialogElement) {
+            this.open = false;
+        });
+    });
+
     test('renders project details correctly', () => {
         render(
             <ProjectDetails
@@ -25,10 +35,42 @@ describe('ProjectDetails Component', () => {
 
         // Check for realization items
         mockProject.realization.forEach(item => {
-            // Since realization items might be translation keys, we check if they are in the document
-            // Note: If they are keys, the mock translator usually returns the key
-            expect(screen.getByText(item)).toBeInTheDocument();
+            const itemText = typeof item === 'string' ? item : item.name;
+            expect(screen.getByText(itemText)).toBeInTheDocument();
         });
+    });
+
+    test('opens technology details modal when a realization item provides extra content', () => {
+        const projectWithTechnologyDetails = {
+            ...mockProject,
+            realization: [
+                {
+                    name: 'experience.apf.projects.actions_associatives.realization.tache1',
+                    description: 'experience.apf.projects.actions_associatives.realization.tache1.description',
+                    image: '/IHttpClientFactory.jpg'
+                }
+            ]
+        };
+
+        render(
+            <ProjectDetails
+                project={projectWithTechnologyDetails}
+                onNext={mockOnNext}
+                onPrev={mockOnPrev}
+                hasNext={true}
+                hasPrev={true}
+                currentIndex={0}
+                totalProjects={1}
+            />
+        );
+
+        // Clic sur "En savoir plus"
+        fireEvent.click(screen.getByRole('button', { name: /common\.learn_more_about/i }));
+
+        // Vérification de la présence de la modale et de son contenu
+        expect(screen.getByRole('dialog')).toBeInTheDocument();
+        expect(screen.getByText(projectWithTechnologyDetails.realization[0].description)).toBeInTheDocument();
+        expect(screen.getAllByRole('button', { name: /common\.close|fermer/i })).toHaveLength(2);
     });
 
     test('calls navigation handlers', () => {
@@ -44,36 +86,12 @@ describe('ProjectDetails Component', () => {
             />
         );
 
-        // Find navigation buttons. 
-        // Note: The component renders navigation only if totalProjects > 1.
-        // We need to identify buttons. They have Chevron icons.
-        // We can find by role button.
         const buttons = screen.getAllByRole('button');
-        // Assuming first is prev, second is next based on order in DOM
         fireEvent.click(buttons[0]);
         expect(mockOnPrev).toHaveBeenCalled();
 
         fireEvent.click(buttons[1]);
         expect(mockOnNext).toHaveBeenCalled();
-    });
-
-    test('disables navigation buttons when appropriate', () => {
-        render(
-            <ProjectDetails
-                project={mockProject}
-                onNext={mockOnNext}
-                onPrev={mockOnPrev}
-                hasNext={false}
-                hasPrev={false}
-                currentIndex={0}
-                totalProjects={1}
-            />
-        );
-
-        // If totalProjects is 1, navigation might not be rendered based on the code:
-        // {totalProjects > 1 && <div id='projects_navigation' ...
-        // So let's test with totalProjects > 1 but hasNext/hasPrev false
-
     });
 
     test('renders navigation and handles disabled states', () => {

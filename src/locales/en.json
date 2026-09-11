@@ -5,7 +5,9 @@
         "not_found_category": "404 - Category not found",
         "email": "Email",
         "phone": "Phone",
-        "location": "Location"
+        "location": "Location",
+        "learn_more": "Learn more",
+        "learn_more_about": "Learn more about {{name}}"
     },
     "hero": {
         "title": "Full-Stack .NET / Angular Engineer",
@@ -77,6 +79,7 @@
                         "tache5": "Integration of AutoMapper to automate and reliable mapping operations.",
                         "tache6": "Use of FluentValidation for clear and decoupled business validation.",
                         "tache7": "Centralization of HTTP requests in dedicated repositories, relying on HttpClientFactory's dependency injection.",
+                        "justification_httpclientfactory": "HttpClientFactory was chosen to centralize HTTP client creation and configuration, avoid lifecycle issues with client instances, simplify header and dependency management, and improve the robustness and maintainability of HTTP calls inside the repositories.",
                         "tache8": "Execution of unit tests (xUnit) with dependency mocking (Moq), and result verification using FluentAssertions.",
                         "tache9": "Deployment on the staging environment and application of SonarQube rules to ensure code quality.",
                         "tache10": "Maintenance and bug fixing."
