@@ -70,7 +70,11 @@ export const experiences: Experience[] = [
                     'experience.henner.projects.ring_central.realization.tache4',
                     'experience.henner.projects.ring_central.realization.tache5',
                     'experience.henner.projects.ring_central.realization.tache6',
-                    'experience.henner.projects.ring_central.realization.tache7',
+                    {
+                        name: 'experience.henner.projects.ring_central.realization.tache7',
+                        description: 'experience.henner.projects.ring_central.realization.justification_httpclientfactory',
+                        image: '/IHttpClientFactory.jpg'
+                    },
                     'experience.henner.projects.ring_central.realization.tache8',
                     'experience.henner.projects.ring_central.realization.tache9',
                     'experience.henner.projects.ring_central.realization.tache10',

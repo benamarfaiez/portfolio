@@ -1,8 +1,14 @@
+export interface ProjectRealizationItem {
+    name: string;
+    description?: string;
+    image?: string;
+}
+
 export interface Projects {
     name: string;
     details: string;
     context: string;
-    realization: string[];
+    realization: Array<string | ProjectRealizationItem>;
     technicalEnvironment: string[];
 }
 
