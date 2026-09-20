@@ -151,7 +151,11 @@ export const experiences: Experience[] = [
                     'experience.euro_information.projects.pixis.realization.tache9',
                     'experience.euro_information.projects.pixis.realization.tache10',
                     'experience.euro_information.projects.pixis.realization.tache11',
-                    'experience.euro_information.projects.pixis.realization.tache12',
+                    {
+                        name: 'experience.euro_information.projects.pixis.realization.tache12',
+                        description: 'experience.euro_information.projects.pixis.choix_technique.justification_heatos_hal_approche',
+                        image: '/heatos_hal_approche.jpg'
+                    },                    
                     'experience.euro_information.projects.pixis.realization.tache13',
                     'experience.euro_information.projects.pixis.realization.tache14',
                     'experience.euro_information.projects.pixis.realization.tache15'

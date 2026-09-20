@@ -151,6 +151,9 @@
                         "tache13": "Quality & Testing : Complete implementation of unit and integration tests to ensure non-regression and reliability of the document management engine",
                         "tache14": "Refactoring & Code Review : Rigorous Code Reviews within the team and continuous Code Refactoring to modernize the legacy codebase and reduce technical debt",
                         "tache15": "Documentation & Maintenance : Writing of technical documentation and handling of evolutionary maintenance (analysis and resolution of bugs)."
+                    },
+                    "choix_technique":{
+                        "justification_heatos_hal_approche": "The HATEOAS/HAL approach was chosen to improve navigability and interaction with the API, allowing clients to dynamically discover available actions and relationships between resources, thus facilitating integration and reducing dependency on static documentation."
                     }
                 }
             }
