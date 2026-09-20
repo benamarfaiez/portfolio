@@ -63,7 +63,7 @@ export function TechnologyDetailsModal({ realization, onClose }: TechnologyDetai
               <img
                 src={realization.image}
                 alt={t(realization.name)}
-                className="max-h-[45vh] w-full rounded-lg object-contain transition-transform duration-300 hover:scale-[1.01]"
+                className="w-full rounded-lg object-contain transition-transform duration-300 hover:scale-[1.01]"
                 loading="lazy"
               />
             </div>

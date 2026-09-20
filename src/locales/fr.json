@@ -151,6 +151,9 @@
                         "tache13": "Qualité & Tests : Implémentation complète des tests unitaires et d'intégration afin de garantir la non-régression et d'assurer la fiabilité du moteur de gestion documentaire",
                         "tache14": "Refactoring & Code Review : Réalisation de Code Reviews rigoureuses au sein de l'équipe et travail continu de Code Refactoring pour moderniser la base de code legacy et réduire la dette technique",
                         "tache15": "Documentation & Suivi : Rédaction de la documentation technique et prise en charge de la maintenance évolutive (analyse et résolution de bugs)."
+                    },
+                    "choix_technique":{
+                        "justification_heatos_hal_approche": "L'approche HATEOAS/HAL a été choisie pour améliorer la navigabilité et l'interaction avec l'API, permettant aux clients de découvrir dynamiquement les actions disponibles et les relations entre les ressources, ce qui facilite l'intégration et réduit la dépendance à une documentation statique."
                     }
                 }
             }
