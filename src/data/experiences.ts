@@ -51,7 +51,12 @@ export const experiences: Experience[] = [
                 realization: [
                     'experience.henner.projects.push_notification.realization.tache1',
                     'experience.henner.projects.push_notification.realization.tache2',
-                    'experience.henner.projects.push_notification.realization.tache3',
+                    {
+                        name: 'experience.henner.projects.push_notification.realization.tache3',
+                        title: 'experience.henner.projects.push_notification.realization.tache3_titre',
+                        description: 'experience.henner.projects.push_notification.realization.choix_technique.justification_couche_metier',
+                        image: '/architecture_pushNotif.jpg'
+                    },
                     'experience.henner.projects.push_notification.realization.tache4',
                     'experience.henner.projects.push_notification.realization.tache5',
                     'experience.henner.projects.push_notification.realization.tache6',

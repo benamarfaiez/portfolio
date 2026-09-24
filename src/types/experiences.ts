@@ -1,5 +1,6 @@
 export interface ProjectRealizationItem {
     name: string;
+    title?: string;
     description?: string;
     image?: string;
 }

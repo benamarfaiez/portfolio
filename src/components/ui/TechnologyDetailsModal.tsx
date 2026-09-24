@@ -35,7 +35,7 @@ export function TechnologyDetailsModal({ realization, onClose }: TechnologyDetai
             id="modal-tech-title"
             className="mt-1.5 text-lg font-bold tracking-tight text-slate-900 sm:text-xl dark:text-slate-100"
           >
-            {t(realization.name)}
+            {t(realization.title || realization.name)}
           </h3>
         </div>
 
