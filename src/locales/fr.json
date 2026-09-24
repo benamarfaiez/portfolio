@@ -60,7 +60,11 @@
                     "realization": {
                         "tache1": "Structuration du projet autour d'une architecture solide pour assurer une séparation des responsabilités optimales et une maintenabilité.",
                         "tache2": "Rédaction et exécution de scripts de migration SQL pour créer et initialiser les tables de configuration dans la base de données.",
+                        "choix_technique": {
+                            "justification_couche_metier": "Ce schéma illustre l'architecture découplée, où la couche métier communique avec les bases de données via des interfaces (INotificationRepository et IConfigurationRepository). L'implémentation concrète dans la couche Infrastructure centralise l'accès aux données pour gérer le statut des notifications et l'agrégation des configurations multi-tables. Ce choix garantit l'isolement du code métier, une testabilité et une maintenance simplifiée lors des évolutions de la base de données."
+                        },
                         "tache3": "Développement des repositories (notification et configuration) dans la couche infrastructure, afin d'implémenter les opérations de récupération et de mise à jour des notifications non envoyées et de gérer les paramètres de configuration issus de différentes tables en base de données.",
+                        "tache3_titre": "Développement des repositories (notification et configuration) dans la couche infrastructure.",
                         "tache4": "Développement de la logique métier pour déterminer le type de notification (singulier/pluriel) et pour construire les fichiers CSV (payloads) conformes aux exigences de l'API Airship.",
                         "tache5": "Mise en œuvre d'un service permettant d'effectuer des appels aux API Airship via HttpWebRequest et assurant la gestion des flux JSON (sérialisation/désérialisation) pour récupérer des listes statiques, mettre à jour des données et envoyer des notifications.",
                         "tache6": "Mettre en place d'une gestion des logs et des erreurs pour assurer la traçabilité des erreurs et faciliter la maintenance.",

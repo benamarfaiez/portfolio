@@ -60,7 +60,11 @@
                     "realization": {
                         "tache1": "Structuring the project around a solid architecture to ensure optimal separation of responsibilities and maintainability.",
                         "tache2": "Writing and execution of SQL migration scripts to create and initialize configuration tables in the database.",
+                        "choix_technique": {
+                            "justification_couche_metier": "This diagram illustrates the decoupled architecture, where the business layer communicates with databases through interfaces (INotificationRepository and IConfigurationRepository). The concrete implementation in the Infrastructure layer centralizes data access to manage notification status and multi-table configuration aggregation. This choice ensures the isolation of business code, testability, and simplified maintenance during database evolution."
+                        },
                         "tache3": "Development of repositories (notification and configuration) in the infrastructure layer, in order to implement operations for retrieving and updating unsent notifications and managing configuration parameters from different database tables.",
+                        "tache3_titre": "Development of repositories (notification and configuration) in the infrastructure layer.",
                         "tache4": "Development of business logic to determine the notification type (singular/plural) and to build CSV files (payloads) compliant with Airship API requirements.",
                         "tache5": "Implementation of a service to make calls to Airship APIs via HttpWebRequest and ensuring JSON flow management (serialization/deserialization) to retrieve static lists, update data, and send notifications.",
                         "tache6": "Setting up log and error management to ensure error traceability and facilitate maintenance.",
